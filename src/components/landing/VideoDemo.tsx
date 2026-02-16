@@ -86,8 +86,8 @@ const VideoDemo = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="relative rounded-3xl overflow-hidden glass-card-strong glow-orange cursor-pointer group mb-16 aspect-video"
-          onClick={mainIsYoutube ? undefined : togglePlay}
+          className={`relative rounded-3xl overflow-hidden glass-card-strong glow-orange group mb-16 aspect-video ${mainIsYoutube ? '' : 'cursor-pointer'}`}
+          onClick={mainIsYoutube || mainIsLocal ? undefined : togglePlay}
         >
           {mainIsYoutube ? (
             <iframe
@@ -97,28 +97,34 @@ const VideoDemo = () => {
               allowFullScreen
               title={activeCard!.title}
             />
+          ) : mainIsLocal ? (
+            <video
+              ref={videoRef}
+              src={activeCard!.localVideo}
+              className="w-full h-full object-cover"
+              controls
+              loop
+              playsInline
+            />
           ) : (
             <>
               <video
                 ref={videoRef}
-                src={mainIsLocal ? activeCard!.localVideo : demoVideo}
+                src={demoVideo}
                 className="w-full h-full object-cover"
+                controls
                 loop
                 playsInline
                 onEnded={() => setPlaying(false)}
               />
               <div
-                className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${
-                  playing ? "opacity-0 group-hover:opacity-100" : "opacity-100"
+                className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 pointer-events-none ${
+                  playing ? "opacity-0" : "opacity-100"
                 }`}
                 style={{ background: "radial-gradient(circle, hsl(0 0% 0% / 0.4) 0%, hsl(0 0% 0% / 0.2) 100%)" }}
               >
-                <div className="w-24 h-24 rounded-full glass-card-elite flex items-center justify-center backdrop-blur-xl transition-transform duration-300 group-hover:scale-110">
-                  {playing ? (
-                    <Pause size={36} className="text-primary" />
-                  ) : (
-                    <Play size={36} className="text-primary ml-1" />
-                  )}
+                <div className="w-24 h-24 rounded-full glass-card-elite flex items-center justify-center backdrop-blur-xl">
+                  <Play size={36} className="text-primary ml-1" />
                 </div>
               </div>
             </>
