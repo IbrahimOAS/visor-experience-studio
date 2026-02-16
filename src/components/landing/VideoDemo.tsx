@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import { Play, Pause, ChevronLeft, ChevronRight } from "lucide-react";
 import demoVideo from "@/assets/visor-demo.mp4";
 
-const videoCards = [
+const videoCards: { title: string; description: string; youtubeId?: string }[] = [
   { title: "AI Body Scan", description: "Real-time body composition analysis powered by computer vision" },
   { title: "Transformation Preview", description: "See your future physique rendered in stunning detail" },
   { title: "Coach Interaction", description: "Adaptive AI coaching that responds to your emotional state" },
   { title: "Ritual Tracking", description: "Build unbreakable habits with streak-powered rituals" },
   { title: "Soul Progression", description: "Track your identity evolution from Initiate to Embodied" },
-  { title: "Workout Engine", description: "Personalized training plans that adapt to your progress" },
+  { title: "Workout Engine", description: "Personalized training plans that adapt to your progress", youtubeId: "o3KFfOra4dU" },
   { title: "Nutrition AI", description: "Smart meal logging with macro tracking and diet plans" },
   { title: "Leaderboard", description: "Compete with your community and climb the XP rankings" },
   { title: "Progress Analytics", description: "Deep insights into your transformation journey over time" },
@@ -127,25 +127,37 @@ const VideoDemo = () => {
               >
                 {/* Video thumbnail */}
                 <div className="relative h-40 overflow-hidden bg-background/50">
-                  <video
-                    src={demoVideo}
-                    className="w-full h-full object-cover opacity-70 group-hover/card:opacity-100 transition-opacity duration-500 group-hover/card:scale-105 transform"
-                    muted
-                    playsInline
-                    loop
-                    onMouseEnter={(e) => (e.target as HTMLVideoElement).play()}
-                    onMouseLeave={(e) => {
-                      const v = e.target as HTMLVideoElement;
-                      v.pause();
-                      v.currentTime = i * 2; // different start frames
-                    }}
-                    onLoadedMetadata={(e) => {
-                      (e.target as HTMLVideoElement).currentTime = i * 2;
-                    }}
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center opacity-60 group-hover/card:opacity-0 transition-opacity duration-300">
-                    <Play size={28} className="text-primary" />
-                  </div>
+                  {card.youtubeId ? (
+                    <iframe
+                      src={`https://www.youtube.com/embed/${card.youtubeId}?rel=0`}
+                      className="w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      title={card.title}
+                    />
+                  ) : (
+                    <>
+                      <video
+                        src={demoVideo}
+                        className="w-full h-full object-cover opacity-70 group-hover/card:opacity-100 transition-opacity duration-500 group-hover/card:scale-105 transform"
+                        muted
+                        playsInline
+                        loop
+                        onMouseEnter={(e) => (e.target as HTMLVideoElement).play()}
+                        onMouseLeave={(e) => {
+                          const v = e.target as HTMLVideoElement;
+                          v.pause();
+                          v.currentTime = i * 2;
+                        }}
+                        onLoadedMetadata={(e) => {
+                          (e.target as HTMLVideoElement).currentTime = i * 2;
+                        }}
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center opacity-60 group-hover/card:opacity-0 transition-opacity duration-300">
+                        <Play size={28} className="text-primary" />
+                      </div>
+                    </>
+                  )}
                 </div>
                 {/* Card info */}
                 <div className="p-5">
