@@ -3,17 +3,17 @@ import { motion } from "framer-motion";
 import { Play, Pause, ChevronLeft, ChevronRight } from "lucide-react";
 import demoVideo from "@/assets/visor-demo.mp4";
 
-const videoCards: { title: string; description: string; youtubeId?: string }[] = [
-  { title: "AI Body Scan", description: "Real-time body composition analysis powered by computer vision" },
-  { title: "Transformation Preview", description: "See your future physique rendered in stunning detail" },
-  { title: "Coach Interaction", description: "Adaptive AI coaching that responds to your emotional state" },
-  { title: "Ritual Tracking", description: "Build unbreakable habits with streak-powered rituals" },
-  { title: "Soul Progression", description: "Track your identity evolution from Initiate to Embodied" },
+const videoCards: { title: string; description: string; youtubeId: string }[] = [
+  { title: "AI Body Scan", description: "Real-time body composition analysis powered by computer vision", youtubeId: "dQw4w9WgXcQ" },
+  { title: "Transformation Preview", description: "See your future physique rendered in stunning detail", youtubeId: "5qap5aO4i9A" },
+  { title: "Coach Interaction", description: "Adaptive AI coaching that responds to your emotional state", youtubeId: "ZXsQAXx_ao0" },
+  { title: "Ritual Tracking", description: "Build unbreakable habits with streak-powered rituals", youtubeId: "LDU_Txk06tM" },
+  { title: "Soul Progression", description: "Track your identity evolution from Initiate to Embodied", youtubeId: "YQHsXMglC9A" },
   { title: "Workout Engine", description: "Personalized training plans that adapt to your progress", youtubeId: "o3KFfOra4dU" },
-  { title: "Nutrition AI", description: "Smart meal logging with macro tracking and diet plans" },
-  { title: "Leaderboard", description: "Compete with your community and climb the XP rankings" },
-  { title: "Progress Analytics", description: "Deep insights into your transformation journey over time" },
-  { title: "Visor Pro", description: "Unlock unlimited AI generations and advanced features" },
+  { title: "Nutrition AI", description: "Smart meal logging with macro tracking and diet plans", youtubeId: "9bZkp7q19f0" },
+  { title: "Leaderboard", description: "Compete with your community and climb the XP rankings", youtubeId: "kJQP7kiw5Fk" },
+  { title: "Progress Analytics", description: "Deep insights into your transformation journey over time", youtubeId: "JGwWNGJdvx8" },
+  { title: "Visor Pro", description: "Unlock unlimited AI generations and advanced features", youtubeId: "RgKAFK5djSk" },
 ];
 
 const VideoDemo = () => {
