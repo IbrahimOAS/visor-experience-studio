@@ -72,7 +72,6 @@ const VideoDemo = () => {
             src={demoVideo}
             className="w-full h-auto"
             loop
-            muted
             playsInline
             onEnded={() => setPlaying(false)}
           />
