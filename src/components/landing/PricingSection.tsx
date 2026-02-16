@@ -96,7 +96,14 @@ const PricingSection = () => (
               <span className="text-muted-foreground text-sm">{plan.period}</span>
             </div>
             {plan.yearlyPrice && (
-              <p className="text-xs text-primary mb-5">or {plan.yearlyPrice}</p>
+              <p className="text-xs text-primary mb-5">
+                or {plan.yearlyPrice}
+                {plan.highlighted && (
+                  <span className="ml-2 inline-block bg-primary text-primary-foreground text-[10px] font-bold uppercase px-2 py-0.5 rounded-full">
+                    7-day free trial
+                  </span>
+                )}
+              </p>
             )}
             {!plan.yearlyPrice && <div className="mb-5" />}
             <ul className="space-y-3 mb-8">
