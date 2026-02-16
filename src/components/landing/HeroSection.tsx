@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Apple, PlayCircle } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import screen1 from "@/assets/app-screen-1.png";
 import screen2 from "@/assets/app-screen-2.png";
@@ -50,27 +50,12 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
-            href="#"
-            className="flex items-center gap-3 px-6 py-3.5 rounded-xl bg-foreground text-background font-semibold hover:bg-foreground/90 transition-colors"
+            href="#features"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-primary/30 bg-primary/10 text-primary font-semibold hover:bg-primary/20 transition-colors"
           >
-            <Apple size={22} />
-            <div className="text-left">
-              <div className="text-[10px] leading-none opacity-70">Download on the</div>
-              <div className="text-sm leading-tight">App Store</div>
-            </div>
-          </a>
-          <a
-            href="#"
-            className="flex items-center gap-3 px-6 py-3.5 rounded-xl bg-foreground text-background font-semibold hover:bg-foreground/90 transition-colors"
-          >
-            <PlayCircle size={22} />
-            <div className="text-left">
-              <div className="text-[10px] leading-none opacity-70">Get it on</div>
-              <div className="text-sm leading-tight">Google Play</div>
-            </div>
+            Explore Features <ArrowDown size={18} />
           </a>
         </motion.div>
       </div>
