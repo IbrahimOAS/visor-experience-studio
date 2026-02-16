@@ -2,9 +2,10 @@ import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Play, Pause, ChevronLeft, ChevronRight } from "lucide-react";
 import demoVideo from "@/assets/visor-demo.mp4";
+import showcaseVideo from "@/assets/visor-showcase.mp4";
 
-const videoCards: { title: string; description: string; youtubeId: string }[] = [
-  { title: "AI Body Scan", description: "Real-time body composition analysis powered by computer vision", youtubeId: "dQw4w9WgXcQ" },
+const videoCards: { title: string; description: string; youtubeId?: string; localVideo?: string }[] = [
+  { title: "AI Body Scan", description: "Real-time body composition analysis powered by computer vision", localVideo: showcaseVideo },
   { title: "Transformation Preview", description: "See your future physique rendered in stunning detail", youtubeId: "5qap5aO4i9A" },
   { title: "Coach Interaction", description: "Adaptive AI coaching that responds to your emotional state", youtubeId: "ZXsQAXx_ao0" },
   { title: "Ritual Tracking", description: "Build unbreakable habits with streak-powered rituals", youtubeId: "LDU_Txk06tM" },
@@ -24,10 +25,11 @@ const VideoDemo = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const activeCard = activeIndex !== null ? videoCards[activeIndex] : null;
-  const mainIsYoutube = activeCard?.youtubeId;
+  const mainIsYoutube = activeCard?.youtubeId && !activeCard?.localVideo;
+  const mainIsLocal = activeCard?.localVideo;
 
   const togglePlay = () => {
-    if (mainIsYoutube) return; // YouTube has its own controls
+    if (mainIsYoutube) return;
     if (!videoRef.current) return;
     if (playing) {
       videoRef.current.pause();
@@ -89,17 +91,17 @@ const VideoDemo = () => {
         >
           {mainIsYoutube ? (
             <iframe
-              src={`https://www.youtube.com/embed/${activeCard.youtubeId}?rel=0&autoplay=1`}
+              src={`https://www.youtube.com/embed/${activeCard!.youtubeId}?rel=0&autoplay=1`}
               className="w-full h-full absolute inset-0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-              title={activeCard.title}
+              title={activeCard!.title}
             />
           ) : (
             <>
               <video
                 ref={videoRef}
-                src={demoVideo}
+                src={mainIsLocal ? activeCard!.localVideo : demoVideo}
                 className="w-full h-full object-cover"
                 loop
                 playsInline
@@ -162,7 +164,7 @@ const VideoDemo = () => {
               >
                 {/* Video thumbnail */}
                 <div className="relative h-40 overflow-hidden bg-background/50">
-                  {card.youtubeId ? (
+                  {card.youtubeId && !card.localVideo ? (
                     <img
                       src={`https://img.youtube.com/vi/${card.youtubeId}/hqdefault.jpg`}
                       alt={card.title}
@@ -170,7 +172,7 @@ const VideoDemo = () => {
                     />
                   ) : (
                     <video
-                      src={demoVideo}
+                      src={card.localVideo || demoVideo}
                       className="w-full h-full object-cover opacity-70 group-hover/card:opacity-100 transition-opacity duration-500 group-hover/card:scale-105 transform"
                       muted
                       playsInline
@@ -179,10 +181,7 @@ const VideoDemo = () => {
                       onMouseLeave={(e) => {
                         const v = e.target as HTMLVideoElement;
                         v.pause();
-                        v.currentTime = i * 2;
-                      }}
-                      onLoadedMetadata={(e) => {
-                        (e.target as HTMLVideoElement).currentTime = i * 2;
+                        v.currentTime = 0;
                       }}
                     />
                   )}
