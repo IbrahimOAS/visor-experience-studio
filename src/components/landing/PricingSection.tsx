@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { Check, Crown } from "lucide-react";
 
 const plans = [
   {
@@ -58,8 +58,14 @@ const plans = [
 ];
 
 const PricingSection = () => (
-  <section id="pricing" className="py-24 px-6 bg-secondary/30">
-    <div className="max-w-5xl mx-auto">
+  <section id="pricing" className="py-28 px-6 relative overflow-hidden">
+    {/* Ambient */}
+    <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/4 rounded-full blur-[140px]" />
+    </div>
+
+    <div className="max-w-5xl mx-auto relative z-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -80,23 +86,26 @@ const PricingSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.15 }}
-            className={`rounded-2xl p-6 border ${
+            className={`rounded-2xl p-7 transition-all duration-500 ${
               plan.highlighted
-                ? "border-primary bg-primary/5 glow-orange"
-                : "border-border glass-card"
+                ? "glass-card-elite shimmer hover:shadow-[0_0_80px_-10px_hsl(28,100%,55%/0.4)] scale-[1.02]"
+                : "glass-card-strong hover:shadow-[0_0_40px_-8px_hsl(28,100%,55%/0.15)] hover:border-primary/15"
             }`}
           >
             {plan.highlighted && (
-              <div className="text-xs font-bold text-primary uppercase tracking-wider mb-3">Most Popular</div>
+              <div className="flex items-center gap-1.5 text-xs font-bold text-primary uppercase tracking-wider mb-4">
+                <Crown size={14} />
+                Most Popular
+              </div>
             )}
             <h3 className="text-2xl font-bold mb-0.5">{plan.name}</h3>
-            <p className="text-xs text-muted-foreground mb-3 italic">{plan.subtitle}</p>
+            <p className="text-xs text-muted-foreground mb-4 italic">{plan.subtitle}</p>
             <div className="flex items-baseline gap-1 mb-1">
               <span className="text-4xl font-bold">{plan.price}</span>
               <span className="text-muted-foreground text-sm">{plan.period}</span>
             </div>
             {plan.yearlyPrice && (
-              <p className="text-xs text-primary mb-5">
+              <p className="text-xs text-primary mb-6">
                 or {plan.yearlyPrice}
                 {plan.highlighted && (
                   <span className="ml-2 inline-block bg-primary text-primary-foreground text-[10px] font-bold uppercase px-2 py-0.5 rounded-full">
@@ -105,10 +114,10 @@ const PricingSection = () => (
                 )}
               </p>
             )}
-            {!plan.yearlyPrice && <div className="mb-5" />}
+            {!plan.yearlyPrice && <div className="mb-6" />}
             <ul className="space-y-3 mb-8">
               {plan.features.map((f, j) => (
-                <li key={j} className="flex items-start gap-2 text-sm text-foreground/80">
+                <li key={j} className="flex items-start gap-2.5 text-sm text-foreground/80">
                   <Check size={16} className="text-primary mt-0.5 flex-shrink-0" />
                   {f}
                 </li>
@@ -116,10 +125,10 @@ const PricingSection = () => (
             </ul>
             <a
               href="#download"
-              className={`block w-full py-3 rounded-xl text-center font-semibold text-sm transition-colors ${
+              className={`block w-full py-3.5 rounded-xl text-center font-semibold text-sm transition-all duration-300 ${
                 plan.highlighted
-                  ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                  : "bg-secondary text-foreground hover:bg-secondary/80"
+                  ? "bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-[0_0_24px_-4px_hsl(28,100%,55%/0.5)]"
+                  : "glass-card-strong text-foreground hover:text-primary hover:border-primary/20"
               }`}
             >
               {plan.cta}

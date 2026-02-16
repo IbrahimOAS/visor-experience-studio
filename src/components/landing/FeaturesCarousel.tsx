@@ -55,7 +55,7 @@ const features = [
     icon: CreditCard,
     label: "Visor Pro",
     title: "Unlock Everything",
-    description: "Go Pro for €9.99/month — unlock advanced analytics, more AI transformations, personalized plans, coach chat, and offline mode.",
+    description: "Go Pro for unlimited AI transformations, advanced analytics, personalized plans, full coach personality setup, and offline mode.",
     image: screen1,
   },
 ];
@@ -70,8 +70,13 @@ const FeaturesCarousel = () => {
   const Icon = f.icon;
 
   return (
-    <section id="features" className="py-24 px-6">
-      <div className="max-w-7xl mx-auto">
+    <section id="features" className="py-28 px-6 relative">
+      {/* Ambient background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px]" />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -88,15 +93,15 @@ const FeaturesCarousel = () => {
         </motion.div>
 
         {/* Feature tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 mb-14">
           {features.map((feat, i) => (
             <button
               key={i}
               onClick={() => setActive(i)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+              className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 ${
                 i === active
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary text-muted-foreground hover:text-foreground"
+                  ? "glass-card-elite text-primary shadow-[0_0_20px_-4px_hsl(28,100%,55%/0.3)]"
+                  : "glass-card text-muted-foreground hover:text-foreground hover:bg-[hsl(0_0%_100%/0.06)]"
               }`}
             >
               {feat.label}
@@ -104,7 +109,7 @@ const FeaturesCarousel = () => {
           ))}
         </div>
 
-        {/* Active feature display - ByteDance Seed style */}
+        {/* Active feature display */}
         <div className="relative">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Text */}
@@ -116,43 +121,59 @@ const FeaturesCarousel = () => {
                 exit={{ opacity: 0, x: 30 }}
                 transition={{ duration: 0.4 }}
               >
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl glass-card-strong text-primary text-sm font-medium mb-6">
                   <Icon size={16} />
                   {f.label}
                 </div>
-                <h3 className="text-3xl md:text-4xl font-bold mb-4">{f.title}</h3>
+                <h3 className="text-3xl md:text-5xl font-bold mb-5">{f.title}</h3>
                 <p className="text-muted-foreground text-lg leading-relaxed">{f.description}</p>
               </motion.div>
             </AnimatePresence>
 
-            {/* Image card - 3D tilt style */}
+            {/* Image card - Glass morphism 3D */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}
-                initial={{ opacity: 0, scale: 0.95, rotateY: -10 }}
+                initial={{ opacity: 0, scale: 0.9, rotateY: -10 }}
                 animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-                exit={{ opacity: 0, scale: 0.95, rotateY: 10 }}
-                transition={{ duration: 0.5 }}
+                exit={{ opacity: 0, scale: 0.9, rotateY: 10 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
                 className="relative mx-auto max-w-sm"
               >
-                <div className="rounded-3xl overflow-hidden border border-border/50 glow-orange">
-                  <img src={f.image} alt={f.title} className="w-full h-auto" />
+                {/* Glow behind card */}
+                <div className="absolute inset-0 bg-primary/15 rounded-3xl blur-[40px] scale-90" />
+                <div className="relative rounded-3xl overflow-hidden glass-card-strong glow-orange shimmer">
+                  <img src={f.image} alt={f.title} className="w-full h-auto relative z-10" />
                 </div>
               </motion.div>
             </AnimatePresence>
           </div>
 
           {/* Nav arrows */}
-          <div className="flex justify-center gap-4 mt-10">
+          <div className="flex justify-center gap-4 mt-12">
             <button
               onClick={prev}
-              className="w-12 h-12 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary transition-colors"
+              className="w-12 h-12 rounded-xl glass-card-strong flex items-center justify-center text-muted-foreground hover:text-primary hover:shadow-[0_0_20px_-4px_hsl(28,100%,55%/0.3)] transition-all duration-300"
             >
               <ChevronLeft size={20} />
             </button>
+            {/* Dots indicator */}
+            <div className="flex items-center gap-1.5">
+              {features.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActive(i)}
+                  className={`rounded-full transition-all duration-300 ${
+                    i === active
+                      ? "w-8 h-2 bg-primary"
+                      : "w-2 h-2 bg-muted-foreground/30 hover:bg-muted-foreground/60"
+                  }`}
+                />
+              ))}
+            </div>
             <button
               onClick={next}
-              className="w-12 h-12 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary transition-colors"
+              className="w-12 h-12 rounded-xl glass-card-strong flex items-center justify-center text-muted-foreground hover:text-primary hover:shadow-[0_0_20px_-4px_hsl(28,100%,55%/0.3)] transition-all duration-300"
             >
               <ChevronRight size={20} />
             </button>
