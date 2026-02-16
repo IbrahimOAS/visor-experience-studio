@@ -2,7 +2,7 @@ import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import FeaturesCarousel from "@/components/landing/FeaturesCarousel";
 import HowItWorks from "@/components/landing/HowItWorks";
-import Testimonials from "@/components/landing/Testimonials";
+import VideoDemo from "@/components/landing/VideoDemo";
 import PricingSection from "@/components/landing/PricingSection";
 import DownloadCTA from "@/components/landing/DownloadCTA";
 import Footer from "@/components/landing/Footer";
@@ -13,7 +13,7 @@ const Index = () => (
     <HeroSection />
     <FeaturesCarousel />
     <HowItWorks />
-    <Testimonials />
+    <VideoDemo />
     <PricingSection />
     <DownloadCTA />
     <Footer />
