@@ -63,28 +63,6 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Marquee of app screens */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-        className="relative z-10 w-full overflow-hidden pb-8"
-      >
-        {/* Fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
-        
-        <div className="flex animate-marquee gap-6 w-max">
-          {[...screens, ...screens].map((src, i) => (
-            <div
-              key={i}
-              className="flex-shrink-0 w-56 md:w-72 rounded-2xl overflow-hidden glass-card-strong glow-orange-subtle hover:glow-orange transition-shadow duration-500"
-            >
-              <img src={src} alt="VISOR App Screen" className="w-full h-auto" />
-            </div>
-          ))}
-        </div>
-      </motion.div>
     </section>
   );
 };
