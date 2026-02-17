@@ -11,7 +11,7 @@ const testimonials = [
   {
     name: "Aisha K.",
     role: "Fitness Coach",
-    text: "The Sandow AI coach is unlike anything I've seen. It adapts to my clients' moods and keeps them accountable. The Soul Track is pure genius for retention.",
+    text: "The Visor AI coach is unlike anything I've seen. It adapts to my clients' moods and keeps them accountable. The Soul Track is pure genius for retention.",
     rating: 5,
   },
   {
