@@ -18,7 +18,7 @@ const features = [
   },
   {
     icon: Brain,
-    label: "Sandow AI Coach",
+    label: "Visor AI Coach",
     title: "A Coach That Knows You",
     description: "Choose your coach personality — Commander, Visionary, Guardian, or Strategist. The AI adapts tone based on your streaks, mood, and progress.",
     image: screen2,
