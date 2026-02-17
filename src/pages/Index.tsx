@@ -1,5 +1,6 @@
 import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
+import FeaturesCarousel from "@/components/landing/FeaturesCarousel";
 import HowItWorks from "@/components/landing/HowItWorks";
 import VideoDemo from "@/components/landing/VideoDemo";
 import PricingSection from "@/components/landing/PricingSection";
@@ -10,6 +11,7 @@ const Index = () => (
   <main className="bg-background text-foreground overflow-x-hidden">
     <Navbar />
     <HeroSection />
+    <FeaturesCarousel />
     <HowItWorks />
     <VideoDemo />
     <PricingSection />
