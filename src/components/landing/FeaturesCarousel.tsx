@@ -1,73 +1,145 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Eye, Brain, Flame, Heart, Utensils, Trophy, CreditCard } from "lucide-react";
-import screen1 from "@/assets/app-screen-1.png";
-import screen2 from "@/assets/app-screen-2.png";
-import screen3 from "@/assets/app-screen-3.png";
-import screen4 from "@/assets/app-screen-4.png";
-import screen5 from "@/assets/app-screen-5.png";
-import screen6 from "@/assets/app-screen-6.png";
+import { memo, useEffect, useMemo, useState, useCallback } from "react";
+import {
+  AnimatePresence,
+  motion,
+  useAnimation,
+  useMotionValue,
+  useTransform,
+} from "framer-motion";
 
-const features = [
-  {
-    icon: Eye,
-    label: "AI Body Transformation",
-    title: "See Your Future Body",
-    description: "Upload your photo and watch AI generate realistic transformation previews — Month 1, Month 3, and beyond. See the destination before you start the journey.",
-    image: screen1,
-  },
-  {
-    icon: Brain,
-    label: "Visor AI Coach",
-    title: "A Coach That Knows You",
-    description: "Choose your coach personality — Commander, Visionary, Guardian, or Strategist. The AI adapts tone based on your streaks, mood, and progress.",
-    image: screen2,
-  },
-  {
-    icon: Heart,
-    label: "Soul Track",
-    title: "Belief Alignment System",
-    description: "Move through identity states: Unawakened → Initiate → Aligned → Disciplined → Embodied. VISOR turns fitness into identity.",
-    image: screen3,
-  },
-  {
-    icon: Flame,
-    label: "Ritual System",
-    title: "Build Unbreakable Habits",
-    description: "Commit to daily rituals with streak tracking, expiry timers, XP rewards, and coach-driven starter packs. Your habits fuel your soul progression.",
-    image: screen4,
-  },
-  {
-    icon: Utensils,
-    label: "Nutrition & Plans",
-    title: "Fuel Your Transformation",
-    description: "Meal logging, daily macro summaries, AI-generated diet plans, and personalized workout recommendations — all integrated into one system.",
-    image: screen5,
-  },
-  {
-    icon: Trophy,
-    label: "Gamification & XP",
-    title: "Level Up Your Life",
-    description: "Earn XP, unlock archetypes (Initiate → Warrior → Champion), climb the leaderboard, and compete with your community.",
-    image: screen6,
-  },
-  {
-    icon: CreditCard,
-    label: "Visor Pro",
-    title: "Unlock Everything",
-    description: "Go Pro for unlimited AI transformations, advanced analytics, personalized plans, full coach personality setup, and offline mode.",
-    image: screen1,
-  },
+import uiScreen1 from "@/assets/ui-screen-1.png";
+import uiScreen2 from "@/assets/ui-screen-2.png";
+import uiScreen3 from "@/assets/ui-screen-3.png";
+import uiScreen4 from "@/assets/ui-screen-4.png";
+import uiScreen5 from "@/assets/ui-screen-5.png";
+import uiScreen6 from "@/assets/ui-screen-6.png";
+import uiScreen7 from "@/assets/ui-screen-7.png";
+import uiScreen8 from "@/assets/ui-screen-8.png";
+import uiScreen9 from "@/assets/ui-screen-9.png";
+
+const cards = [
+  uiScreen1, uiScreen2, uiScreen3, uiScreen4, uiScreen5,
+  uiScreen6, uiScreen7, uiScreen8, uiScreen9,
 ];
 
+const duration = 0.15;
+const transition = { duration, ease: [0.32, 0.72, 0, 1] as const };
+const transitionOverlay = { duration: 0.5, ease: [0.32, 0.72, 0, 1] as const };
+
+function useMediaQuery(query: string): boolean {
+  const [matches, setMatches] = useState(() =>
+    typeof window !== "undefined" ? window.matchMedia(query).matches : false
+  );
+
+  useEffect(() => {
+    const mql = window.matchMedia(query);
+    const handler = () => setMatches(mql.matches);
+    mql.addEventListener("change", handler);
+    return () => mql.removeEventListener("change", handler);
+  }, [query]);
+
+  return matches;
+}
+
+const Cylinder = memo(
+  ({
+    handleClick,
+    controls,
+    isActive,
+  }: {
+    handleClick: (imgUrl: string, index: number) => void;
+    controls: any;
+    isActive: boolean;
+  }) => {
+    const isSm = useMediaQuery("(max-width: 640px)");
+    const cylinderWidth = isSm ? 1100 : 1800;
+    const faceCount = cards.length;
+    const faceWidth = cylinderWidth / faceCount;
+    const radius = cylinderWidth / (2 * Math.PI);
+    const rotation = useMotionValue(0);
+    const transform = useTransform(
+      rotation,
+      (v) => `rotate3d(0, 1, 0, ${v}deg)`
+    );
+
+    return (
+      <div
+        className="flex h-full items-center justify-center"
+        style={{
+          perspective: "1000px",
+          transformStyle: "preserve-3d",
+          willChange: "transform",
+        }}
+      >
+        <motion.div
+          drag={isActive ? "x" : false}
+          className="relative flex h-full origin-center cursor-grab justify-center active:cursor-grabbing"
+          style={{
+            transform,
+            rotateY: rotation,
+            width: cylinderWidth,
+            transformStyle: "preserve-3d",
+          }}
+          onDrag={(_, info) =>
+            isActive && rotation.set(rotation.get() + info.offset.x * 0.05)
+          }
+          onDragEnd={(_, info) =>
+            isActive &&
+            controls.start({
+              rotateY: rotation.get() + info.velocity.x * 0.05,
+              transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 30,
+                mass: 0.1,
+              },
+            })
+          }
+          animate={controls}
+        >
+          {cards.map((imgUrl, i) => (
+            <motion.div
+              key={i}
+              className="absolute flex h-full origin-center items-center justify-center rounded-2xl p-2"
+              style={{
+                width: `${faceWidth}px`,
+                transform: `rotateY(${i * (360 / faceCount)}deg) translateZ(${radius}px)`,
+              }}
+              onClick={() => handleClick(imgUrl, i)}
+            >
+              <motion.img
+                src={imgUrl}
+                alt={`Visor app screen ${i + 1}`}
+                layoutId={`img-${imgUrl}`}
+                className="pointer-events-none w-full rounded-2xl object-cover aspect-[9/16] shadow-xl"
+                initial={{ filter: "blur(4px)" }}
+                layout="position"
+                animate={{ filter: "blur(0px)" }}
+                transition={transition}
+              />
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    );
+  }
+);
+
 const FeaturesCarousel = () => {
-  const [active, setActive] = useState(0);
+  const [activeImg, setActiveImg] = useState<string | null>(null);
+  const [isCarouselActive, setIsCarouselActive] = useState(true);
+  const controls = useAnimation();
 
-  const prev = () => setActive((p) => (p === 0 ? features.length - 1 : p - 1));
-  const next = () => setActive((p) => (p === features.length - 1 ? 0 : p + 1));
+  const handleClick = useCallback((imgUrl: string, _index: number) => {
+    setActiveImg(imgUrl);
+    setIsCarouselActive(false);
+    controls.stop();
+  }, [controls]);
 
-  const f = features[active];
-  const Icon = f.icon;
+  const handleClose = useCallback(() => {
+    setActiveImg(null);
+    setIsCarouselActive(true);
+  }, []);
 
   return (
     <section id="features" className="py-28 px-6 relative">
@@ -92,93 +164,50 @@ const FeaturesCarousel = () => {
           </p>
         </motion.div>
 
-        {/* Feature tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-14">
-          {features.map((feat, i) => (
-            <button
-              key={i}
-              onClick={() => setActive(i)}
-              className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 ${
-                i === active
-                  ? "glass-card-elite text-primary shadow-[0_0_20px_-4px_hsl(28,100%,55%/0.3)]"
-                  : "glass-card text-muted-foreground hover:text-foreground hover:bg-[hsl(0_0%_100%/0.06)]"
-              }`}
-            >
-              {feat.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Active feature display */}
-        <div className="relative">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Text */}
-            <AnimatePresence mode="wait">
+        {/* 3D Carousel */}
+        <motion.div layout className="relative">
+          <AnimatePresence mode="sync">
+            {activeImg && (
               <motion.div
-                key={active}
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 30 }}
-                transition={{ duration: 0.4 }}
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0 }}
+                layoutId={`img-container-${activeImg}`}
+                layout="position"
+                onClick={handleClose}
+                className="fixed inset-0 bg-background/80 backdrop-blur-md flex items-center justify-center z-50 p-8 md:p-20 cursor-pointer"
+                style={{ willChange: "opacity" }}
+                transition={transitionOverlay}
               >
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl glass-card-strong text-primary text-sm font-medium mb-6">
-                  <Icon size={16} />
-                  {f.label}
-                </div>
-                <h3 className="text-3xl md:text-5xl font-bold mb-5">{f.title}</h3>
-                <p className="text-muted-foreground text-lg leading-relaxed">{f.description}</p>
-              </motion.div>
-            </AnimatePresence>
-
-            {/* Image card - Glass morphism 3D */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={active}
-                initial={{ opacity: 0, scale: 0.9, rotateY: -10 }}
-                animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-                exit={{ opacity: 0, scale: 0.9, rotateY: 10 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                className="relative mx-auto max-w-sm"
-              >
-                {/* Glow behind card */}
-                <div className="absolute inset-0 bg-primary/15 rounded-3xl blur-[40px] scale-90" />
-                <div className="relative rounded-3xl overflow-hidden glass-card-strong glow-orange shimmer">
-                  <img src={f.image} alt={f.title} className="w-full h-auto relative z-10" />
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          {/* Nav arrows */}
-          <div className="flex justify-center gap-4 mt-12">
-            <button
-              onClick={prev}
-              className="w-12 h-12 rounded-xl glass-card-strong flex items-center justify-center text-muted-foreground hover:text-primary hover:shadow-[0_0_20px_-4px_hsl(28,100%,55%/0.3)] transition-all duration-300"
-            >
-              <ChevronLeft size={20} />
-            </button>
-            {/* Dots indicator */}
-            <div className="flex items-center gap-1.5">
-              {features.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActive(i)}
-                  className={`rounded-full transition-all duration-300 ${
-                    i === active
-                      ? "w-8 h-2 bg-primary"
-                      : "w-2 h-2 bg-muted-foreground/30 hover:bg-muted-foreground/60"
-                  }`}
+                <motion.img
+                  layoutId={`img-${activeImg}`}
+                  src={activeImg}
+                  className="max-w-sm w-full max-h-[80vh] rounded-3xl shadow-2xl object-contain glow-orange"
+                  initial={{ scale: 0.5 }}
+                  animate={{ scale: 1 }}
+                  transition={{
+                    delay: 0.5,
+                    duration: 0.5,
+                    ease: [0.25, 0.1, 0.25, 1],
+                  }}
+                  style={{ willChange: "transform" }}
                 />
-              ))}
-            </div>
-            <button
-              onClick={next}
-              className="w-12 h-12 rounded-xl glass-card-strong flex items-center justify-center text-muted-foreground hover:text-primary hover:shadow-[0_0_20px_-4px_hsl(28,100%,55%/0.3)] transition-all duration-300"
-            >
-              <ChevronRight size={20} />
-            </button>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          <div className="relative h-[500px] w-full overflow-hidden">
+            <Cylinder
+              handleClick={handleClick}
+              controls={controls}
+              isActive={isCarouselActive}
+            />
           </div>
-        </div>
+
+          <p className="text-center text-muted-foreground text-sm mt-6">
+            Drag to explore · Click to expand
+          </p>
+        </motion.div>
       </div>
     </section>
   );
