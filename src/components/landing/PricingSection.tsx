@@ -86,7 +86,7 @@ const PricingSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.15 }}
-            className={`rounded-2xl p-7 transition-all duration-500 ${
+            className={`rounded-2xl p-7 transition-all duration-500 flex flex-col ${
               plan.highlighted
                 ? "glass-card-elite shimmer hover:shadow-[0_0_80px_-10px_hsl(28,100%,55%/0.4)] scale-[1.02]"
                 : "glass-card-strong hover:shadow-[0_0_40px_-8px_hsl(28,100%,55%/0.15)] hover:border-primary/15"
@@ -115,7 +115,7 @@ const PricingSection = () => (
               </p>
             )}
             {!plan.yearlyPrice && <div className="mb-6" />}
-            <ul className="space-y-3 mb-8">
+            <ul className="space-y-3 mb-8 flex-1">
               {plan.features.map((f, j) => (
                 <li key={j} className="flex items-start gap-2.5 text-sm text-foreground/80">
                   <Check size={16} className="text-primary mt-0.5 flex-shrink-0" />
