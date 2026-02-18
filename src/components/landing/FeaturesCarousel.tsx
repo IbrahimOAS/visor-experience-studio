@@ -203,7 +203,7 @@ const FeaturesCarousel = () => {
             />
           </div>
 
-          <p className="text-center text-muted-foreground text-sm mt-16">
+          <p className="text-center text-muted-foreground text-sm mt-28">
             Drag to explore · Click to expand
           </p>
         </motion.div>
