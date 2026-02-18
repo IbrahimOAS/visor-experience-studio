@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import exercise1 from "@/assets/exercise-1.jpg";
 import exercise2 from "@/assets/exercise-2.jpg";
@@ -17,79 +17,6 @@ const exercises = [
   { src: exercise5, label: "Lat Pulldown" },
   { src: exercise6, label: "Overhead Press" },
 ];
-
-/** A single booth panel — center gets orange walls, sides get concrete */
-const BoothPanel = ({
-  exercise,
-  position,
-  onClick,
-}: {
-  exercise: (typeof exercises)[0];
-  position: "left" | "center" | "right";
-  onClick: () => void;
-}) => {
-  const isCenter = position === "center";
-  const wallColor = isCenter
-    ? "hsl(28, 100%, 55%)"
-    : "hsl(0, 0%, 72%)";
-  const wallColorDark = isCenter
-    ? "hsl(28, 100%, 42%)"
-    : "hsl(0, 0%, 58%)";
-
-  return (
-    <div
-      className="relative cursor-pointer select-none"
-      onClick={onClick}
-      style={{ width: isCenter ? 280 : 240, height: isCenter ? 380 : 340 }}
-    >
-      {/* Back wall */}
-      <div
-        className="absolute inset-0 rounded-md"
-        style={{
-          background: `linear-gradient(180deg, ${wallColor} 0%, ${wallColorDark} 100%)`,
-          boxShadow: isCenter
-            ? "inset 0 0 40px hsl(28, 100%, 65% / 0.2)"
-            : "inset 0 0 20px hsl(0, 0%, 50% / 0.15)",
-        }}
-      />
-
-      {/* Left side wall (3D angled) */}
-      <div
-        className="absolute top-0 bottom-0 -left-[28px] w-[30px]"
-        style={{
-          background: `linear-gradient(90deg, ${wallColorDark}, ${wallColor})`,
-          transform: "perspective(400px) rotateY(45deg)",
-          transformOrigin: "right center",
-          borderRadius: "2px 0 0 2px",
-        }}
-      />
-
-      {/* Right side wall (3D angled) */}
-      <div
-        className="absolute top-0 bottom-0 -right-[28px] w-[30px]"
-        style={{
-          background: `linear-gradient(270deg, ${wallColorDark}, ${wallColor})`,
-          transform: "perspective(400px) rotateY(-45deg)",
-          transformOrigin: "left center",
-          borderRadius: "0 2px 2px 0",
-        }}
-      />
-
-      {/* Image */}
-      <div className="absolute inset-[10px] overflow-hidden rounded-sm">
-        <img
-          src={exercise.src}
-          alt={exercise.label}
-          className="w-full h-full object-cover"
-          draggable={false}
-          style={{
-            filter: isCenter ? "brightness(1)" : "brightness(0.75) saturate(0.8)",
-          }}
-        />
-      </div>
-    </div>
-  );
-};
 
 const ExerciseCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -110,39 +37,39 @@ const ExerciseCarousel = () => {
     return () => clearInterval(interval);
   }, [isAutoPlaying, next]);
 
+  // Get the 3 visible indices: left, center, right
   const leftIndex = (activeIndex - 1 + total) % total;
   const centerIndex = activeIndex;
   const rightIndex = (activeIndex + 1) % total;
 
-  const positions = [
-    {
-      index: leftIndex,
-      position: "left" as const,
-      style: {
-        transform: "translateX(-110%) rotateY(32deg) scale(0.85)",
-        zIndex: 10,
-      },
-    },
-    {
-      index: centerIndex,
-      position: "center" as const,
-      style: {
-        transform: "translateX(0%) rotateY(0deg) scale(1)",
-        zIndex: 20,
-      },
-    },
-    {
-      index: rightIndex,
-      position: "right" as const,
-      style: {
-        transform: "translateX(110%) rotateY(-32deg) scale(0.85)",
-        zIndex: 10,
-      },
-    },
+  const panelData = [
+    { index: leftIndex, position: "left" as const },
+    { index: centerIndex, position: "center" as const },
+    { index: rightIndex, position: "right" as const },
   ];
+
+  // 3D transform configs for the concave room effect
+  const panelStyles = {
+    left: {
+      transform: "translateX(-85%) rotateY(40deg) translateZ(-40px)",
+      zIndex: 10,
+      filter: "brightness(0.7)",
+    },
+    center: {
+      transform: "translateX(0%) rotateY(0deg) translateZ(40px)",
+      zIndex: 20,
+      filter: "brightness(1)",
+    },
+    right: {
+      transform: "translateX(85%) rotateY(-40deg) translateZ(-40px)",
+      zIndex: 10,
+      filter: "brightness(0.7)",
+    },
+  };
 
   return (
     <section className="py-20 px-6 relative overflow-hidden">
+      {/* Ambient background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px]" />
       </div>
@@ -164,80 +91,140 @@ const ExerciseCarousel = () => {
 
         {/* 3D Curved Room Carousel */}
         <div
-          className="relative mx-auto"
-          style={{
-            perspective: "1200px",
-            perspectiveOrigin: "50% 40%",
-            height: 480,
-            maxWidth: 900,
-          }}
+          className="relative h-[420px] md:h-[540px] flex items-center justify-center mx-auto"
+          style={{ perspective: "1000px", perspectiveOrigin: "50% 45%" }}
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
         >
-          {/* Curved floor platform */}
+          {/* Curved floor/base */}
           <div
-            className="absolute left-1/2 bottom-0 -translate-x-1/2"
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] md:w-[700px] h-6 rounded-[50%]"
             style={{
-              width: "110%",
-              height: 50,
-              background: "linear-gradient(to top, hsl(0 0% 18%), hsl(0 0% 25%))",
-              borderRadius: "50% / 100% 100% 0 0",
-              transform: "translateX(-50%) rotateX(12deg)",
-              boxShadow:
-                "0 8px 30px -5px hsl(0 0% 0% / 0.5), inset 0 2px 0 0 hsl(0 0% 35% / 0.3)",
+              background: "linear-gradient(to top, hsl(0 0% 15%), hsl(0 0% 10%))",
+              boxShadow: "0 4px 30px -5px hsl(0 0% 0% / 0.5)",
+              transform: "translateX(-50%) rotateX(60deg) translateZ(-20px)",
             }}
           />
 
-          {/* Panels container */}
           <div
-            className="absolute inset-0 flex items-center justify-center"
+            className="relative w-full h-full flex items-center justify-center"
             style={{ transformStyle: "preserve-3d" }}
           >
-            {positions.map(({ index, position, style }) => (
+            {panelData.map(({ index, position }) => (
               <div
-                key={`${position}-${index}`}
-                className="absolute"
+                key={`${index}-${position}`}
+                className="absolute flex items-center"
                 style={{
-                  ...style,
-                  transition: "all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1)",
+                  ...panelStyles[position],
+                  transition: "all 0.8s cubic-bezier(0.32, 0.72, 0, 1)",
                   transformStyle: "preserve-3d",
                 }}
               >
-                <BoothPanel
-                  exercise={exercises[index]}
-                  position={position}
+                {/* Orange divider - left side */}
+                {position === "center" && (
+                  <div
+                    className="absolute -left-4 md:-left-5 top-0 bottom-0 w-4 md:w-5"
+                    style={{
+                      background: "linear-gradient(135deg, hsl(28, 100%, 55%), hsl(28, 100%, 45%))",
+                      transformOrigin: "right center",
+                      transform: "rotateY(-50deg)",
+                      borderRadius: "2px 0 0 2px",
+                      boxShadow: "inset 2px 0 8px hsl(28, 100%, 65% / 0.3)",
+                    }}
+                  />
+                )}
+
+                {/* Image panel */}
+                <div
+                  className="relative overflow-hidden rounded-lg cursor-pointer"
+                  style={{
+                    boxShadow:
+                      position === "center"
+                        ? "0 0 60px -10px hsl(28, 100%, 55% / 0.3), 0 20px 40px -15px hsl(0 0% 0% / 0.5)"
+                        : "0 10px 30px -10px hsl(0 0% 0% / 0.4)",
+                  }}
                   onClick={() => setActiveIndex(index)}
-                />
+                >
+                  {/* Concrete/gray wall background behind image */}
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background: position === "center"
+                        ? "hsl(28, 100%, 55%)"
+                        : "hsl(0, 0%, 25%)",
+                      padding: position === "center" ? "8px" : "6px",
+                    }}
+                  />
+                  <img
+                    src={exercises[index].src}
+                    alt={exercises[index].label}
+                    className="relative w-48 md:w-64 h-72 md:h-[400px] object-cover rounded-md"
+                    draggable={false}
+                    style={{
+                      filter: panelStyles[position].filter,
+                    }}
+                  />
+                  
+                  {/* Bottom label for center */}
+                  {position === "center" && (
+                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background/90 to-transparent">
+                      <span className="text-foreground font-bold text-sm md:text-base tracking-wide">
+                        {exercises[index].label}
+                      </span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Orange divider - right side */}
+                {position === "center" && (
+                  <div
+                    className="absolute -right-4 md:-right-5 top-0 bottom-0 w-4 md:w-5"
+                    style={{
+                      background: "linear-gradient(225deg, hsl(28, 100%, 55%), hsl(28, 100%, 45%))",
+                      transformOrigin: "left center",
+                      transform: "rotateY(50deg)",
+                      borderRadius: "0 2px 2px 0",
+                      boxShadow: "inset -2px 0 8px hsl(28, 100%, 65% / 0.3)",
+                    }}
+                  />
+                )}
               </div>
             ))}
           </div>
         </div>
 
-        {/* Pill-shaped nav button (like reference) */}
-        <div className="flex justify-center mt-8">
-          <div
-            className="inline-flex items-center gap-0 rounded-full overflow-hidden"
-            style={{
-              background: "hsl(0 0% 95%)",
-              boxShadow: "0 4px 16px hsl(0 0% 0% / 0.15)",
-            }}
+        {/* Controls */}
+        <div className="flex items-center justify-center gap-4 mt-8">
+          <button
+            onClick={prev}
+            className="w-12 h-12 rounded-full glass-card-strong flex items-center justify-center text-primary hover:bg-primary/10 transition-colors"
+            aria-label="Previous exercise"
           >
-            <button
-              onClick={prev}
-              className="px-4 py-3 hover:bg-primary/10 transition-colors"
-              aria-label="Previous"
-            >
-              <ChevronLeft size={18} className="text-primary" />
-            </button>
-            <div className="w-px h-5 bg-primary/20" />
-            <button
-              onClick={next}
-              className="px-4 py-3 hover:bg-primary/10 transition-colors"
-              aria-label="Next"
-            >
-              <ChevronRight size={18} className="text-primary" />
-            </button>
+            <ChevronLeft size={22} />
+          </button>
+
+          <div className="flex gap-2">
+            {exercises.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveIndex(i)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  i === activeIndex
+                    ? "bg-primary w-8"
+                    : "bg-muted-foreground/30 w-2 hover:bg-muted-foreground/50"
+                }`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
           </div>
+
+          <button
+            onClick={next}
+            className="w-12 h-12 rounded-full glass-card-strong flex items-center justify-center text-primary hover:bg-primary/10 transition-colors"
+            aria-label="Next exercise"
+          >
+            <ChevronRight size={22} />
+          </button>
         </div>
       </div>
     </section>
