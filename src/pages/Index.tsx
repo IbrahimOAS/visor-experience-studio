@@ -2,6 +2,7 @@ import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import FeaturesCarousel from "@/components/landing/FeaturesCarousel";
 import HowItWorks from "@/components/landing/HowItWorks";
+import ExerciseCarousel from "@/components/landing/ExerciseCarousel";
 import VideoDemo from "@/components/landing/VideoDemo";
 import PricingSection from "@/components/landing/PricingSection";
 import DownloadCTA from "@/components/landing/DownloadCTA";
@@ -13,6 +14,7 @@ const Index = () => (
     <HeroSection />
     <FeaturesCarousel />
     <HowItWorks />
+    <ExerciseCarousel />
     <VideoDemo />
     <PricingSection />
     <DownloadCTA />
