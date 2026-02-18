@@ -7,7 +7,6 @@ import {
   useTransform,
 } from "framer-motion";
 
-import uiScreen1 from "@/assets/ui-screen-1.png";
 import uiScreen2 from "@/assets/ui-screen-2.png";
 import uiScreen3 from "@/assets/ui-screen-3.png";
 import uiScreen4 from "@/assets/ui-screen-4.png";
@@ -18,7 +17,7 @@ import uiScreen8 from "@/assets/ui-screen-8.png";
 import uiScreen9 from "@/assets/ui-screen-9.png";
 
 const cards = [
-  uiScreen1, uiScreen2, uiScreen3, uiScreen4, uiScreen5,
+  uiScreen2, uiScreen3, uiScreen4, uiScreen5,
   uiScreen6, uiScreen7, uiScreen8, uiScreen9,
 ];
 
