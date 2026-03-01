@@ -5,6 +5,7 @@ import HowItWorks from "@/components/landing/HowItWorks";
 import ExerciseCarousel from "@/components/landing/ExerciseCarousel";
 import VideoDemo from "@/components/landing/VideoDemo";
 import PricingSection from "@/components/landing/PricingSection";
+import PersonalCoaching from "@/components/landing/PersonalCoaching";
 import DownloadCTA from "@/components/landing/DownloadCTA";
 import Footer from "@/components/landing/Footer";
 
@@ -17,6 +18,7 @@ const Index = () => (
     <ExerciseCarousel />
     <VideoDemo />
     <PricingSection />
+    <PersonalCoaching />
     <DownloadCTA />
     <Footer />
   </main>
