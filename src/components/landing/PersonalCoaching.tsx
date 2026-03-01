@@ -6,6 +6,9 @@ import coachMarcus from "@/assets/coach-marcus.jpg";
 import coachPriya from "@/assets/coach-priya.jpg";
 import coachJames from "@/assets/coach-james.jpg";
 
+const pricingPeriods = ["Session", "Weekly", "Monthly"] as const;
+type PricingPeriod = typeof pricingPeriods[number];
+
 const coaches = [
   {
     name: "Marcus Cole",
@@ -18,7 +21,7 @@ const coaches = [
     certifications: ["IFBB Professional League", "NASM Certified Personal Trainer", "Precision Nutrition Level 2", "CPR/AED Certified"],
     availability: "Mon–Sat, 6AM–8PM",
     locations: ["Los Angeles", "Orange County"],
-    price: "$149",
+    pricing: { Session: "$149", Weekly: "$399", Monthly: "$1,199" },
   },
   {
     name: "Priya Sharma",
@@ -31,7 +34,7 @@ const coaches = [
     certifications: ["Doctor of Physical Therapy (DPT)", "Functional Movement Screen (FMS) Level 2", "Yoga Alliance RYT-500", "Dry Needling Certified"],
     availability: "Mon–Fri, 7AM–6PM",
     locations: ["New York City", "Brooklyn"],
-    price: "$169",
+    pricing: { Session: "$169", Weekly: "$449", Monthly: "$1,349" },
   },
   {
     name: "James Rivera",
@@ -44,7 +47,7 @@ const coaches = [
     certifications: ["NSCA CSCS (Certified Strength & Conditioning Specialist)", "USA Weightlifting Level 2", "First Responder Sports Medicine", "TRX Suspension Training Certified"],
     availability: "Mon–Sun, 5AM–9PM",
     locations: ["Miami", "Fort Lauderdale"],
-    price: "$189",
+    pricing: { Session: "$189", Weekly: "$499", Monthly: "$1,499" },
   },
 ];
 
@@ -73,7 +76,7 @@ const features = [
 
 type Coach = typeof coaches[number];
 
-const CoachModal = ({ coach, onClose }: { coach: Coach; onClose: () => void }) => (
+const CoachModal = ({ coach, onClose, period }: { coach: Coach; onClose: () => void; period: PricingPeriod }) => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -169,7 +172,7 @@ const CoachModal = ({ coach, onClose }: { coach: Coach; onClose: () => void }) =
         onClick={onClose}
         className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_24px_-4px_hsl(28,100%,55%/0.5)] group"
       >
-        Book Session — {coach.price}
+        Book {period === "Session" ? "Session" : period === "Weekly" ? "Weekly Plan" : "Monthly Plan"} — {coach.pricing[period]}
         <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
       </a>
       <p className="text-center text-[10px] text-muted-foreground mt-2">
@@ -181,6 +184,7 @@ const CoachModal = ({ coach, onClose }: { coach: Coach; onClose: () => void }) =
 
 const PersonalCoaching = () => {
   const [selectedCoach, setSelectedCoach] = useState<Coach | null>(null);
+  const [period, setPeriod] = useState<PricingPeriod>("Session");
 
   return (
     <section id="coaching" className="py-28 px-6 relative overflow-hidden">
@@ -263,9 +267,26 @@ const PersonalCoaching = () => {
           <h3 className="text-3xl md:text-4xl font-bold mb-3">
             Meet Your <span className="text-gradient">Coaches</span>
           </h3>
-          <p className="text-muted-foreground text-sm">
+          <p className="text-muted-foreground text-sm mb-6">
             Hand-picked professionals. Background-checked. Peer-reviewed.
           </p>
+
+          {/* Pricing Toggle */}
+          <div className="inline-flex items-center rounded-full glass-card-strong p-1 gap-1">
+            {pricingPeriods.map((p) => (
+              <button
+                key={p}
+                onClick={() => setPeriod(p)}
+                className={`px-5 py-2 rounded-full text-xs font-semibold transition-all duration-300 ${
+                  period === p
+                    ? "bg-primary text-primary-foreground shadow-[0_0_16px_-4px_hsl(28,100%,55%/0.4)]"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {p}
+              </button>
+            ))}
+          </div>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-5 mb-16">
@@ -290,7 +311,7 @@ const PersonalCoaching = () => {
               </div>
               <h4 className="text-lg font-bold mb-0.5">{coach.name}</h4>
               <p className="text-xs text-muted-foreground mb-3">{coach.specialty}</p>
-              <div className="flex items-center justify-center gap-3 text-xs text-muted-foreground mb-4">
+              <div className="flex items-center justify-center gap-3 text-xs text-muted-foreground mb-3">
                 <span className="flex items-center gap-1">
                   <Star size={12} className="text-primary fill-primary" />
                   {coach.rating}
@@ -298,6 +319,12 @@ const PersonalCoaching = () => {
                 <span className="text-border">|</span>
                 <span>{coach.sessions} sessions</span>
               </div>
+              <p className="text-sm font-bold text-primary mb-1">
+                {coach.pricing[period]}
+                <span className="text-[10px] text-muted-foreground font-normal ml-1">
+                  /{period === "Session" ? "session" : period === "Weekly" ? "week" : "month"}
+                </span>
+              </p>
               <span className="text-[11px] text-primary font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 View Profile →
               </span>
@@ -328,7 +355,7 @@ const PersonalCoaching = () => {
       {/* Coach Detail Modal */}
       <AnimatePresence>
         {selectedCoach && (
-          <CoachModal coach={selectedCoach} onClose={() => setSelectedCoach(null)} />
+          <CoachModal coach={selectedCoach} onClose={() => setSelectedCoach(null)} period={period} />
         )}
       </AnimatePresence>
     </section>
