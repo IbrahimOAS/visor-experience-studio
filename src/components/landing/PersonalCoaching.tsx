@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { ShieldCheck, Video, MapPin, Calendar, Star, ArrowRight } from "lucide-react";
 import coachingHero from "@/assets/coaching-hero.jpg";
+import coachMarcus from "@/assets/coach-marcus.jpg";
+import coachPriya from "@/assets/coach-priya.jpg";
+import coachJames from "@/assets/coach-james.jpg";
 
 const coaches = [
   {
@@ -9,6 +12,7 @@ const coaches = [
     rating: 4.9,
     sessions: "2,400+",
     badge: "IFBB Pro",
+    photo: coachMarcus,
   },
   {
     name: "Priya Sharma",
@@ -16,6 +20,7 @@ const coaches = [
     rating: 4.8,
     sessions: "1,800+",
     badge: "DPT Certified",
+    photo: coachPriya,
   },
   {
     name: "James Rivera",
@@ -23,6 +28,7 @@ const coaches = [
     rating: 5.0,
     sessions: "3,100+",
     badge: "CSCS Elite",
+    photo: coachJames,
   },
 ];
 
@@ -145,10 +151,11 @@ const PersonalCoaching = () => (
             transition={{ delay: i * 0.12 }}
             className="glass-card-strong rounded-2xl p-6 text-center hover:shadow-[0_0_50px_-10px_hsl(28,100%,55%/0.2)] transition-all duration-500 group"
           >
-            {/* Avatar placeholder */}
-            <div className="w-20 h-20 rounded-full mx-auto mb-4 bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center text-2xl font-bold text-primary">
-              {coach.name.split(" ").map((n) => n[0]).join("")}
-            </div>
+            <img
+              src={coach.photo}
+              alt={coach.name}
+              className="w-20 h-20 rounded-full mx-auto mb-4 object-cover border-2 border-primary/20"
+            />
             <div className="flex items-center justify-center gap-1 mb-1">
               <ShieldCheck size={14} className="text-primary" />
               <span className="text-[10px] font-bold uppercase tracking-wider text-primary">{coach.badge}</span>
