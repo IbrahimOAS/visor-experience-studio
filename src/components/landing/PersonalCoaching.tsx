@@ -284,6 +284,11 @@ const PersonalCoaching = () => {
                 }`}
               >
                 {p}
+                {p === "Monthly" && (
+                  <span className="ml-1.5 px-1.5 py-0.5 rounded-full bg-primary-foreground/20 text-[9px] font-bold uppercase tracking-wide">
+                    Save 33%
+                  </span>
+                )}
               </button>
             ))}
           </div>
