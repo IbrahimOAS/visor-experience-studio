@@ -167,17 +167,19 @@ const CoachModal = ({ coach, onClose, period }: { coach: Coach; onClose: () => v
         </div>
       </div>
 
-      {/* CTA */}
-      <a
-        href="#download"
-        onClick={onClose}
-        className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_24px_-4px_hsl(28,100%,55%/0.5)] group"
-      >
-        Book {period === "Session" ? "Session" : period === "Weekly" ? "Weekly Plan" : "Monthly Plan"} — {coach.pricing[period]}
-        <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-      </a>
+      {/* CTA - Coming Soon */}
+      <div className="w-full py-4 rounded-xl bg-muted/50 border border-border text-center">
+        <p className="text-sm font-semibold text-foreground mb-1">🚀 Coming Soon</p>
+        <p className="text-xs text-muted-foreground">
+          Personal coaching is launching soon. In the meantime,{" "}
+          <a href="#features" onClick={onClose} className="text-primary underline underline-offset-2 hover:text-primary/80 transition-colors">
+            explore our other features
+          </a>
+          !
+        </p>
+      </div>
       <p className="text-center text-[10px] text-muted-foreground mt-2">
-        First session includes a free consultation
+        Be the first to know — download the app for early access
       </p>
     </motion.div>
   </motion.div>
