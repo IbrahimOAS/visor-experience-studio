@@ -358,7 +358,7 @@ const PersonalCoaching = () => {
           className="text-center"
         >
           <div className="inline-flex items-center gap-2 px-8 py-4 rounded-full glass-card-strong border-primary/20 text-foreground font-semibold text-sm">
-            🚀 Coming Soon
+            Coming Soon
           </div>
           <p className="text-xs text-muted-foreground mt-4">
             Starting at <span className="text-primary font-semibold">$149/session</span> · Available in select cities
