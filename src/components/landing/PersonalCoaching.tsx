@@ -169,7 +169,7 @@ const CoachModal = ({ coach, onClose, period }: { coach: Coach; onClose: () => v
 
       {/* CTA - Coming Soon */}
       <div className="w-full py-4 rounded-xl bg-muted/50 border border-border text-center">
-        <p className="text-sm font-semibold text-foreground mb-1">🚀 Coming Soon</p>
+        <p className="text-sm font-semibold text-foreground mb-1">Coming Soon</p>
         <p className="text-xs text-muted-foreground">
           Personal coaching is launching soon. In the meantime,{" "}
           <a href="#features" onClick={onClose} className="text-primary underline underline-offset-2 hover:text-primary/80 transition-colors">
