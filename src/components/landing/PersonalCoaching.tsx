@@ -350,22 +350,22 @@ const PersonalCoaching = () => {
           ))}
         </div>
 
-        {/* CTA */}
+        {/* CTA - Coming Soon */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center"
         >
-          <a
-            href="#download"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_30px_-4px_hsl(28,100%,55%/0.5)] group"
-          >
-            Book a Coach
-            <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-          </a>
+          <div className="inline-flex items-center gap-2 px-8 py-4 rounded-full glass-card-strong border-primary/20 text-foreground font-semibold text-sm">
+            🚀 Coming Soon
+          </div>
           <p className="text-xs text-muted-foreground mt-4">
             Starting at <span className="text-primary font-semibold">$149/session</span> · Available in select cities
+          </p>
+          <p className="text-xs text-muted-foreground mt-2">
+            Meanwhile, <a href="#features" className="text-primary underline underline-offset-2 hover:text-primary/80 transition-colors">try our other features</a> or{" "}
+            <a href="#download" className="text-primary underline underline-offset-2 hover:text-primary/80 transition-colors">download the app</a> for early access.
           </p>
         </motion.div>
       </div>
