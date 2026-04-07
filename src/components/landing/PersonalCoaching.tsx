@@ -169,7 +169,7 @@ const CoachModal = ({ coach, onClose, period }: { coach: Coach; onClose: () => v
 
       {/* CTA - Coming Soon */}
       <div className="w-full py-4 rounded-xl bg-muted/50 border border-border text-center">
-        <p className="text-sm font-semibold text-foreground mb-1">🚀 Coming Soon</p>
+        <p className="text-sm font-semibold text-foreground mb-1">Coming Soon</p>
         <p className="text-xs text-muted-foreground">
           Personal coaching is launching soon. In the meantime,{" "}
           <a href="#features" onClick={onClose} className="text-primary underline underline-offset-2 hover:text-primary/80 transition-colors">
@@ -358,7 +358,7 @@ const PersonalCoaching = () => {
           className="text-center"
         >
           <div className="inline-flex items-center gap-2 px-8 py-4 rounded-full glass-card-strong border-primary/20 text-foreground font-semibold text-sm">
-            🚀 Coming Soon
+            Coming Soon
           </div>
           <p className="text-xs text-muted-foreground mt-4">
             Starting at <span className="text-primary font-semibold">$149/session</span> · Available in select cities
