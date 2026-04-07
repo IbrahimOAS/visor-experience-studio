@@ -222,21 +222,31 @@ const PersonalCoaching = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="rounded-3xl overflow-hidden mb-20 relative group"
+          className="grid md:grid-cols-2 gap-4 mb-20"
         >
-          <img
-            src={coachingHero}
-            alt="Personal coaching session at home"
-            className="w-full h-[340px] md:h-[480px] object-cover transition-transform duration-700 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
-          <div className="absolute bottom-8 left-8 right-8">
-            <p className="text-2xl md:text-3xl font-bold mb-2">
-              Personalized fitness that comes to <span className="text-gradient">you</span>
-            </p>
-            <p className="text-muted-foreground text-sm max-w-lg">
-              Custom training plans, real-time adjustments, and supportive coaching — all in person.
-            </p>
+          <div className="rounded-3xl overflow-hidden relative group">
+            <img
+              src={coachingHero1}
+              alt="Battle ropes training session"
+              className="w-full h-[260px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+          </div>
+          <div className="rounded-3xl overflow-hidden relative group">
+            <img
+              src={coachingHero2}
+              alt="Personal coaching session"
+              className="w-full h-[260px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6">
+              <p className="text-xl md:text-2xl font-bold mb-1">
+                Personalized fitness that comes to <span className="text-gradient">you</span>
+              </p>
+              <p className="text-muted-foreground text-xs max-w-md">
+                Custom training plans, real-time adjustments, and supportive coaching — all in person.
+              </p>
+            </div>
           </div>
         </motion.div>
 
