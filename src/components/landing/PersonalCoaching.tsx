@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ShieldCheck, Video, MapPin, Calendar, Star, ArrowRight, X, Award, Clock, Users } from "lucide-react";
-import coachingHero from "@/assets/coaching-hero.jpg";
+import coachingHero1 from "@/assets/coaching-hero-1.jpg";
+import coachingHero2 from "@/assets/coaching-hero-2.jpg";
 import coachMarcus from "@/assets/coach-marcus.jpg";
 import coachPriya from "@/assets/coach-priya.jpg";
 import coachJames from "@/assets/coach-james.jpg";
