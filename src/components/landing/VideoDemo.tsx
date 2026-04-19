@@ -17,7 +17,7 @@ const videoCards: { title: string; description: string; youtubeId?: string; loca
   {
     title: "Personalized Workouts",
     description: "Browse by muscle group, follow coach-led sessions and review your post-workout summary",
-    images: [featureMuscleAreas, featureWorkoutDetail, featureWorkoutComplete],
+    images: [featureWorkout, featureWorkoutDetail, featureWorkoutComplete],
   },
   { title: "Find Your Ideal Coach", description: "Match with verified fitness coaches that fit your style and ambition", images: [featureCoach] },
   { title: "Activity & Smart Insights", description: "Track every session and unlock data-driven insights into your progress", images: [featureActivity] },
