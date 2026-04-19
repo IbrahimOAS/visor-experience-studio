@@ -27,7 +27,8 @@ const VideoDemo = () => {
 
   const activeCard = activeIndex !== null ? videoCards[activeIndex] : null;
   const mainIsYoutube = activeCard?.youtubeId && !activeCard?.localVideo;
-  const mainIsLocal = activeCard?.localVideo;
+  const mainIsLocal = !!activeCard?.localVideo;
+  const mainIsImage = !!activeCard?.image && !activeCard?.localVideo && !activeCard?.youtubeId;
 
   const togglePlay = () => {
     if (mainIsYoutube) return;
@@ -87,8 +88,8 @@ const VideoDemo = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className={`relative rounded-3xl overflow-hidden glass-card-strong glow-orange group mb-16 aspect-video ${mainIsYoutube ? '' : 'cursor-pointer'}`}
-          onClick={mainIsYoutube || mainIsLocal ? undefined : togglePlay}
+          className={`relative rounded-3xl overflow-hidden glass-card-strong glow-orange group mb-16 aspect-video ${mainIsYoutube || mainIsImage ? '' : 'cursor-pointer'}`}
+          onClick={mainIsYoutube || mainIsLocal || mainIsImage ? undefined : togglePlay}
         >
           {mainIsYoutube ? (
             <iframe
@@ -107,6 +108,14 @@ const VideoDemo = () => {
               loop
               playsInline
             />
+          ) : mainIsImage ? (
+            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-background via-background to-primary/5">
+              <img
+                src={activeCard!.image}
+                alt={activeCard!.title}
+                className="h-full w-auto max-w-full object-contain py-6 drop-shadow-[0_20px_60px_hsl(28_100%_55%/0.25)]"
+              />
+            </div>
           ) : (
             <>
               <video
@@ -171,7 +180,13 @@ const VideoDemo = () => {
               >
                 {/* Video thumbnail */}
                 <div className="relative h-40 overflow-hidden bg-background/50">
-                  {card.youtubeId && !card.localVideo ? (
+                  {card.image ? (
+                    <img
+                      src={card.image}
+                      alt={card.title}
+                      className="w-full h-full object-cover object-top opacity-80 group-hover/card:opacity-100 group-hover/card:scale-105 transition-all duration-500"
+                    />
+                  ) : card.youtubeId && !card.localVideo ? (
                     <img
                       src={`https://img.youtube.com/vi/${card.youtubeId}/hqdefault.jpg`}
                       alt={card.title}
