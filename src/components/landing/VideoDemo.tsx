@@ -13,6 +13,8 @@ import featureWorkoutDetail from "@/assets/feature-workout-detail.png";
 import featureWorkoutComplete from "@/assets/feature-workout-complete.png";
 import featureCoachProfile from "@/assets/feature-coach-profile.png";
 import featureCoachList from "@/assets/feature-coach-list.png";
+import featureActivityRoute from "@/assets/feature-activity-route.png";
+import featureActivityGoal from "@/assets/feature-activity-goal.png";
 
 const videoCards: { title: string; description: string; youtubeId?: string; localVideo?: string; images?: string[] }[] = [
   
