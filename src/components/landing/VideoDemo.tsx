@@ -7,6 +7,8 @@ import featureWorkout from "@/assets/feature-workout.png";
 import featureCoach from "@/assets/feature-coach.png";
 import featureActivity from "@/assets/feature-activity.png";
 import featureAiCoach from "@/assets/feature-ai-coach.png";
+import featureAiPrecautions from "@/assets/feature-ai-precautions.png";
+import featureAiRecommendation from "@/assets/feature-ai-recommendation.png";
 import featureNutrition from "@/assets/feature-nutrition.png";
 import featureMuscleAreas from "@/assets/feature-muscle-areas.png";
 import featureWorkoutDetail from "@/assets/feature-workout-detail.png";
@@ -33,7 +35,11 @@ const videoCards: { title: string; description: string; youtubeId?: string; loca
     description: "Track every session, map your routes and crush weekly activity goals with data-driven insights",
     images: [featureActivity, featureActivityRoute, featureActivityGoal],
   },
-  { title: "Meet Your AI Coach", description: "Fitness 3.0 — adaptive AI that nudges form, reps, and recovery in real time", images: [featureAiCoach] },
+  {
+    title: "Meet Your AI Coach",
+    description: "Fitness 3.0 — adaptive AI that recommends workouts, respects your limits and nudges form in real time",
+    images: [featureAiCoach, featureAiPrecautions, featureAiRecommendation],
+  },
   { title: "Nutrition & Meal Plans", description: "Personalized meal plans and macro tracking to fuel your transformation", images: [featureNutrition] },
 ];
 
