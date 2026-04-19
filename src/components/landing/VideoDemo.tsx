@@ -8,10 +8,16 @@ import featureCoach from "@/assets/feature-coach.png";
 import featureActivity from "@/assets/feature-activity.png";
 import featureAiCoach from "@/assets/feature-ai-coach.png";
 import featureNutrition from "@/assets/feature-nutrition.png";
+import featureMuscleAreas from "@/assets/feature-muscle-areas.png";
+import featureWorkoutDetail from "@/assets/feature-workout-detail.png";
+import featureWorkoutComplete from "@/assets/feature-workout-complete.png";
 
 const videoCards: { title: string; description: string; youtubeId?: string; localVideo?: string; image?: string }[] = [
   { title: "AI Body Scan", description: "Real-time body composition analysis powered by computer vision", localVideo: showcaseVideo },
   { title: "Personalized Workouts", description: "Explore tailored training plans built around your goals and recovery", image: featureWorkout },
+  { title: "Browse by Muscle Area", description: "Target every muscle group with curated workouts for legs, core, chest and more", image: featureMuscleAreas },
+  { title: "Guided Workout Sessions", description: "Coach-led routines with sets, calories and duration mapped to your level", image: featureWorkoutDetail },
+  { title: "Post-Workout Summary", description: "Instant recap of minutes trained, calories burned and average heart rate", image: featureWorkoutComplete },
   { title: "Find Your Ideal Coach", description: "Match with verified fitness coaches that fit your style and ambition", image: featureCoach },
   { title: "Activity & Smart Insights", description: "Track every session and unlock data-driven insights into your progress", image: featureActivity },
   { title: "Meet Your AI Coach", description: "Fitness 3.0 — adaptive AI that nudges form, reps, and recovery in real time", image: featureAiCoach },
