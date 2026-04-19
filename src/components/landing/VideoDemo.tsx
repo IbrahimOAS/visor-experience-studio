@@ -222,12 +222,19 @@ const VideoDemo = () => {
               >
                 {/* Video thumbnail */}
                 <div className="relative h-40 overflow-hidden bg-background/50">
-                  {card.image ? (
-                    <img
-                      src={card.image}
-                      alt={card.title}
-                      className="w-full h-full object-cover object-top opacity-80 group-hover/card:opacity-100 group-hover/card:scale-105 transition-all duration-500"
-                    />
+                  {card.images && card.images.length > 0 ? (
+                    <>
+                      <img
+                        src={card.images[0]}
+                        alt={card.title}
+                        className="w-full h-full object-cover object-top opacity-80 group-hover/card:opacity-100 group-hover/card:scale-105 transition-all duration-500"
+                      />
+                      {card.images.length > 1 && (
+                        <div className="absolute top-2 right-2 px-2 py-1 rounded-full bg-background/80 backdrop-blur-sm border border-primary/30 text-[10px] font-semibold text-primary">
+                          {card.images.length} screens
+                        </div>
+                      )}
+                    </>
                   ) : card.youtubeId && !card.localVideo ? (
                     <img
                       src={`https://img.youtube.com/vi/${card.youtubeId}/hqdefault.jpg`}
