@@ -3,18 +3,19 @@ import { motion } from "framer-motion";
 import { Play, Pause, ChevronLeft, ChevronRight } from "lucide-react";
 import demoVideo from "@/assets/visor-demo.mp4";
 import showcaseVideo from "@/assets/visor-showcase.mp4";
+import featureWorkout from "@/assets/feature-workout.png";
+import featureCoach from "@/assets/feature-coach.png";
+import featureActivity from "@/assets/feature-activity.png";
+import featureAiCoach from "@/assets/feature-ai-coach.png";
+import featureNutrition from "@/assets/feature-nutrition.png";
 
-const videoCards: { title: string; description: string; youtubeId?: string; localVideo?: string }[] = [
+const videoCards: { title: string; description: string; youtubeId?: string; localVideo?: string; image?: string }[] = [
   { title: "AI Body Scan", description: "Real-time body composition analysis powered by computer vision", localVideo: showcaseVideo },
-  { title: "Transformation Preview", description: "See your future physique rendered in stunning detail", youtubeId: "5qap5aO4i9A" },
-  { title: "Coach Interaction", description: "Adaptive AI coaching that responds to your emotional state", youtubeId: "ZXsQAXx_ao0" },
-  { title: "Ritual Tracking", description: "Build unbreakable habits with streak-powered rituals", youtubeId: "LDU_Txk06tM" },
-  { title: "Soul Progression", description: "Track your identity evolution from Initiate to Embodied", youtubeId: "YQHsXMglC9A" },
-  { title: "Workout Engine", description: "Personalized training plans that adapt to your progress", youtubeId: "o3KFfOra4dU" },
-  { title: "Nutrition AI", description: "Smart meal logging with macro tracking and diet plans", youtubeId: "9bZkp7q19f0" },
-  { title: "Leaderboard", description: "Compete with your community and climb the XP rankings", youtubeId: "kJQP7kiw5Fk" },
-  { title: "Progress Analytics", description: "Deep insights into your transformation journey over time", youtubeId: "JGwWNGJdvx8" },
-  { title: "Visor Pro", description: "Unlock unlimited AI generations and advanced features", youtubeId: "RgKAFK5djSk" },
+  { title: "Personalized Workouts", description: "Explore tailored training plans built around your goals and recovery", image: featureWorkout },
+  { title: "Find Your Ideal Coach", description: "Match with verified fitness coaches that fit your style and ambition", image: featureCoach },
+  { title: "Activity & Smart Insights", description: "Track every session and unlock data-driven insights into your progress", image: featureActivity },
+  { title: "Meet Your AI Coach", description: "Fitness 3.0 — adaptive AI that nudges form, reps, and recovery in real time", image: featureAiCoach },
+  { title: "Nutrition & Meal Plans", description: "Personalized meal plans and macro tracking to fuel your transformation", image: featureNutrition },
 ];
 
 const VideoDemo = () => {
@@ -26,7 +27,8 @@ const VideoDemo = () => {
 
   const activeCard = activeIndex !== null ? videoCards[activeIndex] : null;
   const mainIsYoutube = activeCard?.youtubeId && !activeCard?.localVideo;
-  const mainIsLocal = activeCard?.localVideo;
+  const mainIsLocal = !!activeCard?.localVideo;
+  const mainIsImage = !!activeCard?.image && !activeCard?.localVideo && !activeCard?.youtubeId;
 
   const togglePlay = () => {
     if (mainIsYoutube) return;
@@ -86,8 +88,8 @@ const VideoDemo = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className={`relative rounded-3xl overflow-hidden glass-card-strong glow-orange group mb-16 aspect-video ${mainIsYoutube ? '' : 'cursor-pointer'}`}
-          onClick={mainIsYoutube || mainIsLocal ? undefined : togglePlay}
+          className={`relative rounded-3xl overflow-hidden glass-card-strong glow-orange group mb-16 aspect-video ${mainIsYoutube || mainIsImage ? '' : 'cursor-pointer'}`}
+          onClick={mainIsYoutube || mainIsLocal || mainIsImage ? undefined : togglePlay}
         >
           {mainIsYoutube ? (
             <iframe
@@ -106,6 +108,14 @@ const VideoDemo = () => {
               loop
               playsInline
             />
+          ) : mainIsImage ? (
+            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-background via-background to-primary/5">
+              <img
+                src={activeCard!.image}
+                alt={activeCard!.title}
+                className="h-full w-auto max-w-full object-contain py-6 drop-shadow-[0_20px_60px_hsl(28_100%_55%/0.25)]"
+              />
+            </div>
           ) : (
             <>
               <video
@@ -170,7 +180,13 @@ const VideoDemo = () => {
               >
                 {/* Video thumbnail */}
                 <div className="relative h-40 overflow-hidden bg-background/50">
-                  {card.youtubeId && !card.localVideo ? (
+                  {card.image ? (
+                    <img
+                      src={card.image}
+                      alt={card.title}
+                      className="w-full h-full object-cover object-top opacity-80 group-hover/card:opacity-100 group-hover/card:scale-105 transition-all duration-500"
+                    />
+                  ) : card.youtubeId && !card.localVideo ? (
                     <img
                       src={`https://img.youtube.com/vi/${card.youtubeId}/hqdefault.jpg`}
                       alt={card.title}
