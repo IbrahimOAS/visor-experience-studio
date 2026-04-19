@@ -13,6 +13,8 @@ import featureWorkoutDetail from "@/assets/feature-workout-detail.png";
 import featureWorkoutComplete from "@/assets/feature-workout-complete.png";
 import featureCoachProfile from "@/assets/feature-coach-profile.png";
 import featureCoachList from "@/assets/feature-coach-list.png";
+import featureActivityRoute from "@/assets/feature-activity-route.png";
+import featureActivityGoal from "@/assets/feature-activity-goal.png";
 
 const videoCards: { title: string; description: string; youtubeId?: string; localVideo?: string; images?: string[] }[] = [
   
@@ -26,7 +28,11 @@ const videoCards: { title: string; description: string; youtubeId?: string; loca
     description: "Match with verified fitness coaches, browse profiles and book HIIT experts near you",
     images: [featureCoach, featureCoachProfile, featureCoachList],
   },
-  { title: "Activity & Smart Insights", description: "Track every session and unlock data-driven insights into your progress", images: [featureActivity] },
+  {
+    title: "Activity & Smart Insights",
+    description: "Track every session, map your routes and crush weekly activity goals with data-driven insights",
+    images: [featureActivity, featureActivityRoute, featureActivityGoal],
+  },
   { title: "Meet Your AI Coach", description: "Fitness 3.0 — adaptive AI that nudges form, reps, and recovery in real time", images: [featureAiCoach] },
   { title: "Nutrition & Meal Plans", description: "Personalized meal plans and macro tracking to fuel your transformation", images: [featureNutrition] },
 ];
