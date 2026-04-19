@@ -36,6 +36,23 @@ const plans = [
     highlighted: false,
   },
   {
+    name: "Pro",
+    subtitle: "The Performer",
+    price: "$24.99",
+    period: "/month",
+    features: [
+      "Everything in Core +",
+      "AI Workout Optimization",
+      "Advanced Progress Insights",
+      "Smart Recovery System",
+      "Custom Coach Styles",
+      "Faster AI Processing",
+      "Goal-Based Training",
+    ],
+    cta: "Go Pro",
+    highlighted: false,
+  },
+  {
     name: "Elite",
     subtitle: "The Olympia Path",
     price: "$29.99",
@@ -65,7 +82,7 @@ const PricingSection = () => (
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/4 rounded-full blur-[140px]" />
     </div>
 
-    <div className="max-w-5xl mx-auto relative z-10">
+    <div className="max-w-7xl mx-auto relative z-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -78,7 +95,7 @@ const PricingSection = () => (
         <p className="text-muted-foreground text-lg">Start free. Evolve when you're ready.</p>
       </motion.div>
 
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {plans.map((plan, i) => (
           <motion.div
             key={i}
