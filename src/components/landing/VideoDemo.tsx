@@ -122,41 +122,16 @@ const VideoDemo = () => {
               playsInline
             />
           ) : mainIsImage ? (
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-background via-background to-primary/5">
-              <img
-                key={slideIndex}
-                src={slides[slideIndex]}
-                alt={`${activeCard!.title} — screen ${slideIndex + 1}`}
-                className="h-full w-auto max-w-full object-contain py-6 drop-shadow-[0_20px_60px_hsl(28_100%_55%/0.25)] animate-in fade-in duration-500"
-              />
-              {slides.length > 1 && (
-                <>
-                  <button
-                    onClick={(e) => { e.stopPropagation(); prevSlide(); }}
-                    aria-label="Previous screen"
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full glass-card-strong flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <ChevronLeft size={20} />
-                  </button>
-                  <button
-                    onClick={(e) => { e.stopPropagation(); nextSlide(); }}
-                    aria-label="Next screen"
-                    className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full glass-card-strong flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <ChevronRight size={20} />
-                  </button>
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                    {slides.map((_, idx) => (
-                      <button
-                        key={idx}
-                        onClick={(e) => { e.stopPropagation(); setSlideIndex(idx); }}
-                        aria-label={`Go to screen ${idx + 1}`}
-                        className={`h-2 rounded-full transition-all ${idx === slideIndex ? "w-8 bg-primary" : "w-2 bg-muted-foreground/40 hover:bg-muted-foreground/70"}`}
-                      />
-                    ))}
-                  </div>
-                </>
-              )}
+            <div className="absolute inset-0 flex items-center justify-center gap-4 md:gap-6 px-4 md:px-8 py-6 bg-gradient-to-br from-background via-background to-primary/5">
+              {slides.map((src, idx) => (
+                <img
+                  key={idx}
+                  src={src}
+                  alt={`${activeCard!.title} — screen ${idx + 1}`}
+                  className="h-full w-auto max-h-full object-contain drop-shadow-[0_20px_60px_hsl(28_100%_55%/0.25)] animate-in fade-in duration-500"
+                  style={{ animationDelay: `${idx * 80}ms` }}
+                />
+              ))}
             </div>
           ) : (
             <>
