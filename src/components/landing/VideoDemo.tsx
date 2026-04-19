@@ -12,16 +12,17 @@ import featureMuscleAreas from "@/assets/feature-muscle-areas.png";
 import featureWorkoutDetail from "@/assets/feature-workout-detail.png";
 import featureWorkoutComplete from "@/assets/feature-workout-complete.png";
 
-const videoCards: { title: string; description: string; youtubeId?: string; localVideo?: string; image?: string }[] = [
+const videoCards: { title: string; description: string; youtubeId?: string; localVideo?: string; images?: string[] }[] = [
   { title: "AI Body Scan", description: "Real-time body composition analysis powered by computer vision", localVideo: showcaseVideo },
-  { title: "Personalized Workouts", description: "Explore tailored training plans built around your goals and recovery", image: featureWorkout },
-  { title: "Browse by Muscle Area", description: "Target every muscle group with curated workouts for legs, core, chest and more", image: featureMuscleAreas },
-  { title: "Guided Workout Sessions", description: "Coach-led routines with sets, calories and duration mapped to your level", image: featureWorkoutDetail },
-  { title: "Post-Workout Summary", description: "Instant recap of minutes trained, calories burned and average heart rate", image: featureWorkoutComplete },
-  { title: "Find Your Ideal Coach", description: "Match with verified fitness coaches that fit your style and ambition", image: featureCoach },
-  { title: "Activity & Smart Insights", description: "Track every session and unlock data-driven insights into your progress", image: featureActivity },
-  { title: "Meet Your AI Coach", description: "Fitness 3.0 — adaptive AI that nudges form, reps, and recovery in real time", image: featureAiCoach },
-  { title: "Nutrition & Meal Plans", description: "Personalized meal plans and macro tracking to fuel your transformation", image: featureNutrition },
+  {
+    title: "Personalized Workouts",
+    description: "Browse by muscle group, follow coach-led sessions and review your post-workout summary",
+    images: [featureWorkout, featureMuscleAreas, featureWorkoutDetail, featureWorkoutComplete],
+  },
+  { title: "Find Your Ideal Coach", description: "Match with verified fitness coaches that fit your style and ambition", images: [featureCoach] },
+  { title: "Activity & Smart Insights", description: "Track every session and unlock data-driven insights into your progress", images: [featureActivity] },
+  { title: "Meet Your AI Coach", description: "Fitness 3.0 — adaptive AI that nudges form, reps, and recovery in real time", images: [featureAiCoach] },
+  { title: "Nutrition & Meal Plans", description: "Personalized meal plans and macro tracking to fuel your transformation", images: [featureNutrition] },
 ];
 
 const VideoDemo = () => {
@@ -30,11 +31,13 @@ const VideoDemo = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [playing, setPlaying] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [slideIndex, setSlideIndex] = useState(0);
 
   const activeCard = activeIndex !== null ? videoCards[activeIndex] : null;
   const mainIsYoutube = activeCard?.youtubeId && !activeCard?.localVideo;
   const mainIsLocal = !!activeCard?.localVideo;
-  const mainIsImage = !!activeCard?.image && !activeCard?.localVideo && !activeCard?.youtubeId;
+  const mainIsImage = !!activeCard?.images?.length && !activeCard?.localVideo && !activeCard?.youtubeId;
+  const slides = activeCard?.images ?? [];
 
   const togglePlay = () => {
     if (mainIsYoutube) return;
@@ -54,9 +57,13 @@ const VideoDemo = () => {
     }
     setPlaying(false);
     setActiveIndex(i);
+    setSlideIndex(0);
     // Scroll to the main player
     sectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+
+  const nextSlide = () => setSlideIndex((s) => (s + 1) % slides.length);
+  const prevSlide = () => setSlideIndex((s) => (s - 1 + slides.length) % slides.length);
 
   const scroll = (dir: "left" | "right") => {
     if (!scrollRef.current) return;
@@ -117,10 +124,39 @@ const VideoDemo = () => {
           ) : mainIsImage ? (
             <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-background via-background to-primary/5">
               <img
-                src={activeCard!.image}
-                alt={activeCard!.title}
-                className="h-full w-auto max-w-full object-contain py-6 drop-shadow-[0_20px_60px_hsl(28_100%_55%/0.25)]"
+                key={slideIndex}
+                src={slides[slideIndex]}
+                alt={`${activeCard!.title} — screen ${slideIndex + 1}`}
+                className="h-full w-auto max-w-full object-contain py-6 drop-shadow-[0_20px_60px_hsl(28_100%_55%/0.25)] animate-in fade-in duration-500"
               />
+              {slides.length > 1 && (
+                <>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); prevSlide(); }}
+                    aria-label="Previous screen"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full glass-card-strong flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <ChevronLeft size={20} />
+                  </button>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); nextSlide(); }}
+                    aria-label="Next screen"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full glass-card-strong flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <ChevronRight size={20} />
+                  </button>
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                    {slides.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={(e) => { e.stopPropagation(); setSlideIndex(idx); }}
+                        aria-label={`Go to screen ${idx + 1}`}
+                        className={`h-2 rounded-full transition-all ${idx === slideIndex ? "w-8 bg-primary" : "w-2 bg-muted-foreground/40 hover:bg-muted-foreground/70"}`}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
           ) : (
             <>
