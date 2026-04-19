@@ -13,7 +13,7 @@ import featureWorkoutDetail from "@/assets/feature-workout-detail.png";
 import featureWorkoutComplete from "@/assets/feature-workout-complete.png";
 
 const videoCards: { title: string; description: string; youtubeId?: string; localVideo?: string; images?: string[] }[] = [
-  { title: "AI Body Scan", description: "Real-time body composition analysis powered by computer vision", localVideo: showcaseVideo },
+  
   {
     title: "Personalized Workouts",
     description: "Browse by muscle group, follow coach-led sessions and review your post-workout summary",
