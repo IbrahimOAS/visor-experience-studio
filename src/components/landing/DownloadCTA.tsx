@@ -27,7 +27,9 @@ const DownloadCTA = () => (
           {/* Store buttons */}
           <div className="flex flex-col gap-4">
             <a
-              href="#"
+              href="https://apps.apple.com/app/visor"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-3 px-7 py-4 rounded-xl glass-card-strong font-semibold hover:border-primary/20 hover:shadow-[0_0_24px_-4px_hsl(28,100%,55%/0.3)] transition-all duration-300"
             >
               <Apple size={24} className="text-foreground" />
@@ -37,7 +39,9 @@ const DownloadCTA = () => (
               </div>
             </a>
             <a
-              href="#"
+              href="https://play.google.com/store/apps/details?id=com.visor.app"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-3 px-7 py-4 rounded-xl glass-card-strong font-semibold hover:border-primary/20 hover:shadow-[0_0_24px_-4px_hsl(28,100%,55%/0.3)] transition-all duration-300"
             >
               <PlayCircle size={24} className="text-foreground" />
