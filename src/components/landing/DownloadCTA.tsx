@@ -50,6 +50,16 @@ const DownloadCTA = () => (
               href="https://play.google.com/store/apps/details?id=com.visor.app"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => {
+                const ua = navigator.userAgent;
+                const isAndroid = /Android/i.test(ua);
+                e.preventDefault();
+                const url = isAndroid
+                  ? "market://details?id=com.visor.app"
+                  : "https://play.google.com/store/apps/details?id=com.visor.app";
+                // Use _top so it escapes the Lovable preview iframe (Play Store blocks framing)
+                window.open(url, "_top");
+              }}
               className="flex items-center gap-3 px-7 py-4 rounded-xl glass-card-strong font-semibold hover:border-primary/20 hover:shadow-[0_0_24px_-4px_hsl(28,100%,55%/0.3)] transition-all duration-300"
             >
               <PlayCircle size={24} className="text-foreground" />
