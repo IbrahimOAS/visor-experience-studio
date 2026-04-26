@@ -2,6 +2,29 @@ import { motion } from "framer-motion";
 import { Apple, PlayCircle } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
 
+const APP_STORE_URL = "https://apps.apple.com/app/visor";
+const APP_STORE_DEEP_LINK = "itms-apps://apps.apple.com/app/visor";
+const GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.visor.app";
+const GOOGLE_PLAY_DEEP_LINK = "market://details?id=com.visor.app";
+
+const handleAppStoreClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
+
+  if (isIOS) {
+    e.preventDefault();
+    window.location.href = APP_STORE_DEEP_LINK;
+  }
+};
+
+const handleGooglePlayClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const isAndroid = /Android/i.test(navigator.userAgent);
+
+  if (isAndroid) {
+    e.preventDefault();
+    window.location.href = GOOGLE_PLAY_DEEP_LINK;
+  }
+};
+
 const DownloadCTA = () => (
   <section id="download" className="py-28 px-6 relative">
     {/* Ambient */}
@@ -27,18 +50,11 @@ const DownloadCTA = () => (
           {/* Store buttons */}
           <div className="flex flex-col gap-4">
             <a
-              href="itms-apps://apps.apple.com/app/visor"
+              href={APP_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={(e) => {
-                // On non-iOS devices, fall back to the regular https App Store URL
-                const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
-                if (!isIOS) {
-                  e.preventDefault();
-                  // _top escapes the Lovable preview iframe (App Store blocks framing)
-                  window.open("https://apps.apple.com/app/visor", "_top");
-                }
-              }}
+              onClick={handleAppStoreClick}
+              aria-label="Download VISOR on the App Store"
               className="flex items-center gap-3 px-7 py-4 rounded-xl glass-card-strong font-semibold hover:border-primary/20 hover:shadow-[0_0_24px_-4px_hsl(28,100%,55%/0.3)] transition-all duration-300"
             >
               <Apple size={24} className="text-foreground" />
@@ -48,19 +64,11 @@ const DownloadCTA = () => (
               </div>
             </a>
             <a
-              href="https://play.google.com/store/apps/details?id=com.visor.app"
+              href={GOOGLE_PLAY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={(e) => {
-                const ua = navigator.userAgent;
-                const isAndroid = /Android/i.test(ua);
-                e.preventDefault();
-                const url = isAndroid
-                  ? "market://details?id=com.visor.app"
-                  : "https://play.google.com/store/apps/details?id=com.visor.app";
-                // Use _top so it escapes the Lovable preview iframe (Play Store blocks framing)
-                window.open(url, "_top");
-              }}
+              onClick={handleGooglePlayClick}
+              aria-label="Get VISOR on Google Play"
               className="flex items-center gap-3 px-7 py-4 rounded-xl glass-card-strong font-semibold hover:border-primary/20 hover:shadow-[0_0_24px_-4px_hsl(28,100%,55%/0.3)] transition-all duration-300"
             >
               <PlayCircle size={24} className="text-foreground" />
