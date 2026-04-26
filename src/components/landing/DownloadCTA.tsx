@@ -35,7 +35,8 @@ const DownloadCTA = () => (
                 const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
                 if (!isIOS) {
                   e.preventDefault();
-                  window.open("https://apps.apple.com/app/visor", "_blank", "noopener,noreferrer");
+                  // _top escapes the Lovable preview iframe (App Store blocks framing)
+                  window.open("https://apps.apple.com/app/visor", "_top");
                 }
               }}
               className="flex items-center gap-3 px-7 py-4 rounded-xl glass-card-strong font-semibold hover:border-primary/20 hover:shadow-[0_0_24px_-4px_hsl(28,100%,55%/0.3)] transition-all duration-300"
