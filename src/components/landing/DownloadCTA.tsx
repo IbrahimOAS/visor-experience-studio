@@ -40,10 +40,10 @@ const DownloadCTA = () => (
         className="glass-card-elite rounded-3xl p-10 md:p-16 text-center shimmer"
       >
         <h2 className="text-4xl md:text-5xl font-bold mb-4">
-          Start Your <span className="text-gradient">Transformation</span> Today
+          Download the <span className="text-gradient">AI Fitness App</span> Today
         </h2>
         <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-10">
-          Download VISOR and see who you're about to become.
+          Get VISOR on iOS or Android and see your before & after body transformation prediction in seconds.
         </p>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-10">

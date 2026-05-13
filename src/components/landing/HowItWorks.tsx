@@ -25,9 +25,9 @@ const HowItWorks = () => (
         className="text-center mb-20"
       >
         <h2 className="text-4xl md:text-6xl font-bold mb-4">
-          How <span className="text-gradient">VISOR</span> Works
+          How <span className="text-gradient">VISOR AI Fitness App</span> Works
         </h2>
-        <p className="text-muted-foreground text-lg">Four steps to becoming who you want to be.</p>
+        <p className="text-muted-foreground text-lg">Four steps to your before & after body transformation.</p>
       </motion.div>
 
       <div className="grid md:grid-cols-4 gap-6">
