@@ -17,8 +17,9 @@ describe("sitemap", () => {
 
   it("does not include wildcard, dynamic, or excluded routes", () => {
     const xml = readFileSync(resolve("public/sitemap.xml"), "utf8");
-    expect(xml).not.toMatch(/<loc>[^<]*\*/);
-    expect(xml).not.toMatch(/<loc>[^<]*:/);
-    expect(xml).not.toMatch(/<loc>[^<]*\/admin/);
+    const paths = extractLocs(xml);
+    expect(paths.every((p) => !p.includes("*"))).toBe(true);
+    expect(paths.every((p) => !p.includes(":"))).toBe(true);
+    expect(paths.every((p) => !p.startsWith("/admin"))).toBe(true);
   });
 });
