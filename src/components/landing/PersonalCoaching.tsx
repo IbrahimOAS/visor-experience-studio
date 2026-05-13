@@ -210,11 +210,11 @@ const PersonalCoaching = () => {
             Premium · Elite Members Only
           </span>
           <h2 className="text-4xl md:text-6xl font-bold mb-4">
-            Your Coach, <span className="text-gradient">Your Door</span>
+            Personal Training, <span className="text-gradient">Your Door</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Book verified, world-class coaches for personalized 1-on-1 training sessions
-            at your home. Real coaching. Real results.
+            Book verified, world-class fitness coaches for personalized 1-on-1 training sessions
+            at your home. Real coaching. Real body transformation results.
           </p>
         </motion.div>
 

@@ -104,12 +104,12 @@ const VideoDemo = () => {
           className="text-center mb-14"
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-4">
-            See <span className="text-gradient">VISOR</span> in Action
+            See <span className="text-gradient">VISOR AI Body Transformation</span> in Action
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             {activeCard
               ? <><span className="text-primary font-semibold">{activeCard.title}</span> — {activeCard.description}</>
-              : "Watch how AI-powered body visualization, adaptive coaching, and identity tracking work together."
+              : "Watch how AI-powered body visualization, adaptive coaching, and identity tracking work together in the ultimate fitness tracker app."
             }
           </p>
         </motion.div>

@@ -90,9 +90,9 @@ const PricingSection = () => (
         className="text-center mb-16"
       >
         <h2 className="text-4xl md:text-6xl font-bold mb-4">
-          Choose Your <span className="text-gradient">Path</span>
+          Fitness App Plans & <span className="text-gradient">Pricing</span>
         </h2>
-        <p className="text-muted-foreground text-lg">Start free. Evolve when you're ready.</p>
+        <p className="text-muted-foreground text-lg">Start free. Evolve when you're ready to transform.</p>
       </motion.div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

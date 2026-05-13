@@ -82,10 +82,11 @@ const ExerciseCarousel = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-4">
-            Transform Yourself with <span className="text-gradient">Visor</span>
+            AI Workout & Training Programs in{" "}
+            <span className="text-gradient">VISOR</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Premium workout trainings and Videos designed for total body transformation.
+            Premium gym workouts and training videos designed for total body transformation — from HIIT to hypertrophy.
           </p>
         </motion.div>
 

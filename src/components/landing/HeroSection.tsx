@@ -46,7 +46,7 @@ const HeroSection = () => {
           transition={{ delay: 0.5 }}
           className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10"
         >
-          VISOR lets you visualize your body transformation, build belief through daily rituals, and receive emotionally adaptive AI coaching to turn consistency into lifestyle change.
+          VISOR is the AI fitness app that visualizes your body transformation with realistic before & after predictions. Build belief through daily rituals and receive emotionally adaptive AI coaching to turn consistency into lasting change.
         </motion.p>
 
         <motion.div
