@@ -34,14 +34,21 @@
         "name": "VISOR",
         "operatingSystem": "iOS, ANDROID",
         "applicationCategory": "HealthApplication",
-        "description": "AI fitness app with before & after body transformation predictions, personalized workouts, and adaptive AI coaching.",
+        "description": "AI fitness app with before & after body transformation predictions, personalized workouts, adaptive AI coaching, and gamified Soul Track streaks.",
         "url": "https://charmflow-vision.lovable.app/",
         "image": "https://charmflow-vision.lovable.app/og-image.jpg",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
+        "featureList": [
+          "AI before & after body transformation predictions (Month 1, Month 3, Olympia mode)",
+          "Adaptive AI coach with emotionally intelligent personalities",
+          "Soul Track gamified streaks and identity alignment",
+          "Personalized workout and nutrition plans",
+          "Free, Core, and Elite subscription tiers"
+        ],
+        "offers": [
+          { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
+          { "@type": "Offer", "name": "Core", "price": "9.99", "priceCurrency": "USD" },
+          { "@type": "Offer", "name": "Elite", "price": "19.99", "priceCurrency": "USD" }
+        ],
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "4.8",
@@ -52,6 +59,54 @@
           "name": "VISOR",
           "url": "https://charmflow-vision.lovable.app/"
         }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is VISOR?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "VISOR is an AI fitness app that predicts your before & after body transformation, delivers adaptive AI coaching, and uses gamified Soul Track streaks to keep you consistent."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does AI body transformation work in VISOR?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "VISOR generates a visual progression of your future body at Month 1, Month 3, and an aspirational Olympia mode based on your starting photo, goals, and training plan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is VISOR free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "VISOR offers a Free tier with core tracking, a Core tier with full AI coaching and transformation previews, and an Elite tier with personal coaching access."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Soul Track?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Soul Track is VISOR's gamified streak and identity alignment system that rewards consistent behavior tied to who you want to become, not just workouts completed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does VISOR include an AI coach?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The Visor AI Coach is emotionally intelligent and adapts its tone and personality to your mood, motivation level, and goals."
+            }
+          }
+        ]
       }
     </script>
   </head>
