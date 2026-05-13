@@ -11,6 +11,8 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
+    "sitemap": "tsx scripts/generate-sitemap.ts",
+    "sitemap:check": "tsx scripts/generate-sitemap.ts --check",
     "test": "vitest run",
     "test:watch": "vitest"
   },
