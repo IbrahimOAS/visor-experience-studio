@@ -1,79 +1,109 @@
 // Runs before `vite dev` and `vite build`; writes public/sitemap.xml.
 // Auto-discovers routes from src/App.tsx so the sitemap never references
 // a page that doesn't exist (which would produce 404 soft errors in Search Console).
+//
+// Usage:
+//   tsx scripts/generate-sitemap.ts            # write public/sitemap.xml
+//   tsx scripts/generate-sitemap.ts --check    # CI mode: verify on-disk sitemap
+//                                               matches the router; exit 1 on drift
 import { writeFileSync, readFileSync, existsSync } from "fs";
 import { resolve } from "path";
 
-const BASE_URL = "https://charmflow-vision.lovable.app";
+export const BASE_URL = "https://charmflow-vision.lovable.app";
 
-interface SitemapEntry {
+export interface SitemapEntry {
   path: string;
   lastmod?: string;
   changefreq?: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
   priority?: string;
 }
 
-// Routes we never want crawled even if they exist in the router.
-const EXCLUDED_PATHS = new Set<string>([
-  "*",
-  "/not-found",
-  "/404",
-]);
+const EXCLUDED_PATHS = new Set<string>(["*", "/not-found", "/404"]);
 const EXCLUDED_PREFIXES = ["/admin", "/lovable", "/auth", "/dashboard/private"];
 
-// Per-path SEO hints (only applied if the path is actually present in the router).
 const HINTS: Record<string, Pick<SitemapEntry, "changefreq" | "priority">> = {
   "/": { changefreq: "weekly", priority: "1.0" },
 };
 
-function discoverRoutes(): string[] {
-  const appPath = resolve("src/App.tsx");
+export function discoverRoutes(appPath = resolve("src/App.tsx")): string[] {
   if (!existsSync(appPath)) return ["/"];
-
   const src = readFileSync(appPath, "utf8");
-  // Match: <Route path="/something" ... />
   const matches = [...src.matchAll(/<Route\s+[^>]*path=["']([^"']+)["']/g)].map((m) => m[1]);
-
   const routes = matches.filter((path) => {
     if (EXCLUDED_PATHS.has(path)) return false;
-    if (path.includes(":")) return false; // dynamic params — needs a data source, skip
+    if (path.includes(":")) return false;
     if (path.includes("*")) return false;
     if (EXCLUDED_PREFIXES.some((p) => path.startsWith(p))) return false;
     return true;
   });
-
-  // Dedupe + ensure "/" present if discovered
   return Array.from(new Set(routes));
 }
 
-const today = new Date().toISOString().split("T")[0];
+export function buildEntries(routes: string[]): SitemapEntry[] {
+  return routes.map((path) => ({
+    path,
+    ...(HINTS[path] ?? { changefreq: "monthly", priority: "0.7" }),
+  }));
+}
 
-const entries: SitemapEntry[] = discoverRoutes().map((path) => ({
-  path,
-  lastmod: today,
-  ...(HINTS[path] ?? { changefreq: "monthly", priority: "0.7" }),
-}));
-
-function generateSitemap(items: SitemapEntry[]) {
+// XML body without <lastmod> so the verify check is stable day-to-day.
+export function renderSitemap(items: SitemapEntry[]): string {
   const urls = items.map((e) =>
     [
       `  <url>`,
       `    <loc>${BASE_URL}${e.path}</loc>`,
-      e.lastmod ? `    <lastmod>${e.lastmod}</lastmod>` : null,
       e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
       e.priority ? `    <priority>${e.priority}</priority>` : null,
       `  </url>`,
     ]
       .filter(Boolean)
-      .join("\n")
+      .join("\n"),
   );
   return [
     `<?xml version="1.0" encoding="UTF-8"?>`,
     `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`,
     ...urls,
     `</urlset>`,
+    "",
   ].join("\n");
 }
 
-writeFileSync(resolve("public/sitemap.xml"), generateSitemap(entries));
-console.log(`sitemap.xml written (${entries.length} entries): ${entries.map((e) => e.path).join(", ")}`);
+export function extractLocs(xml: string): string[] {
+  return [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)]
+    .map((m) => m[1].replace(BASE_URL, ""))
+    .sort();
+}
+
+function main() {
+  const isCheck = process.argv.includes("--check");
+  const routes = discoverRoutes();
+  const entries = buildEntries(routes);
+  const expected = renderSitemap(entries);
+  const sitemapPath = resolve("public/sitemap.xml");
+
+  if (isCheck) {
+    if (!existsSync(sitemapPath)) {
+      console.error("✗ public/sitemap.xml is missing. Run: bunx tsx scripts/generate-sitemap.ts");
+      process.exit(1);
+    }
+    const onDisk = readFileSync(sitemapPath, "utf8");
+    const expectedRoutes = routes.sort();
+    const onDiskRoutes = extractLocs(onDisk);
+    const missing = expectedRoutes.filter((r) => !onDiskRoutes.includes(r));
+    const extra = onDiskRoutes.filter((r) => !expectedRoutes.includes(r));
+    if (missing.length || extra.length) {
+      console.error("✗ Sitemap is out of sync with src/App.tsx routes.");
+      if (missing.length) console.error("  Missing from sitemap:", missing.join(", "));
+      if (extra.length) console.error("  Extra (route removed?):", extra.join(", "));
+      console.error("  Fix: bunx tsx scripts/generate-sitemap.ts");
+      process.exit(1);
+    }
+    console.log(`✓ sitemap.xml matches router (${expectedRoutes.length} routes): ${expectedRoutes.join(", ")}`);
+    return;
+  }
+
+  writeFileSync(sitemapPath, expected);
+  console.log(`sitemap.xml written (${entries.length} entries): ${entries.map((e) => e.path).join(", ")}`);
+}
+
+main();
