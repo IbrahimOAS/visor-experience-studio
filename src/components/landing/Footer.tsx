@@ -8,8 +8,16 @@ const Footer = () => (
     <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
       <div>
         <div className="flex items-center gap-2 mb-4">
-          <img src={visorLogo} alt="VISOR" className="h-8 w-8 rounded-lg" />
-          <span className="text-xl font-bold font-['Space_Grotesk']">VISOR</span>
+          <img
+            src={visorLogo}
+            alt="VISOR"
+            width={56}
+            height={56}
+            loading="lazy"
+            decoding="async"
+            className="h-9 w-9 sm:h-10 sm:w-10 md:h-12 md:w-12 rounded-full object-cover"
+          />
+          <span className="text-lg sm:text-xl md:text-2xl font-bold font-['Space_Grotesk']">VISOR</span>
         </div>
         <p className="text-sm text-muted-foreground leading-relaxed">
           AI-powered identity transformation. See your future body. Become it.
