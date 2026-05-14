@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import visorLogo from "@/assets/visor-logo.png";
+
+const visorLogo = "/visor-logo.png";
 
 const navLinks = ["Features", "How It Works", "Pricing", "Coaching", "Download"];
 
@@ -23,6 +24,7 @@ const Navbar = () => {
             width={48}
             height={48}
             loading="eager"
+            fetchPriority="high"
             decoding="async"
             className="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 lg:h-11 lg:w-11 rounded-full object-cover transition-transform duration-300 group-hover:scale-110"
           />
