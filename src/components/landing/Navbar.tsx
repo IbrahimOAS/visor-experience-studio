@@ -17,8 +17,16 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2 group">
-          <img src={visorLogo} alt="VISOR" className="h-8 w-8 rounded-lg transition-transform duration-300 group-hover:scale-110" />
-          <span className="text-xl font-bold font-['Space_Grotesk'] text-foreground">VISOR</span>
+          <img
+            src={visorLogo}
+            alt="VISOR"
+            width={48}
+            height={48}
+            loading="eager"
+            decoding="async"
+            className="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 lg:h-11 lg:w-11 rounded-full object-cover transition-transform duration-300 group-hover:scale-110"
+          />
+          <span className="text-lg sm:text-xl md:text-2xl font-bold font-['Space_Grotesk'] text-foreground">VISOR</span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
