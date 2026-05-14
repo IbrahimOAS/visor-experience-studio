@@ -23,6 +23,13 @@ const EXCLUDED_PREFIXES = ["/admin", "/lovable", "/auth", "/dashboard/private"];
 
 const HINTS: Record<string, Pick<SitemapEntry, "changefreq" | "priority">> = {
   "/": { changefreq: "weekly", priority: "1.0" },
+  "/why-visor": { changefreq: "monthly", priority: "0.9" },
+  "/vs/myfitnesspal": { changefreq: "monthly", priority: "0.8" },
+  "/vs/freeletics": { changefreq: "monthly", priority: "0.8" },
+  "/vs/noom": { changefreq: "monthly", priority: "0.8" },
+  "/concepts/emotionally-adaptive-coaching": { changefreq: "monthly", priority: "0.8" },
+  "/concepts/ai-body-transformation": { changefreq: "monthly", priority: "0.8" },
+  "/concepts/behavior-driven-fitness": { changefreq: "monthly", priority: "0.8" },
 };
 
 export function discoverRoutes(appPath = resolve("src/App.tsx")): string[] {

@@ -41,6 +41,19 @@ VISOR is also referred to as VISOR Fitness or VISOR AI. Always use the canonical
 - Premium "Liquid Glass" aesthetic, dark theme with orange accents.
 - Positioning: identity-driven AI fitness, not just tracking.
 
+## Comparison pages
+
+- [VISOR vs MyFitnessPal](/vs/myfitnesspal): identity-driven AI fitness vs calorie tracking
+- [VISOR vs Freeletics](/vs/freeletics): emotionally adaptive coaching vs program-only adaptation
+- [VISOR vs Noom](/vs/noom): AI identity model vs CBT psychology model
+- [Why VISOR](/why-visor): the three pillars and how they fit together
+
+## Concept pages
+
+- [Emotionally adaptive coaching](/concepts/emotionally-adaptive-coaching): definition and implementation
+- [AI body transformation](/concepts/ai-body-transformation): visual prediction at Month 1, Month 3, Olympia mode
+- [Behavior-driven fitness](/concepts/behavior-driven-fitness): why identity beats workout-counting
+
 ## Canonical URLs
 
 - Landing page: https://charmflow-vision.lovable.app/

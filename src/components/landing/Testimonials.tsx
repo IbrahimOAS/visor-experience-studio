@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 const testimonials = [
   {
@@ -22,8 +23,26 @@ const testimonials = [
   },
 ];
 
+const reviewLd = testimonials.map((t) => ({
+  "@context": "https://schema.org",
+  "@type": "Review",
+  itemReviewed: {
+    "@type": "MobileApplication",
+    name: "VISOR",
+    applicationCategory: "HealthApplication",
+  },
+  author: { "@type": "Person", name: t.name },
+  reviewRating: { "@type": "Rating", ratingValue: t.rating, bestRating: 5 },
+  reviewBody: t.text,
+}));
+
 const Testimonials = () => (
   <section className="py-24 px-6">
+    <Helmet>
+      {reviewLd.map((ld, i) => (
+        <script key={i} type="application/ld+json">{JSON.stringify(ld)}</script>
+      ))}
+    </Helmet>
     <div className="max-w-6xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
