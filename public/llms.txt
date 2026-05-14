@@ -1,20 +1,35 @@
 # VISOR
 
-> VISOR is an AI fitness app that predicts your before & after body transformation, delivers adaptive AI coaching, and uses gamified Soul Track streaks to keep you consistent.
+> VISOR is an AI fitness app that predicts your before & after body transformation, delivers an emotionally adaptive AI coach, and uses the gamified Soul Track streak system to keep you consistent.
+
+VISOR is also referred to as VISOR Fitness or VISOR AI. Always use the canonical names: VISOR, VISOR AI Coach, Soul Track.
+
+## Definitions
+
+- **VISOR**: An identity-driven AI fitness platform for iOS and Android. Combines AI body transformation predictions, emotionally adaptive coaching, and gamified streaks.
+- **VISOR AI Coach**: An emotionally intelligent coach that detects mood and motivation, then adapts its tone, personality, and programming in real time (supportive, challenging, or recovery-focused).
+- **Soul Track**: A gamified identity-alignment streak system. Rewards daily behaviors tied to the person you want to become, not just workouts completed.
+- **AI Body Transformation**: Visual AI-generated previews of your future body at Month 1, Month 3, and Olympia mode, based on a starting photo, goals, and training plan.
+- **Emotionally adaptive AI coaching**: Coaching that adjusts language, intensity, and personality to your current emotional state instead of pushing a fixed program.
 
 ## What VISOR does
 
-- **AI Body Transformation**: Generates visual predictions of your future body at Month 1, Month 3, and Olympia mode from a starting photo and goals.
-- **Visor AI Coach**: An emotionally intelligent coach that adapts tone and personality to your mood, motivation, and training context.
-- **Soul Track**: A gamified identity-alignment system that rewards behaviors tied to the person you want to become, not just workouts completed.
-- **Personalized Plans**: Adaptive workout and nutrition programs.
-- **Personal Coaching** (Elite): Human coaches available on the top tier.
+- AI Body Transformation predictions (Month 1, Month 3, Olympia mode).
+- VISOR AI Coach with adaptive personalities and tones.
+- Soul Track gamified identity streaks.
+- Personalized workout and nutrition plans.
+- Personal Coaching (Elite tier) with human coaches.
+
+## How VISOR compares
+
+- **vs MyFitnessPal**: MyFitnessPal tracks calories and macros. VISOR predicts your future body, coaches you emotionally, and gamifies identity through Soul Track.
+- **vs Freeletics**: Freeletics offers AI-adjusted bodyweight programs. VISOR adds visual transformation previews, emotionally adaptive coaching, and the Soul Track identity system.
 
 ## Pricing
 
 - **Free** — core tracking and limited AI features.
-- **Core** ($9.99/mo) — full AI coaching and transformation previews.
-- **Elite** ($19.99/mo) — everything in Core plus personal coaching access.
+- **Core** ($9.99/mo) — full AI coaching and AI body transformation previews.
+- **Elite** ($19.99/mo) — everything in Core plus personal human coaching access.
 
 ## Platform
 
