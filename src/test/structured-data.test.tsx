@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import { render, waitFor, cleanup } from "@testing-library/react";
+import { render, cleanup } from "@testing-library/react";
+import { waitFor } from "@testing-library/dom";
 import { HelmetProvider } from "react-helmet-async";
 import { MemoryRouter } from "react-router-dom";
 import { ComponentType } from "react";
