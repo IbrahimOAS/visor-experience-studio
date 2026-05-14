@@ -1,4 +1,6 @@
-import visorLogo from "@/assets/visor-logo.png";
+import visorLogo96 from "@/assets/visor-logo-96.png";
+import visorLogo192 from "@/assets/visor-logo-192.png";
+import visorLogo256 from "@/assets/visor-logo-256.png";
 
 const Footer = () => (
   <footer className="relative border-t border-border/30 py-14 px-6">
@@ -9,10 +11,12 @@ const Footer = () => (
       <div>
         <div className="flex items-center gap-2 mb-4">
           <img
-            src={visorLogo}
+            src={visorLogo96}
+            srcSet={`${visorLogo96} 96w, ${visorLogo192} 192w, ${visorLogo256} 256w`}
+            sizes="(min-width: 768px) 64px, (min-width: 640px) 56px, 48px"
             alt="VISOR"
-            width={56}
-            height={56}
+            width={64}
+            height={64}
             loading="lazy"
             decoding="async"
             className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 rounded-full object-cover"
