@@ -15,7 +15,7 @@ const Footer = () => (
             height={56}
             loading="lazy"
             decoding="async"
-            className="h-9 w-9 sm:h-10 sm:w-10 md:h-12 md:w-12 rounded-full object-cover"
+            className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 rounded-full object-cover"
           />
           <span className="text-lg sm:text-xl md:text-2xl font-bold font-['Space_Grotesk']">VISOR</span>
         </div>
