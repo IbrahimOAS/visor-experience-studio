@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-
-const visorLogo = "/visor-logo.png";
+import visorLogo from "@/assets/visor-logo.png";
 
 const navLinks = ["Features", "How It Works", "Pricing", "Coaching", "Download"];
 
