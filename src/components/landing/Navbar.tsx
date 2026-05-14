@@ -26,7 +26,7 @@ const Navbar = () => {
             loading="eager"
             fetchPriority="high"
             decoding="async"
-            className="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 lg:h-11 lg:w-11 rounded-full object-cover transition-transform duration-300 group-hover:scale-110"
+            className="h-11 w-11 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 rounded-full object-cover transition-transform duration-300 group-hover:scale-110"
           />
           <span className="text-lg sm:text-xl md:text-2xl font-bold font-['Space_Grotesk'] text-foreground">VISOR</span>
         </a>
