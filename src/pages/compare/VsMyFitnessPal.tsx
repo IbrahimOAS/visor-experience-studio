@@ -26,7 +26,7 @@ const faqLd = {
 export default function VsMyFitnessPal() {
   return (
     <ContentPage
-      title="VISOR vs MyFitnessPal: AI Body Transformation vs Calorie Tracking"
+      title="VISOR vs MyFitnessPal: AI Body Transformation vs Calories"
       description="MyFitnessPal logs calories. VISOR predicts your future body, coaches you emotionally, and gamifies identity through Soul Track. Honest comparison."
       path="/vs/myfitnesspal"
       h1="VISOR vs MyFitnessPal"

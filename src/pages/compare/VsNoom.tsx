@@ -3,7 +3,7 @@ import { ContentPage } from "@/components/seo/ContentPage";
 export default function VsNoom() {
   return (
     <ContentPage
-      title="VISOR vs Noom: Identity-Driven AI vs Psychology-Based Weight Loss"
+      title="VISOR vs Noom: Identity-Driven AI vs CBT Weight Loss"
       description="Noom uses CBT-style behavior change for weight loss. VISOR uses AI body transformation previews, an emotionally adaptive coach, and identity streaks."
       path="/vs/noom"
       h1="VISOR vs Noom"

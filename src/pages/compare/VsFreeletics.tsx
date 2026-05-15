@@ -3,7 +3,7 @@ import { ContentPage } from "@/components/seo/ContentPage";
 export default function VsFreeletics() {
   return (
     <ContentPage
-      title="VISOR vs Freeletics: Adaptive AI Programming vs Bodyweight Workouts"
+      title="VISOR vs Freeletics: Adaptive AI vs Bodyweight Workouts"
       description="Freeletics adjusts bodyweight programs with AI. VISOR adds visual body transformation previews, an emotionally adaptive coach, and Soul Track identity streaks."
       path="/vs/freeletics"
       h1="VISOR vs Freeletics"
