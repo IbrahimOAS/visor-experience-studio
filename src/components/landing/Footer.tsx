@@ -1,6 +1,9 @@
+import { Link } from "react-router-dom";
 import visorLogo96 from "@/assets/visor-logo-96.png";
 import visorLogo192 from "@/assets/visor-logo-192.png";
 import visorLogo256 from "@/assets/visor-logo-256.png";
+
+type FooterLink = { label: string; href: string; external?: boolean };
 
 const Footer = () => (
   <footer className="relative border-t border-border/30 py-14 px-6">
@@ -28,21 +31,50 @@ const Footer = () => (
         </p>
       </div>
 
-      {[
-        { title: "Product", links: ["Features", "Pricing", "AI Coach", "Soul Track"] },
-        { title: "Company", links: ["About", "Blog", "Careers", "Contact"] },
-        { title: "Legal", links: ["Privacy Policy", "Terms of Service", "Cookie Policy"] },
-      ].map((col) => (
+      {([
+        {
+          title: "Product",
+          links: [
+            { label: "Features", href: "#whats-inside" },
+            { label: "Pricing", href: "#pricing" },
+            { label: "AI Coach", href: "/concepts/emotionally-adaptive-coaching" },
+            { label: "Soul Track", href: "/concepts/behavior-driven-fitness" },
+          ],
+        },
+        {
+          title: "Company",
+          links: [
+            { label: "Why VISOR", href: "/why-visor" },
+            { label: "vs MyFitnessPal", href: "/vs/myfitnesspal" },
+            { label: "vs Freeletics", href: "/vs/freeletics" },
+            { label: "Contact", href: "mailto:support@visorfitness.com", external: true },
+          ],
+        },
+        {
+          title: "Legal",
+          links: [
+            { label: "Privacy Policy", href: "/privacy" },
+            { label: "Terms of Use", href: "/terms" },
+          ],
+        },
+      ] as { title: string; links: FooterLink[] }[]).map((col) => (
         <div key={col.title}>
           <h4 className="font-semibold mb-4 text-foreground">{col.title}</h4>
           <ul className="space-y-2.5">
-            {col.links.map((link) => (
-              <li key={link}>
-                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">
-                  {link}
-                </a>
-              </li>
-            ))}
+            {col.links.map((link) => {
+              const isAnchor = link.href.startsWith("#");
+              const isRoute = link.href.startsWith("/") && !link.external;
+              const className = "text-sm text-muted-foreground hover:text-primary transition-colors duration-300";
+              return (
+                <li key={link.label}>
+                  {isRoute ? (
+                    <Link to={link.href} className={className}>{link.label}</Link>
+                  ) : (
+                    <a href={isAnchor ? `/${link.href}` : link.href} className={className}>{link.label}</a>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </div>
       ))}

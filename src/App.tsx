@@ -12,6 +12,8 @@ import WhyVisor from "./pages/compare/WhyVisor";
 import EmotionallyAdaptiveCoaching from "./pages/concepts/EmotionallyAdaptiveCoaching";
 import AiBodyTransformation from "./pages/concepts/AiBodyTransformation";
 import BehaviorDrivenFitness from "./pages/concepts/BehaviorDrivenFitness";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfUse from "./pages/TermsOfUse";
 
 
 const queryClient = new QueryClient();
@@ -31,6 +33,8 @@ const App = () => (
           <Route path="/concepts/emotionally-adaptive-coaching" element={<EmotionallyAdaptiveCoaching />} />
           <Route path="/concepts/ai-body-transformation" element={<AiBodyTransformation />} />
           <Route path="/concepts/behavior-driven-fitness" element={<BehaviorDrivenFitness />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsOfUse />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
