@@ -3,7 +3,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import visorLogo from "@/assets/visor-logo.png";
 
-const navLinks = ["Features", "How It Works", "Pricing", "Coaching", "Download"];
+const navLinks: { label: string; href: string }[] = [
+  { label: "Features", href: "#whats-inside" },
+  { label: "How It Works", href: "#how-it-works" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "Coaching", href: "#coaching" },
+  { label: "Download", href: "#download" },
+];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -33,11 +39,11 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
-              key={link}
-              href={`#${link.toLowerCase().replace(/ /g, "-")}`}
+              key={link.label}
+              href={link.href}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
             >
-              {link}
+              {link.label}
             </a>
           ))}
           <a
@@ -64,12 +70,12 @@ const Navbar = () => {
             <div className="px-6 py-4 flex flex-col gap-4">
               {navLinks.map((link) => (
                 <a
-                  key={link}
-                  href={`#${link.toLowerCase().replace(/ /g, "-")}`}
+                  key={link.label}
+                  href={link.href}
                   className="text-muted-foreground hover:text-foreground transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
-                  {link}
+                  {link.label}
                 </a>
               ))}
               <a
