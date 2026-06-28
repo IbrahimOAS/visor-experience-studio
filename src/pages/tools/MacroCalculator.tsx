@@ -183,21 +183,21 @@ export default function MacroCalculator() {
                 <input
                   type="number" min={14} max={100} value={age}
                   onChange={(e) => setAge(Number(e.target.value) || 0)}
-                  className="calc-input"
+                  className="w-full px-4 py-2.5 rounded-lg glass-card bg-background/40 border border-border focus:outline-none focus:ring-2 focus:ring-primary/40 text-foreground"
                 />
               </Field>
               <Field label={`Weight (${units === "metric" ? "kg" : "lb"})`}>
                 <input
                   type="number" min={30} max={400} value={weight}
                   onChange={(e) => setWeight(Number(e.target.value) || 0)}
-                  className="calc-input"
+                  className="w-full px-4 py-2.5 rounded-lg glass-card bg-background/40 border border-border focus:outline-none focus:ring-2 focus:ring-primary/40 text-foreground"
                 />
               </Field>
               <Field label={`Height (${units === "metric" ? "cm" : "in"})`}>
                 <input
                   type="number" min={48} max={250} value={height}
                   onChange={(e) => setHeight(Number(e.target.value) || 0)}
-                  className="calc-input"
+                  className="w-full px-4 py-2.5 rounded-lg glass-card bg-background/40 border border-border focus:outline-none focus:ring-2 focus:ring-primary/40 text-foreground"
                 />
               </Field>
 
@@ -205,7 +205,7 @@ export default function MacroCalculator() {
                 <select
                   value={activity}
                   onChange={(e) => setActivity(e.target.value as Activity)}
-                  className="calc-input"
+                  className="w-full px-4 py-2.5 rounded-lg glass-card bg-background/40 border border-border focus:outline-none focus:ring-2 focus:ring-primary/40 text-foreground"
                 >
                   {(Object.keys(ACTIVITY_LABELS) as Activity[]).map((a) => (
                     <option key={a} value={a}>{ACTIVITY_LABELS[a]}</option>
