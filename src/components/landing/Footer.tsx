@@ -1,6 +1,9 @@
+import { Link } from "react-router-dom";
 import visorLogo96 from "@/assets/visor-logo-96.png";
 import visorLogo192 from "@/assets/visor-logo-192.png";
 import visorLogo256 from "@/assets/visor-logo-256.png";
+
+type FooterLink = { label: string; href: string; external?: boolean };
 
 const Footer = () => (
   <footer className="relative border-t border-border/30 py-14 px-6">
