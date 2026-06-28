@@ -41,8 +41,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://visorfitness.com/tools/macro-calculator</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://visorfitness.com/privacy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://visorfitness.com/terms</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
