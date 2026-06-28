@@ -12,6 +12,8 @@ import WhyVisor from "./pages/compare/WhyVisor";
 import EmotionallyAdaptiveCoaching from "./pages/concepts/EmotionallyAdaptiveCoaching";
 import AiBodyTransformation from "./pages/concepts/AiBodyTransformation";
 import BehaviorDrivenFitness from "./pages/concepts/BehaviorDrivenFitness";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfUse from "./pages/TermsOfUse";
 
 
 const queryClient = new QueryClient();
