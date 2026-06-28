@@ -48,7 +48,7 @@ const VideoDemo = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const [playing, setPlaying] = useState(false);
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
   const [slideIndex, setSlideIndex] = useState(0);
 
   const activeCard = activeIndex !== null ? videoCards[activeIndex] : null;
