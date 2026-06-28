@@ -9,7 +9,7 @@
 import { writeFileSync, readFileSync, existsSync } from "fs";
 import { resolve } from "path";
 
-export const BASE_URL = "https://charmflow-vision.lovable.app";
+export const BASE_URL = "https://visorfitness.com";
 
 export interface SitemapEntry {
   path: string;

@@ -97,6 +97,7 @@ const CoachModal = ({ coach, onClose, period }: { coach: Coach; onClose: () => v
       {/* Close button */}
       <button
         onClick={onClose}
+        aria-label="Close"
         className="absolute top-4 right-4 p-2 rounded-full glass-card hover:bg-primary/10 transition-colors"
       >
         <X size={18} className="text-muted-foreground" />
