@@ -30,6 +30,8 @@ const HINTS: Record<string, Pick<SitemapEntry, "changefreq" | "priority">> = {
   "/concepts/emotionally-adaptive-coaching": { changefreq: "monthly", priority: "0.8" },
   "/concepts/ai-body-transformation": { changefreq: "monthly", priority: "0.8" },
   "/concepts/behavior-driven-fitness": { changefreq: "monthly", priority: "0.8" },
+  "/privacy": { changefreq: "yearly", priority: "0.3" },
+  "/terms": { changefreq: "yearly", priority: "0.3" },
 };
 
 export function discoverRoutes(appPath = resolve("src/App.tsx")): string[] {
