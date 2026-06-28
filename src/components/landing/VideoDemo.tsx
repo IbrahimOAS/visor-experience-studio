@@ -48,7 +48,7 @@ const VideoDemo = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const [playing, setPlaying] = useState(false);
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
   const [slideIndex, setSlideIndex] = useState(0);
 
   const activeCard = activeIndex !== null ? videoCards[activeIndex] : null;
@@ -151,29 +151,7 @@ const VideoDemo = () => {
                 />
               ))}
             </div>
-          ) : (
-            <>
-              <video
-                ref={videoRef}
-                src={demoVideo}
-                className="w-full h-full object-cover"
-                controls
-                loop
-                playsInline
-                onEnded={() => setPlaying(false)}
-              />
-              <div
-                className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 pointer-events-none ${
-                  playing ? "opacity-0" : "opacity-100"
-                }`}
-                style={{ background: "radial-gradient(circle, hsl(0 0% 0% / 0.4) 0%, hsl(0 0% 0% / 0.2) 100%)" }}
-              >
-                <div className="w-24 h-24 rounded-full glass-card-elite flex items-center justify-center backdrop-blur-xl">
-                  <Play size={36} className="text-primary ml-1" />
-                </div>
-              </div>
-            </>
-          )}
+          ) : null}
         </motion.div>
 
         {/* Scrollable video cards */}
