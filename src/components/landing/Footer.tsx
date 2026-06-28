@@ -17,7 +17,7 @@ const Footer = () => (
             src={visorLogo96}
             srcSet={`${visorLogo96} 96w, ${visorLogo192} 192w, ${visorLogo256} 256w`}
             sizes="(min-width: 768px) 64px, (min-width: 640px) 56px, 48px"
-            alt="VISOR"
+            alt="VISOR AI Fitness app logo"
             width={64}
             height={64}
             loading="lazy"

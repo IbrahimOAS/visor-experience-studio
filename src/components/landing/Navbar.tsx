@@ -25,7 +25,7 @@ const Navbar = () => {
         <a href="#" className="flex items-center gap-2 group">
           <img
             src={visorLogo}
-            alt="VISOR"
+            alt="VISOR AI Fitness app logo"
             width={48}
             height={48}
             loading="eager"

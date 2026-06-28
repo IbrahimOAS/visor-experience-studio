@@ -6,10 +6,11 @@ interface SeoHeadProps {
   title: string;
   description: string;
   path: string;
+  type?: "website" | "article";
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-export const SeoHead = ({ title, description, path, jsonLd }: SeoHeadProps) => {
+export const SeoHead = ({ title, description, path, type = "article", jsonLd }: SeoHeadProps) => {
   const url = `${SITE}${path}`;
   const ldArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
   return (
@@ -20,7 +21,8 @@ export const SeoHead = ({ title, description, path, jsonLd }: SeoHeadProps) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
-      <meta property="og:type" content="article" />
+      <meta property="og:type" content={type} />
+      <meta property="og:site_name" content="VISOR" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       {ldArray.map((ld, i) => (
