@@ -33,6 +33,8 @@ const App = () => (
           <Route path="/concepts/emotionally-adaptive-coaching" element={<EmotionallyAdaptiveCoaching />} />
           <Route path="/concepts/ai-body-transformation" element={<AiBodyTransformation />} />
           <Route path="/concepts/behavior-driven-fitness" element={<BehaviorDrivenFitness />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsOfUse />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
