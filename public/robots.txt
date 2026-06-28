@@ -35,4 +35,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://charmflow-vision.lovable.app/sitemap.xml
+Sitemap: https://visorfitness.com/sitemap.xml

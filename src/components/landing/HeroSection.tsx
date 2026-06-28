@@ -36,7 +36,7 @@ const HeroSection = () => {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] mb-6"
         >
-          See Your Future.{" "}
+          VISOR AI Fitness App: See Your Future.{" "}
           <span className="text-gradient">Become It.</span>
         </motion.h1>
 
