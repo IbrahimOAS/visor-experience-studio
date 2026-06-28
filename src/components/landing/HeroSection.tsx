@@ -12,7 +12,7 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16">
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-70" />
+        <img src={heroBg} alt="" width="1920" height="1080" fetchPriority="high" decoding="async" className="w-full h-full object-cover opacity-70" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
         {/* Ambient glow orbs */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] animate-pulse" />
