@@ -22,7 +22,7 @@ interface ContentPageProps {
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const SITE = "https://charmflow-vision.lovable.app";
+const SITE = "https://visorfitness.com";
 
 export const ContentPage = ({
   title, description, path, h1, intro, sections, breadcrumbs, jsonLd,
