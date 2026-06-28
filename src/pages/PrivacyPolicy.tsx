@@ -15,9 +15,9 @@ const PrivacyPolicy = () => (
         This Privacy Policy explains how VISOR collects, uses, shares, and retains information
         when you use the VISOR mobile app and related services — including workout planning,
         nutrition logging, calorie tracking, AI-powered coaching, body transformation features,
-        community tools, and subscriptions. VISOR is operated by Drakkar, a company registered in
-        Norway, and is governed by the EU/EEA General Data Protection Regulation (GDPR) and the
-        Norwegian Personal Data Act (<em>personopplysningsloven</em>).
+        community tools, and subscriptions. VISOR is operated by Drakkar Mahmed Harun, a sole
+        proprietorship registered in Norway, and is governed by the EU/EEA General Data Protection
+        Regulation (GDPR) and the Norwegian Personal Data Act (<em>personopplysningsloven</em>).
         <br />
         <span className="text-sm opacity-70">Last updated: June 2026</span>
       </>
@@ -36,7 +36,7 @@ const PrivacyPolicy = () => (
             </p>
             <p>
               For privacy questions or to exercise your rights, contact us at{" "}
-              <a href="mailto:veyntatech@gmail.com" className="text-primary hover:underline">veyntatech@gmail.com</a>.
+              <a href="mailto:privacy@visorfitness.com" className="text-primary hover:underline">privacy@visorfitness.com</a>.
             </p>
           </>
         ),
@@ -51,6 +51,7 @@ const PrivacyPolicy = () => (
             <p><strong>Community and communications.</strong> Posts, messages, moderation reports and related records.</p>
             <p><strong>Subscription and transaction information.</strong> Subscription status, entitlements, product identifiers, renewal dates and receipt identifiers from Apple, Google, RevenueCat or similar billing partners. We do not receive or store your full payment card number.</p>
             <p><strong>Device, diagnostics, and usage.</strong> IP address, device type, OS, app version, push token, crash data, diagnostics and usage events.</p>
+            <p><strong>Apple Health / HealthKit.</strong> VISOR does not access, read from, or write to Apple Health or HealthKit.</p>
           </>
         ),
       },
@@ -94,9 +95,11 @@ const PrivacyPolicy = () => (
               and before you enable health-related AI features.
             </p>
             <p>
-              We instruct our AI processor to use your inputs only to generate your outputs and <strong>not to train its
-              general models</strong> on your data. AI inputs and outputs are retained only as long as needed to provide
-              the feature, then deleted or anonymized in line with the retention periods below.
+              We contractually require our AI processor to use your inputs only to generate your outputs and{" "}
+              <strong>not to use your data to train its general models</strong>. Health and fitness data transmitted to
+              Google Gemini is <strong>not used for advertising, cross-app tracking, or sold</strong> to any third party,
+              and is retained only as long as needed to provide the feature, then deleted or anonymized in line with the
+              retention periods below.
             </p>
             <p>
               AI-generated outputs can be incomplete or inaccurate and should be used as general fitness or wellness
@@ -111,8 +114,9 @@ const PrivacyPolicy = () => (
         heading: "How We Share Information",
         body: (
           <>
+            <p><strong>We do not sell your personal data</strong>, including your health and fitness data, and we do not share your health or fitness data with any third party for advertising, marketing or cross-context behavioral tracking.</p>
             <p><strong>Service providers.</strong> Vendors that help us run VISOR — cloud hosting, storage, CDN, authentication, notifications, analytics, support and subscription management — acting as processors on our instructions.</p>
-            <p><strong>Examples.</strong> Firebase / Google services for authentication and messaging, Google Gemini for AI features (including health-related inputs), RevenueCat for subscription management, and Apple App Store and Google Play for billing.</p>
+            <p><strong>Examples.</strong> Firebase / Google services for authentication and messaging; Google Gemini for AI features (including health-related inputs); RevenueCat for subscription and entitlement management — it receives your app user ID, subscription product identifiers, purchase timestamps and device platform to manage and restore your subscription status, and does not receive your health or fitness data; and Apple App Store and Google Play for billing.</p>
             <p><strong>Legal and safety.</strong> When reasonably necessary to comply with law, respond to valid requests, protect users, investigate fraud or enforce our Terms.</p>
             <p><strong>Business transfers.</strong> Information may transfer as part of a merger, acquisition, financing or asset sale, subject to applicable law.</p>
           </>
@@ -141,7 +145,7 @@ const PrivacyPolicy = () => (
               <li><strong>Subscription and transaction records.</strong> Retained for as long as required by Norwegian accounting law (currently 5 years) and for billing reconciliation.</li>
               <li><strong>Diagnostic logs and security records.</strong> Kept for limited periods, then deleted or anonymized.</li>
             </ul>
-            <p>After a deletion request, limited information may be retained for fraud prevention, billing reconciliation or legal compliance.</p>
+            <p>After a deletion request, limited information may be retained for fraud prevention, billing reconciliation or legal compliance, for no longer than the applicable legal or accounting obligation requires.</p>
           </>
         ),
       },
@@ -153,20 +157,34 @@ const PrivacyPolicy = () => (
             <ul className="list-disc pl-5 space-y-2">
               <li>Access a copy of your personal data and information about how it is processed (Art. 15).</li>
               <li>Rectify inaccurate or incomplete data (Art. 16).</li>
-              <li>Erase your data (Art. 17), including via in-app account deletion.</li>
+              <li>Erase your data (Art. 17), including via in-app account deletion (see "Account Deletion" below).</li>
               <li>Restrict processing (Art. 18) or object to processing based on legitimate interests (Art. 21).</li>
               <li>Receive your data in a portable, machine-readable format (Art. 20).</li>
               <li>Withdraw consent at any time (Art. 7), without affecting prior processing.</li>
               <li>Not be subject to decisions based solely on automated processing with legal or similarly significant effects (Art. 22).</li>
             </ul>
             <p>
-              To exercise these rights, use the in-app controls or email{" "}
-              <a href="mailto:veyntatech@gmail.com" className="text-primary hover:underline">veyntatech@gmail.com</a>.
+              You can withdraw consent for health-data processing or AI features, and delete your account, directly in
+              the app from your account settings. You can also email{" "}
+              <a href="mailto:privacy@visorfitness.com" className="text-primary hover:underline">privacy@visorfitness.com</a>.
               We respond within 30 days. You also have the right to lodge a complaint with the Norwegian Data Protection
               Authority (<a href="https://www.datatilsynet.no" className="text-primary hover:underline">Datatilsynet</a>) or your
               local EU/EEA supervisory authority.
             </p>
           </>
+        ),
+      },
+      {
+        heading: "Account Deletion",
+        body: (
+          <p>
+            You can permanently delete your VISOR account at any time directly in the app, from your account settings.
+            Deletion is <strong>self-service</strong> — you do not need to contact us to complete it. When you delete your
+            account, your profile, fitness and health data, photos and community content are removed from our active
+            systems. Backup copies may persist for up to ~90 days before they are purged. Transaction records required by
+            Norwegian accounting law are retained for the legally required period (currently 5 years) regardless of account
+            deletion.
+          </p>
         ),
       },
       {
@@ -192,12 +210,22 @@ const PrivacyPolicy = () => (
       {
         heading: "Children",
         body: (
-          <p>
-            VISOR is not directed to children under 13, and we do not knowingly collect personal information from
-            children under 13. In some EU/EEA countries the minimum age for consenting to online services is higher
-            (for example, 16 in Germany); where a higher age applies, we rely on appropriate consent from a parent or
-            guardian as required by local law.
-          </p>
+          <>
+            <p>
+              VISOR is not directed to children under 13, and we do not knowingly collect personal information from
+              children under 13. The minimum age to use VISOR is 13; in some EU/EEA countries the minimum age for
+              consenting to online services is higher (for example, 16 in Germany), and where a higher age applies we
+              rely on appropriate consent from a parent or guardian.
+            </p>
+            <p>
+              Users between 13 and 17 may use VISOR where permitted by law. We do not use age-verification technology
+              and rely on the date of birth provided at registration; we recommend that minors use VISOR under parental
+              supervision. A parent or guardian who believes a child has provided personal data without appropriate
+              consent can contact us at{" "}
+              <a href="mailto:privacy@visorfitness.com" className="text-primary hover:underline">privacy@visorfitness.com</a>{" "}
+              to request deletion.
+            </p>
+          </>
         ),
       },
       {
@@ -212,7 +240,7 @@ const PrivacyPolicy = () => (
             <br />
             Website: <a href="https://visorfitness.com" className="text-primary hover:underline">visorfitness.com</a>
             <br />
-            Email: <a href="mailto:veyntatech@gmail.com" className="text-primary hover:underline">veyntatech@gmail.com</a>
+            Email: <a href="mailto:privacy@visorfitness.com" className="text-primary hover:underline">privacy@visorfitness.com</a>
             <br />
             Supervisory authority: <a href="https://www.datatilsynet.no" className="text-primary hover:underline">Datatilsynet</a> (Norway)
           </p>
