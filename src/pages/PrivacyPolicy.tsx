@@ -208,20 +208,17 @@ const PrivacyPolicy = () => (
         ),
       },
       {
-        heading: "Children",
+        heading: "Minimum Age",
         body: (
           <>
             <p>
-              VISOR is not directed to children under 13, and we do not knowingly collect personal information from
-              children under 13. The minimum age to use VISOR is 13; in some EU/EEA countries the minimum age for
-              consenting to online services is higher (for example, 16 in Germany), and where a higher age applies we
-              rely on appropriate consent from a parent or guardian.
+              VISOR is intended only for adults aged 18 and over. It is not directed to anyone under 18, and we do not
+              knowingly collect personal information from anyone under 18.
             </p>
             <p>
-              Users between 13 and 17 may use VISOR where permitted by law. We do not use age-verification technology
-              and rely on the date of birth provided at registration; we recommend that minors use VISOR under parental
-              supervision. A parent or guardian who believes a child has provided personal data without appropriate
-              consent can contact us at{" "}
+              We rely on the date of birth provided at registration to confirm eligibility. If we learn that we have
+              collected personal information from someone under 18, we will delete it. A parent or guardian who believes
+              someone under 18 has provided personal data can contact us at{" "}
               <a href="mailto:privacy@visorfitness.com" className="text-primary hover:underline">privacy@visorfitness.com</a>{" "}
               to request deletion.
             </p>
