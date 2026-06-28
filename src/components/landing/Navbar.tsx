@@ -3,7 +3,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import visorLogo from "@/assets/visor-logo.png";
 
-const navLinks = ["Features", "How It Works", "Pricing", "Coaching", "Download"];
+const navLinks: { label: string; href: string }[] = [
+  { label: "Features", href: "#whats-inside" },
+  { label: "How It Works", href: "#how-it-works" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "Coaching", href: "#coaching" },
+  { label: "Download", href: "#download" },
+];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
