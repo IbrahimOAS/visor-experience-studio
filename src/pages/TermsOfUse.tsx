@@ -88,7 +88,7 @@ const TermsOfUse = () => (
           <>
             <p>If you post content, join groups, send messages or otherwise submit user content in VISOR, you are responsible for that content and for ensuring that you have the rights needed to share it.</p>
             <p>You grant VISOR a limited, non-exclusive, worldwide license to host, store, reproduce, display and process your user content only as reasonably necessary to operate, secure, moderate and improve the service.</p>
-            <p>You can report illegal or infringing content or other violations to us at support@visorfitness.com, and we may remove content or restrict accounts that breach these Terms or applicable law.</p>
+            <p>You can report illegal or infringing content or other violations to us at veyntatech@gmail.com, and we may remove content or restrict accounts that breach these Terms or applicable law.</p>
           </>
         ),
       },
@@ -166,7 +166,7 @@ const TermsOfUse = () => (
             <br />
             Website: <a href="https://visorfitness.com" className="text-primary hover:underline">visorfitness.com</a>
             <br />
-            Email: <a href="mailto:support@visorfitness.com" className="text-primary hover:underline">support@visorfitness.com</a>
+            Email: <a href="mailto:veyntatech@gmail.com" className="text-primary hover:underline">veyntatech@gmail.com</a>
           </p>
         ),
       },

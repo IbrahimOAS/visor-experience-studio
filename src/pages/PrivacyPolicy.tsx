@@ -36,7 +36,7 @@ const PrivacyPolicy = () => (
             </p>
             <p>
               For privacy questions or to exercise your rights, contact us at{" "}
-              <a href="mailto:support@visorfitness.com" className="text-primary hover:underline">support@visorfitness.com</a>.
+              <a href="mailto:veyntatech@gmail.com" className="text-primary hover:underline">veyntatech@gmail.com</a>.
             </p>
           </>
         ),
@@ -161,7 +161,7 @@ const PrivacyPolicy = () => (
             </ul>
             <p>
               To exercise these rights, use the in-app controls or email{" "}
-              <a href="mailto:support@visorfitness.com" className="text-primary hover:underline">support@visorfitness.com</a>.
+              <a href="mailto:veyntatech@gmail.com" className="text-primary hover:underline">veyntatech@gmail.com</a>.
               We respond within 30 days. You also have the right to lodge a complaint with the Norwegian Data Protection
               Authority (<a href="https://www.datatilsynet.no" className="text-primary hover:underline">Datatilsynet</a>) or your
               local EU/EEA supervisory authority.
@@ -212,7 +212,7 @@ const PrivacyPolicy = () => (
             <br />
             Website: <a href="https://visorfitness.com" className="text-primary hover:underline">visorfitness.com</a>
             <br />
-            Email: <a href="mailto:support@visorfitness.com" className="text-primary hover:underline">support@visorfitness.com</a>
+            Email: <a href="mailto:veyntatech@gmail.com" className="text-primary hover:underline">veyntatech@gmail.com</a>
             <br />
             Supervisory authority: <a href="https://www.datatilsynet.no" className="text-primary hover:underline">Datatilsynet</a> (Norway)
           </p>
