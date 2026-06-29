@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Apple, PlayCircle } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
+import { useTranslation } from "react-i18next";
 
 const APP_STORE_URL = "https://apps.apple.com/app/visor";
 const APP_STORE_DEEP_LINK = "itms-apps://apps.apple.com/app/visor";
@@ -25,7 +26,9 @@ const handleGooglePlayClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
   }
 };
 
-const DownloadCTA = () => (
+const DownloadCTA = () => {
+  const { t } = useTranslation();
+  return (
   <section id="download" className="py-28 px-6 relative">
     {/* Ambient */}
     <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -40,10 +43,10 @@ const DownloadCTA = () => (
         className="glass-card-elite rounded-3xl p-10 md:p-16 text-center shimmer"
       >
         <h2 className="text-4xl md:text-5xl font-bold mb-4">
-          Download the <span className="text-gradient">AI Fitness App</span> Today
+          {t("download.title")} <span className="text-gradient">{t("download.titleAccent")}</span> {t("download.titleSuffix")}
         </h2>
         <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-10">
-          Get VISOR on iOS or Android and see your before & after body transformation prediction in seconds.
+          {t("download.subtitle")}
         </p>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-10">
@@ -59,8 +62,8 @@ const DownloadCTA = () => (
             >
               <Apple size={24} className="text-foreground" />
               <div className="text-left">
-                <div className="text-[10px] leading-none text-muted-foreground">Download on the</div>
-                <div className="text-base leading-tight text-foreground">App Store</div>
+                <div className="text-[10px] leading-none text-muted-foreground">{t("download.appStoreCaption")}</div>
+                <div className="text-base leading-tight text-foreground">{t("download.appStore")}</div>
               </div>
             </a>
             <a
@@ -73,8 +76,8 @@ const DownloadCTA = () => (
             >
               <PlayCircle size={24} className="text-foreground" />
               <div className="text-left">
-                <div className="text-[10px] leading-none text-muted-foreground">Get it on</div>
-                <div className="text-base leading-tight text-foreground">Google Play</div>
+                <div className="text-[10px] leading-none text-muted-foreground">{t("download.playCaption")}</div>
+                <div className="text-base leading-tight text-foreground">{t("download.play")}</div>
               </div>
             </a>
           </div>
@@ -90,12 +93,13 @@ const DownloadCTA = () => (
                 bgColor="transparent"
               />
             </div>
-            <span className="text-sm text-muted-foreground">Scan to download</span>
+            <span className="text-sm text-muted-foreground">{t("download.scan")}</span>
           </div>
         </div>
       </motion.div>
     </div>
   </section>
-);
+  );
+};
 
 export default DownloadCTA;

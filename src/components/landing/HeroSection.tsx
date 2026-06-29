@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import heroBg from "@/assets/hero-bg.jpg";
 import screen1 from "@/assets/app-screen-1.png";
 import screen2 from "@/assets/app-screen-2.png";
@@ -8,6 +9,7 @@ import screen3 from "@/assets/app-screen-5.png";
 const screens = [screen1, screen2, screen3, screen1, screen2, screen3];
 
 const HeroSection = () => {
+  const { t } = useTranslation();
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16">
       {/* Background */}
@@ -27,7 +29,7 @@ const HeroSection = () => {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="inline-block mb-6 px-5 py-2 rounded-full glass-card-strong text-primary text-sm font-medium shimmer"
         >
-          AI-Powered Identity Transformation
+          {t("hero.badge")}
         </motion.div>
 
         <motion.h1
@@ -36,8 +38,8 @@ const HeroSection = () => {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] mb-6"
         >
-          VISOR AI Fitness App: See Your Future.{" "}
-          <span className="text-gradient">Become It.</span>
+          {t("hero.titleA")}{" "}
+          <span className="text-gradient">{t("hero.titleB")}</span>
         </motion.h1>
 
         <motion.p
@@ -46,7 +48,7 @@ const HeroSection = () => {
           transition={{ delay: 0.5 }}
           className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10"
         >
-          VISOR is the AI fitness app that visualizes your body transformation with realistic before & after predictions. Build belief through daily rituals and receive emotionally adaptive AI coaching to turn consistency into lasting change.
+          {t("hero.subtitle")}
         </motion.p>
 
         <motion.div
@@ -58,7 +60,7 @@ const HeroSection = () => {
             href="#features"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl glass-card-strong text-primary font-semibold hover:bg-primary/10 transition-all duration-300 hover:shadow-[0_0_30px_-4px_hsl(28,100%,55%/0.3)] group"
           >
-            Explore Features <ArrowDown size={18} className="group-hover:translate-y-1 transition-transform duration-300" />
+            {t("hero.cta")} <ArrowDown size={18} className="group-hover:translate-y-1 transition-transform duration-300" />
           </a>
         </motion.div>
       </div>
