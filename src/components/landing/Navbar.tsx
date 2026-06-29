@@ -1,17 +1,20 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import visorLogo from "@/assets/visor-logo.png";
-
-const navLinks: { label: string; href: string }[] = [
-  { label: "Features", href: "#whats-inside" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Coaching", href: "#coaching" },
-];
+import LanguageToggle from "@/components/LanguageToggle";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { t } = useTranslation();
+
+  const navLinks: { label: string; href: string }[] = [
+    { label: t("nav.features"), href: "#whats-inside" },
+    { label: t("nav.howItWorks"), href: "#how-it-works" },
+    { label: t("nav.pricing"), href: "#pricing" },
+    { label: t("nav.coaching"), href: "#coaching" },
+  ];
 
   return (
     <motion.nav
@@ -54,25 +57,18 @@ const Navbar = () => {
 
           {/* Right cluster */}
           <div className="hidden md:flex items-center gap-2">
-            <button
-              type="button"
-              className="flex items-center gap-1.5 px-3 h-9 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-white/10 transition-colors"
-              aria-label="Change language"
-            >
-              <Globe size={13} />
-              EN
-            </button>
+            <LanguageToggle />
             <a
               href="#download"
               className="px-4 h-9 inline-flex items-center rounded-full border border-white/10 bg-white/5 text-xs font-medium text-foreground hover:bg-white/10 transition-colors"
             >
-              Sign In
+              {t("nav.signIn")}
             </a>
             <a
               href="#download"
               className="px-4 h-9 inline-flex items-center rounded-full bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_20px_-4px_hsl(28,100%,55%/0.5)]"
             >
-              Get the App
+              {t("nav.getApp")}
             </a>
           </div>
 
@@ -105,23 +101,21 @@ const Navbar = () => {
                     {link.label}
                   </a>
                 ))}
-                <div className="flex items-center gap-2 pt-2">
-                  <button className="flex items-center gap-1.5 px-3 h-9 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-muted-foreground">
-                    <Globe size={13} /> EN
-                  </button>
+                <div className="flex items-center gap-2 pt-2 flex-wrap">
+                  <LanguageToggle />
                   <a
                     href="#download"
                     onClick={() => setMobileOpen(false)}
                     className="px-4 h-9 inline-flex items-center rounded-full border border-white/10 bg-white/5 text-xs font-medium text-foreground"
                   >
-                    Sign In
+                    {t("nav.signIn")}
                   </a>
                   <a
                     href="#download"
                     onClick={() => setMobileOpen(false)}
                     className="px-4 h-9 inline-flex items-center rounded-full bg-primary text-primary-foreground text-xs font-semibold ml-auto"
                   >
-                    Get the App
+                    {t("nav.getApp")}
                   </a>
                 </div>
               </div>

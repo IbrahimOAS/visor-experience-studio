@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "features": "Funktionen",
+    "howItWorks": "So funktioniert's",
+    "pricing": "Preise",
+    "coaching": "Coaching",
+    "signIn": "Anmelden",
+    "getApp": "App holen",
+    "language": "Sprache ändern"
+  },
+  "hero": {
+    "badge": "KI-gestützte Identitätstransformation",
+    "titleA": "VISOR KI-Fitness-App: Sieh deine Zukunft.",
+    "titleB": "Werde sie.",
+    "subtitle": "VISOR ist die KI-Fitness-App, die deine Körpertransformation mit realistischen Vorher-Nachher-Vorhersagen visualisiert. Baue Überzeugung durch tägliche Rituale auf und erhalte emotional anpassbares KI-Coaching, das Konsistenz in dauerhafte Veränderung verwandelt.",
+    "cta": "Funktionen entdecken"
+  },
+  "download": {
+    "title": "Lade die",
+    "titleAccent": "KI-Fitness-App",
+    "titleSuffix": "heute herunter",
+    "subtitle": "Hol dir VISOR auf iOS oder Android und sieh deine Vorher-Nachher-Vorhersage in Sekunden.",
+    "appStoreCaption": "Laden im",
+    "appStore": "App Store",
+    "playCaption": "Jetzt bei",
+    "play": "Google Play",
+    "scan": "Scannen zum Download"
+  },
+  "footer": {
+    "tagline": "KI-gestützte Identitätstransformation. Sieh deinen zukünftigen Körper. Werde er.",
+    "product": "Produkt",
+    "company": "Unternehmen",
+    "legal": "Rechtliches",
+    "rights": "© 2026 VISOR. Alle Rechte vorbehalten.",
+    "links": {
+      "features": "Funktionen",
+      "pricing": "Preise",
+      "aiCoach": "KI-Coach",
+      "soulTrack": "Soul Track",
+      "whyVisor": "Warum VISOR",
+      "vsMyFitnessPal": "vs MyFitnessPal",
+      "vsFreeletics": "vs Freeletics",
+      "contact": "Kontakt",
+      "privacy": "Datenschutz",
+      "terms": "Nutzungsbedingungen"
+    }
+  }
+}

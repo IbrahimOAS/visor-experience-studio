@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "features": "Features",
+    "howItWorks": "How It Works",
+    "pricing": "Pricing",
+    "coaching": "Coaching",
+    "signIn": "Sign In",
+    "getApp": "Get the App",
+    "language": "Change language"
+  },
+  "hero": {
+    "badge": "AI-Powered Identity Transformation",
+    "titleA": "VISOR AI Fitness App: See Your Future.",
+    "titleB": "Become It.",
+    "subtitle": "VISOR is the AI fitness app that visualizes your body transformation with realistic before & after predictions. Build belief through daily rituals and receive emotionally adaptive AI coaching to turn consistency into lasting change.",
+    "cta": "Explore Features"
+  },
+  "download": {
+    "title": "Download the",
+    "titleAccent": "AI Fitness App",
+    "titleSuffix": "Today",
+    "subtitle": "Get VISOR on iOS or Android and see your before & after body transformation prediction in seconds.",
+    "appStoreCaption": "Download on the",
+    "appStore": "App Store",
+    "playCaption": "Get it on",
+    "play": "Google Play",
+    "scan": "Scan to download"
+  },
+  "footer": {
+    "tagline": "AI-powered identity transformation. See your future body. Become it.",
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal",
+    "rights": "© 2026 VISOR. All rights reserved.",
+    "links": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "aiCoach": "AI Coach",
+      "soulTrack": "Soul Track",
+      "whyVisor": "Why VISOR",
+      "vsMyFitnessPal": "vs MyFitnessPal",
+      "vsFreeletics": "vs Freeletics",
+      "contact": "Contact",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Use"
+    }
+  }
+}

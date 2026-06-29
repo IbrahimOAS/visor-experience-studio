@@ -1,15 +1,18 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import visorLogo96 from "@/assets/visor-logo-96.png";
 import visorLogo192 from "@/assets/visor-logo-192.png";
 import visorLogo256 from "@/assets/visor-logo-256.png";
 
 type FooterLink = { label: string; href: string; external?: boolean };
 
-const Footer = () => (
+const Footer = () => {
+  const { t } = useTranslation();
+  return (
   <footer className="relative border-t border-border/30 py-14 px-6">
     {/* Top border glow */}
     <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-    
+
     <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
       <div>
         <div className="flex items-center gap-2 mb-4">
@@ -27,34 +30,34 @@ const Footer = () => (
           <span className="text-lg sm:text-xl md:text-2xl font-bold font-['Space_Grotesk']">VISOR</span>
         </div>
         <p className="text-sm text-muted-foreground leading-relaxed">
-          AI-powered identity transformation. See your future body. Become it.
+          {t("footer.tagline")}
         </p>
       </div>
 
       {([
         {
-          title: "Product",
+          title: t("footer.product"),
           links: [
-            { label: "Features", href: "#whats-inside" },
-            { label: "Pricing", href: "#pricing" },
-            { label: "AI Coach", href: "/concepts/emotionally-adaptive-coaching" },
-            { label: "Soul Track", href: "/concepts/behavior-driven-fitness" },
+            { label: t("footer.links.features"), href: "#whats-inside" },
+            { label: t("footer.links.pricing"), href: "#pricing" },
+            { label: t("footer.links.aiCoach"), href: "/concepts/emotionally-adaptive-coaching" },
+            { label: t("footer.links.soulTrack"), href: "/concepts/behavior-driven-fitness" },
           ],
         },
         {
-          title: "Company",
+          title: t("footer.company"),
           links: [
-            { label: "Why VISOR", href: "/why-visor" },
-            { label: "vs MyFitnessPal", href: "/vs/myfitnesspal" },
-            { label: "vs Freeletics", href: "/vs/freeletics" },
-            { label: "Contact", href: "mailto:support@visorfitness.com", external: true },
+            { label: t("footer.links.whyVisor"), href: "/why-visor" },
+            { label: t("footer.links.vsMyFitnessPal"), href: "/vs/myfitnesspal" },
+            { label: t("footer.links.vsFreeletics"), href: "/vs/freeletics" },
+            { label: t("footer.links.contact"), href: "mailto:support@visorfitness.com", external: true },
           ],
         },
         {
-          title: "Legal",
+          title: t("footer.legal"),
           links: [
-            { label: "Privacy Policy", href: "/privacy" },
-            { label: "Terms of Use", href: "/terms" },
+            { label: t("footer.links.privacy"), href: "/privacy" },
+            { label: t("footer.links.terms"), href: "/terms" },
           ],
         },
       ] as { title: string; links: FooterLink[] }[]).map((col) => (
@@ -80,9 +83,10 @@ const Footer = () => (
       ))}
     </div>
     <div className="max-w-7xl mx-auto mt-12 pt-6 border-t border-border/20 text-center text-sm text-muted-foreground">
-      © 2026 VISOR. All rights reserved.
+      {t("footer.rights")}
     </div>
   </footer>
-);
+  );
+};
 
 export default Footer;
