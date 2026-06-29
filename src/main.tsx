@@ -2,6 +2,7 @@ import { createRoot } from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
 import App from "./App.tsx";
 import "./index.css";
+import "./i18n";
 import visorLogo from "@/assets/visor-logo.png";
 
 // Preload the content-hashed logo URL so it benefits from immutable

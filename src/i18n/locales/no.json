@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "features": "Funksjoner",
+    "howItWorks": "Slik fungerer det",
+    "pricing": "Priser",
+    "coaching": "Coaching",
+    "signIn": "Logg inn",
+    "getApp": "Last ned appen",
+    "language": "Endre språk"
+  },
+  "hero": {
+    "badge": "AI-drevet identitetstransformasjon",
+    "titleA": "VISOR AI Treningsapp: Se din fremtid.",
+    "titleB": "Bli den.",
+    "subtitle": "VISOR er AI-treningsappen som visualiserer kroppstransformasjonen din med realistiske før- og etter-prediksjoner. Bygg tro gjennom daglige ritualer og få emosjonelt tilpasset AI-coaching som gjør konsistens om til varig endring.",
+    "cta": "Utforsk funksjoner"
+  },
+  "download": {
+    "title": "Last ned",
+    "titleAccent": "AI-treningsappen",
+    "titleSuffix": "i dag",
+    "subtitle": "Få VISOR på iOS eller Android og se din før- og etter-prediksjon på sekunder.",
+    "appStoreCaption": "Last ned på",
+    "appStore": "App Store",
+    "playCaption": "Hent den på",
+    "play": "Google Play",
+    "scan": "Skann for å laste ned"
+  },
+  "footer": {
+    "tagline": "AI-drevet identitetstransformasjon. Se din fremtidige kropp. Bli den.",
+    "product": "Produkt",
+    "company": "Selskap",
+    "legal": "Juridisk",
+    "rights": "© 2026 VISOR. Alle rettigheter forbeholdt.",
+    "links": {
+      "features": "Funksjoner",
+      "pricing": "Priser",
+      "aiCoach": "AI-coach",
+      "soulTrack": "Soul Track",
+      "whyVisor": "Hvorfor VISOR",
+      "vsMyFitnessPal": "vs MyFitnessPal",
+      "vsFreeletics": "vs Freeletics",
+      "contact": "Kontakt",
+      "privacy": "Personvern",
+      "terms": "Vilkår"
+    }
+  }
+}
