@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import visorLogo from "@/assets/visor-logo.png";
 import LanguageToggle from "@/components/LanguageToggle";
 
