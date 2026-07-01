@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import visorLogo from "@/assets/visor-logo.png";
 import LanguageToggle from "@/components/LanguageToggle";
 
@@ -26,7 +27,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto">
         <div className="glass-card-strong rounded-full px-4 sm:px-5 h-14 sm:h-16 flex items-center justify-between shadow-[0_10px_40px_-12px_rgba(0,0,0,0.5)] border border-white/10">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group shrink-0">
+          <Link to="/" className="flex items-center gap-2 group shrink-0">
             <img
               src={visorLogo}
               alt="VISOR AI Fitness app logo"
@@ -40,7 +41,7 @@ const Navbar = () => {
             <span className="text-base sm:text-lg font-bold font-['Space_Grotesk'] tracking-wide text-foreground">
               VISOR
             </span>
-          </a>
+          </Link>
 
           {/* Center links */}
           <div className="hidden md:flex items-center gap-7 absolute left-1/2 -translate-x-1/2">
