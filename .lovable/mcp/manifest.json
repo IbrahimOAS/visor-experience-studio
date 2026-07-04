@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "sdk_version": "0.20.0",
+  "path": "/functions/v1/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "visor-mcp",
+      "version": "0.1.0",
+      "title": "VISOR MCP"
+    },
+    "tools": [
+      {
+        "name": "get_app_info",
+        "title": "Get VISOR app info",
+        "description": "Returns overview information about the VISOR AI fitness app, including its purpose, key features, and subscription tiers.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_features",
+        "title": "List VISOR features",
+        "description": "Lists VISOR's main product features, optionally filtered by category (coaching, transformation, tracking, all).",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "category": {
+              "default": "all",
+              "description": "Feature category filter.",
+              "type": "string",
+              "enum": [
+                "coaching",
+                "transformation",
+                "tracking",
+                "all"
+              ]
+            }
+          }
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
