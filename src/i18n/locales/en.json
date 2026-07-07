@@ -270,5 +270,357 @@
         }
       }
     }
+  },
+  "landing": {
+    "howItWorks": {
+      "titlePre": "How",
+      "titleAccent": "VISOR AI Fitness App",
+      "titlePost": "Works",
+      "subtitle": "Four steps to your before & after body transformation.",
+      "step": "Step",
+      "steps": [
+        {
+          "title": "Upload Your Photo",
+          "desc": "Take a body photo and set your transformation goals."
+        },
+        {
+          "title": "See Your Future",
+          "desc": "AI generates realistic previews of your body at Month 1, 3, and beyond."
+        },
+        {
+          "title": "Build Daily Rituals",
+          "desc": "Your AI coach guides you through personalized habits and workouts."
+        },
+        {
+          "title": "Transform Your Identity",
+          "desc": "Track your Soul progression as fitness becomes who you are."
+        }
+      ]
+    },
+    "whatsInside": {
+      "titlePre": "What's inside",
+      "titleAccent": "VISOR",
+      "subtitle": "18 features. One identity transformation engine.",
+      "features": [
+        {
+          "title": "AI Body Transformation",
+          "desc": "See your Month 1, 3, 6 and Olympia future-self predictions."
+        },
+        {
+          "title": "AI 12-Week Plan",
+          "desc": "An adaptive program that evolves with your progress."
+        },
+        {
+          "title": "Level Progression",
+          "desc": "Beginner → Intermediate → Advanced, unlocked by behavior."
+        },
+        {
+          "title": "Activity Tracker",
+          "desc": "Log sessions, routes, and effort with smart insights."
+        },
+        {
+          "title": "Calorie Tracker",
+          "desc": "Macro & calorie logging with goal-aware feedback."
+        },
+        {
+          "title": "AI Food Scanner",
+          "desc": "Camera auto-logs meals — no manual entry."
+        },
+        {
+          "title": "Exercise Library",
+          "desc": "Hundreds of moves with embedded YouTube demos."
+        },
+        {
+          "title": "Workout Programs",
+          "desc": "Structured programs with Personal Records tracking."
+        },
+        {
+          "title": "Custom Workout Builder",
+          "desc": "Design your own sessions, sets and progressions."
+        },
+        {
+          "title": "Sleep & Health Charts",
+          "desc": "Recovery, sleep and trend visualisations."
+        },
+        {
+          "title": "VISOR AI Chat",
+          "desc": "Always-on coach for form, food and motivation."
+        },
+        {
+          "title": "Dynamic AI Coach",
+          "desc": "Personality and tone shifts with your mood and goals."
+        },
+        {
+          "title": "Rituals & Streak Recovery",
+          "desc": "Daily rituals with forgiveness when life happens."
+        },
+        {
+          "title": "Soul Track",
+          "desc": "Identity-aligned gamification — vote for who you become."
+        },
+        {
+          "title": "Community Feed",
+          "desc": "Discover, follow and learn from real transformations."
+        },
+        {
+          "title": "Groups & Direct Messages",
+          "desc": "Train with friends, coaches and private circles."
+        },
+        {
+          "title": "Smart Push Alerts",
+          "desc": "Context-aware nudges — never spammy."
+        },
+        {
+          "title": "Olympia Mode",
+          "desc": "Top-tier AI rendering, priority queue & elite rituals."
+        }
+      ]
+    },
+    "pricing": {
+      "titlePre": "Fitness App Plans &",
+      "titleAccent": "Pricing",
+      "subtitle": "Start free. Evolve when you're ready to transform.",
+      "mostPopular": "Most Popular",
+      "month": "/month",
+      "forever": "forever",
+      "orPrefix": "or",
+      "trial7": "7-day free trial",
+      "plans": [
+        {
+          "name": "Free",
+          "subtitle": "The Awakening",
+          "price": "$0",
+          "period": "forever",
+          "features": [
+            "AI Transformation — Month 1 (limited)",
+            "AI 12-Week Plan — Week 1 preview",
+            "Activity Tracker (up to 5 sessions/mo)",
+            "Calorie Tracker (up to 10 entries/day)",
+            "Exercise Library (YouTube demos)",
+            "VISOR AI Chat (5 messages/day)",
+            "Community Feed & Discover (view only)",
+            "Basic Coach + Rituals (up to 5/day)"
+          ],
+          "cta": "Get Started"
+        },
+        {
+          "name": "Core",
+          "subtitle": "The Builder",
+          "price": "$12.99",
+          "period": "/month",
+          "yearlyPrice": "$89.99/yr (save 42%)",
+          "features": [
+            "Everything in Free +",
+            "Full 12-Week Plan (Weeks 2–12)",
+            "Level Progression: Beginner → Advanced",
+            "Unlimited Activity & Calorie Tracking",
+            "Workout Programs + Personal Records",
+            "Sleep Tracking & Health Charts",
+            "Dynamic Coach + Personalised Messages",
+            "Full Ritual Library + Streak Recovery",
+            "Unlimited VISOR AI Chat",
+            "AI Transformation Month 3 Prediction",
+            "Post, Comment & Direct Messages"
+          ],
+          "cta": "Go Core"
+        },
+        {
+          "name": "Pro",
+          "subtitle": "The Performer",
+          "price": "$19.99",
+          "period": "/month",
+          "yearlyPrice": "$139.99/yr (save 42%)",
+          "features": [
+            "Everything in Core +",
+            "AI Food Scanner (camera auto-log)",
+            "Custom Workout Builder",
+            "Full Coach Personality & Tone Shift",
+            "AI Transformation Month 6 Prediction",
+            "Create & Join Groups + Push Alerts",
+            "Advanced Progress Insights"
+          ],
+          "cta": "Go Pro"
+        },
+        {
+          "name": "Elite",
+          "subtitle": "The Olympia Path",
+          "price": "$27.99",
+          "period": "/month",
+          "yearlyPrice": "$199.99/yr (save 40%)",
+          "features": [
+            "Everything in Pro +",
+            "Olympia Mode — most advanced AI render",
+            "Unlimited AI Transformation Predictions",
+            "Priority AI Rendering Queue",
+            "Elite Ritual Library",
+            "Early Access to New Features"
+          ],
+          "cta": "Start 7-Day Free Trial"
+        }
+      ]
+    },
+    "coaching": {
+      "badge": "Premium · Elite Members Only",
+      "titlePre": "Personal Training,",
+      "titleAccent": "Your Door",
+      "subtitle": "Book verified, world-class fitness coaches for personalized 1-on-1 training sessions at your home. Real coaching. Real body transformation results.",
+      "heroCaptionPre": "Personalized fitness that comes to",
+      "heroCaptionAccent": "you",
+      "heroCaptionSub": "Custom training plans, real-time adjustments, and supportive coaching — all in person.",
+      "features": [
+        {
+          "title": "Verified & Vetted Coaches",
+          "description": "Every coach is background-checked, certified, and reviewed by our team before onboarding."
+        },
+        {
+          "title": "At-Home or Gym Sessions",
+          "description": "Your coach comes to you — at home, in the park, or at your gym. You choose the location."
+        },
+        {
+          "title": "Hybrid Coaching",
+          "description": "Combine in-person sessions with live video check-ins for accountability between visits."
+        },
+        {
+          "title": "Flexible Booking",
+          "description": "Book single sessions or weekly packages. Reschedule anytime, no penalties."
+        }
+      ],
+      "meetTitlePre": "Meet Your",
+      "meetTitleAccent": "Coaches",
+      "meetSubtitle": "Hand-picked professionals. Background-checked. Peer-reviewed.",
+      "periodSession": "Session",
+      "periodWeekly": "Weekly",
+      "periodMonthly": "Monthly",
+      "save33": "Save 33%",
+      "perSession": "session",
+      "perWeek": "week",
+      "perMonth": "month",
+      "sessionsSuffix": "sessions",
+      "viewProfile": "View Profile →",
+      "comingSoon": "Coming Soon",
+      "startingAtPre": "Starting at",
+      "startingAtSuffix": "· Available in select cities",
+      "meanwhilePre": "Meanwhile,",
+      "meanwhileTry": "try our other features",
+      "meanwhileOr": "or",
+      "meanwhileDownload": "download the app",
+      "meanwhileSuffix": "for early access.",
+      "coaches": [
+        {
+          "name": "Marcus Cole",
+          "specialty": "Strength & Hypertrophy",
+          "badge": "IFBB Pro",
+          "bio": "Marcus is a former competitive bodybuilder turned elite coach with over 12 years of hands-on experience. He specializes in progressive overload programming, body recomposition, and contest prep. His clients have collectively lost over 5,000 lbs and gained lean muscle mass under his guidance.",
+          "certifications": [
+            "IFBB Professional League",
+            "NASM Certified Personal Trainer",
+            "Precision Nutrition Level 2",
+            "CPR/AED Certified"
+          ],
+          "availability": "Mon–Sat, 6AM–8PM",
+          "locations": [
+            "Los Angeles",
+            "Orange County"
+          ]
+        },
+        {
+          "name": "Priya Sharma",
+          "specialty": "Mobility & Recovery",
+          "badge": "DPT Certified",
+          "bio": "Dr. Priya Sharma is a Doctor of Physical Therapy who bridges the gap between rehabilitation and peak performance. She combines corrective exercise, breathwork, and dynamic mobility protocols to help clients move pain-free and perform at their best — whether recovering from injury or training for competition.",
+          "certifications": [
+            "Doctor of Physical Therapy (DPT)",
+            "Functional Movement Screen (FMS) Level 2",
+            "Yoga Alliance RYT-500",
+            "Dry Needling Certified"
+          ],
+          "availability": "Mon–Fri, 7AM–6PM",
+          "locations": [
+            "New York City",
+            "Brooklyn"
+          ]
+        },
+        {
+          "name": "James Rivera",
+          "specialty": "Athletic Performance",
+          "badge": "CSCS Elite",
+          "bio": "James has trained NCAA Division I athletes, MMA fighters, and weekend warriors alike. His evidence-based approach blends explosive power training, speed development, and sport-specific conditioning. He's known for building unshakeable mental toughness alongside physical performance.",
+          "certifications": [
+            "NSCA CSCS (Certified Strength & Conditioning Specialist)",
+            "USA Weightlifting Level 2",
+            "First Responder Sports Medicine",
+            "TRX Suspension Training Certified"
+          ],
+          "availability": "Mon–Sun, 5AM–9PM",
+          "locations": [
+            "Miami",
+            "Fort Lauderdale"
+          ]
+        }
+      ],
+      "modal": {
+        "close": "Close",
+        "about": "About",
+        "certifications": "Certifications",
+        "availability": "Availability",
+        "locations": "Locations",
+        "comingSoonTitle": "Coming Soon",
+        "comingSoonBodyPre": "Personal coaching is launching soon. In the meantime,",
+        "comingSoonBodyLink": "explore our other features",
+        "comingSoonBodySuffix": "!",
+        "beFirst": "Be the first to know — download the app for early access"
+      }
+    },
+    "video": {
+      "titlePre": "See",
+      "titleAccent": "VISOR AI Body Transformation",
+      "titlePost": "in Action",
+      "defaultSubtitle": "Watch how AI-powered body visualization, adaptive coaching, and identity tracking work together in the ultimate fitness tracker app.",
+      "screensLabel": "screens",
+      "cards": [
+        {
+          "title": "Personalized Workouts",
+          "description": "Browse by muscle group, follow coach-led sessions and review your post-workout summary"
+        },
+        {
+          "title": "Find Your Ideal Coach",
+          "description": "Match with verified fitness coaches, browse profiles and book HIIT experts near you"
+        },
+        {
+          "title": "Activity & Smart Insights",
+          "description": "Track every session, map your routes and crush weekly activity goals with data-driven insights"
+        },
+        {
+          "title": "Meet Your AI Coach",
+          "description": "Fitness 3.0 — adaptive AI that recommends workouts, respects your limits and nudges form in real time"
+        },
+        {
+          "title": "Nutrition & Meal Plans",
+          "description": "Personalized meal plans and macro tracking to fuel your transformation"
+        }
+      ]
+    },
+    "testimonials": {
+      "titlePre": "Real",
+      "titleAccent": "Transformations",
+      "subtitle": "People don't quit because they lack workouts — they quit because they can't see their future.",
+      "items": [
+        {
+          "name": "Marcus J.",
+          "role": "Lost 15kg in 4 months",
+          "text": "Seeing my future body on Day 1 changed everything. I didn't just want it — I believed it. VISOR made me feel like the transformation had already begun."
+        },
+        {
+          "name": "Aisha K.",
+          "role": "Fitness Coach",
+          "text": "The VISOR AI Coach is unlike anything I've seen. It adapts to my clients' moods and keeps them accountable. The Soul Track is pure genius for retention."
+        },
+        {
+          "name": "Daniel R.",
+          "role": "Embodied in 6 months",
+          "text": "The ritual system turned my chaotic habits into an identity. I'm not 'trying to get fit' anymore — I am fit. VISOR made that shift happen."
+        }
+      ]
+    }
   }
 }
