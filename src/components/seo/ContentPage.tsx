@@ -20,13 +20,15 @@ interface ContentPageProps {
   sections: Section[];
   breadcrumbs: Crumb[];
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  ctaLabel?: string;
 }
 
 const SITE = "https://visorfitness.com";
 
 export const ContentPage = ({
-  title, description, path, h1, intro, sections, breadcrumbs, jsonLd,
+  title, description, path, h1, intro, sections, breadcrumbs, jsonLd, ctaLabel,
 }: ContentPageProps) => {
+
   const breadcrumbLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
