@@ -50,6 +50,7 @@ const Footer = () => {
             { label: t("footer.links.whyVisor"), href: "/why-visor" },
             { label: t("footer.links.vsMyFitnessPal"), href: "/vs/myfitnesspal" },
             { label: t("footer.links.vsFreeletics"), href: "/vs/freeletics" },
+            { label: t("footer.links.support"), href: "/support" },
             { label: t("footer.links.contact"), href: "mailto:support@visorfitness.com", external: true },
           ],
         },

@@ -14,6 +14,7 @@ import AiBodyTransformation from "./pages/concepts/AiBodyTransformation";
 import BehaviorDrivenFitness from "./pages/concepts/BehaviorDrivenFitness";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
+import Support from "./pages/Support";
 
 
 const queryClient = new QueryClient();
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/concepts/behavior-driven-fitness" element={<BehaviorDrivenFitness />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfUse />} />
+          <Route path="/support" element={<Support />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
