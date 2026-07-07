@@ -93,14 +93,17 @@ const VideoDemo = () => {
           className="text-center mb-14"
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-4">
-            See <span className="text-gradient">VISOR AI Body Transformation</span> in Action
+            {t("landing.video.titlePre")}{" "}
+            <span className="text-gradient">{t("landing.video.titleAccent")}</span>{" "}
+            {t("landing.video.titlePost")}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             {activeCard
               ? <><span className="text-primary font-semibold">{activeCard.title}</span> — {activeCard.description}</>
-              : "Watch how AI-powered body visualization, adaptive coaching, and identity tracking work together in the ultimate fitness tracker app."
+              : t("landing.video.defaultSubtitle")
             }
           </p>
+
         </motion.div>
 
         {/* Main video */}
