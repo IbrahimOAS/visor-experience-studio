@@ -11,10 +11,10 @@ const Navbar = () => {
   const { t } = useTranslation();
 
   const navLinks: { label: string; href: string }[] = [
-    { label: t("nav.features"), href: "#whats-inside" },
-    { label: t("nav.howItWorks"), href: "#how-it-works" },
-    { label: t("nav.pricing"), href: "#pricing" },
-    { label: t("nav.coaching"), href: "#coaching" },
+    { label: t("nav.features"), href: "/#whats-inside" },
+    { label: t("nav.howItWorks"), href: "/#how-it-works" },
+    { label: t("nav.pricing"), href: "/#pricing" },
+    { label: t("nav.coaching"), href: "/#coaching" },
   ];
 
   return (
