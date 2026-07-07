@@ -5,9 +5,15 @@ import { SUPPORTED_LANGUAGES } from "@/i18n";
 
 interface LanguageToggleProps {
   className?: string;
+  align?: "left" | "right";
+  dropdownMode?: "absolute" | "static";
 }
 
-const LanguageToggle = ({ className = "" }: LanguageToggleProps) => {
+const LanguageToggle = ({
+  className = "",
+  align = "right",
+  dropdownMode = "absolute",
+}: LanguageToggleProps) => {
   const { i18n, t } = useTranslation();
   const [open, setOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -48,7 +54,8 @@ const LanguageToggle = ({ className = "" }: LanguageToggleProps) => {
       {open && (
         <ul
           role="listbox"
-          className="absolute right-0 mt-2 min-w-[160px] glass-card-strong rounded-2xl border border-white/10 overflow-hidden z-50 shadow-xl"
+          dir="ltr"
+          className={`${dropdownMode === "static" ? "relative w-full" : `absolute ${align === "left" ? "left-0" : "right-0"} w-[min(220px,calc(100vw-2rem))]`} mt-2 glass-card-strong rounded-2xl border border-white/10 overflow-hidden z-[80] shadow-xl`}
         >
           {SUPPORTED_LANGUAGES.map((lang) => {
             const active = lang.code === current.code;
@@ -59,9 +66,9 @@ const LanguageToggle = ({ className = "" }: LanguageToggleProps) => {
                   role="option"
                   aria-selected={active}
                   onClick={() => handleSelect(lang.code)}
-                  className={`w-full flex items-center justify-between gap-3 px-3.5 py-2.5 text-xs hover:bg-white/10 transition-colors ${active ? "text-foreground" : "text-muted-foreground"}`}
+                  className={`w-full flex items-center justify-between gap-3 px-3.5 py-2.5 text-left text-xs hover:bg-white/10 transition-colors ${active ? "text-foreground" : "text-muted-foreground"}`}
                 >
-                  <span>
+                  <span className="min-w-0 truncate">
                     <span className="font-semibold mr-2">{lang.label}</span>
                     {lang.name}
                   </span>

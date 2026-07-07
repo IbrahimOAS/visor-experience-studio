@@ -86,9 +86,9 @@ const Navbar = () => {
         <AnimatePresence>
           {mobileOpen && (
             <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
+              initial={{ y: -8, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -8, opacity: 0 }}
               className="md:hidden glass-card-strong mt-2 rounded-3xl border border-white/10"
             >
               <div className="px-5 py-4 flex flex-col gap-3">
@@ -102,19 +102,21 @@ const Navbar = () => {
                     {link.label}
                   </a>
                 ))}
-                <div className="flex items-center gap-2 pt-2 flex-wrap">
-                  <LanguageToggle />
+                <div className="grid grid-cols-[auto_auto] gap-2 pt-2 relative z-[70]">
+                  <div className="col-span-2">
+                    <LanguageToggle align="left" dropdownMode="static" className="w-full" />
+                  </div>
                   <a
                     href="/#download"
                     onClick={() => setMobileOpen(false)}
-                    className="px-4 h-9 inline-flex items-center rounded-full border border-white/10 bg-white/5 text-xs font-medium text-foreground"
+                    className="px-4 h-9 inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-xs font-medium text-foreground"
                   >
                     {t("nav.signIn")}
                   </a>
                   <a
                     href="/#download"
                     onClick={() => setMobileOpen(false)}
-                    className="px-4 h-9 inline-flex items-center rounded-full bg-primary text-primary-foreground text-xs font-semibold ml-auto"
+                    className="px-4 h-9 inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-semibold"
                   >
                     {t("nav.getApp")}
                   </a>
