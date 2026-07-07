@@ -17,6 +17,15 @@ const Support = () => (
         and we'll get back to you as quickly as possible.
         <br />
         <span className="text-sm opacity-70">Last updated: July 2026</span>
+        <br />
+        <a
+          href="https://visorfitness.com/support"
+          className="inline-flex items-center gap-2 mt-3 text-sm text-primary hover:underline break-all"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          https://visorfitness.com/support
+        </a>
       </>
     }
     sections={[
