@@ -102,8 +102,8 @@ const Navbar = () => {
                     {link.label}
                   </a>
                 ))}
-                <div className="flex items-center gap-2 pt-2 flex-wrap">
-                  <LanguageToggle />
+                <div className="flex items-center gap-2 pt-2 flex-wrap relative z-[70]">
+                  <LanguageToggle align="left" />
                   <a
                     href="/#download"
                     onClick={() => setMobileOpen(false)}
