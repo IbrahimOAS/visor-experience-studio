@@ -13,6 +13,9 @@ import exercise6 from "@/assets/exercise-6.jpg";
 const exerciseImages = [exercise1, exercise2, exercise3, exercise4, exercise5, exercise6];
 
 const ExerciseCarousel = () => {
+  const { t } = useTranslation();
+  const labels = t("landing.exercises.labels", { returnObjects: true }) as string[];
+  const exercises = exerciseImages.map((src, i) => ({ src, label: labels[i] ?? "" }));
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const total = exercises.length;
