@@ -621,6 +621,25 @@
           "text": "El sistema de rituales convirtió mis hábitos caóticos en una identidad. Ya no 'estoy intentando ponerme en forma' — estoy en forma. VISOR provocó ese cambio."
         }
       ]
+    },
+    "features": {
+      "titlePre": "Funciones de la app de fitness con IA para",
+      "titleAccent": "transformar tu cuerpo",
+      "subtitle": "Siete sistemas potentes en una sola app de entrenamiento — predicciones corporales con IA, coaching adaptativo y seguimiento del progreso para remodelar tu físico, mente e identidad.",
+      "drag": "Arrastra para explorar · Haz clic para ampliar"
+    },
+    "exercises": {
+      "titlePre": "Entrenamientos y programas con IA en",
+      "titleAccent": "VISOR",
+      "subtitle": "Entrenamientos premium de gimnasio y videos diseñados para la transformación total del cuerpo — desde HIIT hasta hipertrofia.",
+      "labels": [
+        "Enfoque sentado",
+        "Prensa de piernas",
+        "Sentadilla Hack",
+        "Bicicleta de aire",
+        "Jalón al pecho",
+        "Press militar"
+      ]
     }
   }
 }

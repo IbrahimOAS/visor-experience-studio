@@ -621,6 +621,25 @@
           "text": "Ritualsystemet snudde mine kaotiske vaner til en identitet. Jeg prøver ikke lenger å bli fit — jeg er fit. VISOR fikk den overgangen til å skje."
         }
       ]
+    },
+    "features": {
+      "titlePre": "AI-treningsapp-funksjoner for å",
+      "titleAccent": "transformere kroppen din",
+      "subtitle": "Syv kraftige systemer i én treningsapp — AI-kroppsprognoser, adaptiv coaching og fremgangssporing for å forme kroppen, sinnet og identiteten din på nytt.",
+      "drag": "Dra for å utforske · Klikk for å utvide"
+    },
+    "exercises": {
+      "titlePre": "AI-trening og treningsprogrammer i",
+      "titleAccent": "VISOR",
+      "subtitle": "Premium treningsøkter og treningsvideoer designet for total kroppstransformasjon — fra HIIT til hypertrofi.",
+      "labels": [
+        "Sittende fokus",
+        "Benpress",
+        "Hack Squat",
+        "Luftsykkel",
+        "Nedtrekk",
+        "Skulderpress"
+      ]
     }
   }
 }

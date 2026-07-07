@@ -621,6 +621,25 @@
           "text": "The ritual system turned my chaotic habits into an identity. I'm not 'trying to get fit' anymore — I am fit. VISOR made that shift happen."
         }
       ]
+    },
+    "features": {
+      "titlePre": "AI Fitness App Features to",
+      "titleAccent": "Transform Your Body",
+      "subtitle": "Seven powerful systems in one workout app — AI body predictions, adaptive coaching, and progress tracking to reshape your physique, mind, and identity.",
+      "drag": "Drag to explore · Click to expand"
+    },
+    "exercises": {
+      "titlePre": "AI Workout & Training Programs in",
+      "titleAccent": "VISOR",
+      "subtitle": "Premium gym workouts and training videos designed for total body transformation — from HIIT to hypertrophy.",
+      "labels": [
+        "Seated Focus",
+        "Leg Press",
+        "Hack Squat",
+        "Air Bike",
+        "Lat Pulldown",
+        "Overhead Press"
+      ]
     }
   }
 }

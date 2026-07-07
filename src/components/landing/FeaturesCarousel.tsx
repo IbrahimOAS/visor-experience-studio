@@ -1,4 +1,5 @@
 import { memo, useEffect, useMemo, useState, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import {
   AnimatePresence,
   motion,
@@ -125,6 +126,7 @@ const Cylinder = memo(
 );
 
 const FeaturesCarousel = () => {
+  const { t } = useTranslation();
   const [activeImg, setActiveImg] = useState<string | null>(null);
   const [isCarouselActive, setIsCarouselActive] = useState(true);
   const controls = useAnimation();
@@ -155,11 +157,11 @@ const FeaturesCarousel = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-4">
-            AI Fitness App Features to{" "}
-            <span className="text-gradient">Transform Your Body</span>
+            {t("landing.features.titlePre")}{" "}
+            <span className="text-gradient">{t("landing.features.titleAccent")}</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Seven powerful systems in one workout app — AI body predictions, adaptive coaching, and progress tracking to reshape your physique, mind, and identity.
+            {t("landing.features.subtitle")}
           </p>
         </motion.div>
 
@@ -204,7 +206,7 @@ const FeaturesCarousel = () => {
           </div>
 
           <p className="text-center text-muted-foreground text-sm mt-16">
-            Drag to explore · Click to expand
+            {t("landing.features.drag")}
           </p>
         </motion.div>
       </div>

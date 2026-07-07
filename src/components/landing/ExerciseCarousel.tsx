@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -9,16 +10,12 @@ import exercise4 from "@/assets/exercise-4.jpg";
 import exercise5 from "@/assets/exercise-5.jpg";
 import exercise6 from "@/assets/exercise-6.jpg";
 
-const exercises = [
-  { src: exercise1, label: "Seated Focus" },
-  { src: exercise2, label: "Leg Press" },
-  { src: exercise3, label: "Hack Squat" },
-  { src: exercise4, label: "Air Bike" },
-  { src: exercise5, label: "Lat Pulldown" },
-  { src: exercise6, label: "Overhead Press" },
-];
+const exerciseImages = [exercise1, exercise2, exercise3, exercise4, exercise5, exercise6];
 
 const ExerciseCarousel = () => {
+  const { t } = useTranslation();
+  const labels = t("landing.exercises.labels", { returnObjects: true }) as string[];
+  const exercises = exerciseImages.map((src, i) => ({ src, label: labels[i] ?? "" }));
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const total = exercises.length;
@@ -82,11 +79,11 @@ const ExerciseCarousel = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-4">
-            AI Workout & Training Programs in{" "}
-            <span className="text-gradient">VISOR</span>
+            {t("landing.exercises.titlePre")}{" "}
+            <span className="text-gradient">{t("landing.exercises.titleAccent")}</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Premium gym workouts and training videos designed for total body transformation — from HIIT to hypertrophy.
+            {t("landing.exercises.subtitle")}
           </p>
         </motion.div>
 
