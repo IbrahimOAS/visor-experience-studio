@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -9,14 +10,7 @@ import exercise4 from "@/assets/exercise-4.jpg";
 import exercise5 from "@/assets/exercise-5.jpg";
 import exercise6 from "@/assets/exercise-6.jpg";
 
-const exercises = [
-  { src: exercise1, label: "Seated Focus" },
-  { src: exercise2, label: "Leg Press" },
-  { src: exercise3, label: "Hack Squat" },
-  { src: exercise4, label: "Air Bike" },
-  { src: exercise5, label: "Lat Pulldown" },
-  { src: exercise6, label: "Overhead Press" },
-];
+const exerciseImages = [exercise1, exercise2, exercise3, exercise4, exercise5, exercise6];
 
 const ExerciseCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
