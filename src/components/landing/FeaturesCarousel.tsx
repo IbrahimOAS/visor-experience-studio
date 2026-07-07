@@ -126,6 +126,7 @@ const Cylinder = memo(
 );
 
 const FeaturesCarousel = () => {
+  const { t } = useTranslation();
   const [activeImg, setActiveImg] = useState<string | null>(null);
   const [isCarouselActive, setIsCarouselActive] = useState(true);
   const controls = useAnimation();
