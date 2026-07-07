@@ -105,14 +105,14 @@ const Navbar = () => {
                 <div className="flex items-center gap-2 pt-2 flex-wrap">
                   <LanguageToggle />
                   <a
-                    href="#download"
+                    href="/#download"
                     onClick={() => setMobileOpen(false)}
                     className="px-4 h-9 inline-flex items-center rounded-full border border-white/10 bg-white/5 text-xs font-medium text-foreground"
                   >
                     {t("nav.signIn")}
                   </a>
                   <a
-                    href="#download"
+                    href="/#download"
                     onClick={() => setMobileOpen(false)}
                     className="px-4 h-9 inline-flex items-center rounded-full bg-primary text-primary-foreground text-xs font-semibold ml-auto"
                   >
