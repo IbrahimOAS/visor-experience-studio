@@ -1,28 +1,28 @@
 {
   "nav": {
     "features": "Funksjoner",
-    "howItWorks": "Slik fungerer det",
+    "howItWorks": "Hvordan det fungerer",
     "pricing": "Priser",
     "coaching": "Coaching",
     "signIn": "Logg inn",
     "getApp": "Last ned appen",
-    "language": "Endre språk"
+    "language": "Bytt språk"
   },
   "hero": {
     "badge": "AI-drevet identitetstransformasjon",
     "titleA": "Se din fremtid.",
     "titleB": "Bli den.",
-    "subtitle": "VISOR er AI-treningsappen som visualiserer kroppstransformasjonen din med realistiske før- og etter-prediksjoner. Bygg tro gjennom daglige ritualer og få emosjonelt tilpasset AI-coaching som gjør konsistens om til varig endring.",
+    "subtitle": "VISOR er den AI-drevne treningsappen som visualiserer kroppsforvandlingen din med realistiske før- og etterprediksjoner. Bygg tro gjennom daglige ritualer og motta følelsesmessig adaptiv AI-coaching for å gjøre konsistens om til varig endring.",
     "cta": "Utforsk funksjoner"
   },
   "download": {
     "title": "Last ned",
     "titleAccent": "AI-treningsappen",
-    "titleSuffix": "i dag",
-    "subtitle": "Få VISOR på iOS eller Android og se din før- og etter-prediksjon på sekunder.",
+    "titleSuffix": "I dag",
+    "subtitle": "Få VISOR på iOS eller Android og se prediksjonen av din før- og etter-kroppsforvandling på sekunder.",
     "appStoreCaption": "Last ned på",
     "appStore": "App Store",
-    "playCaption": "Hent den på",
+    "playCaption": "Få den på",
     "play": "Google Play",
     "scan": "Skann for å laste ned"
   },
@@ -43,7 +43,232 @@
       "support": "Support",
       "contact": "Kontakt",
       "privacy": "Personvern",
-      "terms": "Vilkår"
+      "terms": "Vilkår for bruk"
+    }
+  },
+  "breadcrumbs": {
+    "home": "Hjem",
+    "compare": "Sammenlign",
+    "concepts": "Konsepter",
+    "support": "Support"
+  },
+  "pages": {
+    "vsFreeletics": {
+      "title": "VISOR vs Freeletics: Adaptiv AI vs kroppsvektstrening",
+      "description": "Freeletics justerer kroppsvektprogrammer med AI. VISOR legger til visuelle kroppstransformasjonsforhåndsvisninger, en følelsesmessig adaptiv coach og Soul Track-identitetsrekker.",
+      "h1": "VISOR vs Freeletics",
+      "crumb": "vs Freeletics",
+      "intro": "Freeletics var pioner på AI-justert kroppsvekttrening. VISOR bygger videre på det med visuelle transformasjonsforhåndsvisninger, følelsesmessig adaptivitet og identitetsdrevne rekker.",
+      "sections": [
+        {
+          "heading": "Kjerneforskjell",
+          "body": "Freeletics optimaliserer *treningsøkten*. VISOR optimaliserer *personen som gjennomfører treningsøkten* — hva de ser, hvordan de føler seg, hvem de blir."
+        },
+        {
+          "heading": "Funksjonssammenligning",
+          "body": "- **Kroppsvektprogrammering:** Freeletics — deres styrke. VISOR — inkludert, pluss programmer med vekter og for treningsstudio.\n- **AI-programtilpasning:** Freeletics — justerer vanskelighetsgrad per økt. VISOR — justerer vanskelighet *og* coachens tone etter humør.\n- **Visuell kroppstransformasjon:** Freeletics — ingen. VISOR — AI-forhåndsvisninger ved Måned 1, Måned 3, Olympia-modus.\n- **Følelsesmessig intelligens:** Freeletics — fast coach-stemme. VISOR — støttende, utfordrende eller restitusjonsorienterte personligheter.\n- **Identitetsgamifisering:** Freeletics — treningsstreaks. VISOR — Soul Track knytter streaks til identiteten, ikke bare øktene.\n- **Ernæring:** Begge inkludert.\n- **Menneskelig coaching:** Freeletics — ingen. VISOR — Elite-nivå."
+        },
+        {
+          "heading": "Når Freeletics vinner",
+          "body": "Du vil ha et fokusert kroppsvekt-HIIT-system, du trener alene, og én coach-stemme passer for deg. Freeletics er modent og velprøvd for det."
+        },
+        {
+          "heading": "Når VISOR vinner",
+          "body": "Du trenger å *se* resultatet for å forplikte deg, motivasjonen din svinger, og du vil ha trening som tilpasser seg personen — ikke bare protokollen."
+        }
+      ]
+    },
+    "vsMyFitnessPal": {
+      "title": "VISOR vs MyFitnessPal: AI-kroppstransformasjon vs kalorier",
+      "description": "MyFitnessPal logger kalorier. VISOR forutsier din fremtidige kropp, coacher deg følelsesmessig, og gamifiserer identiteten gjennom Soul Track. En ærlig sammenligning.",
+      "h1": "VISOR vs MyFitnessPal",
+      "crumb": "vs MyFitnessPal",
+      "intro": "MyFitnessPal er standarden for kaloritelling for over 200 millioner brukere. VISOR er en nyere kategori: identitetsdrevet AI-trening. Begge kan leve på telefonen din — de svarer på forskjellige spørsmål.",
+      "sections": [
+        {
+          "heading": "Kjerneforskjell i én setning",
+          "body": "MyFitnessPal svarer på *\"Hva spiste jeg?\"*. VISOR svarer på *\"Hvem blir jeg, og hvordan fører dagen meg dit?\"*"
+        },
+        {
+          "heading": "Funksjon for funksjon",
+          "body": "- **Kalori- og makrosporing:** MyFitnessPal — omfattende matdatabase. VISOR — inkludert, AI-personlig tilpasset.\n- **AI-kroppstransformasjonsforhåndsvisninger:** MyFitnessPal — ingen. VISOR — Måned 1, Måned 3, Olympia-modus.\n- **Følelsesmessig adaptiv AI-coach:** MyFitnessPal — ingen. VISOR — tilpasser tone, intensitet og personlighet etter humøret ditt.\n- **Identitets-/streak-gamifisering:** MyFitnessPal — grunnleggende streaks. VISOR — Soul Track knytter streaks til hvem du ønsker å bli.\n- **Treningsprogrammering:** MyFitnessPal — begrenset. VISOR — fullstendige, personlig tilpassede planer.\n- **Menneskelig coaching:** MyFitnessPal — ingen. VISOR — Elite-nivå."
+        },
+        {
+          "heading": "Når MyFitnessPal er det rette valget",
+          "body": "Du kjenner allerede rutinen din, du trener konsekvent, og du trenger bare en rask database for å loggføre måltider. MyFitnessPal er den velprøvde, gratisvennlige loggføreren for den jobben."
+        },
+        {
+          "heading": "Når VISOR er det riktige valget",
+          "body": "Du slutter ikke fordi du mangler treningsøkter — du slutter fordi du ikke kan se ditt fremtidige jeg. VISOR er bygget for konsistensproblemet: visualiser resultatet, tilpass deg hvordan du føler deg, bygg identiteten bak kroppen."
+        },
+        {
+          "heading": "Prising",
+          "body": "MyFitnessPal: gratis med Premium til ca. $19.99/mnd. VISOR: gratisnivå, Core til $9.99/mnd, Elite til $19.99/mnd med personlig coaching."
+        }
+      ]
+    },
+    "vsNoom": {
+      "title": "VISOR vs Noom: Identitetsdrevet AI vs CBT-vekttap",
+      "description": "Noom bruker CBT-lignende atferdsendring for vekttap. VISOR bruker AI-kroppstransformasjonsforhåndsvisninger, en følelsesmessig adaptiv coach og identitetsrekker.",
+      "h1": "VISOR vs Noom",
+      "crumb": "vs Noom",
+      "intro": "Noom bygde en kategori rundt psykologibasert vekttap. VISOR deler overbevisningen om at atferd betyr mer enn kalorier, men tar en identitetsførst, AI-innfødt tilnærming.",
+      "sections": [
+        {
+          "heading": "Kjerneforskjell",
+          "body": "Noom lærer deg *hvorfor* du spiser det du spiser. VISOR viser deg *hvem* du er i ferd med å bli og tilpasser hver interaksjon til den identiteten."
+        },
+        {
+          "heading": "Funksjonssammenligning",
+          "body": "- **Atferdsendringsmodell:** Noom — CBT-lignende daglige leksjoner. VISOR — identitetsbasert via Soul Track.\n- **AI-kroppstransformasjon:** Noom — ingen. VISOR — Måned 1, Måned 3, Olympia-forhåndsvisninger.\n- **Coaching:** Noom — menneskelige coacher via chat. VISOR — følelsesmessig adaptiv AI-coach + valgfri menneskelig coaching på Elite.\n- **Treningsprogrammering:** Noom — lett. VISOR — fullstendig personlig tilpassede planer.\n- **Fargesystem for mat:** Nooms signaturfunksjon. VISOR bruker standard makrosporing.\n- **Prising:** Noom — ca. $70/mnd. VISOR — Gratis / $9.99 / $19.99."
+        },
+        {
+          "heading": "Når Noom vinner",
+          "body": "Du vil ha daglige, lesningsbaserte atferdsleksjoner og en menneskelig coach som ditt primære kontaktpunkt, og høyere pris er ikke et hinder."
+        },
+        {
+          "heading": "Når VISOR vinner",
+          "body": "Du vil ha visuell bekreftelse på din bane, en AI-coach tilgjengelig 24/7 som tilpasser seg humøret, og et treningslag Noom ikke leverer — til en brøkdel av prisen."
+        }
+      ]
+    },
+    "whyVisor": {
+      "title": "Hvorfor VISOR: Den identitetsdrevne AI-treningsplattformen",
+      "description": "VISOR er den AI-treningsappen som forutsier din fremtidige kropp, coacher deg følelsesmessig og gamifiserer identiteten bak målet. Her er hvorfor det betyr noe.",
+      "h1": "Hvorfor VISOR",
+      "crumb": "Hvorfor VISOR",
+      "intro": "De fleste treningsapper feiler på samme vegg: konsistens. VISOR er bygget rundt innsikten at folk ikke slutter fordi de mangler treningsøkter — de slutter fordi de ikke kan se sitt fremtidige jeg.",
+      "sections": [
+        {
+          "heading": "De tre søylene",
+          "body": "- **AI Body Transformation:** visuell bekreftelse av din bane ved Måned 1, Måned 3 og Olympia-modus.\n- **VISOR AI Coach:** følelsesmessig adaptiv — støttende, utfordrende eller restitusjonsfokusert, avhengig av dagen.\n- **Soul Track:** gamifiserte rekker knyttet til identiteten du bygger, ikke bare registrerte treningsøkter."
+        },
+        {
+          "heading": "Sammenlign VISOR",
+          "body": "- [VISOR vs MyFitnessPal](/vs/myfitnesspal) — identitet vs kalorisporing\n- [VISOR vs Freeletics](/vs/freeletics) — følelsesmessig adaptivitet vs programtilpasning\n- [VISOR vs Noom](/vs/noom) — AI-identitet vs CBT-psykologi"
+        },
+        {
+          "heading": "Konsepter bak VISOR",
+          "body": "- [Emotionally adaptive coaching](/concepts/emotionally-adaptive-coaching)\n- [AI body transformation](/concepts/ai-body-transformation)\n- [Behavior-driven fitness](/concepts/behavior-driven-fitness)"
+        }
+      ]
+    },
+    "aiBodyTransformation": {
+      "title": "AI-kroppstransformasjon, forklart",
+      "description": "AI-kroppstransformasjon genererer visuelle forhåndsvisninger av din fremtidige kropp ved Måned 1, Måned 3 og Olympia-modus. Vitenskapen om å se resultatet før du har fortjent det.",
+      "h1": "AI Body Transformation",
+      "crumb": "AI Body Transformation",
+      "intro": "Den mest kraftfulle prediktoren for atferdsendring er ikke viljestyrke — det er et levende, troverdig bilde av personen du er i ferd med å bli. AI-kroppstransformasjon gjør det bildet synlig.",
+      "sections": [
+        {
+          "heading": "Definisjon",
+          "body": "AI-kroppstransformasjon er bruk av generative AI-modeller for å produsere en realistisk visuell progresjon av en brukers fremtidige fysikk, kalibrert til deres startbilde, treningsplan, ernæring og tidslinje."
+        },
+        {
+          "heading": "VISORs tre horisonter",
+          "body": "- **Måned 1:** tidlige synlige tilpasninger — slankere ansikt, bedre holdning, grunnleggende komposisjonsendring.\n- **Måned 3:** vendepunktet — når konsistent trening blir åpenbart for omverdenen.\n- **Olympia-modus:** aspirerende tak — den maksimale versjonen av deg gitt protokollen."
+        },
+        {
+          "heading": "Hvorfor visuell prediksjon virker",
+          "body": "Identitet kommer før atferd. Når hjernen aksepterer et bilde som et plausibelt fremtidsjeg, reorganiserer daglige beslutninger seg rundt det. Soul Track gjør denne forventningen om til en streak-loop, slik at hver økt forsterker en identitet som allerede er i ferd med å dannes."
+        },
+        {
+          "heading": "Relaterte konsepter",
+          "body": "- [Emotionally adaptive coaching](/concepts/emotionally-adaptive-coaching)\n- [Behavior-driven fitness](/concepts/behavior-driven-fitness)"
+        }
+      ]
+    },
+    "behaviorDrivenFitness": {
+      "title": "Behavior-Driven Fitness, forklart",
+      "description": "Behavior-driven fitness optimaliserer for identitetsjustert daglig atferd, ikke fullføring av treningsøkter. Hvordan Soul Track gjør konsistens til en sammensatt fordel.",
+      "h1": "Behavior-Driven Fitness",
+      "crumb": "Behavior-Driven Fitness",
+      "intro": "Treningsøkter er en etterslepindicator. Det ledende indikatoren er identitetsjustert atferd som produserte dem. Behavior-driven fitness inverterer prioriteten.",
+      "sections": [
+        {
+          "heading": "Definisjon",
+          "body": "Behavior-driven fitness er en modell som måler, belønner og tilpasser seg de daglige atferdene knyttet til hvem en bruker er i ferd med å bli — søvn, målrettet bevegelse, ernæringskonsistens, restitusjon — i stedet for å telle treningsøkter isolert."
+        },
+        {
+          "heading": "Hvorfor telletreninger feiler",
+          "body": "\"30 økter fullført\" er meningsløst hvis underliggende identitet ikke endret seg. De fleste brukere churner i det øyeblikket en streak brytes fordi streaken var målet, ikke personen bak den. Behavior-drevne systemer overlever tapte dager fordi identiteten er intakt."
+        },
+        {
+          "heading": "Hvordan Soul Track anvender det",
+          "body": "- **Identitetsprompter** definert ved onboarding — hvem du ønsker å bli, med dine ord.\n- **Daglige alignede atferder** sporet som bevis på identiteten, ikke som oppgaver.\n- **Streak-tilgivelse** knyttet til identitet snarere enn perfekt utførelse.\n- **AI Coach-forsterkning** innrammet i andreperson identitetsspråk (\"du er en som…\")."
+        },
+        {
+          "heading": "Relaterte konsepter",
+          "body": "- [AI body transformation](/concepts/ai-body-transformation)\n- [Emotionally adaptive coaching](/concepts/emotionally-adaptive-coaching)"
+        }
+      ]
+    },
+    "emotionallyAdaptiveCoaching": {
+      "title": "Emotionally Adaptive Coaching, forklart",
+      "description": "Følelsesmessig adaptiv coaching oppdager humør, motivasjon og kontekst, og justerer deretter tone, intensitet og personlighet i sanntid. Hvordan VISOR implementerer det.",
+      "h1": "Emotionally Adaptive Coaching",
+      "crumb": "Emotionally Adaptive Coaching",
+      "intro": "Mesteparten av treningscoaching er fast: samme stemme, samme intensitet, samme plan enten du har sovet fire timer eller føler deg ustoppelig. Følelsesmessig adaptiv coaching forandrer det.",
+      "sections": [
+        {
+          "heading": "Definisjon",
+          "body": "Følelsesmessig adaptiv coaching er et system som oppdager en brukers emosjonelle og motivasjonsmessige tilstand — gjennom innsjekker, atferdssignaler og kontekst — og deretter dynamisk justerer coachingtone, språk, intensitet og programstruktur for å matche."
+        },
+        {
+          "heading": "Hvorfor det betyr noe",
+          "body": "Etterlevelse er den eneste metrikken som bygger seg over tid. Et program du forlater i uke 3 gir ingenting tilbake. Følelsesmessig adaptiv coaching reduserer frafall ved å møte deg der du er: hardere når du er sulten på det, mykere når du er skjør, fokusert på restitusjon når kroppen trenger det."
+        },
+        {
+          "heading": "Hvordan VISOR implementerer det",
+          "body": "- **Humør- og motivasjonsdeteksjon** via korte daglige innsjekker og atferdssignaler.\n- **Tre coach-personligheter:** støttende, utfordrende, restitusjonsfokusert.\n- **Sanntidsjustering** av programintensitet, språkstil og belønningsinnramming.\n- **Soul Track-integrasjon** slik at emosjonell tilstand påvirker identitetsfremgang, ikke bare treningslogger."
+        },
+        {
+          "heading": "Relaterte konsepter",
+          "body": "- [AI body transformation](/concepts/ai-body-transformation)\n- [Behavior-driven fitness](/concepts/behavior-driven-fitness)"
+        }
+      ]
+    },
+    "support": {
+      "title": "VISOR Support — Kontakt oss og få hjelp",
+      "description": "Få hjelp med VISOR. Kontakt support, finn svar på vanlige spørsmål, administrer abonnementet ditt, slett kontoen din og rapporter problemer.",
+      "h1": "Support-senter",
+      "crumb": "Support",
+      "introLead": "Trenger du hjelp med VISOR? Vi er her for deg. Bla gjennom vanlige emner nedenfor eller ta kontakt direkte, så svarer vi så raskt som mulig.",
+      "lastUpdated": "Sist oppdatert: juli 2026",
+      "sections": {
+        "contact": {
+          "heading": "Kontakt oss",
+          "lead": "Raskeste måte å få support på er via e-post. Vi svarer vanligvis innen 1–2 virkedager.",
+          "emailTitle": "E-postsupport",
+          "emailNote": "Generelle spørsmål, feil, tilbakemeldinger",
+          "privacyTitle": "Personvernspørsmål",
+          "privacyNote": "Data, personvern, sletting av konto",
+          "hours": "Supporttider: mandag–fredag, 09:00–17:00 CET (norsk tid)"
+        },
+        "faq": {
+          "heading": "Ofte stilte spørsmål",
+          "q1": "Hvordan gjenoppretter jeg abonnementet eller kjøpet mitt?",
+          "a1": "Åpne VISOR, gå til konto- eller abonnementinnstillingene, og trykk \"Gjenopprett kjøp.\" Forsikre deg om at du er logget inn med samme Apple ID eller Google Play-konto som ble brukt ved det opprinnelige kjøpet. Hvis problemet vedvarer, send oss en e-post med kvitteringen eller ordre-IDen.",
+          "q2": "Hvordan kansellerer, refunderer eller endrer jeg abonnementet mitt?",
+          "a2": "Abonnement administreres av Apple (iOS) eller Google (Android). For å kansellere eller be om refusjon, gå til plattformens abonnementinnstillinger. Hvis du trenger hjelp med å identifisere planen din eller har et fakturaspørsmål, kontakt oss på [support@visorfitness.com](mailto:support@visorfitness.com).",
+          "q3": "Hvordan sletter jeg kontoen og dataene mine?",
+          "a3": "Du kan slette kontoen din direkte i VISOR-appen fra konto-innstillingene. Dette fjerner profilen din, treningsdata, bilder og fellesskapsinnhold fra aktive systemer. Hvis du ikke får tilgang til appen, send en e-post til [privacy@visorfitness.com](mailto:privacy@visorfitness.com) fra e-postadressen som er knyttet til kontoen din.",
+          "q4": "Appen krasjer eller lastes ikke. Hva bør jeg gjøre?",
+          "a4": "Prøv disse trinnene først: tving avslutning av appen, start enheten på nytt, og sørg for at du har siste appversjon og OS-oppdatering. Hvis problemet fortsetter, send en e-post til [support@visorfitness.com](mailto:support@visorfitness.com) med enhetsmodell, OS-versjon og en beskrivelse av hva som skjer."
+        },
+        "billing": {
+          "heading": "Betaling og abonnement",
+          "body": "VISOR-abonnement behandles gjennom Apple App Store (iOS) og Google Play (Android). Vi lagrer ikke betalingskortinformasjonen din.\n\n- For å kansellere eller administrere et iOS-abonnement: iPhone Settings → [Your Name] → Subscriptions → VISOR.\n- For å administrere et Android-abonnement: Google Play Store → Profile → Payments & subscriptions → Subscriptions.\n- For refusjonsforespørsler, bruk Apples eller Googles refusjonsprosess, eller kontakt oss med bestillingsinformasjonen din.\n\nHvis du ser en uventet belastning eller har problemer med å gjenopprette et kjøp, send en e-post til [support@visorfitness.com](mailto:support@visorfitness.com) og inkluder plattformen din, ordre-ID og et skjermbilde hvis mulig."
+        },
+        "report": {
+          "heading": "Rapporter et problem eller en sikkerhetsbekymring",
+          "body": "Hvis du oppdager skadelig, unøyaktig eller upassende AI-utdata, innhold fra fellesskapet eller appoppførsel, vennligst rapporter det i appen der det er tilgjengelig, eller send oss en e-post direkte.\n\n- Generelle problemer og tilbakemeldinger: [support@visorfitness.com](mailto:support@visorfitness.com)\n- Personvern, data eller sletting av konto: [privacy@visorfitness.com](mailto:privacy@visorfitness.com)\n\nVi gjennomgår rapporter så snart som mulig og forsøker å svare innen 5 virkedager for sikkerhets- eller misbruksrapporter."
+        },
+        "address": {
+          "heading": "Postadresse",
+          "body": "Drakkar Mahmed Harun\nBjørnegårdsvingen 17\n1338 Sandvika\nNorway\nOrganisation number: 935 975 530"
+        }
+      }
     }
   }
 }
