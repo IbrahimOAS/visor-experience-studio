@@ -102,7 +102,7 @@ const Navbar = () => {
                     {link.label}
                   </a>
                 ))}
-                <div className="flex flex-col gap-3 pt-2">
+                <div className="flex flex-col gap-5 pt-2">
                   <LanguageToggle align="left" dropdownMode="static" className="w-full" />
                   <div className="grid grid-cols-2 gap-2">
                     <a
