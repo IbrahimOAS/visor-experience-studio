@@ -6,9 +6,14 @@ import { SUPPORTED_LANGUAGES } from "@/i18n";
 interface LanguageToggleProps {
   className?: string;
   align?: "left" | "right";
+  dropdownMode?: "absolute" | "static";
 }
 
-const LanguageToggle = ({ className = "", align = "right" }: LanguageToggleProps) => {
+const LanguageToggle = ({
+  className = "",
+  align = "right",
+  dropdownMode = "absolute",
+}: LanguageToggleProps) => {
   const { i18n, t } = useTranslation();
   const [open, setOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -50,7 +55,7 @@ const LanguageToggle = ({ className = "", align = "right" }: LanguageToggleProps
         <ul
           role="listbox"
           dir="ltr"
-          className={`absolute ${align === "left" ? "left-0" : "right-0"} mt-2 w-[min(220px,calc(100vw-2rem))] glass-card-strong rounded-2xl border border-white/10 overflow-hidden z-[80] shadow-xl`}
+          className={`${dropdownMode === "static" ? "relative w-full" : `absolute ${align === "left" ? "left-0" : "right-0"} w-[min(220px,calc(100vw-2rem))]`} mt-2 glass-card-strong rounded-2xl border border-white/10 overflow-hidden z-[80] shadow-xl`}
         >
           {SUPPORTED_LANGUAGES.map((lang) => {
             const active = lang.code === current.code;
