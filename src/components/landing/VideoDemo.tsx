@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Play, Pause, ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import demoVideo from "@/assets/visor-demo.mp4";
 import showcaseVideo from "@/assets/visor-showcase.mp4";
 import featureWorkout from "@/assets/feature-workout.png";
@@ -18,32 +19,19 @@ import featureCoachList from "@/assets/feature-coach-list.png";
 import featureActivityRoute from "@/assets/feature-activity-route.png";
 import featureActivityGoal from "@/assets/feature-activity-goal.png";
 
-const videoCards: { title: string; description: string; youtubeId?: string; localVideo?: string; images?: string[] }[] = [
-  
-  {
-    title: "Personalized Workouts",
-    description: "Browse by muscle group, follow coach-led sessions and review your post-workout summary",
-    images: [featureWorkout, featureWorkoutDetail, featureWorkoutComplete],
-  },
-  {
-    title: "Find Your Ideal Coach",
-    description: "Match with verified fitness coaches, browse profiles and book HIIT experts near you",
-    images: [featureCoach, featureCoachProfile, featureCoachList],
-  },
-  {
-    title: "Activity & Smart Insights",
-    description: "Track every session, map your routes and crush weekly activity goals with data-driven insights",
-    images: [featureActivity, featureActivityRoute, featureActivityGoal],
-  },
-  {
-    title: "Meet Your AI Coach",
-    description: "Fitness 3.0 — adaptive AI that recommends workouts, respects your limits and nudges form in real time",
-    images: [featureAiCoach, featureAiPrecautions, featureAiRecommendation],
-  },
-  { title: "Nutrition & Meal Plans", description: "Personalized meal plans and macro tracking to fuel your transformation", images: [featureNutrition] },
+const cardMedia: { youtubeId?: string; localVideo?: string; images?: string[] }[] = [
+  { images: [featureWorkout, featureWorkoutDetail, featureWorkoutComplete] },
+  { images: [featureCoach, featureCoachProfile, featureCoachList] },
+  { images: [featureActivity, featureActivityRoute, featureActivityGoal] },
+  { images: [featureAiCoach, featureAiPrecautions, featureAiRecommendation] },
+  { images: [featureNutrition] },
 ];
 
+
 const VideoDemo = () => {
+  const { t } = useTranslation();
+  const cardStrings = t("landing.video.cards", { returnObjects: true }) as Array<{ title: string; description: string }>;
+  const videoCards = cardStrings.map((s, i) => ({ ...s, ...cardMedia[i] }));
   const videoRef = useRef<HTMLVideoElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
@@ -56,6 +44,7 @@ const VideoDemo = () => {
   const mainIsLocal = !!activeCard?.localVideo;
   const mainIsImage = !!activeCard?.images?.length && !activeCard?.localVideo && !activeCard?.youtubeId;
   const slides = activeCard?.images ?? [];
+
 
   const togglePlay = () => {
     if (mainIsYoutube) return;
@@ -104,14 +93,17 @@ const VideoDemo = () => {
           className="text-center mb-14"
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-4">
-            See <span className="text-gradient">VISOR AI Body Transformation</span> in Action
+            {t("landing.video.titlePre")}{" "}
+            <span className="text-gradient">{t("landing.video.titleAccent")}</span>{" "}
+            {t("landing.video.titlePost")}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             {activeCard
               ? <><span className="text-primary font-semibold">{activeCard.title}</span> — {activeCard.description}</>
-              : "Watch how AI-powered body visualization, adaptive coaching, and identity tracking work together in the ultimate fitness tracker app."
+              : t("landing.video.defaultSubtitle")
             }
           </p>
+
         </motion.div>
 
         {/* Main video */}
@@ -202,7 +194,7 @@ const VideoDemo = () => {
                       />
                       {card.images.length > 1 && (
                         <div className="absolute top-2 right-2 px-2 py-1 rounded-full bg-background/80 backdrop-blur-sm border border-primary/30 text-[10px] font-semibold text-primary">
-                          {card.images.length} screens
+                          {card.images.length} {t("landing.video.screensLabel")}
                         </div>
                       )}
                     </>
