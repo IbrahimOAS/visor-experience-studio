@@ -102,24 +102,24 @@ const Navbar = () => {
                     {link.label}
                   </a>
                 ))}
-                <div className="grid grid-cols-[auto_auto] gap-2 pt-2 relative z-[70]">
-                  <div className="col-span-2">
-                    <LanguageToggle align="left" dropdownMode="static" className="w-full" />
+                <div className="flex flex-col gap-4 pt-2">
+                  <LanguageToggle align="left" dropdownMode="static" className="w-full" />
+                  <div className="grid grid-cols-2 gap-2 border-t border-white/10 pt-4">
+                    <a
+                      href="/#download"
+                      onClick={() => setMobileOpen(false)}
+                      className="px-4 h-9 inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-xs font-medium text-foreground"
+                    >
+                      {t("nav.signIn")}
+                    </a>
+                    <a
+                      href="/#download"
+                      onClick={() => setMobileOpen(false)}
+                      className="px-4 h-9 inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-semibold"
+                    >
+                      {t("nav.getApp")}
+                    </a>
                   </div>
-                  <a
-                    href="/#download"
-                    onClick={() => setMobileOpen(false)}
-                    className="px-4 h-9 inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-xs font-medium text-foreground"
-                  >
-                    {t("nav.signIn")}
-                  </a>
-                  <a
-                    href="/#download"
-                    onClick={() => setMobileOpen(false)}
-                    className="px-4 h-9 inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-semibold"
-                  >
-                    {t("nav.getApp")}
-                  </a>
                 </div>
               </div>
             </motion.div>
