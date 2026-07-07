@@ -621,6 +621,25 @@
           "text": "Das Ritual‑System hat meine chaotischen Gewohnheiten in eine Identität verwandelt. Ich 'versuche nicht mehr, fit zu werden' — ich bin fit. VISOR hat diesen Wandel ermöglicht."
         }
       ]
+    },
+    "features": {
+      "titlePre": "KI-Fitness-App-Funktionen, um",
+      "titleAccent": "deinen Körper zu transformieren",
+      "subtitle": "Sieben leistungsstarke Systeme in einer Workout-App — KI-Körperprognosen, adaptives Coaching und Fortschrittsverfolgung, um deinen Körper, Geist und deine Identität neu zu formen.",
+      "drag": "Ziehen zum Erkunden · Klicken zum Vergrößern"
+    },
+    "exercises": {
+      "titlePre": "KI-Workout- und Trainingsprogramme in",
+      "titleAccent": "VISOR",
+      "subtitle": "Premium-Gym-Workouts und Trainingsvideos für die totale Körpertransformation — von HIIT bis Hypertrophie.",
+      "labels": [
+        "Sitzender Fokus",
+        "Beinpresse",
+        "Hackenschmidt-Kniebeuge",
+        "Airbike",
+        "Latzug",
+        "Schulterdrücken"
+      ]
     }
   }
 }
