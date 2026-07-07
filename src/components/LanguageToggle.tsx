@@ -135,7 +135,7 @@ const LanguageToggle = ({
           aria-label={t("nav.language")}
           aria-activedescendant={`${listboxId}-opt-${SUPPORTED_LANGUAGES[activeIndex]?.code}`}
           onKeyDown={handleListKeyDown}
-          className={`${dropdownMode === "static" ? "relative w-full" : `absolute ${align === "left" ? "left-0" : "right-0"} w-[min(220px,calc(100vw-2rem))] z-[80]`} mt-2 glass-card-strong rounded-2xl border border-white/10 overflow-hidden shadow-xl focus:outline-none`}
+          className={`${dropdownMode === "static" ? "relative w-full mb-2" : `absolute ${align === "left" ? "left-0" : "right-0"} w-[min(220px,calc(100vw-2rem))] z-[80]`} mt-2 glass-card-strong rounded-2xl border border-white/10 overflow-hidden ${dropdownMode === "static" ? "shadow-md" : "shadow-xl"} focus:outline-none`}
         >
           {SUPPORTED_LANGUAGES.map((lang, i) => {
             const active = lang.code === current.code;
