@@ -1,4 +1,5 @@
 import { memo, useEffect, useMemo, useState, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import {
   AnimatePresence,
   motion,
