@@ -29,6 +29,9 @@ const cardMedia: { youtubeId?: string; localVideo?: string; images?: string[] }[
 
 
 const VideoDemo = () => {
+  const { t } = useTranslation();
+  const cardStrings = t("landing.video.cards", { returnObjects: true }) as Array<{ title: string; description: string }>;
+  const videoCards = cardStrings.map((s, i) => ({ ...s, ...cardMedia[i] }));
   const videoRef = useRef<HTMLVideoElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
@@ -41,6 +44,7 @@ const VideoDemo = () => {
   const mainIsLocal = !!activeCard?.localVideo;
   const mainIsImage = !!activeCard?.images?.length && !activeCard?.localVideo && !activeCard?.youtubeId;
   const slides = activeCard?.images ?? [];
+
 
   const togglePlay = () => {
     if (mainIsYoutube) return;
