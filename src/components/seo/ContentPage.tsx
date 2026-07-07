@@ -20,13 +20,15 @@ interface ContentPageProps {
   sections: Section[];
   breadcrumbs: Crumb[];
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  ctaLabel?: string;
 }
 
 const SITE = "https://visorfitness.com";
 
 export const ContentPage = ({
-  title, description, path, h1, intro, sections, breadcrumbs, jsonLd,
+  title, description, path, h1, intro, sections, breadcrumbs, jsonLd, ctaLabel,
 }: ContentPageProps) => {
+
   const breadcrumbLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -89,9 +91,10 @@ export const ContentPage = ({
               to="/"
               className="inline-block px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_20px_-4px_hsl(28,100%,55%/0.5)]"
             >
-              Explore VISOR
+              {ctaLabel ?? "Explore VISOR"}
             </Link>
           </div>
+
         </article>
         <Footer />
       </main>
