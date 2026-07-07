@@ -89,9 +89,10 @@ export const ContentPage = ({
               to="/"
               className="inline-block px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_20px_-4px_hsl(28,100%,55%/0.5)]"
             >
-              Explore VISOR
+              {ctaLabel ?? "Explore VISOR"}
             </Link>
           </div>
+
         </article>
         <Footer />
       </main>
