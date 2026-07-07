@@ -102,9 +102,9 @@ const Navbar = () => {
                     {link.label}
                   </a>
                 ))}
-                <div className="flex flex-col gap-5 pt-2">
+                <div className="flex flex-col gap-4 pt-2">
                   <LanguageToggle align="left" dropdownMode="static" className="w-full" />
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-2 gap-2 border-t border-white/10 pt-4">
                     <a
                       href="/#download"
                       onClick={() => setMobileOpen(false)}
