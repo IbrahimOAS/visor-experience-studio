@@ -89,7 +89,7 @@ const Navbar = () => {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              className="md:hidden overflow-hidden glass-card-strong mt-2 rounded-3xl border border-white/10"
+              className="md:hidden glass-card-strong mt-2 rounded-3xl border border-white/10"
             >
               <div className="px-5 py-4 flex flex-col gap-3">
                 {navLinks.map((link) => (
