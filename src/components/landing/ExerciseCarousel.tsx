@@ -79,11 +79,11 @@ const ExerciseCarousel = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-4">
-            AI Workout & Training Programs in{" "}
-            <span className="text-gradient">VISOR</span>
+            {t("landing.exercises.titlePre")}{" "}
+            <span className="text-gradient">{t("landing.exercises.titleAccent")}</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Premium gym workouts and training videos designed for total body transformation — from HIIT to hypertrophy.
+            {t("landing.exercises.subtitle")}
           </p>
         </motion.div>
 
