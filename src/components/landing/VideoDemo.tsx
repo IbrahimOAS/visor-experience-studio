@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Play, Pause, ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import demoVideo from "@/assets/visor-demo.mp4";
 import showcaseVideo from "@/assets/visor-showcase.mp4";
 import featureWorkout from "@/assets/feature-workout.png";
@@ -18,30 +19,14 @@ import featureCoachList from "@/assets/feature-coach-list.png";
 import featureActivityRoute from "@/assets/feature-activity-route.png";
 import featureActivityGoal from "@/assets/feature-activity-goal.png";
 
-const videoCards: { title: string; description: string; youtubeId?: string; localVideo?: string; images?: string[] }[] = [
-  
-  {
-    title: "Personalized Workouts",
-    description: "Browse by muscle group, follow coach-led sessions and review your post-workout summary",
-    images: [featureWorkout, featureWorkoutDetail, featureWorkoutComplete],
-  },
-  {
-    title: "Find Your Ideal Coach",
-    description: "Match with verified fitness coaches, browse profiles and book HIIT experts near you",
-    images: [featureCoach, featureCoachProfile, featureCoachList],
-  },
-  {
-    title: "Activity & Smart Insights",
-    description: "Track every session, map your routes and crush weekly activity goals with data-driven insights",
-    images: [featureActivity, featureActivityRoute, featureActivityGoal],
-  },
-  {
-    title: "Meet Your AI Coach",
-    description: "Fitness 3.0 — adaptive AI that recommends workouts, respects your limits and nudges form in real time",
-    images: [featureAiCoach, featureAiPrecautions, featureAiRecommendation],
-  },
-  { title: "Nutrition & Meal Plans", description: "Personalized meal plans and macro tracking to fuel your transformation", images: [featureNutrition] },
+const cardMedia: { youtubeId?: string; localVideo?: string; images?: string[] }[] = [
+  { images: [featureWorkout, featureWorkoutDetail, featureWorkoutComplete] },
+  { images: [featureCoach, featureCoachProfile, featureCoachList] },
+  { images: [featureActivity, featureActivityRoute, featureActivityGoal] },
+  { images: [featureAiCoach, featureAiPrecautions, featureAiRecommendation] },
+  { images: [featureNutrition] },
 ];
+
 
 const VideoDemo = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
