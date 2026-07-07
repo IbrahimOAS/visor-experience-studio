@@ -194,7 +194,7 @@ const VideoDemo = () => {
                       />
                       {card.images.length > 1 && (
                         <div className="absolute top-2 right-2 px-2 py-1 rounded-full bg-background/80 backdrop-blur-sm border border-primary/30 text-[10px] font-semibold text-primary">
-                          {card.images.length} screens
+                          {card.images.length} {t("landing.video.screensLabel")}
                         </div>
                       )}
                     </>
