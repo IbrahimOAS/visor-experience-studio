@@ -5,29 +5,29 @@
     "pricing": "Preise",
     "coaching": "Coaching",
     "signIn": "Anmelden",
-    "getApp": "App herunterladen",
+    "getApp": "App holen",
     "language": "Sprache ändern"
   },
   "hero": {
-    "badge": "KI-gestützte Identitätsveränderung",
+    "badge": "KI-gestützte Identitätsverwandlung",
     "titleA": "Sieh deine Zukunft.",
-    "titleB": "Verwirkliche sie.",
-    "subtitle": "VISOR ist die KI-Fitness-App, die deine Körperveränderung mit realistischen Vorher & Nachher‑Prognosen visualisiert. Stärke Überzeugung durch tägliche Rituale und erhalte emotional adaptives KI-Coaching, das Konsistenz in dauerhafte Veränderung verwandelt.",
+    "titleB": "Werde sie.",
+    "subtitle": "VISOR ist die KI-Fitness-App, die deine Körperverwandlung mit realistischen Vorher‑ & Nachher‑Prognosen visualisiert. Baue Überzeugung durch tägliche Rituale auf und erhalte emotional adaptives KI-Coaching, das Konsistenz in dauerhafte Veränderung verwandelt.",
     "cta": "Funktionen entdecken"
   },
   "download": {
     "title": "Lade die",
     "titleAccent": "KI-Fitness-App",
-    "titleSuffix": "heute",
-    "subtitle": "Hol dir VISOR auf iOS oder Android und sieh deine Vorher & Nachher‑Körperveränderungs‑Prognose in Sekundenschnelle.",
+    "titleSuffix": "heute herunter",
+    "subtitle": "Hole dir VISOR auf iOS oder Android und sieh deine Vorher‑ und Nachher‑Körperprognose in Sekunden.",
     "appStoreCaption": "Im",
     "appStore": "App Store",
-    "playCaption": "Erhältlich bei",
+    "playCaption": "Jetzt bei",
     "play": "Google Play",
-    "scan": "Zum Herunterladen scannen"
+    "scan": "Scanne zum Herunterladen"
   },
   "footer": {
-    "tagline": "KI-gestützte Identitätsveränderung. Sieh deinen zukünftigen Körper. Verwirkliche ihn.",
+    "tagline": "KI-gestützte Identitätsverwandlung. Sieh deinen zukünftigen Körper. Werde er.",
     "product": "Produkt",
     "company": "Unternehmen",
     "legal": "Rechtliches",
@@ -54,98 +54,98 @@
   },
   "pages": {
     "vsFreeletics": {
-      "title": "VISOR vs Freeletics: Adaptive KI vs Körpergewichts-Workouts",
-      "description": "Freeletics passt Körpergewichtsprogramme mit KI an. VISOR ergänzt visuelle Vorschauen der Körperveränderung, einen emotional adaptiven Coach und Soul Track‑Identitäts‑Streaks.",
+      "title": "VISOR vs Freeletics: Adaptive KI vs Körpergewichtstraining",
+      "description": "Freeletics passt Körpergewichts‑Programme mit KI an. VISOR ergänzt visuelle Körperveränderungs‑Vorschauen, einen emotional adaptiven Coach und Soul Track Identitäts‑Streaks.",
       "h1": "VISOR vs Freeletics",
       "crumb": "vs Freeletics",
-      "intro": "Freeletics hat KI‑angepasstes Körpergewichtstraining etabliert. VISOR baut darauf auf und ergänzt visuelle Transformationsvorschauen, emotionale Adaptivität und identitätsgetriebene Streaks.",
+      "intro": "Freeletics war Vorreiter bei KI‑angepasstem Körpergewichtstraining. VISOR baut auf diesem Fundament auf – mit visuellen Transformationsvorschauen, emotionaler Adaptivität und identitätsgesteuerten Streaks.",
       "sections": [
         {
           "heading": "Kernunterschied",
-          "body": "Freeletics optimiert das *Workout*. VISOR optimiert die *Person, die das Workout macht* — was sie sieht, wie sie sich fühlt, wer sie wird."
+          "body": "Freeletics optimiert das *Workout*. VISOR optimiert die *Person, die das Workout macht* — was sie sieht, wie sie sich fühlt und wer sie wird."
         },
         {
-          "heading": "Feature-Vergleich",
-          "body": "- **Körpergewichts‑Programmierung:** Freeletics — seine Stärke. VISOR — enthalten, plus Gewichtstraining und Studio‑Programme.\n- **KI‑Programm‑Anpassung:** Freeletics — passt die Schwierigkeit pro Einheit an. VISOR — passt Schwierigkeit *und* Coaching‑Ton an die Stimmung an.\n- **Visuelle Körper‑Transformation:** Freeletics — keine. VISOR — KI‑Vorschauen bei Monat 1, Monat 3, Olympia‑Modus.\n- **Emotionale Intelligenz:** Freeletics — feste Coach‑Stimme. VISOR — unterstützende, herausfordernde oder erholungsorientierte Persönlichkeiten.\n- **Identitäts‑Gamification:** Freeletics — Workout‑Streaks. VISOR — Soul Track verknüpft Streaks mit Identität, nicht nur mit Einheiten.\n- **Ernährung:** Beide enthalten.\n- **Menschliches Coaching:** Freeletics — keines. VISOR — Elite‑Tarif."
+          "heading": "Funktionsvergleich",
+          "body": "- **Körpergewichts‑Programmierung:** Freeletics — seine Stärke. VISOR — enthalten, plus Gewichtstraining und Studio‑Programme.\n- **KI‑Programmanpassung:** Freeletics — passt die Schwierigkeit pro Einheit an. VISOR — passt Schwierigkeit *und* Coaching‑Ton an die Stimmung an.\n- **Visuelle Körperverwandlung:** Freeletics — keine. VISOR — KI‑Vorschauen bei Monat 1, Monat 3, Olympia‑Modus.\n- **Emotionale Intelligenz:** Freeletics — feste Coach‑Stimme. VISOR — unterstützende, herausfordernde oder erholungsorientierte Persönlichkeiten.\n- **Identitäts‑Gamification:** Freeletics — Workout‑Streaks. VISOR — Soul Track verknüpft Streaks mit Identität, nicht nur mit Sessions.\n- **Ernährung:** Beide enthalten.\n- **Menschliches Coaching:** Freeletics — keines. VISOR — Elite‑Tier."
         },
         {
-          "heading": "Wenn Freeletics die bessere Wahl ist",
-          "body": "Du willst ein fokussiertes Körpergewichts‑HIIT‑System, trainierst allein, und eine einzige Coach‑Stimme reicht dir. Freeletics ist dafür ausgereift und bewährt."
+          "heading": "Wann Freeletics geeignet ist",
+          "body": "Du willst ein fokussiertes Körpergewichts‑HIIT‑System, trainierst allein und eine einzige Coach‑Stimme funktioniert für dich. Freeletics ist dafür ausgereift und bewährt."
         },
         {
-          "heading": "Wenn VISOR die bessere Wahl ist",
-          "body": "Du musst das Ergebnis *sehen*, um dich zu verpflichten, deine Motivation schwankt, und du willst Training, das sich an die Person anpasst — nicht nur an das Protokoll."
+          "heading": "Wann VISOR gewinnt",
+          "body": "Du musst das Ergebnis *sehen*, um dich zu committen, deine Motivation schwankt, und du möchtest Training, das sich an die Person anpasst — nicht nur an das Protokoll."
         }
       ]
     },
     "vsMyFitnessPal": {
-      "title": "VISOR vs MyFitnessPal: KI‑Körpertransformation vs Kalorien",
-      "description": "MyFitnessPal protokolliert Kalorien. VISOR prognostiziert deinen zukünftigen Körper, coacht dich emotional und gamifiziert Identität durch Soul Track. Ehrlicher Vergleich.",
+      "title": "VISOR vs MyFitnessPal: KI‑Körperverwandlung vs Kalorien",
+      "description": "MyFitnessPal protokolliert Kalorien. VISOR sagt deinen zukünftigen Körper voraus, coacht dich emotional und gamifiziert Identität durch Soul Track. Ehrlicher Vergleich.",
       "h1": "VISOR vs MyFitnessPal",
       "crumb": "vs MyFitnessPal",
-      "intro": "MyFitnessPal ist der Standard‑Kalorienzähler für über 200 Mio. Nutzer. VISOR ist eine neue Kategorie: identitätsgetriebene KI‑Fitness. Beides kann auf deinem Telefon leben — sie beantworten unterschiedliche Fragen.",
+      "intro": "MyFitnessPal ist der Standard‑Kalorienzähler für über 200 Mio. Nutzer. VISOR ist eine neuere Kategorie: identitätsgesteuerte KI‑Fitness. Beides kann auf deinem Telefon leben — sie beantworten unterschiedliche Fragen.",
       "sections": [
         {
           "heading": "Kernunterschied in einem Satz",
-          "body": "MyFitnessPal beantwortet *„Was habe ich gegessen?“*. VISOR beantwortet *„Wer werde ich, und wie bringt mich der heutige Tag dorthin?“*"
+          "body": "MyFitnessPal beantwortet *\"Was habe ich gegessen?\"*. VISOR beantwortet *\"Wer werde ich, und wie bringt mich der heutige Tag diesem Ziel näher?\"*"
         },
         {
-          "heading": "Feature für Feature",
-          "body": "- **Kalorien‑ & Makro‑Tracking:** MyFitnessPal — umfangreiche Lebensmitteldatenbank. VISOR — enthalten, KI‑personalisiert.\n- **KI‑Körper‑Transformations‑Vorschauen:** MyFitnessPal — keine. VISOR — Monat 1, Monat 3, Olympia‑Modus.\n- **Emotional adaptiver KI‑Coach:** MyFitnessPal — keiner. VISOR — passt Ton, Intensität und Persönlichkeit an deine Stimmung an.\n- **Identitäts‑ / Streak‑Gamification:** MyFitnessPal — einfache Streaks. VISOR — Soul Track verknüpft Streaks mit dem, zu dem du werden willst.\n- **Workout‑Programmierung:** MyFitnessPal — begrenzt. VISOR — vollständige personalisierte Pläne.\n- **Menschliches Coaching:** MyFitnessPal — keines. VISOR — Elite‑Tarif."
+          "heading": "Feature‑für‑Feature",
+          "body": "- **Kalorien‑ & Makrotracking:** MyFitnessPal — umfangreiche Lebensmittel‑Datenbank. VISOR — enthalten, KI‑personalisiert.\n- **KI‑Körperverwandlungs‑Vorschauen:** MyFitnessPal — keine. VISOR — Monat 1, Monat 3, Olympia‑Modus.\n- **Emotional adaptiver KI‑Coach:** MyFitnessPal — keiner. VISOR — passt Ton, Intensität und Persönlichkeit an deine Stimmung an.\n- **Identität / Streak‑Gamification:** MyFitnessPal — grundlegende Streaks. VISOR — Soul Track verknüpft Streaks mit dem, wer du werden willst.\n- **Workout‑Programmierung:** MyFitnessPal — begrenzt. VISOR — vollständige personalisierte Pläne.\n- **Menschliches Coaching:** MyFitnessPal — keines. VISOR — Elite‑Tier."
         },
         {
-          "heading": "Wenn MyFitnessPal die richtige Wahl ist",
-          "body": "Du kennst deine Routine bereits, trainierst konstant und brauchst nur eine schnelle Datenbank zum Protokollieren von Mahlzeiten. MyFitnessPal ist der bewährte, freizeitorientierte Logger für diesen Zweck."
+          "heading": "Wann MyFitnessPal die richtige Wahl ist",
+          "body": "Du kennst deine Routine bereits, trainierst konsequent und brauchst nur eine schnelle Datenbank zum Protokollieren von Mahlzeiten. MyFitnessPal ist der bewährte, freundlich zur Gratis‑Ebene passende Logger dafür."
         },
         {
-          "heading": "Wenn VISOR die richtige Wahl ist",
-          "body": "Du hörst nicht auf, weil dir Workouts fehlen — du hörst auf, weil du dein Zukunfts‑Ich nicht sehen kannst. VISOR ist für das Konsistenzproblem gebaut: visualisiere das Ergebnis, passe dich an, wie du dich fühlst, und baue die Identität hinter dem Körper auf."
+          "heading": "Wann VISOR die richtige Wahl ist",
+          "body": "Du hörst nicht auf, weil dir Workouts fehlen — du hörst auf, weil du dein zukünftiges Selbst nicht sehen kannst. VISOR ist für das Konsistenzproblem gebaut: visualisiere das Ergebnis, passe dich an, wie du dich fühlst, und baue die Identität hinter dem Körper auf."
         },
         {
-          "heading": "Preisgestaltung",
-          "body": "MyFitnessPal: kostenlos mit Premium bei ~$19.99/Monat. VISOR: kostenloser Tarif, Core bei $9.99/Monat, Elite bei $19.99/Monat mit persönlichem Coaching."
+          "heading": "Preise",
+          "body": "MyFitnessPal: gratis mit Premium bei ~ $19.99/Monat. VISOR: Gratis‑Tier, Core für $9.99/Monat, Elite für $19.99/Monat mit persönlichem Coaching."
         }
       ]
     },
     "vsNoom": {
       "title": "VISOR vs Noom: Identitätsgetriebene KI vs CBT‑Gewichtsverlust",
-      "description": "Noom verwendet CBT‑ähnliche Verhaltensänderungen zur Gewichtsreduktion. VISOR nutzt KI‑Körper‑Transformationsvorschauen, einen emotional adaptiven Coach und Identitäts‑Streaks.",
+      "description": "Noom nutzt CBT‑ähnliche Verhaltensänderung für Gewichtsverlust. VISOR verwendet KI‑Körperverwandlungs‑Vorschauen, einen emotional adaptiven Coach und Identitäts‑Streaks.",
       "h1": "VISOR vs Noom",
       "crumb": "vs Noom",
-      "intro": "Noom hat eine Kategorie um psychologisch geleiteten Gewichtsverlust aufgebaut. VISOR teilt die Überzeugung, dass Verhalten wichtiger ist als Kalorien, verfolgt jedoch einen identitätszentrierten, KI‑nativen Ansatz.",
+      "intro": "Noom hat eine Kategorie rund um psychologisch geführten Gewichtsverlust aufgebaut. VISOR teilt die Überzeugung, dass Verhalten wichtiger ist als Kalorien, verfolgt jedoch einen Identitäts‑first, KI‑nativen Ansatz.",
       "sections": [
         {
           "heading": "Kernunterschied",
           "body": "Noom lehrt dich *warum* du isst, was du isst. VISOR zeigt dir *wer* du wirst und passt jede Interaktion an diese Identität an."
         },
         {
-          "heading": "Feature‑Vergleich",
-          "body": "- **Verhaltensänderungsmodell:** Noom — CBT‑artige tägliche Lektionen. VISOR — identitätsbasiert via Soul Track.\n- **KI‑Körper‑Transformation:** Noom — keine. VISOR — Monat 1, Monat 3, Olympia‑Vorschauen.\n- **Coaching:** Noom — menschliche Coaches per Chat. VISOR — emotional adaptiver KI‑Coach + optionales menschliches Coaching im Elite‑Tarif.\n- **Workout‑Programmierung:** Noom — leicht. VISOR — vollständige personalisierte Pläne.\n- **Farbkodiertes Lebensmittelsystem:** Nooms Signaturfeature. VISOR verwendet standardmäßiges Makro‑Tracking.\n- **Preisgestaltung:** Noom — ~$70/Monat. VISOR — Kostenlos / $9.99 / $19.99."
+          "heading": "Funktionsvergleich",
+          "body": "- **Modell der Verhaltensänderung:** Noom — CBT‑ähnliche tägliche Lektionen. VISOR — identitätsbasiert über Soul Track.\n- **KI‑Körperverwandlung:** Noom — keine. VISOR — Monat 1, Monat 3, Olympia‑Vorschauen.\n- **Coaching:** Noom — menschliche Coaches per Chat. VISOR — emotional adaptiver KI‑Coach + optionales menschliches Coaching in Elite.\n- **Workout‑Programmierung:** Noom — leicht. VISOR — vollständige personalisierte Pläne.\n- **Farbkodiertes Lebensmittelsystem:** Nooms Signaturfeature. VISOR nutzt standardmäßiges Makro‑Tracking.\n- **Preisgestaltung:** Noom — ~ $70/Monat. VISOR — Gratis / $9.99 / $19.99."
         },
         {
-          "heading": "Wenn Noom gewinnt",
-          "body": "Du willst tägliche, lesebasierte Verhaltenslektionen und einen menschlichen Coach als Hauptkontakt, und der höhere Preis ist kein Hindernis."
+          "heading": "Wann Noom gewinnt",
+          "body": "Du möchtest tägliche leseorientierte Verhaltenslektionen und einen menschlichen Coach als primären Ansprechpartner, und der höhere Preis ist kein Hindernis."
         },
         {
-          "heading": "Wenn VISOR gewinnt",
-          "body": "Du willst visuelle Beweise deiner Entwicklung, einen rund um die Uhr verfügbaren KI‑Coach, der sich an die Stimmung anpasst, und eine Fitness‑Ebene, die Noom nicht liefert — zu einem Bruchteil des Preises."
+          "heading": "Wann VISOR gewinnt",
+          "body": "Du willst visuellen Beweis für deine Entwicklung, einen rund um die Uhr verfügbaren KI‑Coach, der sich der Stimmung anpasst, und eine Fitness‑Ebene, die Noom nicht liefert — zu einem Bruchteil des Preises."
         }
       ]
     },
     "whyVisor": {
-      "title": "Warum VISOR: Die identitätsgetriebene KI‑Fitness‑Plattform",
+      "title": "Warum VISOR: Die identitätsgesteuerte KI‑Fitness‑Plattform",
       "description": "VISOR ist die KI‑Fitness‑App, die deinen zukünftigen Körper vorhersagt, dich emotional coacht und die Identität hinter dem Ziel gamifiziert. Darum ist das wichtig.",
       "h1": "Warum VISOR",
-      "crumb": "Warum VISOR",
-      "intro": "Die meisten Fitness‑Apps scheitern an derselben Hürde: Konsistenz. VISOR basiert auf der Erkenntnis, dass Menschen nicht aufhören, weil ihnen Workouts fehlen — sie hören auf, weil sie ihr Zukunfts‑Ich nicht sehen können.",
+      "crumb": "Why VISOR",
+      "intro": "Die meisten Fitness‑Apps scheitern am gleichen Hindernis: Konsistenz. VISOR ist um die Einsicht gebaut, dass Menschen nicht aufhören, weil ihnen Workouts fehlen — sie hören auf, weil sie ihr zukünftiges Selbst nicht sehen können.",
       "sections": [
         {
           "heading": "Die drei Säulen",
-          "body": "- **KI‑Körper‑Transformation:** visuelle Beweise deiner Entwicklung bei Monat 1, Monat 3 und Olympia‑Modus.\n- **VISOR KI‑Coach:** emotional adaptiv — unterstützend, herausfordernd oder erholungsorientiert, je nach Tag.\n- **Soul Track:** gamifizierte Streaks, verknüpft mit der Identität, die du aufbaust, nicht nur mit protokollierten Workouts."
+          "body": "- **KI‑Körperverwandlung:** visuelle Beweise deiner Entwicklung bei Monat 1, Monat 3 und im Olympia‑Modus.\n- **VISOR KI‑Coach:** emotional adaptiv — unterstützend, herausfordernd oder erholungsfokussiert, abhängig vom Tag.\n- **Soul Track:** gamifizierte Streaks, verknüpft mit der Identität, die du aufbaust, nicht nur mit protokollierten Workouts."
         },
         {
           "heading": "VISOR vergleichen",
-          "body": "- [VISOR vs MyFitnessPal](/vs/myfitnesspal) — Identität vs Kalorientracking\n- [VISOR vs Freeletics](/vs/freeletics) — emotionale Adaptivität vs Programm‑Anpassung\n- [VISOR vs Noom](/vs/noom) — KI‑Identität vs CBT‑Psychologie"
+          "body": "- [VISOR vs MyFitnessPal](/vs/myfitnesspal) — Identität vs Kalorienzählen\n- [VISOR vs Freeletics](/vs/freeletics) — emotionale Adaptivität vs Programmanpassung\n- [VISOR vs Noom](/vs/noom) — KI‑Identität vs CBT‑Psychologie"
         },
         {
           "heading": "Konzepte hinter VISOR",
@@ -154,23 +154,23 @@
       ]
     },
     "aiBodyTransformation": {
-      "title": "KI‑Körpertransformation, erklärt",
-      "description": "KI‑Körpertransformation erzeugt visuelle Vorschauen deines zukünftigen Körpers bei Monat 1, Monat 3 und im Olympia‑Modus. Die Wissenschaft, das Ergebnis zu sehen, bevor man es verdient hat.",
-      "h1": "KI‑Körpertransformation",
-      "crumb": "KI‑Körpertransformation",
-      "intro": "Der stärkste Prädiktor für Verhaltensänderung ist nicht Willenskraft — es ist ein lebendiges, glaubwürdiges Bild der Person, die du wirst. KI‑Körpertransformation macht dieses Bild sichtbar.",
+      "title": "KI‑Körperverwandlung, erklärt",
+      "description": "KI‑Körperverwandlung erstellt visuelle Vorschauen deines zukünftigen Körpers bei Monat 1, Monat 3 und im Olympia‑Modus. Die Wissenschaft, das Ergebnis zu sehen, bevor man es verdient.",
+      "h1": "KI‑Körperverwandlung",
+      "crumb": "AI Body Transformation",
+      "intro": "Der stärkste Prädiktor für Verhaltensänderung ist nicht Willenskraft — es ist ein lebendiges, glaubwürdiges Bild der Person, die du wirst. KI‑Körperverwandlung macht dieses Bild sichtbar.",
       "sections": [
         {
           "heading": "Definition",
-          "body": "KI‑Körpertransformation ist der Einsatz generativer KI‑Modelle zur Erzeugung einer realistischen visuellen Progression der künftigen Physis eines Nutzers, kalibriert auf das Ausgangsbild, Trainingsplan, Ernährung und Zeitplan."
+          "body": "KI‑Körperverwandlung ist der Einsatz generativer KI‑Modelle zur Erstellung einer realistischen visuellen Progression der zukünftigen Physis eines Nutzers, kalibriert auf das Ausgangsbild, den Trainingsplan, die Ernährung und den Zeitplan."
         },
         {
           "heading": "VISORs drei Horizonte",
-          "body": "- **Monat 1:** frühe sichtbare Anpassungen — schlankeres Gesicht, Haltung, grundlegende Kompositionsverschiebung.\n- **Monat 3:** der Wendepunkt — wenn konsequentes Training von außen deutlich wird.\n- **Olympia‑Modus:** aspirative Obergrenze — die maximal erreichbare Version von dir gemäß dem Protokoll."
+          "body": "- **Monat 1:** frühe sichtbare Anpassungen — schlankeres Gesicht, Haltung, grundlegende Kompositionsverschiebung.\n- **Monat 3:** der Wendepunkt — wenn konsistentes Training äußerlich deutlich wird.\n- **Olympia‑Modus:** aspirative Obergrenze — die maximal mögliche Version von dir entsprechend dem Protokoll."
         },
         {
           "heading": "Warum visuelle Vorhersage wirkt",
-          "body": "Identität geht Verhalten voraus. Wenn das Gehirn ein Bild als plausibles Zukunfts‑Ich akzeptiert, ordnen sich tägliche Entscheidungen danach. Soul Track verwandelt diese Erwartung in eine Streak‑Schleife, sodass jede Einheit die Bestärkung einer bereits entstehenden Identität ist."
+          "body": "Identität geht Verhalten voraus. Wenn das Gehirn ein Bild als plausibles Zukunfts‑Ich akzeptiert, reorganisieren sich tägliche Entscheidungen darum. Soul Track verwandelt diese Erwartung in eine Streak‑Schleife, sodass jede Session die Bestätigung einer Identität ist, die sich bereits formt."
         },
         {
           "heading": "Verwandte Konzepte",
@@ -179,23 +179,23 @@
       ]
     },
     "behaviorDrivenFitness": {
-      "title": "Verhaltensgetriebene Fitness, erklärt",
-      "description": "Verhaltensgetriebene Fitness optimiert für identitätskonformes tägliches Verhalten, nicht für abgeschlossene Workouts. Wie Soul Track Konsistenz in ein zusammengesetztes Asset verwandelt.",
-      "h1": "Verhaltensgetriebene Fitness",
-      "crumb": "Verhaltensgetriebene Fitness",
-      "intro": "Workouts sind ein nachlaufender Indikator. Der führende Indikator ist das identitätskonforme Verhalten, das sie hervorgebracht hat. Verhaltensgetriebene Fitness kehrt die Priorität um.",
+      "title": "Verhaltensorientierte Fitness, erklärt",
+      "description": "Verhaltensorientierte Fitness optimiert für identitätskonformes tägliches Verhalten, nicht für abgeschlossene Workouts. Wie Soul Track Konsistenz in ein aufwertbares Asset verwandelt.",
+      "h1": "Verhaltensorientierte Fitness",
+      "crumb": "Behavior-Driven Fitness",
+      "intro": "Workouts sind ein verzögerter Indikator. Der führende Indikator ist das identitätskonforme Verhalten, das sie hervorgebracht hat. Verhaltensorientierte Fitness kehrt die Priorität um.",
       "sections": [
         {
           "heading": "Definition",
-          "body": "Verhaltensgetriebene Fitness ist ein Modell, das tägliche Verhaltensweisen misst, belohnt und anpasst, die mit dem verbunden sind, zu dem ein Nutzer wird — Schlaf, absichtliche Bewegung, Ernährungs‑Konsistenz, Erholung — statt Workouts isoliert zu zählen."
+          "body": "Verhaltensorientierte Fitness ist ein Modell, das tägliche Verhaltensweisen misst, belohnt und anpasst, die mit dem zusammenhängen, wer ein Nutzer wird — Schlaf, absichtliche Bewegung, Ernährungs‑Konsistenz, Erholung — statt Workouts isoliert zu zählen."
         },
         {
-          "heading": "Warum Workout‑Zählen scheitert",
-          "body": "\"30 abgeschlossene Einheiten\" ist bedeutungslos, wenn sich die zugrunde liegende Identität nicht verschoben hat. Die meisten Nutzer churnen, sobald eine Streak bricht, weil die Streak das Ziel war, nicht die dahinterstehende Person. Verhaltensgetriebene Systeme überstehen Aussetzer, weil die Identität intakt bleibt."
+          "heading": "Warum Workout‑Zählen versagt",
+          "body": "\"30 abgeschlossene Einheiten\" ist bedeutungslos, wenn die zugrunde liegende Identität sich nicht verschoben hat. Die meisten Nutzer churnen, sobald eine Streak bricht, weil die Streak das Ziel war, nicht die dahinterstehende Person. Verhaltensorientierte Systeme überstehen verpasste Tage, weil die Identität intakt bleibt."
         },
         {
           "heading": "Wie Soul Track es anwendet",
-          "body": "- **Identitäts‑Prompts**, die beim Onboarding definiert werden — wer du werden willst, in deinen eigenen Worten.\n- **Täglich ausgerichtete Verhaltensweisen** werden als Beleg der Identität verfolgt, nicht als Aufgaben.\n- **Streak‑Vergebung** gekoppelt an Identität statt an perfekte Ausführung.\n- **KI‑Coach‑Verstärkung** im zweiten Person‑Identitätston formuliert (\"du bist jemand, der…\")."
+          "body": "- **Identitäts‑Prompts** werden beim Onboarding definiert — wer du werden willst, mit deinen eigenen Worten.\n- **Täglich abgestimmte Verhaltensweisen** werden als Beleg der Identität verfolgt, nicht als Aufgaben.\n- **Streak‑Vergebung** ist an die Identität gebunden statt an perfekte Ausführung.\n- **KI‑Coach Verstärkung** wird in Zweitpersonen‑Identitätssprache gerahmt (\"du bist jemand, der …\")."
         },
         {
           "heading": "Verwandte Konzepte",
@@ -205,22 +205,22 @@
     },
     "emotionallyAdaptiveCoaching": {
       "title": "Emotional adaptives Coaching, erklärt",
-      "description": "Emotional adaptives Coaching erkennt Stimmung, Motivation und Kontext und passt dann Ton, Intensität und Persönlichkeit in Echtzeit an. Wie VISOR das umsetzt.",
+      "description": "Emotional adaptives Coaching erkennt Stimmung, Motivation und Kontext und passt dann in Echtzeit Ton, Intensität und Persönlichkeit an. Wie VISOR das umsetzt.",
       "h1": "Emotional adaptives Coaching",
-      "crumb": "Emotional adaptives Coaching",
-      "intro": "Die meisten Fitness‑Coaches sind fixiert: gleiche Stimme, gleiche Intensität, gleicher Plan — egal, ob du vier Stunden geschlafen hast oder dich unaufhaltbar fühlst. Emotional adaptives Coaching ändert das.",
+      "crumb": "Emotionally Adaptive Coaching",
+      "intro": "Die meisten Fitness‑Coachings sind fest: gleiche Stimme, gleiche Intensität, gleicher Plan — egal, ob du vier Stunden geschlafen hast oder dich unaufhaltsam fühlst. Emotional adaptives Coaching ändert das.",
       "sections": [
         {
           "heading": "Definition",
-          "body": "Emotional adaptives Coaching ist ein System, das den emotionalen und motivationalen Zustand eines Nutzers — durch Check‑ins, Verhaltenssignale und Kontext — erkennt und dann dynamisch Coaching‑Ton, Sprache, Intensität und Programmstruktur anpasst, um dazu zu passen."
+          "body": "Emotional adaptives Coaching ist ein System, das den emotionalen und motivationalen Zustand eines Nutzers erkennt — durch Check‑ins, Verhaltenssignale und Kontext — und dann dynamisch Coaching‑Ton, Sprache, Intensität und Programmstruktur anpasst."
         },
         {
           "heading": "Warum es wichtig ist",
-          "body": "Adhärenz ist die einzige Metrik, die sich vervielfacht. Ein Programm, das du in Woche 3 abbrichst, bringt nichts. Emotional adaptives Coaching reduziert Abbrüche, indem es dich dort abholt, wo du bist: härter, wenn du danach verlangst, sanfter, wenn du fragil bist, fokussiert auf Erholung, wenn dein Körper sie braucht."
+          "body": "Adhärenz ist die einzige Kennzahl, die sich aufaddiert. Ein Programm, das du in Woche 3 abbrichst, liefert nichts. Emotional adaptives Coaching reduziert Abbrüche, indem es dich dort abholt, wo du bist: härter, wenn du danach verlangst, sanfter, wenn du fragil bist, fokussiert auf Erholung, wenn dein Körper sie braucht."
         },
         {
           "heading": "Wie VISOR es umsetzt",
-          "body": "- **Stimmungs‑ und Motivations‑Erkennung** via kurzen täglichen Check‑ins und Verhaltenssignalen.\n- **Drei Coach‑Persönlichkeiten:** unterstützend, herausfordernd, erholungsorientiert.\n- **Echtzeit‑Anpassung** von Programmintensität, Sprachstil und Belohnungs‑Rahmung.\n- **Soul Track‑Integration**, sodass der emotionale Zustand Identitätsfortschritt speist, nicht nur Workout‑Logs."
+          "body": "- **Stimmungs‑ und Motivations­erkennung** via kurzen täglichen Check‑ins und Verhaltenssignalen.\n- **Drei Coach‑Persönlichkeiten:** unterstützend, herausfordernd, erholungsfokussiert.\n- **Echtzeit‑Anpassung** von Programmin­ten­sität, Sprachstil und Belohnungsrahmung.\n- **Soul Track‑Integration**, sodass der emotionale Zustand den Identitätsfortschritt speist, nicht nur Workout‑Logs."
         },
         {
           "heading": "Verwandte Konzepte",
@@ -230,7 +230,7 @@
     },
     "support": {
       "title": "VISOR Support — Kontakt & Hilfe",
-      "description": "Hilfe zu VISOR. Kontaktiere den Support, finde Antworten auf häufige Fragen, verwalte dein Abonnement, lösche dein Konto und melde Probleme.",
+      "description": "Erhalte Hilfe zu VISOR. Kontaktiere den Support, finde Antworten auf häufige Fragen, verwalte dein Abonnement, lösche dein Konto und melde Probleme.",
       "h1": "Support‑Center",
       "crumb": "Support",
       "introLead": "Brauchen Sie Hilfe mit VISOR? Wir sind für Sie da. Durchsuchen Sie die häufigen Themen unten oder kontaktieren Sie uns direkt — wir melden uns so schnell wie möglich zurück.",
@@ -238,37 +238,389 @@
       "sections": {
         "contact": {
           "heading": "Kontakt",
-          "lead": "Der schnellste Weg zu Support ist per E‑Mail. Wir antworten typischerweise innerhalb von 1–2 Werktagen.",
+          "lead": "Der schnellste Weg zum Support ist per E‑Mail. Wir antworten in der Regel innerhalb von 1–2 Werktagen.",
           "emailTitle": "E‑Mail‑Support",
           "emailNote": "Allgemeine Fragen, Fehler, Feedback",
-          "privacyTitle": "Fragen zum Datenschutz",
-          "privacyNote": "Daten, Privatsphäre, Kontolöschung",
-          "hours": "Supportzeiten: Montag–Freitag, 09:00–17:00 CET (Norway time)"
+          "privacyTitle": "Datenschutz‑Fragen",
+          "privacyNote": "Daten, Datenschutz, Kontolöschung",
+          "hours": "Supportzeiten: Montag–Freitag, 09:00–17:00 CET (Norwegenzeit)"
         },
         "faq": {
-          "heading": "Häufig gestellte Fragen",
+          "heading": "Häufige Fragen",
           "q1": "Wie stelle ich mein Abonnement oder meinen Kauf wieder her?",
-          "a1": "Öffne VISOR, gehe zu deinen Konto‑ oder Abonnement‑Einstellungen und tippe auf \"Restore Purchases.\" Stelle sicher, dass du mit derselben Apple ID oder dem Google Play‑Konto angemeldet bist, das für den ursprünglichen Kauf verwendet wurde. Falls das Problem besteht, sende uns eine E‑Mail mit deiner Quittung oder Bestell‑ID.",
-          "q2": "Wie kündige, erstelle ich eine Rückerstattung oder ändere ich mein Abonnement?",
-          "a2": "Abonnements werden von Apple (iOS) oder Google (Android) verwaltet. Um zu kündigen oder eine Rückerstattung zu beantragen, besuche die Abonnement‑Einstellungen deiner Plattform. Wenn du Hilfe bei der Identifikation deines Plans brauchst oder eine Abrechnungsfrage hast, kontaktiere uns unter [support@visorfitness.com](mailto:support@visorfitness.com).",
+          "a1": "Öffne VISOR, gehe zu deinen Konto‑ oder Abonnement‑Einstellungen und tippe auf \"Restore Purchases.\" Stelle sicher, dass du mit derselben Apple ID oder Google Play‑Anmeldung angemeldet bist, die für den ursprünglichen Kauf verwendet wurde. Wenn das Problem weiterhin besteht, sende uns eine E‑Mail mit deinem Beleg oder Bestell‑ID.",
+          "q2": "Wie kündige, erstattet oder ändere ich mein Abonnement?",
+          "a2": "Abonnements werden über Apple (iOS) oder Google (Android) verwaltet. Um zu kündigen oder eine Rückerstattung zu beantragen, besuche die Abonnement‑Einstellungen deiner Plattform. Wenn du Hilfe bei der Identifizierung deines Plans brauchst oder eine Abrechnungsfrage hast, kontaktiere uns unter [support@visorfitness.com](mailto:support@visorfitness.com).",
           "q3": "Wie lösche ich mein Konto und meine Daten?",
-          "a3": "Du kannst dein Konto direkt in der VISOR‑App in den Kontoeinstellungen löschen. Dadurch werden dein Profil, Fitnessdaten, Fotos und Community‑Inhalte aus den aktiven Systemen entfernt. Wenn du keinen Zugriff auf die App hast, sende eine E‑Mail an [privacy@visorfitness.com](mailto:privacy@visorfitness.com) von der E‑Mail‑Adresse, die mit deinem Konto verknüpft ist.",
+          "a3": "Du kannst dein Konto direkt in der VISOR‑App in deinen Kontoeinstellungen löschen. Dadurch werden dein Profil, Fitnessdaten, Fotos und Community‑Inhalte aus den aktiven Systemen entfernt. Wenn du keinen Zugriff auf die App hast, schicke eine E‑Mail an [privacy@visorfitness.com](mailto:privacy@visorfitness.com) von der E‑Mail‑Adresse, die mit deinem Konto verknüpft ist.",
           "q4": "Die App stürzt ab oder lädt nicht. Was soll ich tun?",
-          "a4": "Probier zuerst diese Schritte: App zwangsbeenden, Gerät neu starten und sicherstellen, dass du die neueste App‑Version und das aktuellste OS‑Update installiert hast. Wenn das Problem weiterhin besteht, sende eine E‑Mail an [support@visorfitness.com](mailto:support@visorfitness.com) mit deinem Gerätemodell, OS‑Version und einer Beschreibung dessen, was passiert."
+          "a4": "Versuche zunächst diese Schritte: Erzwinge das Schließen der App, starte dein Gerät neu und stelle sicher, dass du die neueste App‑Version und das neueste Betriebssystem installiert hast. Wenn das Problem weiterhin besteht, sende eine E‑Mail an [support@visorfitness.com](mailto:support@visorfitness.com) mit deinem Gerätemodell, OS‑Version und einer Beschreibung des Fehlers."
         },
         "billing": {
           "heading": "Abrechnung & Abonnements",
-          "body": "VISOR‑Abonnements werden über Apple App Store (iOS) und Google Play (Android) abgewickelt. Wir speichern deine Kartendaten nicht.\n\n- Um ein iOS‑Abonnement zu kündigen oder zu verwalten: iPhone Settings → [Your Name] → Subscriptions → VISOR.\n- Um ein Android‑Abonnement zu verwalten: Google Play Store → Profile → Payments & subscriptions → Subscriptions.\n- Für Rückerstattungsanfragen nutze den Rückerstattungsablauf von Apple oder Google, oder kontaktiere uns mit deinen Bestelldaten.\n\nWenn du eine unerwartete Abbuchung siehst oder Probleme beim Wiederherstellen eines Kaufs hast, sende eine E‑Mail an [support@visorfitness.com](mailto:support@visorfitness.com) und füge Plattform, Bestell‑ID und nach Möglichkeit einen Screenshot bei."
+          "body": "VISOR‑Abonnements werden über Apple App Store (iOS) und Google Play (Android) abgewickelt. Wir speichern deine Zahlungsdaten nicht.\n\n- Um ein iOS‑Abonnement zu kündigen oder zu verwalten: iPhone Einstellungen → [Dein Name] → Abonnements → VISOR.\n- Um ein Android‑Abonnement zu verwalten: Google Play Store → Profil → Zahlungen & Abonnements → Abonnements.\n- Für Rückerstattungsanfragen nutze den Rückerstattungsprozess von Apple oder Google oder kontaktiere uns mit deinen Bestelldaten.\n\nWenn du eine unerwartete Abbuchung siehst oder Probleme beim Wiederherstellen eines Kaufs hast, sende eine E‑Mail an [support@visorfitness.com](mailto:support@visorfitness.com) und gib deine Plattform, Bestell‑ID und nach Möglichkeit einen Screenshot an."
         },
         "report": {
           "heading": "Problem oder Sicherheitsbedenken melden",
-          "body": "Wenn du schädliche, ungenaue oder unangemessene KI‑Ausgaben, Community‑Inhalte oder App‑Verhalten feststellst, melde dies bitte in der App, wo verfügbar, oder sende uns eine E‑Mail.\n\n- Allgemeine Probleme & Feedback: [support@visorfitness.com](mailto:support@visorfitness.com)\n- Datenschutz, Daten oder Kontolöschung: [privacy@visorfitness.com](mailto:privacy@visorfitness.com)\n\nWir prüfen Meldungen so schnell wie möglich und bemühen uns, bei Sicherheits‑ oder Missbrauchsmeldungen innerhalb von 5 Werktagen zu antworten."
+          "body": "Wenn du auf schädliche, ungenaue oder unangemessene KI‑Ausgaben, Community‑Inhalte oder App‑Verhalten stößt, melde dies bitte in der App, sofern verfügbar, oder sende uns eine E‑Mail.\n\n- Allgemeine Probleme & Feedback: [support@visorfitness.com](mailto:support@visorfitness.com)\n- Datenschutz, Daten oder Kontolöschung: [privacy@visorfitness.com](mailto:privacy@visorfitness.com)\n\nWir prüfen Meldungen so schnell wie möglich und bemühen uns, bei Sicherheits‑ oder Missbrauchsberichten innerhalb von 5 Werktagen zu antworten."
         },
         "address": {
           "heading": "Mailing Address",
           "body": "Drakkar Mahmed Harun\nBjørnegårdsvingen 17\n1338 Sandvika\nNorway\nOrganisation number: 935 975 530"
         }
       }
+    }
+  },
+  "landing": {
+    "howItWorks": {
+      "titlePre": "Wie",
+      "titleAccent": "VISOR AI Fitness App",
+      "titlePost": "funktioniert",
+      "subtitle": "Vier Schritte zu deiner Vorher‑ & Nachher‑Körperverwandlung.",
+      "step": "Schritt",
+      "steps": [
+        {
+          "title": "Lade dein Foto hoch",
+          "desc": "Mache ein Ganzkörperfoto und lege deine Transformationsziele fest."
+        },
+        {
+          "title": "Sieh deine Zukunft",
+          "desc": "Die KI erzeugt realistische Vorschauen deines Körpers bei Monat 1, 3 und darüber hinaus."
+        },
+        {
+          "title": "Baue tägliche Rituale auf",
+          "desc": "Dein KI‑Coach führt dich durch personalisierte Gewohnheiten und Workouts."
+        },
+        {
+          "title": "Verwandle deine Identität",
+          "desc": "Verfolge deinen Soul‑Fortschritt, während Fitness zu dem wird, wer du bist."
+        }
+      ]
+    },
+    "whatsInside": {
+      "titlePre": "Was drin ist",
+      "titleAccent": "VISOR",
+      "subtitle": "18 Funktionen. Eine Identitäts‑Transformations‑Engine.",
+      "features": [
+        {
+          "title": "KI‑Körperverwandlung",
+          "desc": "Sieh deine Vorhersagen für Monat 1, 3, 6 und das Olympia‑Zukunfts‑Ich."
+        },
+        {
+          "title": "KI‑12‑Wochen‑Plan",
+          "desc": "Ein adaptives Programm, das sich mit deinem Fortschritt weiterentwickelt."
+        },
+        {
+          "title": "Level‑Fortschritt",
+          "desc": "Anfänger → Mittelstufe → Fortgeschritten, freigeschaltet durch Verhalten."
+        },
+        {
+          "title": "Aktivitäts‑Tracker",
+          "desc": "Protokolliere Einheiten, Routen und Aufwand mit intelligenten Insights."
+        },
+        {
+          "title": "Kalorien‑Tracker",
+          "desc": "Makro‑ & Kalorienzähler mit zielbewusstem Feedback."
+        },
+        {
+          "title": "KI‑Lebensmittel‑Scanner",
+          "desc": "Kamera loggt Mahlzeiten automatisch — keine manuelle Eingabe."
+        },
+        {
+          "title": "Übungsbibliothek",
+          "desc": "Hunderte von Übungen mit eingebetteten YouTube‑Demos."
+        },
+        {
+          "title": "Workout‑Programme",
+          "desc": "Strukturierte Programme mit Personal‑Record‑Tracking."
+        },
+        {
+          "title": "Custom Workout Builder",
+          "desc": "Erstelle deine eigenen Sessions, Sätze und Progressionen."
+        },
+        {
+          "title": "Schlaf‑ & Gesundheits‑Charts",
+          "desc": "Erholung, Schlaf und Trend‑Visualisierungen."
+        },
+        {
+          "title": "VISOR AI Chat",
+          "desc": "Immer verfügbarer Coach für Form, Nahrung und Motivation."
+        },
+        {
+          "title": "Dynamischer KI‑Coach",
+          "desc": "Persönlichkeit und Ton verschieben sich mit deiner Stimmung und deinen Zielen."
+        },
+        {
+          "title": "Rituale & Streak‑Wiederherstellung",
+          "desc": "Tägliche Rituale mit Vergebung, wenn das Leben dazwischenkommt."
+        },
+        {
+          "title": "Soul Track",
+          "desc": "Identitätsorientierte Gamification — stimme ab, wer du werden willst."
+        },
+        {
+          "title": "Community‑Feed",
+          "desc": "Entdecke, folge und lerne von echten Transformationen."
+        },
+        {
+          "title": "Gruppen & Direktnachrichten",
+          "desc": "Trainiere mit Freunden, Coaches und privaten Kreisen."
+        },
+        {
+          "title": "Intelligente Push‑Benachrichtigungen",
+          "desc": "Kontext‑bewusste Erinnerungen — niemals spammy."
+        },
+        {
+          "title": "Olympia‑Modus",
+          "desc": "Top‑KI‑Rendering, Prioritätswarteschlange & Elite‑Rituale."
+        }
+      ]
+    },
+    "pricing": {
+      "titlePre": "App‑Pläne &",
+      "titleAccent": "Preise",
+      "subtitle": "Beginne gratis. Entwickle dich, wenn du bereit bist zu transformieren.",
+      "mostPopular": "Am beliebtesten",
+      "month": "/Monat",
+      "forever": "für immer",
+      "orPrefix": "oder",
+      "trial7": "7‑tägige kostenlose Testphase",
+      "plans": [
+        {
+          "name": "Free",
+          "subtitle": "The Awakening",
+          "price": "$0",
+          "period": "für immer",
+          "features": [
+            "KI‑Transformation — Monat 1 (eingeschränkt)",
+            "KI‑12‑Wochen‑Plan — Vorschau Woche 1",
+            "Aktivitäts‑Tracker (bis zu 5 Einheiten/Monat)",
+            "Kalorien‑Tracker (bis zu 10 Einträge/Tag)",
+            "Übungsbibliothek (YouTube‑Demos)",
+            "VISOR AI Chat (5 Nachrichten/Tag)",
+            "Community‑Feed & Entdecken (nur Ansicht)",
+            "Basis‑Coach + Rituale (bis zu 5/Tag)"
+          ],
+          "cta": "Loslegen"
+        },
+        {
+          "name": "Core",
+          "subtitle": "The Builder",
+          "price": "$12.99",
+          "period": "/Monat",
+          "yearlyPrice": "$89.99/yr (save 42%)",
+          "features": [
+            "Alles in Free +",
+            "Voller 12‑Wochen‑Plan (Wochen 2–12)",
+            "Level‑Fortschritt: Anfänger → Fortgeschritten",
+            "Unbegrenztes Aktivitäts‑ & Kalorien‑Tracking",
+            "Workout‑Programme + Personal Records",
+            "Schlaf‑Tracking & Gesundheits‑Charts",
+            "Dynamischer Coach + personalisierte Nachrichten",
+            "Vollständige Ritual‑Bibliothek + Streak‑Wiederherstellung",
+            "Unbegrenzter VISOR AI Chat",
+            "KI‑Transformation Monat 3 Prognose",
+            "Posten, Kommentieren & Direktnachrichten"
+          ],
+          "cta": "Zu Core"
+        },
+        {
+          "name": "Pro",
+          "subtitle": "The Performer",
+          "price": "$19.99",
+          "period": "/Monat",
+          "yearlyPrice": "$139.99/yr (save 42%)",
+          "features": [
+            "Alles in Core +",
+            "KI‑Lebensmittel‑Scanner (Kamera‑Auto‑Log)",
+            "Custom Workout Builder",
+            "Vollständige Coach‑Persönlichkeit & Ton‑Verschiebung",
+            "KI‑Transformation Monat 6 Prognose",
+            "Gruppen erstellen & beitreten + Push‑Alerts",
+            "Erweiterte Fortschritts‑Insights"
+          ],
+          "cta": "Zu Pro"
+        },
+        {
+          "name": "Elite",
+          "subtitle": "The Olympia Path",
+          "price": "$27.99",
+          "period": "/Monat",
+          "yearlyPrice": "$199.99/yr (save 40%)",
+          "features": [
+            "Alles in Pro +",
+            "Olympia‑Modus — fortschrittlichstes KI‑Rendering",
+            "Unbegrenzte KI‑Transformations‑Prognosen",
+            "Priorisierte KI‑Rendering‑Warteschlange",
+            "Elite‑Ritual‑Bibliothek",
+            "Früher Zugang zu neuen Funktionen"
+          ],
+          "cta": "7‑tägige Gratis‑Testphase starten"
+        }
+      ]
+    },
+    "coaching": {
+      "badge": "Premium · Nur für Elite‑Mitglieder",
+      "titlePre": "Personal Training,",
+      "titleAccent": "direkt zu dir",
+      "subtitle": "Buche verifizierte, weltklasse Fitness‑Coaches für personalisierte 1‑zu‑1‑Trainingseinheiten bei dir zu Hause. Echtes Coaching. Echte Körperveränderungen.",
+      "heroCaptionPre": "Personalisiertes Training, das zu",
+      "heroCaptionAccent": "dir",
+      "heroCaptionSub": "Individuelle Trainingspläne, Echtzeit‑Anpassungen und unterstützendes Coaching — alles persönlich.",
+      "features": [
+        {
+          "title": "Verifizierte & geprüfte Coaches",
+          "description": "Jeder Coach wird vor dem Onboarding von unserem Team Hintergrund‑geprüft, zertifiziert und bewertet."
+        },
+        {
+          "title": "Sitzungen zu Hause oder im Studio",
+          "description": "Dein Coach kommt zu dir — zu Hause, im Park oder in deinem Studio. Du wählst den Ort."
+        },
+        {
+          "title": "Hybrid‑Coaching",
+          "description": "Kombiniere Präsenzsitzungen mit Live‑Video‑Check‑ins für Verantwortlichkeit zwischen den Besuchen."
+        },
+        {
+          "title": "Flexibles Buchen",
+          "description": "Buche einzelne Sitzungen oder Wochenpakete. Verschiebe jederzeit ohne Strafen."
+        }
+      ],
+      "meetTitlePre": "Lerne deine",
+      "meetTitleAccent": "Coaches kennen",
+      "meetSubtitle": "Handverlesene Profis. Hintergrundgeprüft. Peer‑reviewed.",
+      "periodSession": "Session",
+      "periodWeekly": "Wöchentlich",
+      "periodMonthly": "Monatlich",
+      "save33": "33% sparen",
+      "perSession": "Sitzung",
+      "perWeek": "Woche",
+      "perMonth": "Monat",
+      "sessionsSuffix": "Sitzungen",
+      "viewProfile": "Profil ansehen →",
+      "comingSoon": "Demnächst",
+      "startingAtPre": "Ab",
+      "startingAtSuffix": "· Verfügbar in ausgewählten Städten",
+      "meanwhilePre": "Inzwischen,",
+      "meanwhileTry": "probier unsere anderen Funktionen",
+      "meanwhileOr": "oder",
+      "meanwhileDownload": "lade die App herunter",
+      "meanwhileSuffix": "für frühen Zugang.",
+      "coaches": [
+        {
+          "name": "Marcus Cole",
+          "specialty": "Strength & Hypertrophy",
+          "badge": "IFBB Pro",
+          "bio": "Marcus ist ein ehemaliger Wettkampf‑Bodybuilder und jetzt Elite‑Coach mit über 12 Jahren praktischer Erfahrung. Er spezialisiert sich auf Progressive‑Overload‑Programme, Körperrekomposition und Wettkampfvorbereitung. Seine Klienten haben unter seiner Leitung zusammen über 5.000 lbs verloren und fettfreie Muskelmasse aufgebaut.",
+          "certifications": [
+            "IFBB Professional League",
+            "NASM Certified Personal Trainer",
+            "Precision Nutrition Level 2",
+            "CPR/AED Certified"
+          ],
+          "availability": "Mo–Sa, 06:00–20:00",
+          "locations": [
+            "Los Angeles",
+            "Orange County"
+          ]
+        },
+        {
+          "name": "Priya Sharma",
+          "specialty": "Mobility & Recovery",
+          "badge": "DPT Certified",
+          "bio": "Dr. Priya Sharma ist Doctor of Physical Therapy und schlägt die Brücke zwischen Rehabilitation und Höchstleistung. Sie kombiniert korrigierende Übungen, Atemarbeit und dynamische Mobilitätsprotokolle, um Klienten schmerzfrei zu bewegen und ihre Leistungsfähigkeit zu maximieren — ob bei der Genesung nach Verletzungen oder im Training für Wettkämpfe.",
+          "certifications": [
+            "Doctor of Physical Therapy (DPT)",
+            "Functional Movement Screen (FMS) Level 2",
+            "Yoga Alliance RYT-500",
+            "Dry Needling Certified"
+          ],
+          "availability": "Mo–Fr, 07:00–18:00",
+          "locations": [
+            "New York City",
+            "Brooklyn"
+          ]
+        },
+        {
+          "name": "James Rivera",
+          "specialty": "Athletic Performance",
+          "badge": "CSCS Elite",
+          "bio": "James hat NCAA Division I Athleten, MMA‑Kämpfer und Wochenend‑Athleten trainiert. Sein evidenzbasierter Ansatz vereint explosive Kraftentwicklung, Schnelligkeitsaufbau und sportspezifische Konditionierung. Er ist bekannt dafür, unerschütterliche mentale Stärke neben physischer Leistungsfähigkeit aufzubauen.",
+          "certifications": [
+            "NSCA CSCS (Certified Strength & Conditioning Specialist)",
+            "USA Weightlifting Level 2",
+            "First Responder Sports Medicine",
+            "TRX Suspension Training Certified"
+          ],
+          "availability": "Mo–So, 05:00–21:00",
+          "locations": [
+            "Miami",
+            "Fort Lauderdale"
+          ]
+        }
+      ],
+      "modal": {
+        "close": "Schließen",
+        "about": "Über",
+        "certifications": "Zertifizierungen",
+        "availability": "Verfügbarkeit",
+        "locations": "Standorte",
+        "comingSoonTitle": "Demnächst",
+        "comingSoonBodyPre": "Persönliches Coaching startet bald. In der Zwischenzeit,",
+        "comingSoonBodyLink": "erkunde unsere anderen Funktionen",
+        "comingSoonBodySuffix": "!",
+        "beFirst": "Sei der Erste, der es erfährt — lade die App für frühen Zugang herunter"
+      }
+    },
+    "video": {
+      "titlePre": "Sieh",
+      "titleAccent": "VISOR KI‑Körperverwandlung",
+      "titlePost": "in Aktion",
+      "defaultSubtitle": "Sieh, wie KI‑gestützte Körpervisualisierung, adaptives Coaching und Identitäts‑Tracking in der ultimativen Fitness‑Tracker‑App zusammenwirken.",
+      "screensLabel": "Screens",
+      "cards": [
+        {
+          "title": "Personalisierte Workouts",
+          "description": "Durchsuche nach Muskelgruppe, folge coachgeführten Einheiten und sieh deine Nach‑Workout‑Zusammenfassung"
+        },
+        {
+          "title": "Finde deinen idealen Coach",
+          "description": "Finde verifizierte Fitness‑Coaches, durchsuche Profile und buche HIIT‑Experten in deiner Nähe"
+        },
+        {
+          "title": "Aktivität & smarte Insights",
+          "description": "Verfolge jede Einheit, kartiere deine Routen und erreiche wöchentliche Aktivitätsziele mit datengestützten Insights"
+        },
+        {
+          "title": "Lerne deinen KI‑Coach kennen",
+          "description": "Fitness 3.0 — adaptive KI, die Workouts empfiehlt, deine Limits respektiert und in Echtzeit an der Form korrigiert"
+        },
+        {
+          "title": "Ernährung & Meal‑Pläne",
+          "description": "Personalisierte Meal‑Pläne und Makro‑Tracking, um deine Transformation zu unterstützen"
+        }
+      ]
+    },
+    "testimonials": {
+      "titlePre": "Echte",
+      "titleAccent": "Transformationen",
+      "subtitle": "Menschen hören nicht auf, weil ihnen Workouts fehlen — sie hören auf, weil sie ihr zukünftiges Selbst nicht sehen können.",
+      "items": [
+        {
+          "name": "Marcus J.",
+          "role": "15 kg in 4 Monaten verloren",
+          "text": "Mein Zukunfts‑Ich am ersten Tag zu sehen, hat alles verändert. Ich wollte es nicht nur — ich glaubte daran. VISOR ließ mich fühlen, als hätte die Transformation schon begonnen."
+        },
+        {
+          "name": "Aisha K.",
+          "role": "Fitness‑Coach",
+          "text": "Der VISOR KI‑Coach ist anders als alles, was ich kenne. Er passt sich der Stimmung meiner Klienten an und hält sie verantwortlich. Der Soul Track ist reine Genialität für Retention."
+        },
+        {
+          "name": "Daniel R.",
+          "role": "Verwirklicht in 6 Monaten",
+          "text": "Das Ritual‑System hat meine chaotischen Gewohnheiten in eine Identität verwandelt. Ich 'versuche nicht mehr, fit zu werden' — ich bin fit. VISOR hat diesen Wandel ermöglicht."
+        }
+      ]
     }
   }
 }
