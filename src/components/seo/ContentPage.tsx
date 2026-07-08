@@ -27,7 +27,7 @@ interface ContentPageProps {
 const SITE = "https://visorfitness.com";
 
 export const ContentPage = ({
-  title, description, path, h1, intro, sections, breadcrumbs, jsonLd, ctaLabel,
+  title, description, path, h1, intro, sections, breadcrumbs, jsonLd, ctaLabel, afterSections,
 }: ContentPageProps) => {
 
   const breadcrumbLd = {
