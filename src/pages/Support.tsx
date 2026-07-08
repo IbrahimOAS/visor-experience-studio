@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { ContentPage } from "@/components/seo/ContentPage";
 import { RichText } from "@/components/seo/RichText";
+import { SupportContactForm } from "@/components/support/SupportContactForm";
 import { Mail, MessageCircle, Clock, Trash2, CreditCard, HelpCircle } from "lucide-react";
 
 const Support = () => {
