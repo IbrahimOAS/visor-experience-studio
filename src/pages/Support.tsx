@@ -121,6 +121,11 @@ const Support = () => {
           ),
         },
       ]}
+      afterSections={
+        <div className="mt-12">
+          <SupportContactForm />
+        </div>
+      }
     />
   );
 };
