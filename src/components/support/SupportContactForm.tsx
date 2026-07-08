@@ -31,7 +31,7 @@ const TOPIC_OPTIONS = [
   "account",
   "feedback",
   "other",
-] as const;
+] as ["general", "billing", "technical", "account", "feedback", "other"];
 
 export const SupportContactForm = () => {
   const { t } = useTranslation();
