@@ -21,12 +21,13 @@ interface ContentPageProps {
   breadcrumbs: Crumb[];
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
   ctaLabel?: string;
+  afterSections?: ReactNode;
 }
 
 const SITE = "https://visorfitness.com";
 
 export const ContentPage = ({
-  title, description, path, h1, intro, sections, breadcrumbs, jsonLd, ctaLabel,
+  title, description, path, h1, intro, sections, breadcrumbs, jsonLd, ctaLabel, afterSections,
 }: ContentPageProps) => {
 
   const breadcrumbLd = {
@@ -85,6 +86,8 @@ export const ContentPage = ({
               </section>
             ))}
           </div>
+
+          {afterSections}
 
           <div className="mt-16 text-center">
             <Link
