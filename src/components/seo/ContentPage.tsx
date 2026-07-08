@@ -21,6 +21,7 @@ interface ContentPageProps {
   breadcrumbs: Crumb[];
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
   ctaLabel?: string;
+  afterSections?: ReactNode;
 }
 
 const SITE = "https://visorfitness.com";
