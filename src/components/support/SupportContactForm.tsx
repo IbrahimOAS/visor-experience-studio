@@ -31,7 +31,18 @@ const TOPIC_OPTIONS = [
   "account",
   "feedback",
   "other",
-] as ["general", "billing", "technical", "account", "feedback", "other"];
+] as const;
+
+type TopicOption = (typeof TOPIC_OPTIONS)[number];
+
+const topicSchema: z.ZodType<TopicOption> = z.union([
+  z.literal("general"),
+  z.literal("billing"),
+  z.literal("technical"),
+  z.literal("account"),
+  z.literal("feedback"),
+  z.literal("other"),
+]);
 
 export const SupportContactForm = () => {
   const { t } = useTranslation();
