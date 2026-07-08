@@ -87,6 +87,8 @@ export const ContentPage = ({
             ))}
           </div>
 
+          {afterSections}
+
           <div className="mt-16 text-center">
             <Link
               to="/"
