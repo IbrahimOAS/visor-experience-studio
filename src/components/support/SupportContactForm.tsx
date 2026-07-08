@@ -70,9 +70,7 @@ export const SupportContactForm = () => {
       .trim()
       .max(50, { message: t("pages.support.form.validation.maxLength", { count: 50 }) })
       .optional(),
-    topic: z.enum(TOPIC_OPTIONS, {
-      errorMap: () => ({ message: t("pages.support.form.validation.required") }),
-    }),
+    topic: topicSchema,
     message: z
       .string()
       .trim()
