@@ -15,6 +15,7 @@ const Navbar = () => {
     { label: t("nav.howItWorks"), href: "/#how-it-works" },
     { label: t("nav.pricing"), href: "/#pricing" },
     { label: t("nav.coaching"), href: "/#coaching" },
+    { label: "Elite Coaches", href: "/elite-coaches" },
   ];
 
   return (
