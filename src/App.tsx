@@ -15,6 +15,8 @@ import BehaviorDrivenFitness from "./pages/concepts/BehaviorDrivenFitness";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
 import Support from "./pages/Support";
+import EliteCoaches from "./pages/EliteCoaches";
+import ForCoaches from "./pages/ForCoaches";
 
 
 const queryClient = new QueryClient();
@@ -37,6 +39,8 @@ const App = () => (
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfUse />} />
           <Route path="/support" element={<Support />} />
+          <Route path="/elite-coaches" element={<EliteCoaches />} />
+          <Route path="/for-coaches" element={<ForCoaches />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

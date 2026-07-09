@@ -5,6 +5,7 @@ import HowItWorks from "@/components/landing/HowItWorks";
 import ExerciseCarousel from "@/components/landing/ExerciseCarousel";
 import VideoDemo from "@/components/landing/VideoDemo";
 import WhatsInside from "@/components/landing/WhatsInside";
+import EliteCoachesTeaser from "@/components/landing/EliteCoachesTeaser";
 import PricingSection from "@/components/landing/PricingSection";
 import PersonalCoaching from "@/components/landing/PersonalCoaching";
 import DownloadCTA from "@/components/landing/DownloadCTA";
@@ -19,6 +20,7 @@ const Index = () => (
     <ExerciseCarousel />
     <VideoDemo />
     <WhatsInside />
+    <EliteCoachesTeaser />
     <PricingSection />
     <PersonalCoaching />
     <DownloadCTA />

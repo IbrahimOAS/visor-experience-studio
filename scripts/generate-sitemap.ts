@@ -33,6 +33,8 @@ const HINTS: Record<string, Pick<SitemapEntry, "changefreq" | "priority">> = {
   "/privacy": { changefreq: "yearly", priority: "0.3" },
   "/terms": { changefreq: "yearly", priority: "0.3" },
   "/support": { changefreq: "monthly", priority: "0.7" },
+  "/elite-coaches": { changefreq: "monthly", priority: "0.9" },
+  "/for-coaches": { changefreq: "monthly", priority: "0.8" },
 };
 
 export function discoverRoutes(appPath = resolve("src/App.tsx")): string[] {
