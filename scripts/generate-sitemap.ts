@@ -39,6 +39,10 @@ const EXTRA_STATIC_ROUTES: string[] = [
   "/specialties/women-fitness-coach",
   "/specialties/sports-performance-coach",
   "/specialties/mobility-coach",
+  "/blog",
+  "/blog/why-identity-beats-motivation",
+  "/blog/ai-vs-human-coaching",
+  "/blog/science-of-consistency",
 ];
 
 const HINTS: Record<string, Pick<SitemapEntry, "changefreq" | "priority">> = {
@@ -62,6 +66,7 @@ const HINTS: Record<string, Pick<SitemapEntry, "changefreq" | "priority">> = {
   "/business": { changefreq: "monthly", priority: "0.6" },
   "/careers": { changefreq: "monthly", priority: "0.5" },
   "/elite": { changefreq: "monthly", priority: "0.8" },
+  "/blog": { changefreq: "weekly", priority: "0.8" },
 };
 
 
