@@ -17,6 +17,18 @@ import TermsOfUse from "./pages/TermsOfUse";
 import Support from "./pages/Support";
 import EliteCoaches from "./pages/EliteCoaches";
 import ForCoaches from "./pages/ForCoaches";
+import CoachesIndex from "./pages/coaches/CoachesIndex";
+import CoachProfile from "./pages/coaches/CoachProfile";
+import CityPage from "./pages/cities/CityPage";
+import SpecialtyPage from "./pages/specialties/SpecialtyPage";
+import Trust from "./pages/Trust";
+import Transformations from "./pages/Transformations";
+import Compare from "./pages/Compare";
+import Business from "./pages/Business";
+import Careers from "./pages/Careers";
+import Elite from "./pages/Elite";
+
+
 
 
 const queryClient = new QueryClient();
@@ -41,6 +53,17 @@ const App = () => (
           <Route path="/support" element={<Support />} />
           <Route path="/elite-coaches" element={<EliteCoaches />} />
           <Route path="/for-coaches" element={<ForCoaches />} />
+          <Route path="/coaches" element={<CoachesIndex />} />
+          <Route path="/coaches/:slug" element={<CoachProfile />} />
+          <Route path="/cities/:city" element={<CityPage />} />
+          <Route path="/specialties/:slug" element={<SpecialtyPage />} />
+          <Route path="/trust" element={<Trust />} />
+          <Route path="/transformations" element={<Transformations />} />
+          <Route path="/compare" element={<Compare />} />
+          <Route path="/business" element={<Business />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/elite" element={<Elite />} />
+
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

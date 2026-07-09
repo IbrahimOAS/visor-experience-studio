@@ -21,6 +21,26 @@ export interface SitemapEntry {
 const EXCLUDED_PATHS = new Set<string>(["*", "/not-found", "/404"]);
 const EXCLUDED_PREFIXES = ["/admin", "/lovable", "/auth", "/dashboard/private"];
 
+// Reserved Phase 2 slug pages — dynamic routes in App.tsx are filtered out by
+// the regex, so list every real coach / city / specialty slug we ship.
+const EXTRA_STATIC_ROUTES: string[] = [
+  "/coaches/marcus-cole",
+  "/coaches/priya-sharma",
+  "/coaches/james-rivera",
+  "/cities/new-york",
+  "/cities/oslo",
+  "/cities/london",
+  "/cities/stockholm",
+  "/specialties/strength-coach",
+  "/specialties/bodybuilding-coach",
+  "/specialties/weight-loss-coach",
+  "/specialties/home-personal-trainer",
+  "/specialties/online-fitness-coach",
+  "/specialties/women-fitness-coach",
+  "/specialties/sports-performance-coach",
+  "/specialties/mobility-coach",
+];
+
 const HINTS: Record<string, Pick<SitemapEntry, "changefreq" | "priority">> = {
   "/": { changefreq: "weekly", priority: "1.0" },
   "/why-visor": { changefreq: "monthly", priority: "0.9" },
@@ -35,7 +55,15 @@ const HINTS: Record<string, Pick<SitemapEntry, "changefreq" | "priority">> = {
   "/support": { changefreq: "monthly", priority: "0.7" },
   "/elite-coaches": { changefreq: "monthly", priority: "0.9" },
   "/for-coaches": { changefreq: "monthly", priority: "0.8" },
+  "/coaches": { changefreq: "weekly", priority: "0.8" },
+  "/trust": { changefreq: "monthly", priority: "0.7" },
+  "/transformations": { changefreq: "monthly", priority: "0.7" },
+  "/compare": { changefreq: "monthly", priority: "0.7" },
+  "/business": { changefreq: "monthly", priority: "0.6" },
+  "/careers": { changefreq: "monthly", priority: "0.5" },
+  "/elite": { changefreq: "monthly", priority: "0.8" },
 };
+
 
 export function discoverRoutes(appPath = resolve("src/App.tsx")): string[] {
   if (!existsSync(appPath)) return ["/"];
@@ -48,7 +76,7 @@ export function discoverRoutes(appPath = resolve("src/App.tsx")): string[] {
     if (EXCLUDED_PREFIXES.some((p) => path.startsWith(p))) return false;
     return true;
   });
-  return Array.from(new Set(routes));
+  return Array.from(new Set([...routes, ...EXTRA_STATIC_ROUTES]));
 }
 
 export function buildEntries(routes: string[]): SitemapEntry[] {
