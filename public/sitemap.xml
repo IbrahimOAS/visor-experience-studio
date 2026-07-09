@@ -101,6 +101,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://visorfitness.com/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://visorfitness.com/coaches/marcus-cole</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -172,6 +177,21 @@
   </url>
   <url>
     <loc>https://visorfitness.com/specialties/mobility-coach</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://visorfitness.com/blog/why-identity-beats-motivation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://visorfitness.com/blog/ai-vs-human-coaching</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://visorfitness.com/blog/science-of-consistency</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
