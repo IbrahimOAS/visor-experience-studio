@@ -27,6 +27,8 @@ import Compare from "./pages/Compare";
 import Business from "./pages/Business";
 import Careers from "./pages/Careers";
 import Elite from "./pages/Elite";
+import BlogIndex from "./pages/blog/BlogIndex";
+import BlogPost from "./pages/blog/BlogPost";
 
 
 
@@ -63,6 +65,8 @@ const App = () => (
           <Route path="/business" element={<Business />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/elite" element={<Elite />} />
+          <Route path="/blog" element={<BlogIndex />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
 
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
