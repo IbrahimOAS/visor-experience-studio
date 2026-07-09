@@ -14,6 +14,57 @@ export type Database = {
   }
   public: {
     Tables: {
+      coach_applications: {
+        Row: {
+          certification: string | null
+          city: string
+          country: string
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          message: string | null
+          phone: string | null
+          specialization: string
+          status: string
+          updated_at: string
+          website: string | null
+          years_experience: number | null
+        }
+        Insert: {
+          certification?: string | null
+          city: string
+          country: string
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          message?: string | null
+          phone?: string | null
+          specialization: string
+          status?: string
+          updated_at?: string
+          website?: string | null
+          years_experience?: number | null
+        }
+        Update: {
+          certification?: string | null
+          city?: string
+          country?: string
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          message?: string | null
+          phone?: string | null
+          specialization?: string
+          status?: string
+          updated_at?: string
+          website?: string | null
+          years_experience?: number | null
+        }
+        Relationships: []
+      }
       support_submissions: {
         Row: {
           company: string | null
