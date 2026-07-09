@@ -28,7 +28,7 @@ export default function ComparisonTemplate({ data, breadcrumbs }: Props) {
       pageKey={data.pageKey}
       path={data.path}
       breadcrumbTrail={crumbs.map((c) => ({
-        key: c.label.toLowerCase(),
+        key: c.label.toLowerCase() as "compare" | "concepts" | "home" | "support",
         href: c.href,
       }))}
     />
