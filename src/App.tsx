@@ -17,6 +17,18 @@ import TermsOfUse from "./pages/TermsOfUse";
 import Support from "./pages/Support";
 import EliteCoaches from "./pages/EliteCoaches";
 import ForCoaches from "./pages/ForCoaches";
+import CoachesIndex from "./pages/coaches/CoachesIndex";
+import CoachProfile from "./pages/coaches/CoachProfile";
+import CityPage from "./pages/cities/CityPage";
+import SpecialtyPage from "./pages/specialties/SpecialtyPage";
+import Trust from "./pages/Trust";
+import Transformations from "./pages/Transformations";
+import Compare from "./pages/Compare";
+import Business from "./pages/Business";
+import Careers from "./pages/Careers";
+import Elite from "./pages/Elite";
+
+
 
 
 const queryClient = new QueryClient();
