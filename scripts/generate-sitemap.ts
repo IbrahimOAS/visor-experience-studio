@@ -76,7 +76,7 @@ export function discoverRoutes(appPath = resolve("src/App.tsx")): string[] {
     if (EXCLUDED_PREFIXES.some((p) => path.startsWith(p))) return false;
     return true;
   });
-  return Array.from(new Set(routes));
+  return Array.from(new Set([...routes, ...EXTRA_STATIC_ROUTES]));
 }
 
 export function buildEntries(routes: string[]): SitemapEntry[] {
