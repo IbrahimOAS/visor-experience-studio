@@ -111,6 +111,23 @@ const PrivacyPolicy = () => (
         ),
       },
       {
+        heading: "Body Transformation Photos and Face Data",
+        body: (
+          <>
+            <p>
+              The body transformation feature asks you to upload a full-body photo in gym wear. These photos may
+              incidentally contain your face. VISOR does <strong>not</strong> perform facial recognition, face detection, or
+              biometric face analysis on any photo. Face data is <strong>not extracted, stored separately, or used for any purpose</strong>.
+            </p>
+            <p>
+              The photo is transmitted to <strong>Google Gemini</strong> solely to generate a visual rendering of potential
+              physique changes and is <strong>not used for identification or any face-specific processing</strong>. As with all
+              health-related AI features, we rely on your explicit consent before processing body transformation photos.
+            </p>
+          </>
+        ),
+      },
+      {
         heading: "How We Share Information",
         body: (
           <>
