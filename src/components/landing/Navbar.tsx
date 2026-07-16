@@ -68,7 +68,10 @@ const Navbar = () => {
               {t("nav.signIn")}
             </a>
             <a
-              href="/#download"
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleAppStoreClick}
               className="px-4 h-9 inline-flex items-center rounded-full bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_20px_-4px_hsl(28,100%,55%/0.5)]"
             >
               {t("nav.getApp")}
