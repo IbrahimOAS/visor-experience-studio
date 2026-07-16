@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { Apple, ArrowDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { APP_STORE_URL, handleAppStoreClick } from "@/lib/app-store";
 import heroBg from "@/assets/hero-bg.jpg";
 import screen1 from "@/assets/app-screen-1.png";
 import screen2 from "@/assets/app-screen-2.png";
@@ -63,12 +64,23 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
+          <a
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={handleAppStoreClick}
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_30px_-4px_hsl(28,100%,55%/0.5)] group"
+          >
+            <Apple size={20} />
+            {t("hero.cta")}
+          </a>
           <a
             href="#features"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl glass-card-strong text-primary font-semibold hover:bg-primary/10 transition-all duration-300 hover:shadow-[0_0_30px_-4px_hsl(28,100%,55%/0.3)] group"
           >
-            {t("hero.cta")} <ArrowDown size={18} className="group-hover:translate-y-1 transition-transform duration-300" />
+            {t("hero.secondaryCta")} <ArrowDown size={18} className="group-hover:translate-y-1 transition-transform duration-300" />
           </a>
         </motion.div>
       </div>

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import { APP_STORE_URL, handleAppStoreClick } from "@/lib/app-store";
 import visorLogo from "@/assets/visor-logo.png";
 import LanguageToggle from "@/components/LanguageToggle";
 
@@ -67,7 +68,10 @@ const Navbar = () => {
               {t("nav.signIn")}
             </a>
             <a
-              href="/#download"
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleAppStoreClick}
               className="px-4 h-9 inline-flex items-center rounded-full bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_20px_-4px_hsl(28,100%,55%/0.5)]"
             >
               {t("nav.getApp")}
@@ -114,8 +118,13 @@ const Navbar = () => {
                       {t("nav.signIn")}
                     </a>
                     <a
-                      href="/#download"
-                      onClick={() => setMobileOpen(false)}
+                      href={APP_STORE_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => {
+                        setMobileOpen(false);
+                        handleAppStoreClick(e);
+                      }}
                       className="px-4 h-9 inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-semibold"
                     >
                       {t("nav.getApp")}

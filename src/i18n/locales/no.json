@@ -13,13 +13,15 @@
     "titleA": "Se din fremtid.",
     "titleB": "Bli den.",
     "subtitle": "VISOR er AI-treningsappen som visualiserer kroppsforvandlingen din med realistiske før- og etterprediksjoner. Bygg tro gjennom daglige ritualer og få en emosjonstilpasset AI-coach som gjør konsistens om til varig forandring.",
-    "cta": "Utforsk funksjonene"
+    "cta": "Last ned på App Store",
+    "secondaryCta": "Utforsk funksjonene"
   },
   "download": {
-    "title": "Last ned",
-    "titleAccent": "AI-treningsappen",
-    "titleSuffix": "i dag",
-    "subtitle": "Få VISOR på iOS eller Android og se din før- og etter‑kroppsprediksjon på sekunder.",
+    "title": "VISOR er",
+    "titleAccent": "live",
+    "titleSuffix": "",
+    "launchBadge": "Nå på App Store",
+    "subtitle": "Last ned VISOR i dag og se din AI-drevne kroppsforvandlingsprediksjon på sekunder. Din fremtidige jeg venter allerede.",
     "appStoreCaption": "Last ned på",
     "appStore": "App Store",
     "playCaption": "Få den på",
