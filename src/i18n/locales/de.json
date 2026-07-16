@@ -270,6 +270,57 @@
           "heading": "Mailing Address",
           "body": "Drakkar Mahmed Harun\nBjørnegårdsvingen 17\n1338 Sandvika\nNorway\nOrganisation number: 935 975 530"
         }
+      },
+      "form": {
+        "title": "Sende uns dein Anliegen",
+        "subtitle": "Fülle das folgende Formular aus und wir melden uns so schnell wie möglich.",
+        "fullName": {
+          "label": "Vollständiger Name",
+          "placeholder": "Vollständiger Name"
+        },
+        "email": {
+          "label": "E-Mail-Adresse",
+          "placeholder": "E-Mail-Adresse"
+        },
+        "company": {
+          "label": "Unternehmen",
+          "placeholder": "Unternehmen"
+        },
+        "phone": {
+          "label": "Telefonnummer",
+          "placeholder": "Telefonnummer"
+        },
+        "topic": {
+          "label": "Art des Anliegens",
+          "placeholder": "Art des Anliegens auswählen",
+          "options": {
+            "general": "Allgemeine Frage",
+            "billing": "Abrechnung & Abo",
+            "technical": "Technisches Problem",
+            "account": "Konto & Daten",
+            "feedback": "Feedback",
+            "other": "Sonstiges"
+          }
+        },
+        "message": {
+          "label": "Nachricht",
+          "placeholder": "Nachricht"
+        },
+        "submit": "Nachricht senden",
+        "submitting": "Wird gesendet...",
+        "success": {
+          "title": "Nachricht gesendet",
+          "description": "Danke für deine Nachricht. Wir haben sie erhalten und antworten bald."
+        },
+        "error": {
+          "title": "Etwas ist schiefgelaufen",
+          "description": "Wir konnten deine Nachricht nicht senden. Bitte versuche es erneut oder schreibe uns direkt eine E-Mail."
+        },
+        "validation": {
+          "required": "Dieses Feld ist erforderlich",
+          "email": "Bitte gib eine gültige E-Mail-Adresse ein",
+          "maxLength": "Höchstens {{count}} Zeichen"
+        }
       }
     }
   },

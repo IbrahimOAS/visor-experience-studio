@@ -270,6 +270,57 @@
           "heading": "Postadresse",
           "body": "Drakkar Mahmed Harun\nBjørnegårdsvingen 17\n1338 Sandvika\nNorway\nOrganisation number: 935 975 530"
         }
+      },
+      "form": {
+        "title": "Send oss din henvendelse",
+        "subtitle": "Fyll ut skjemaet nedenfor, så svarer vi så snart som mulig.",
+        "fullName": {
+          "label": "Fullt navn",
+          "placeholder": "Fullt navn"
+        },
+        "email": {
+          "label": "E-postadresse",
+          "placeholder": "E-postadresse"
+        },
+        "company": {
+          "label": "Selskap",
+          "placeholder": "Selskap"
+        },
+        "phone": {
+          "label": "Telefonnummer",
+          "placeholder": "Telefonnummer"
+        },
+        "topic": {
+          "label": "Type henvendelse",
+          "placeholder": "Velg type henvendelse",
+          "options": {
+            "general": "Generelt spørsmål",
+            "billing": "Fakturering og abonnement",
+            "technical": "Teknisk problem",
+            "account": "Konto og data",
+            "feedback": "Tilbakemelding",
+            "other": "Annet"
+          }
+        },
+        "message": {
+          "label": "Melding",
+          "placeholder": "Melding"
+        },
+        "submit": "Send melding",
+        "submitting": "Sender...",
+        "success": {
+          "title": "Melding sendt",
+          "description": "Takk for at du tok kontakt. Vi har mottatt meldingen din og svarer snart."
+        },
+        "error": {
+          "title": "Noe gikk galt",
+          "description": "Vi kunne ikke sende meldingen din. Prøv igjen eller send oss en e-post direkte."
+        },
+        "validation": {
+          "required": "Dette feltet er påkrevd",
+          "email": "Vennligst oppgi en gyldig e-postadresse",
+          "maxLength": "Maks {{count}} tegn"
+        }
       }
     }
   },
