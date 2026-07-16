@@ -1,11 +1,11 @@
 /**
  * App store download links.
  *
- * IMPORTANT: Replace APP_STORE_URL and GOOGLE_PLAY_URL below with the real
- * store URLs before publishing. The current values are placeholders.
+ * IMPORTANT: Replace GOOGLE_PLAY_URL below with the real Google Play URL
+ * before publishing. The App Store link is now live.
  */
-export const APP_STORE_URL = "https://apps.apple.com/app/visor-fitness";
-export const APP_STORE_DEEP_LINK = "itms-apps://apps.apple.com/app/visor-fitness";
+export const APP_STORE_URL = "https://apps.apple.com/us/app/visor-fitness/id6776579817";
+export const APP_STORE_DEEP_LINK = "itms-apps://apps.apple.com/us/app/visor-fitness/id6776579817";
 export const GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.visor.app";
 export const GOOGLE_PLAY_DEEP_LINK = "market://details?id=com.visor.app";
 
