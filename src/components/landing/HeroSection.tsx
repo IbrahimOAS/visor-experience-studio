@@ -17,7 +17,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={heroBg}
-          alt=""
+          alt="AI-powered body transformation visualization background"
           width="1920"
           height="1080"
           fetchPriority="high"

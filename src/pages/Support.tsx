@@ -7,6 +7,26 @@ import { Mail, MessageCircle, Clock, Trash2, CreditCard, HelpCircle } from "luci
 const Support = () => {
   const { t } = useTranslation();
 
+  const faqKeys = [
+    { q: "q1", a: "a1" },
+    { q: "q2", a: "a2" },
+    { q: "q3", a: "a3" },
+    { q: "q4", a: "a4" },
+  ];
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqKeys.map(({ q, a }) => ({
+      "@type": "Question",
+      name: t(`pages.support.sections.faq.${q}`),
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: t(`pages.support.sections.faq.${a}`),
+      },
+    })),
+  };
+
   return (
     <ContentPage
       title={t("pages.support.title")}
@@ -14,6 +34,7 @@ const Support = () => {
       path="/support"
       h1={t("pages.support.h1")}
       ctaLabel={t("hero.cta")}
+      jsonLd={faqJsonLd}
       breadcrumbs={[
         { label: t("breadcrumbs.home"), href: "/" },
         { label: t("pages.support.crumb"), href: "/support" },
