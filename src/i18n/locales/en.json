@@ -13,13 +13,15 @@
     "titleA": "See Your Future.",
     "titleB": "Become It.",
     "subtitle": "VISOR is the AI fitness app that visualizes your body transformation with realistic before & after predictions. Build belief through daily rituals and receive emotionally adaptive AI coaching to turn consistency into lasting change.",
-    "cta": "Explore Features"
+    "cta": "Download on the App Store",
+    "secondaryCta": "Explore Features"
   },
   "download": {
-    "title": "Download the",
-    "titleAccent": "AI Fitness App",
-    "titleSuffix": "Today",
-    "subtitle": "Get VISOR on iOS or Android and see your before & after body transformation prediction in seconds.",
+    "title": "VISOR is",
+    "titleAccent": "Live",
+    "titleSuffix": "",
+    "launchBadge": "Now on the App Store",
+    "subtitle": "Download VISOR today and see your AI-powered body transformation prediction in seconds. Your future self is already waiting.",
     "appStoreCaption": "Download on the",
     "appStore": "App Store",
     "playCaption": "Get it on",
