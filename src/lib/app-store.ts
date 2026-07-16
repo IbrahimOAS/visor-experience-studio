@@ -1,8 +1,8 @@
 /**
  * App store download links.
  *
- * TODO: Replace APP_STORE_URL with the real App Store URL once it is available.
- * The current value is a placeholder that redirects to the download section.
+ * IMPORTANT: Replace APP_STORE_URL and GOOGLE_PLAY_URL below with the real
+ * store URLs before publishing. The current values are placeholders.
  */
 export const APP_STORE_URL = "https://apps.apple.com/app/visor-fitness";
 export const APP_STORE_DEEP_LINK = "itms-apps://apps.apple.com/app/visor-fitness";
