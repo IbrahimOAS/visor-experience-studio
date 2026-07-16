@@ -118,8 +118,13 @@ const Navbar = () => {
                       {t("nav.signIn")}
                     </a>
                     <a
-                      href="/#download"
-                      onClick={() => setMobileOpen(false)}
+                      href={APP_STORE_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => {
+                        setMobileOpen(false);
+                        handleAppStoreClick(e);
+                      }}
                       className="px-4 h-9 inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-semibold"
                     >
                       {t("nav.getApp")}
