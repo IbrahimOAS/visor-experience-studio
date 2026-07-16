@@ -13,13 +13,15 @@
     "titleA": "Sieh deine Zukunft.",
     "titleB": "Werde sie.",
     "subtitle": "VISOR ist die KI-Fitness-App, die deine Körperverwandlung mit realistischen Vorher‑ & Nachher‑Prognosen visualisiert. Baue Überzeugung durch tägliche Rituale auf und erhalte emotional adaptives KI-Coaching, das Konsistenz in dauerhafte Veränderung verwandelt.",
-    "cta": "Funktionen entdecken"
+    "cta": "Im App Store laden",
+    "secondaryCta": "Funktionen entdecken"
   },
   "download": {
-    "title": "Lade die",
-    "titleAccent": "KI-Fitness-App",
-    "titleSuffix": "heute herunter",
-    "subtitle": "Hole dir VISOR auf iOS oder Android und sieh deine Vorher‑ und Nachher‑Körperprognose in Sekunden.",
+    "title": "VISOR ist",
+    "titleAccent": "live",
+    "titleSuffix": "",
+    "launchBadge": "Jetzt im App Store",
+    "subtitle": "Lade VISOR jetzt herunter und sieh deine KI-gestützte Körperverwandlungsprognose in Sekunden. Dein zukünftiges Ich wartet bereits.",
     "appStoreCaption": "Im",
     "appStore": "App Store",
     "playCaption": "Jetzt bei",

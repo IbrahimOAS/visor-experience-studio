@@ -13,13 +13,15 @@
     "titleA": "Ve tu futuro.",
     "titleB": "Conviértete en él.",
     "subtitle": "VISOR es la app de fitness con IA que visualiza tu transformación corporal con predicciones realistas de antes y después. Construye creencia a través de rituales diarios y recibe coaching emocionalmente adaptativo por IA para convertir la constancia en cambio duradero.",
-    "cta": "Explorar características"
+    "cta": "Descargar en el App Store",
+    "secondaryCta": "Explorar características"
   },
   "download": {
-    "title": "Descarga la",
-    "titleAccent": "App de Fitness con IA",
-    "titleSuffix": "hoy",
-    "subtitle": "Obtén VISOR en iOS o Android y ve la predicción de tu transformación corporal antes y después en segundos.",
+    "title": "VISOR está",
+    "titleAccent": "en vivo",
+    "titleSuffix": "",
+    "launchBadge": "Ya en el App Store",
+    "subtitle": "Descarga VISOR hoy y ve tu predicción de transformación corporal con IA en segundos. Tu futuro yo ya te está esperando.",
     "appStoreCaption": "Descargar en el",
     "appStore": "App Store",
     "playCaption": "Consíguelo en",
