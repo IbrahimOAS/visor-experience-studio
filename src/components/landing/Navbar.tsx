@@ -63,6 +63,7 @@ const Navbar = () => {
             <LanguageToggle />
             <a
               href="/#download"
+              aria-label={`${t("nav.signIn")} — VISOR`}
               className="px-4 h-9 inline-flex items-center rounded-full border border-white/10 bg-white/5 text-xs font-medium text-foreground hover:bg-white/10 transition-colors"
             >
               {t("nav.signIn")}
@@ -72,6 +73,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleAppStoreClick}
+              aria-label={`${t("nav.getApp")} — Download VISOR on the App Store`}
               className="px-4 h-9 inline-flex items-center rounded-full bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_20px_-4px_hsl(28,100%,55%/0.5)]"
             >
               {t("nav.getApp")}
