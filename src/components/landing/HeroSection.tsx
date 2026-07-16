@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { Apple, ArrowDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { APP_STORE_URL, handleAppStoreClick } from "@/lib/app-store";
 import heroBg from "@/assets/hero-bg.jpg";
 import screen1 from "@/assets/app-screen-1.png";
 import screen2 from "@/assets/app-screen-2.png";
