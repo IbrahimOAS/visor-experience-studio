@@ -270,6 +270,57 @@
           "heading": "Mailing Address",
           "body": "Drakkar Mahmed Harun\nBjørnegårdsvingen 17\n1338 Sandvika\nNorway\nOrganisation number: 935 975 530"
         }
+      },
+      "form": {
+        "title": "Envoyez-nous votre demande",
+        "subtitle": "Remplissez le formulaire ci-dessous et nous vous répondrons dès que possible.",
+        "fullName": {
+          "label": "Nom complet",
+          "placeholder": "Nom complet"
+        },
+        "email": {
+          "label": "Adresse e-mail",
+          "placeholder": "Adresse e-mail"
+        },
+        "company": {
+          "label": "Entreprise",
+          "placeholder": "Entreprise"
+        },
+        "phone": {
+          "label": "Numéro de téléphone",
+          "placeholder": "Numéro de téléphone"
+        },
+        "topic": {
+          "label": "Type de demande",
+          "placeholder": "Sélectionnez le type de demande",
+          "options": {
+            "general": "Question générale",
+            "billing": "Facturation & abonnement",
+            "technical": "Problème technique",
+            "account": "Compte & données",
+            "feedback": "Commentaires",
+            "other": "Autre"
+          }
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Message"
+        },
+        "submit": "Envoyer le message",
+        "submitting": "Envoi en cours...",
+        "success": {
+          "title": "Message envoyé",
+          "description": "Merci de nous avoir contactés. Nous avons bien reçu votre message et vous répondrons bientôt."
+        },
+        "error": {
+          "title": "Une erreur s'est produite",
+          "description": "Nous n'avons pas pu envoyer votre message. Veuillez réessayer ou nous écrire directement."
+        },
+        "validation": {
+          "required": "Ce champ est requis",
+          "email": "Veuillez saisir une adresse e-mail valide",
+          "maxLength": "Doit contenir au maximum {{count}} caractères"
+        }
       }
     }
   },
