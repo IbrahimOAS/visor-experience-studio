@@ -478,6 +478,15 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      get_admin_dashboard_metrics: {
+        Args: never
+        Returns: {
+          total_active_entitlements: number
+          total_coach_applications: number
+          total_profiles: number
+          total_support_submissions: number
+        }[]
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
