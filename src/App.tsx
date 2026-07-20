@@ -78,10 +78,20 @@ const App = () => (
           <Route path="/blog" element={<BlogIndex />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
 
-          
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/checkout/success" element={<CheckoutSuccess />} />
+          <Route path="/checkout/cancel" element={<CheckoutCancel />} />
+          <Route path="/account" element={<ProtectedRoute><AccountLayout /></ProtectedRoute>}>
+            <Route index element={<Account />} />
+            <Route path="profile" element={<ProfilePage />} />
+            <Route path="billing" element={<Billing />} />
+          </Route>
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </AuthProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
