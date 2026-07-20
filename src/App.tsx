@@ -40,6 +40,8 @@ import CheckoutSuccess from "./pages/checkout/Success";
 import CheckoutCancel from "./pages/checkout/Cancel";
 import { AuthProvider } from "./hooks/useAuth";
 import { ProtectedRoute } from "./components/auth/ProtectedRoute";
+import { AdminProtectedRoute } from "./components/auth/AdminProtectedRoute";
+import AdminHome from "./pages/admin/AdminHome";
 
 const queryClient = new QueryClient();
 
@@ -87,6 +89,7 @@ const App = () => (
             <Route path="profile" element={<ProfilePage />} />
             <Route path="billing" element={<Billing />} />
           </Route>
+          <Route path="/admin" element={<AdminProtectedRoute><AdminHome /></AdminProtectedRoute>} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
