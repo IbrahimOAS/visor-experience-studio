@@ -45,7 +45,8 @@
       "support": "Soporte",
       "contact": "Contacto",
       "privacy": "Política de privacidad",
-      "terms": "Términos de uso"
+      "terms": "Términos de uso",
+      "deleteAccount": "Eliminar cuenta"
     }
   },
   "breadcrumbs": {

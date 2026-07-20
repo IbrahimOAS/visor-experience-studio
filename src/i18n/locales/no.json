@@ -45,7 +45,8 @@
       "support": "Support",
       "contact": "Kontakt",
       "privacy": "Personvernerklæring",
-      "terms": "Bruksvilkår"
+      "terms": "Bruksvilkår",
+      "deleteAccount": "Slett konto"
     }
   },
   "breadcrumbs": {
