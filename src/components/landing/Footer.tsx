@@ -59,6 +59,7 @@ const Footer = () => {
           links: [
             { label: t("footer.links.privacy"), href: "/privacy" },
             { label: t("footer.links.terms"), href: "/terms" },
+            { label: t("footer.links.deleteAccount"), href: "/delete-account" },
           ],
         },
       ] as { title: string; links: FooterLink[] }[]).map((col) => (
