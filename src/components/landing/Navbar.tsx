@@ -113,7 +113,7 @@ const Navbar = () => {
                   <LanguageToggle align="left" dropdownMode="static" className="w-full" />
                   <div className="grid grid-cols-2 gap-2 border-t border-white/10 pt-4">
                     <a
-                      href="/#download"
+                      href="/auth"
                       onClick={() => setMobileOpen(false)}
                       className="px-4 h-9 inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-xs font-medium text-foreground"
                     >
