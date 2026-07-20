@@ -30,9 +30,16 @@ import Careers from "./pages/Careers";
 import Elite from "./pages/Elite";
 import BlogIndex from "./pages/blog/BlogIndex";
 import BlogPost from "./pages/blog/BlogPost";
-
-
-
+import Auth from "./pages/Auth";
+import ResetPassword from "./pages/ResetPassword";
+import AccountLayout from "./pages/account/AccountLayout";
+import Account from "./pages/account/Account";
+import ProfilePage from "./pages/account/Profile";
+import Billing from "./pages/account/Billing";
+import CheckoutSuccess from "./pages/checkout/Success";
+import CheckoutCancel from "./pages/checkout/Cancel";
+import { AuthProvider } from "./hooks/useAuth";
+import { ProtectedRoute } from "./components/auth/ProtectedRoute";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +49,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <AuthProvider>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/why-visor" element={<WhyVisor />} />
