@@ -3,7 +3,7 @@ import { useProfile } from "@/hooks/useProfile";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import SeoHead from "@/components/seo/SeoHead";
+import { SeoHead } from "@/components/seo/SeoHead";
 import { toast } from "sonner";
 
 const Profile = () => {
@@ -38,7 +38,7 @@ const Profile = () => {
 
   return (
     <>
-      <SeoHead title="Profile — VISOR" description="Edit your VISOR profile." canonical="https://visorfitness.com/account/profile" noindex />
+      <SeoHead title="Profile — VISOR" description="Edit your VISOR profile." path="/account/profile" />
       <h1 className="text-3xl font-bold mb-6">Profile</h1>
       <form onSubmit={handleSubmit} className="glass-card-strong rounded-2xl p-6 space-y-4 max-w-xl">
         <div>

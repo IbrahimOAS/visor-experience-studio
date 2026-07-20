@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useProfile } from "@/hooks/useProfile";
 import { useEntitlements } from "@/hooks/useEntitlements";
-import SeoHead from "@/components/seo/SeoHead";
+import { SeoHead } from "@/components/seo/SeoHead";
 
 const Account = () => {
   const { profile, loading } = useProfile();
@@ -9,7 +9,7 @@ const Account = () => {
 
   return (
     <>
-      <SeoHead title="Account — VISOR" description="Your VISOR account overview." canonical="https://visorfitness.com/account" noindex />
+      <SeoHead title="Account — VISOR" description="Your VISOR account overview." path="/account" />
       <div className="space-y-6">
         <div>
           <h1 className="text-3xl font-bold">Welcome{profile?.display_name ? `, ${profile.display_name}` : ""}</h1>

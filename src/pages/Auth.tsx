@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import SeoHead from "@/components/seo/SeoHead";
+import { SeoHead } from "@/components/seo/SeoHead";
 import { toast } from "sonner";
 
 /** Only allow same-origin relative paths for post-login redirect. */
@@ -63,8 +63,7 @@ const Auth = () => {
       <SeoHead
         title="Sign in — VISOR"
         description="Sign in or create your VISOR account to manage your profile and subscription."
-        canonical="https://visorfitness.com/auth"
-        noindex
+        path="/auth"
       />
       <main className="min-h-screen bg-background text-foreground flex items-center justify-center px-6 py-16">
         <div className="w-full max-w-md glass-card-strong rounded-2xl p-8">

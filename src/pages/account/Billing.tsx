@@ -1,13 +1,13 @@
 import { useEntitlements } from "@/hooks/useEntitlements";
 import { Button } from "@/components/ui/button";
-import SeoHead from "@/components/seo/SeoHead";
+import { SeoHead } from "@/components/seo/SeoHead";
 
 const Billing = () => {
   const { entitlements, activeEntitlements, loading } = useEntitlements();
 
   return (
     <>
-      <SeoHead title="Billing — VISOR" description="Your VISOR billing and subscription." canonical="https://visorfitness.com/account/billing" noindex />
+      <SeoHead title="Billing — VISOR" description="Your VISOR billing and subscription." path="/account/billing" />
       <h1 className="text-3xl font-bold mb-6">Billing</h1>
 
       <section className="glass-card-strong rounded-2xl p-6 mb-6">

@@ -4,7 +4,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import SeoHead from "@/components/seo/SeoHead";
+import { SeoHead } from "@/components/seo/SeoHead";
 import { toast } from "sonner";
 
 const ResetPassword = () => {
@@ -25,7 +25,7 @@ const ResetPassword = () => {
 
   return (
     <>
-      <SeoHead title="Reset password — VISOR" description="Set a new password for your VISOR account." canonical="https://visorfitness.com/reset-password" noindex />
+      <SeoHead title="Reset password — VISOR" description="Set a new password for your VISOR account." path="/reset-password" />
       <main className="min-h-screen bg-background text-foreground flex items-center justify-center px-6 py-16">
         <form onSubmit={handleSubmit} className="w-full max-w-md glass-card-strong rounded-2xl p-8 space-y-4">
           <h1 className="text-2xl font-bold">Set a new password</h1>

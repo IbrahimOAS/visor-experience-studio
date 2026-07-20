@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import SeoHead from "@/components/seo/SeoHead";
+import { SeoHead } from "@/components/seo/SeoHead";
 
 const CheckoutCancel = () => (
   <>
-    <SeoHead title="Checkout cancelled — VISOR" description="Your checkout was cancelled." canonical="https://visorfitness.com/checkout/cancel" noindex />
+    <SeoHead title="Checkout cancelled — VISOR" description="Your checkout was cancelled." path="/checkout/cancel" />
     <main className="min-h-screen bg-background text-foreground flex items-center justify-center px-6 py-16">
       <div className="max-w-lg text-center glass-card-strong rounded-2xl p-10">
         <h1 className="text-3xl font-bold mb-3">Checkout cancelled</h1>
