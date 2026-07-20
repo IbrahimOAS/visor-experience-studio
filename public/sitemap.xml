@@ -46,6 +46,11 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://visorfitness.com/delete-account</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://visorfitness.com/terms</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

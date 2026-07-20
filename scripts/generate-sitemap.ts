@@ -55,6 +55,7 @@ const HINTS: Record<string, Pick<SitemapEntry, "changefreq" | "priority">> = {
   "/concepts/ai-body-transformation": { changefreq: "monthly", priority: "0.8" },
   "/concepts/behavior-driven-fitness": { changefreq: "monthly", priority: "0.8" },
   "/privacy": { changefreq: "yearly", priority: "0.3" },
+  "/delete-account": { changefreq: "yearly", priority: "0.3" },
   "/terms": { changefreq: "yearly", priority: "0.3" },
   "/support": { changefreq: "monthly", priority: "0.7" },
   "/elite-coaches": { changefreq: "monthly", priority: "0.9" },
