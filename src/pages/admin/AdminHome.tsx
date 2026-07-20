@@ -43,7 +43,7 @@ const AdminHome = () => {
 
   return (
     <>
-      <SeoHead title="VISOR Admin" description="Internal VISOR admin console." path="/admin" noindex />
+      <SeoHead title="VISOR Admin" description="Internal VISOR admin console." path="/admin" />
       <main className="min-h-screen bg-background text-foreground px-6 py-16">
         <div className="max-w-5xl mx-auto">
           <header className="flex items-center justify-between mb-10">
