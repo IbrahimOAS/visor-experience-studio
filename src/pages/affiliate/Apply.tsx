@@ -21,7 +21,7 @@ const schema = z.object({
   fitness_niche: z.string().trim().min(1).max(120),
   audience_countries: z.string().trim().max(500).optional().default(""),
   reason: z.string().trim().min(20).max(2000),
-  accepted_terms: z.literal(true, { errorMap: () => ({ message: "You must accept the terms" }) }),
+  accepted_terms: z.literal(true, { message: "You must accept the terms" }),
 });
 
 const AffiliateApply = () => {
