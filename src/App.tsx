@@ -41,7 +41,13 @@ import CheckoutCancel from "./pages/checkout/Cancel";
 import { AuthProvider } from "./hooks/useAuth";
 import { ProtectedRoute } from "./components/auth/ProtectedRoute";
 import { AdminProtectedRoute } from "./components/auth/AdminProtectedRoute";
+import { AffiliateProtectedRoute } from "./components/auth/AffiliateProtectedRoute";
 import AdminHome from "./pages/admin/AdminHome";
+import AdminAffiliates from "./pages/admin/AdminAffiliates";
+import AdminAffiliateDetail from "./pages/admin/AdminAffiliateDetail";
+import AffiliateApply from "./pages/affiliate/Apply";
+import AffiliateDashboard from "./pages/affiliate/AffiliateDashboard";
+import ReferralLanding from "./pages/affiliate/ReferralLanding";
 
 const queryClient = new QueryClient();
 
@@ -90,6 +96,12 @@ const App = () => (
             <Route path="billing" element={<Billing />} />
           </Route>
           <Route path="/admin" element={<AdminProtectedRoute><AdminHome /></AdminProtectedRoute>} />
+          <Route path="/admin/affiliates" element={<AdminProtectedRoute><AdminAffiliates /></AdminProtectedRoute>} />
+          <Route path="/admin/affiliates/:id" element={<AdminProtectedRoute><AdminAffiliateDetail /></AdminProtectedRoute>} />
+
+          <Route path="/affiliate/apply" element={<AffiliateApply />} />
+          <Route path="/affiliate" element={<AffiliateProtectedRoute><AffiliateDashboard /></AffiliateProtectedRoute>} />
+          <Route path="/r/:code" element={<ReferralLanding />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
