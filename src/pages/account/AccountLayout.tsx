@@ -1,5 +1,6 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
+import { useIsAdmin } from "@/hooks/useUserRoles";
 import { Button } from "@/components/ui/button";
 
 const linkClass = ({ isActive }: { isActive: boolean }) =>
@@ -9,6 +10,7 @@ const linkClass = ({ isActive }: { isActive: boolean }) =>
 
 export const AccountLayout = () => {
   const { signOut, user } = useAuth();
+  const { isAdmin, loading: adminLoading } = useIsAdmin();
   return (
     <main className="min-h-screen bg-background text-foreground">
       <header className="border-b border-border/40">
@@ -25,6 +27,9 @@ export const AccountLayout = () => {
           <NavLink to="/account" end className={linkClass}>Overview</NavLink>
           <NavLink to="/account/profile" className={linkClass}>Profile</NavLink>
           <NavLink to="/account/billing" className={linkClass}>Billing</NavLink>
+          {!adminLoading && isAdmin && (
+            <NavLink to="/admin" className={linkClass}>Admin Dashboard</NavLink>
+          )}
         </nav>
         <div>
           <Outlet />
