@@ -14,6 +14,197 @@ export type Database = {
   }
   public: {
     Tables: {
+      admin_audit_logs: {
+        Row: {
+          action: string
+          actor_id: string | null
+          created_at: string
+          details: Json
+          id: string
+          target_id: string | null
+          target_type: string | null
+        }
+        Insert: {
+          action: string
+          actor_id?: string | null
+          created_at?: string
+          details?: Json
+          id?: string
+          target_id?: string | null
+          target_type?: string | null
+        }
+        Update: {
+          action?: string
+          actor_id?: string | null
+          created_at?: string
+          details?: Json
+          id?: string
+          target_id?: string | null
+          target_type?: string | null
+        }
+        Relationships: []
+      }
+      affiliate_applications: {
+        Row: {
+          accepted_terms: boolean
+          audience_countries: string[]
+          country_code: string
+          created_at: string
+          email: string
+          fitness_niche: string
+          follower_range: string
+          full_name: string
+          id: string
+          internal_notes: string | null
+          primary_platform: string
+          profile_url: string
+          reason: string
+          reviewed_at: string | null
+          reviewed_by: string | null
+          status: Database["public"]["Enums"]["affiliate_app_status"]
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          accepted_terms?: boolean
+          audience_countries?: string[]
+          country_code: string
+          created_at?: string
+          email: string
+          fitness_niche: string
+          follower_range: string
+          full_name: string
+          id?: string
+          internal_notes?: string | null
+          primary_platform: string
+          profile_url: string
+          reason: string
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: Database["public"]["Enums"]["affiliate_app_status"]
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          accepted_terms?: boolean
+          audience_countries?: string[]
+          country_code?: string
+          created_at?: string
+          email?: string
+          fitness_niche?: string
+          follower_range?: string
+          full_name?: string
+          id?: string
+          internal_notes?: string | null
+          primary_platform?: string
+          profile_url?: string
+          reason?: string
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: Database["public"]["Enums"]["affiliate_app_status"]
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      affiliate_fraud_flags: {
+        Row: {
+          affiliate_id: string | null
+          attribution_id: string | null
+          created_at: string
+          details: Json
+          flag_type: string
+          id: string
+          resolved: boolean
+          severity: string
+        }
+        Insert: {
+          affiliate_id?: string | null
+          attribution_id?: string | null
+          created_at?: string
+          details?: Json
+          flag_type: string
+          id?: string
+          resolved?: boolean
+          severity?: string
+        }
+        Update: {
+          affiliate_id?: string | null
+          attribution_id?: string | null
+          created_at?: string
+          details?: Json
+          flag_type?: string
+          id?: string
+          resolved?: boolean
+          severity?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "affiliate_fraud_flags_affiliate_id_fkey"
+            columns: ["affiliate_id"]
+            isOneToOne: false
+            referencedRelation: "affiliates"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "affiliate_fraud_flags_attribution_id_fkey"
+            columns: ["attribution_id"]
+            isOneToOne: false
+            referencedRelation: "referral_attributions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      affiliates: {
+        Row: {
+          application_id: string | null
+          approved_at: string
+          commission_model: string
+          country_code: string | null
+          created_at: string
+          display_name: string | null
+          id: string
+          status: Database["public"]["Enums"]["affiliate_status"]
+          suspended_at: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          application_id?: string | null
+          approved_at?: string
+          commission_model?: string
+          country_code?: string | null
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          status?: Database["public"]["Enums"]["affiliate_status"]
+          suspended_at?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          application_id?: string | null
+          approved_at?: string
+          commission_model?: string
+          country_code?: string | null
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          status?: Database["public"]["Enums"]["affiliate_status"]
+          suspended_at?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "affiliates_application_id_fkey"
+            columns: ["application_id"]
+            isOneToOne: false
+            referencedRelation: "affiliate_applications"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       coach_applications: {
         Row: {
           certification: string | null
@@ -413,6 +604,167 @@ export type Database = {
         }
         Relationships: []
       }
+      referral_attributions: {
+        Row: {
+          affiliate_id: string
+          anonymous_session_id: string
+          campaign: string | null
+          conversion_status: Database["public"]["Enums"]["conversion_status"]
+          converted_user_id: string | null
+          created_at: string
+          expires_at: string
+          first_click_at: string
+          id: string
+          last_click_at: string
+          metadata: Json
+          referral_code_id: string
+          source: string | null
+          updated_at: string
+        }
+        Insert: {
+          affiliate_id: string
+          anonymous_session_id: string
+          campaign?: string | null
+          conversion_status?: Database["public"]["Enums"]["conversion_status"]
+          converted_user_id?: string | null
+          created_at?: string
+          expires_at?: string
+          first_click_at?: string
+          id?: string
+          last_click_at?: string
+          metadata?: Json
+          referral_code_id: string
+          source?: string | null
+          updated_at?: string
+        }
+        Update: {
+          affiliate_id?: string
+          anonymous_session_id?: string
+          campaign?: string | null
+          conversion_status?: Database["public"]["Enums"]["conversion_status"]
+          converted_user_id?: string | null
+          created_at?: string
+          expires_at?: string
+          first_click_at?: string
+          id?: string
+          last_click_at?: string
+          metadata?: Json
+          referral_code_id?: string
+          source?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "referral_attributions_affiliate_id_fkey"
+            columns: ["affiliate_id"]
+            isOneToOne: false
+            referencedRelation: "affiliates"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "referral_attributions_referral_code_id_fkey"
+            columns: ["referral_code_id"]
+            isOneToOne: false
+            referencedRelation: "referral_codes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      referral_clicks: {
+        Row: {
+          affiliate_id: string | null
+          anonymous_session_id: string | null
+          campaign: string | null
+          country_code: string | null
+          created_at: string
+          id: string
+          ip_hash: string | null
+          referral_code_id: string | null
+          source: string | null
+          ua_hash: string | null
+        }
+        Insert: {
+          affiliate_id?: string | null
+          anonymous_session_id?: string | null
+          campaign?: string | null
+          country_code?: string | null
+          created_at?: string
+          id?: string
+          ip_hash?: string | null
+          referral_code_id?: string | null
+          source?: string | null
+          ua_hash?: string | null
+        }
+        Update: {
+          affiliate_id?: string | null
+          anonymous_session_id?: string | null
+          campaign?: string | null
+          country_code?: string | null
+          created_at?: string
+          id?: string
+          ip_hash?: string | null
+          referral_code_id?: string | null
+          source?: string | null
+          ua_hash?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "referral_clicks_affiliate_id_fkey"
+            columns: ["affiliate_id"]
+            isOneToOne: false
+            referencedRelation: "affiliates"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "referral_clicks_referral_code_id_fkey"
+            columns: ["referral_code_id"]
+            isOneToOne: false
+            referencedRelation: "referral_codes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      referral_codes: {
+        Row: {
+          active: boolean
+          affiliate_id: string
+          code: string
+          code_upper: string | null
+          created_at: string
+          expires_at: string | null
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          active?: boolean
+          affiliate_id: string
+          code: string
+          code_upper?: string | null
+          created_at?: string
+          expires_at?: string | null
+          id?: string
+          updated_at?: string
+        }
+        Update: {
+          active?: boolean
+          affiliate_id?: string
+          code?: string
+          code_upper?: string | null
+          created_at?: string
+          expires_at?: string | null
+          id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "referral_codes_affiliate_id_fkey"
+            columns: ["affiliate_id"]
+            isOneToOne: false
+            referencedRelation: "affiliates"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       support_submissions: {
         Row: {
           company: string | null
@@ -478,6 +830,27 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      admin_set_affiliate_status: {
+        Args: {
+          _affiliate_id: string
+          _reason?: string
+          _status: Database["public"]["Enums"]["affiliate_status"]
+        }
+        Returns: undefined
+      }
+      admin_set_code_active: {
+        Args: { _active: boolean; _code_id: string }
+        Returns: undefined
+      }
+      admin_update_application: {
+        Args: {
+          _app_id: string
+          _new_status: Database["public"]["Enums"]["affiliate_app_status"]
+          _notes?: string
+        }
+        Returns: undefined
+      }
+      generate_referral_code: { Args: never; Returns: string }
       get_admin_dashboard_metrics: {
         Args: never
         Returns: {
@@ -487,6 +860,7 @@ export type Database = {
           total_support_submissions: number
         }[]
       }
+      get_my_affiliate: { Args: never; Returns: Json }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -494,9 +868,34 @@ export type Database = {
         }
         Returns: boolean
       }
+      log_admin_action: {
+        Args: {
+          _action: string
+          _details?: Json
+          _target_id: string
+          _target_type: string
+        }
+        Returns: undefined
+      }
+      resolve_referral_code: {
+        Args: {
+          _campaign?: string
+          _code: string
+          _country_code?: string
+          _ip_hash?: string
+          _session_id: string
+          _source?: string
+          _ua_hash?: string
+        }
+        Returns: Json
+      }
+      submit_affiliate_application: { Args: { payload: Json }; Returns: string }
     }
     Enums: {
-      app_role: "admin" | "moderator" | "user"
+      affiliate_app_status: "pending" | "reviewing" | "approved" | "rejected"
+      affiliate_status: "active" | "suspended"
+      app_role: "admin" | "moderator" | "user" | "affiliate"
+      conversion_status: "pending" | "converted" | "expired" | "void"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -624,7 +1023,10 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
-      app_role: ["admin", "moderator", "user"],
+      affiliate_app_status: ["pending", "reviewing", "approved", "rejected"],
+      affiliate_status: ["active", "suspended"],
+      app_role: ["admin", "moderator", "user", "affiliate"],
+      conversion_status: ["pending", "converted", "expired", "void"],
     },
   },
 } as const
