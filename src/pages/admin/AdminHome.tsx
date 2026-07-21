@@ -78,6 +78,16 @@ const AdminHome = () => {
               Unable to load metrics. {error instanceof Error ? error.message : ""}
             </p>
           )}
+
+          <section className="mt-10">
+            <h2 className="text-xl font-semibold mb-3">Manage</h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <a href="/admin/affiliates" className="glass-card rounded-xl p-5 hover:bg-white/5 transition">
+                <div className="font-semibold">Affiliate applications</div>
+                <div className="text-sm text-muted-foreground mt-1">Review, approve, or reject affiliates.</div>
+              </a>
+            </div>
+          </section>
         </div>
       </main>
     </>

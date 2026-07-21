@@ -31,3 +31,17 @@ export const useIsAdmin = () => {
   const { roles, loading, error } = useUserRoles();
   return { isAdmin: roles.includes("admin"), loading, error };
 };
+
+export const useIsAffiliate = () => {
+  const { roles, loading, error } = useUserRoles();
+  return { isAffiliate: roles.includes("affiliate" as AppRole), loading, error };
+};
+
+export const useIsModerator = () => {
+  const { roles, loading, error } = useUserRoles();
+  return {
+    isModerator: roles.includes("moderator") || roles.includes("admin"),
+    loading,
+    error,
+  };
+};
