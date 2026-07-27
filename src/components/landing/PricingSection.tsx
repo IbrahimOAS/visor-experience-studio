@@ -85,7 +85,7 @@ const PricingSection = () => {
                   ))}
                 </ul>
                 <a
-                  href="#download"
+                  href="/pricing"
                   className={`block w-full py-3.5 rounded-xl text-center font-semibold text-sm transition-all duration-300 ${
                     highlighted
                       ? "bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-[0_0_24px_-4px_hsl(28,100%,55%/0.5)]"
