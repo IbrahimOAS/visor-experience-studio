@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Apple, PlayCircle, Sparkles } from "lucide-react";
-import { QRCodeSVG } from "qrcode.react";
 import { useTranslation } from "react-i18next";
+import { QRCodeSVG } from "qrcode.react";
 import {
   APP_STORE_URL,
   GOOGLE_PLAY_URL,
