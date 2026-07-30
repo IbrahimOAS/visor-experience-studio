@@ -2,7 +2,9 @@ import { initializeApp } from "firebase/app";
 import {
   createUserWithEmailAndPassword,
   getAuth,
+  GoogleAuthProvider,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
 } from "firebase/auth";
 
@@ -70,6 +72,17 @@ const toUsername = (email: string) =>
 export const signInWithFirebaseEmail = async (email: string, password: string) => {
   const credential = await signInWithEmailAndPassword(firebaseAuth, email, password);
   return credential.user.getIdToken();
+};
+
+export const signInWithGooglePopup = async () => {
+  const provider = new GoogleAuthProvider();
+  provider.setCustomParameters({ prompt: "select_account" });
+  const credential = await signInWithPopup(firebaseAuth, provider);
+  const googleCredential = GoogleAuthProvider.credentialFromResult(credential);
+  if (!googleCredential?.idToken) {
+    throw new Error("Google did not return an ID token");
+  }
+  return googleCredential.idToken;
 };
 
 export const signUpWithFirebaseEmail = async (email: string, password: string) => {
