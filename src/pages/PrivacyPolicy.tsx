@@ -170,7 +170,7 @@ const PrivacyPolicy = () => (
         heading: "International Data Transfers",
         body: (
           <p>
-            Some of our providers (such as Google) may process personal data outside Norway and the EU/EEA, including
+            Some of our providers (such as Google) may process personal data outside the United Arab Emirates and the EU/EEA, including
             in the United States. Where data is transferred outside the EEA, we rely on appropriate safeguards under
             GDPR Chapter V — including the European Commission's <strong>Standard Contractual Clauses</strong> and, where
             applicable, certification under the <strong>EU–US Data Privacy Framework</strong>. You can request more
