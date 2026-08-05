@@ -517,7 +517,7 @@
       "badge": "Premium · Nur für Elite‑Mitglieder",
       "titlePre": "Personal Training,",
       "titleAccent": "direkt zu dir",
-      "subtitle": "Buche verifizierte, weltklasse Fitness‑Coaches für personalisierte 1‑zu‑1‑Trainingseinheiten bei dir zu Hause. Echtes Coaching. Echte Körperveränderungen.",
+      "subtitle": "Verifiziertes Personal Training startet bald. Melde dich auf der Warteliste an, um als Erste/r an der Reihe zu sein — zu Hause, im Studio oder online.",
       "heroCaptionPre": "Personalisiertes Training, das zu",
       "heroCaptionAccent": "dir",
       "heroCaptionSub": "Individuelle Trainingspläne, Echtzeit‑Anpassungen und unterstützendes Coaching — alles persönlich.",
@@ -541,7 +541,7 @@
       ],
       "meetTitlePre": "Lerne deine",
       "meetTitleAccent": "Coaches kennen",
-      "meetSubtitle": "Handverlesene Profis. Hintergrundgeprüft. Peer‑reviewed.",
+      "meetSubtitle": "Trage dich auf die Warteliste ein, um bei Launch mit verifizierten Coaches vermittelt zu werden.",
       "periodSession": "Session",
       "periodWeekly": "Wöchentlich",
       "periodMonthly": "Monatlich",
@@ -559,6 +559,8 @@
       "meanwhileOr": "oder",
       "meanwhileDownload": "lade die App herunter",
       "meanwhileSuffix": "für frühen Zugang.",
+      "notifyMe": "Benachrichtige mich beim Launch",
+      "coachCta": "Bist du Coach?",
       "coaches": [
         {
           "name": "Marcus Cole",

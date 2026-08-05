@@ -517,7 +517,7 @@
       "badge": "Premium · Réservé aux membres Elite",
       "titlePre": "Entraînement personnel,",
       "titleAccent": "chez vous",
-      "subtitle": "Réservez des coachs de fitness vérifiés et de classe mondiale pour des séances personnalisées 1‑à‑1 à votre domicile. Coaching réel. Résultats réels de transformation corporelle.",
+      "subtitle": "L'entraînement personnel vérifié arrive bientôt. Inscrivez-vous sur la liste d'attente pour être parmi les premiers — à domicile, en salle ou en ligne.",
       "heroCaptionPre": "Fitness personnalisé qui vient",
       "heroCaptionAccent": "à vous",
       "heroCaptionSub": "Plans d'entraînement sur mesure, ajustements en temps réel et coaching de soutien — tous en personne.",
@@ -541,7 +541,7 @@
       ],
       "meetTitlePre": "Rencontrez vos",
       "meetTitleAccent": "coachs",
-      "meetSubtitle": "Professionnels triés sur le volet. Vérifiés. Évalués par les pairs.",
+      "meetSubtitle": "Inscrivez-vous sur la liste d'attente pour être mis en relation avec des coaches vérifiés dès le lancement.",
       "periodSession": "Séance",
       "periodWeekly": "Hebdomadaire",
       "periodMonthly": "Mensuel",
@@ -559,6 +559,8 @@
       "meanwhileOr": "ou",
       "meanwhileDownload": "téléchargez l'application",
       "meanwhileSuffix": "pour un accès anticipé.",
+      "notifyMe": "M'avertir du lancement",
+      "coachCta": "Vous êtes coach ?",
       "coaches": [
         {
           "name": "Marcus Cole",
