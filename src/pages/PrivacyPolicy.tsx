@@ -3,7 +3,7 @@ import { ContentPage } from "@/components/seo/ContentPage";
 const PrivacyPolicy = () => (
   <ContentPage
     title="VISOR Privacy Policy — How We Handle Your Data"
-    description="How VISOR (operated by Drakkar, Norway) collects, uses, shares and retains your information across the mobile app, AI features and subscriptions."
+    description="How VISOR Fitness, operated by Cedra Kaddour FZ-LLC (Ras Al Khaimah, UAE), collects, uses, shares and retains your information across the mobile app, AI features and subscriptions."
     path="/privacy"
     h1="Privacy Policy"
     breadcrumbs={[
@@ -15,11 +15,19 @@ const PrivacyPolicy = () => (
         This Privacy Policy explains how VISOR collects, uses, shares, and retains information
         when you use the VISOR mobile app and related services — including workout planning,
         nutrition logging, calorie tracking, AI-powered coaching, body transformation features,
-        community tools, and subscriptions. VISOR is operated by Drakkar Mahmed Harun, a sole
-        proprietorship registered in Norway, and is governed by the EU/EEA General Data Protection
-        Regulation (GDPR) and the Norwegian Personal Data Act (<em>personopplysningsloven</em>).
+        community tools, and subscriptions.
         <br />
-        <span className="text-sm opacity-70">Last updated: June 2026</span>
+        <br />
+        <strong>
+          Cedra Kaddour FZ-LLC operates the VISOR Fitness application and website. For the purposes
+          of applicable data protection laws, Cedra Kaddour FZ-LLC is the controller of personal
+          data collected through VISOR Fitness, except where another party is separately identified
+          as a controller.
+        </strong>{" "}
+        We apply the UAE Personal Data Protection Law (Federal Decree-Law No. 45 of 2021) and, where
+        it applies to users in the EU/EEA and UK, the GDPR.
+        <br />
+        <span className="text-sm opacity-70">Last updated: August 2026</span>
       </>
     }
     sections={[
@@ -29,11 +37,19 @@ const PrivacyPolicy = () => (
           <>
             <p>
               The data controller responsible for your personal data is{" "}
-              <strong>Drakkar Mahmed Harun</strong> ("Drakkar", "VISOR", "we", "us"),
-              a sole proprietorship (<em>enkeltpersonforetak</em>) registered in Norway under organisation number{" "}
-              <strong>935 975 530</strong>, with registered address{" "}
-              <strong>Bjørnegårdsvingen 17, 1338 Sandvika, Norway</strong>.
+              <strong>Cedra Kaddour FZ-LLC</strong> ("VISOR Fitness", "VISOR", "we", "us"), a Free
+              Zone Limited Liability Company registered in Ras Al Khaimah, United Arab Emirates.
+              VISOR Fitness is a product owned and operated by Cedra Kaddour FZ-LLC.
             </p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Legal entity: <strong>Cedra Kaddour FZ-LLC</strong></li>
+              <li>Registration No.: <strong>0000004084353</strong></li>
+              <li>Licence No.: <strong>7017101</strong></li>
+              <li>
+                Registered address: FDRK7137, Compass Building, Al Shohada Road, Al Hamra Industrial
+                Zone-FZ, Ras Al Khaimah, United Arab Emirates
+              </li>
+            </ul>
             <p>
               For privacy questions or to exercise your rights, contact us at{" "}
               <a href="mailto:privacy@visorfitness.com" className="text-primary hover:underline">privacy@visorfitness.com</a>.
@@ -53,6 +69,17 @@ const PrivacyPolicy = () => (
             <p><strong>Device, diagnostics, and usage.</strong> IP address, device type, OS, app version, push token, crash data, diagnostics and usage events.</p>
             <p><strong>Apple Health / HealthKit.</strong> VISOR does not access, read from, or write to Apple Health or HealthKit.</p>
           </>
+        ),
+      },
+      {
+        heading: "AI Model Training",
+        body: (
+          <p>
+            We do <strong>not</strong> use your personal data, photos, health data, community content
+            or AI conversations to train general-purpose AI models, and we contractually require our
+            AI providers not to do so either. Your inputs are processed only to generate your own
+            outputs.
+          </p>
         ),
       },
       {
@@ -159,7 +186,8 @@ const PrivacyPolicy = () => (
             <ul className="list-disc pl-5 space-y-2">
               <li><strong>Account and profile.</strong> For the life of your account; deleted on account deletion (limited copies may persist in backups for up to ~90 days).</li>
               <li><strong>Fitness and health data.</strong> For the life of your account and deleted when you delete your account, unless retention is legally required.</li>
-              <li><strong>Subscription and transaction records.</strong> Retained for as long as required by Norwegian accounting law (currently 5 years) and for billing reconciliation.</li>
+              <li><strong>Photos.</strong> Uploaded body and meal photos, and AI-generated transformation images, are kept until you delete them in the app or delete your account; backup copies purge within ~90 days. Photos are never used to train AI models.</li>
+              <li><strong>Subscription and transaction records.</strong> Retained for as long as required by applicable UAE accounting, tax and record-keeping obligations (currently 5 years) and for billing reconciliation.</li>
               <li><strong>Diagnostic logs and security records.</strong> Kept for limited periods, then deleted or anonymized.</li>
             </ul>
             <p>After a deletion request, limited information may be retained for fraud prevention, billing reconciliation or legal compliance, for no longer than the applicable legal or accounting obligation requires.</p>
@@ -184,9 +212,8 @@ const PrivacyPolicy = () => (
               You can withdraw consent for health-data processing or AI features, and delete your account, directly in
               the app from your account settings. You can also email{" "}
               <a href="mailto:privacy@visorfitness.com" className="text-primary hover:underline">privacy@visorfitness.com</a>.
-              We respond within 30 days. You also have the right to lodge a complaint with the Norwegian Data Protection
-              Authority (<a href="https://www.datatilsynet.no" className="text-primary hover:underline">Datatilsynet</a>) or your
-              local EU/EEA supervisory authority.
+              We respond within 30 days. You may also lodge a complaint with the UAE Data Office or,
+              if you are in the EU/EEA or UK, with your local supervisory authority.
             </p>
           </>
         ),
@@ -196,11 +223,12 @@ const PrivacyPolicy = () => (
         body: (
           <p>
             You can permanently delete your VISOR account at any time directly in the app, from your account settings.
-            Deletion is <strong>self-service</strong> — you do not need to contact us to complete it. When you delete your
-            account, your profile, fitness and health data, photos and community content are removed from our active
-            systems. Backup copies may persist for up to ~90 days before they are purged. Transaction records required by
-            Norwegian accounting law are retained for the legally required period (currently 5 years) regardless of account
-            deletion.
+            Deletion is <strong>self-service</strong> — you do not need to contact us to complete it. You can also request
+            deletion from the web at <a href="/delete-account" className="text-primary hover:underline">visorfitness.com/delete-account</a>.
+            When you delete your account, your profile, fitness and health data, photos and community content are removed
+            from our active systems. Backup copies may persist for up to ~90 days before they are purged. Transaction
+            records required by applicable UAE accounting and tax law are retained for the legally required period
+            (currently 5 years) regardless of account deletion. Deletion requests are processed by Cedra Kaddour FZ-LLC.
           </p>
         ),
       },
@@ -250,13 +278,18 @@ const PrivacyPolicy = () => (
         heading: "Contact Us",
         body: (
           <p>
-            Controller: <strong>Drakkar Mahmed Harun</strong> (org. no. 935 975 530), Bjørnegårdsvingen 17, 1338 Sandvika, Norway
+            Controller: <strong>Cedra Kaddour FZ-LLC</strong> (Registration No. 0000004084353, Licence No. 7017101)
+            <br />
+            Registered address: FDRK7137, Compass Building, Al Shohada Road, Al Hamra Industrial Zone-FZ,
+            Ras Al Khaimah, United Arab Emirates
             <br />
             Website: <a href="https://visorfitness.com" className="text-primary hover:underline">visorfitness.com</a>
             <br />
-            Email: <a href="mailto:privacy@visorfitness.com" className="text-primary hover:underline">privacy@visorfitness.com</a>
+            Privacy contact: <a href="mailto:privacy@visorfitness.com" className="text-primary hover:underline">privacy@visorfitness.com</a>
             <br />
-            Supervisory authority: <a href="https://www.datatilsynet.no" className="text-primary hover:underline">Datatilsynet</a> (Norway)
+            Legal: <a href="mailto:legal@visorfitness.com" className="text-primary hover:underline">legal@visorfitness.com</a>
+            <br />
+            Company information: <a href="/company" className="text-primary hover:underline">visorfitness.com/company</a>
           </p>
         ),
       },
