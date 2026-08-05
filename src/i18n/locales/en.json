@@ -543,7 +543,7 @@
       ],
       "meetTitlePre": "Meet Your",
       "meetTitleAccent": "Coaches",
-      "meetSubtitle": "Hand-picked professionals. Background-checked. Peer-reviewed.",
+      "meetSubtitle": "Join the waitlist to be matched with verified coaches when we launch.",
       "periodSession": "Session",
       "periodWeekly": "Weekly",
       "periodMonthly": "Monthly",
@@ -561,6 +561,8 @@
       "meanwhileOr": "or",
       "meanwhileDownload": "download the app",
       "meanwhileSuffix": "for early access.",
+      "notifyMe": "Notify me when it launches",
+      "coachCta": "Are you a coach?",
       "coaches": [
         {
           "name": "Marcus Cole",
