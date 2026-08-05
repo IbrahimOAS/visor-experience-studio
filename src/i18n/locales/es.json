@@ -541,7 +541,7 @@
       ],
       "meetTitlePre": "Conoce a tus",
       "meetTitleAccent": "coaches",
-      "meetSubtitle": "Profesionales seleccionados. Verificados. Revisados por pares.",
+      "meetSubtitle": "Únete a la lista de espera para ser emparejado con coaches verificados en el lanzamiento.",
       "periodSession": "Sesión",
       "periodWeekly": "Semanal",
       "periodMonthly": "Mensual",
@@ -559,6 +559,8 @@
       "meanwhileOr": "o",
       "meanwhileDownload": "descarga la app",
       "meanwhileSuffix": "para acceso anticipado.",
+      "notifyMe": "Avisarme al lanzar",
+      "coachCta": "¿Eres coach?"
       "coaches": [
         {
           "name": "Marcus Cole",
