@@ -113,6 +113,12 @@ const DeleteAccount = () => {
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
               You can permanently delete your VISOR account and associated personal data at any time.
             </p>
+            <p className="mt-4 text-sm text-muted-foreground max-w-2xl mx-auto">
+              Account deletion requests are processed by <strong>Cedra Kaddour FZ-LLC</strong>, operator of
+              VISOR Fitness (Registration No. 0000004084353, Licence No. 7017101, Ras Al Khaimah, United
+              Arab Emirates).
+            </p>
+            <p className="mt-2 text-xs text-muted-foreground">Last updated: August 2026</p>
           </motion.div>
 
           <div className="grid gap-5">
@@ -137,8 +143,14 @@ const DeleteAccount = () => {
                 with the subject line <strong>Delete My Account</strong>.
               </p>
               <p className="text-sm text-muted-foreground">
-                Include the email address associated with your VISOR account so we can verify and
-                process your request.
+                To identify your account, include: the email address registered to your VISOR account,
+                your account name or display name, and the platform you signed up on (iOS or Android).
+                We may ask one additional verification question before deleting the account.
+              </p>
+              <p className="text-sm text-muted-foreground">
+                We confirm receipt within 5 business days, complete deletion within 30 days, and send a
+                confirmation email to your registered address once the deletion is done. Backup copies
+                are purged within approximately 90 days.
               </p>
             </Card>
 
@@ -167,7 +179,9 @@ const DeleteAccount = () => {
             <Card icon={<CreditCard size={22} />} title="Subscription notice" index={4}>
               <p>
                 Deleting your VISOR account does <strong>not</strong> automatically cancel your
-                subscription.
+                subscription. Subscriptions purchased through Apple App Store or Google Play are
+                billed and managed by the applicable platform and must be cancelled separately in
+                your Apple or Google account settings.
               </p>
               <p>
                 If you subscribed through Apple App Store or Google Play, you must cancel your

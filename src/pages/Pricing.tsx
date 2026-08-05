@@ -68,7 +68,8 @@ const Pricing = () => {
         <section className="py-14 text-center">
           <h1 className="text-4xl font-bold md:text-6xl">Choose your VISOR plan</h1>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Subscribe on the web, then sign in with the same account in the mobile app.
+            Subscribe on the web, then sign in with the same account in the mobile app. Prices are shown
+            in USD and exclude any taxes that may apply in your country.
           </p>
           <div className="mx-auto mt-8 inline-flex rounded-full border border-white/10 bg-white/5 p-1">
             {(["monthly", "annual"] as const).map((period) => (
@@ -121,6 +122,26 @@ const Pricing = () => {
               </div>
             </article>
           ))}
+        </section>
+
+        <section className="mx-auto mt-12 max-w-3xl space-y-3 rounded-2xl border border-white/10 bg-white/5 p-6 text-sm text-muted-foreground">
+          <h2 className="text-base font-semibold text-foreground">Subscription terms</h2>
+          <ul className="list-disc space-y-2 pl-5">
+            <li>Elite includes a 7-day free trial. Payment begins when the trial ends unless you cancel before then.</li>
+            <li>All plans renew automatically — monthly plans every month, annual plans every 12 months — at the price shown above, until cancelled.</li>
+            <li>
+              Subscriptions purchased through Apple App Store or Google Play are billed and managed by the applicable
+              platform. Users must cancel subscriptions through their Apple or Google account settings. Refunds for those
+              purchases are handled by Apple or Google under their policies.
+            </li>
+            <li>Web subscriptions can be cancelled at any time from your <Link to="/account" className="text-primary hover:underline">account page</Link>; access continues until the end of the paid period.</li>
+            <li>No wearable hardware is included in any plan. Any hardware is sold separately and is not part of these subscription fees.</li>
+            <li>
+              See our <Link to="/terms" className="text-primary hover:underline">Terms of Use</Link> and{" "}
+              <Link to="/privacy" className="text-primary hover:underline">Privacy Policy</Link>.
+            </li>
+          </ul>
+          <p className="pt-1">VISOR Fitness is a product owned and operated by Cedra Kaddour FZ-LLC.</p>
         </section>
       </div>
     </main>
