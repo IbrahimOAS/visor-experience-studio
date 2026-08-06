@@ -246,7 +246,7 @@
           "emailNote": "Preguntas generales, errores, comentarios",
           "privacyTitle": "Preguntas sobre privacidad",
           "privacyNote": "Datos, privacidad, eliminación de cuenta",
-          "hours": "Horario de soporte: Lunes–Viernes, 09:00–17:00 CET (hora de Noruega)"
+          "hours": "Horario de soporte: Lunes–Viernes, 09:00–17:00 GST (hora de EAU)"
         },
         "faq": {
           "heading": "Preguntas frecuentes",
@@ -269,7 +269,7 @@
         },
         "address": {
           "heading": "Mailing Address",
-          "body": "Drakkar Mahmed Harun\nBjørnegårdsvingen 17\n1338 Sandvika\nNorway\nOrganisation number: 935 975 530"
+          "body": "Cedra Kaddour FZ-LLC\nFDRK7137, Compass Building, Al Shohada Road, Al Hamra Industrial Zone-FZ\nRas Al Khaimah, United Arab Emirates\nRegistration No.: 0000004084353\nLicence No.: 7017101"
         }
       },
       "form": {
@@ -517,7 +517,7 @@
       "badge": "Premium · Solo para miembros Elite",
       "titlePre": "Entrenamiento personal,",
       "titleAccent": "tu puerta",
-      "subtitle": "Reserva coaches de fitness verificados y de clase mundial para sesiones personalizadas 1-a-1 en tu domicilio. Coaching real. Resultados reales de transformación corporal.",
+      "subtitle": "El entrenamiento personal verificado se lanzará pronto. Únete a la lista de espera para ser de los primeros — en casa, gimnasio u online.",
       "heroCaptionPre": "Fitness personalizado que llega",
       "heroCaptionAccent": "a ti",
       "heroCaptionSub": "Planes de entrenamiento personalizados, ajustes en tiempo real y coaching de apoyo — todo en persona.",
@@ -541,7 +541,7 @@
       ],
       "meetTitlePre": "Conoce a tus",
       "meetTitleAccent": "coaches",
-      "meetSubtitle": "Profesionales seleccionados. Verificados. Revisados por pares.",
+      "meetSubtitle": "Únete a la lista de espera para ser emparejado con coaches verificados en el lanzamiento.",
       "periodSession": "Sesión",
       "periodWeekly": "Semanal",
       "periodMonthly": "Mensual",
@@ -559,6 +559,8 @@
       "meanwhileOr": "o",
       "meanwhileDownload": "descarga la app",
       "meanwhileSuffix": "para acceso anticipado.",
+      "notifyMe": "Avisarme al lanzar",
+      "coachCta": "¿Eres coach?",
       "coaches": [
         {
           "name": "Marcus Cole",

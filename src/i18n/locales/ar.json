@@ -246,7 +246,7 @@
           "emailNote": "أسئلة عامة، أخطاء، ملاحظات",
           "privacyTitle": "أسئلة الخصوصية",
           "privacyNote": "البيانات، الخصوصية، حذف الحساب",
-          "hours": "ساعات الدعم: الاثنين–الجمعة، 09:00–17:00 بتوقيت وسط أوروبا (توقيت النرويج)"
+          "hours": "ساعات الدعم: الاثنين–الجمعة، 09:00–17:00 بتوقيت الإمارات"
         },
         "faq": {
           "heading": "الأسئلة المتكررة",
@@ -269,7 +269,7 @@
         },
         "address": {
           "heading": "Mailing Address",
-          "body": "Drakkar Mahmed Harun\nBjørnegårdsvingen 17\n1338 Sandvika\nNorway\nOrganisation number: 935 975 530"
+          "body": "Cedra Kaddour FZ-LLC\nFDRK7137, Compass Building, Al Shohada Road, Al Hamra Industrial Zone-FZ\nRas Al Khaimah, United Arab Emirates\nRegistration No.: 0000004084353\nLicence No.: 7017101"
         }
       },
       "form": {
@@ -517,7 +517,7 @@
       "badge": "Premium · للأعضاء Elite فقط",
       "titlePre": "تدريب شخصي،",
       "titleAccent": "عند بابك",
-      "subtitle": "احجز مدرّبين معتمدين من الطراز العالمي لجلسات تدريب فردي مخصصة في منزلك. تدريب حقيقي. نتائج تحوّل جسدية حقيقية.",
+      "subtitle": "التدريب الشخصي الموثوق قادم قريبًا. انضم إلى قائمة الانتظار لتكون من أوائل المستخدمين — في المنزل، النادي، أو عبر الإنترنت.",
       "heroCaptionPre": "لياقة مخصصة تأتي إلى",
       "heroCaptionAccent": "أنت",
       "heroCaptionSub": "خطط تدريب مخصصة، تعديلات في الوقت الحقيقي، وتدريب داعم — كل ذلك شخصيًا.",
@@ -541,7 +541,7 @@
       ],
       "meetTitlePre": "تعرف على",
       "meetTitleAccent": "المدرّبين",
-      "meetSubtitle": "محترفون مختارون يدويًا. تم التحقق من خلفياتهم. مراجعات الأقران.",
+      "meetSubtitle": "انضم إلى قائمة الانتظار ليتم توصيلك بمدربين موثوقين عند الإطلاق.",
       "periodSession": "جلسة",
       "periodWeekly": "أسبوعي",
       "periodMonthly": "شهري",
@@ -559,6 +559,8 @@
       "meanwhileOr": "أو",
       "meanwhileDownload": "حمّل التطبيق",
       "meanwhileSuffix": "للوصول المبكر.",
+      "notifyMe": "أعلمني عند الإطلاق",
+      "coachCta": "هل أنت مدرب؟",
       "coaches": [
         {
           "name": "Marcus Cole",

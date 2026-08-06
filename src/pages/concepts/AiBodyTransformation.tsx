@@ -1,4 +1,5 @@
 import { I18nContentPage } from "@/components/seo/I18nContentPage";
+import { AiTransformationDisclaimer } from "@/components/legal/CompanyLegalInfo";
 
 const definedTermLd = {
   "@context": "https://schema.org",
@@ -19,6 +20,7 @@ export default function AiBodyTransformation() {
         { key: "concepts", href: "/why-visor" },
       ]}
       jsonLd={definedTermLd}
+      afterSections={<AiTransformationDisclaimer className="mt-12" />}
     />
   );
 }

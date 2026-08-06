@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ShieldCheck, ArrowRight, UserPlus } from "lucide-react";
+import { Sparkles, ArrowRight, UserPlus, Bell } from "lucide-react";
 
 const EliteCoachesTeaser = () => (
   <section className="py-24 px-6 relative overflow-hidden">
@@ -16,20 +16,20 @@ const EliteCoachesTeaser = () => (
         className="glass-card-elite rounded-3xl p-8 md:p-12 text-center"
       >
         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-primary border border-primary/20 bg-primary/5 mb-5">
-          <ShieldCheck size={12} /> New · Elite Tier
+          <Sparkles size={12} /> Coming Soon · Elite Tier
         </span>
         <h2 className="text-3xl md:text-5xl font-bold font-['Space_Grotesk'] mb-4">
           Meet <span className="text-gradient">VISOR Elite Coaches</span>
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-          Verified personal trainers for home, gym or online sessions — booked entirely inside the VISOR app for Elite members.
+          Verified personal trainers for home, gym or online sessions are launching soon. Booking, messaging and payments will happen entirely inside the VISOR app for Elite members.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-3">
           <Link
-            to="/elite-coaches"
+            to="/support?topic=elite-coaches"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_24px_-4px_hsl(28,100%,55%/0.5)]"
           >
-            Explore Elite Coaches <ArrowRight size={16} />
+            <Bell size={16} /> Notify me when it launches
           </Link>
           <Link
             to="/for-coaches"

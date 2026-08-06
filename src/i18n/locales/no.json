@@ -246,7 +246,7 @@
           "emailNote": "Generelle spørsmål, feil, tilbakemeldinger",
           "privacyTitle": "Personvernspørsmål",
           "privacyNote": "Data, personvern, kontosletting",
-          "hours": "Supporttider: Mandag–Fredag, 09:00–17:00 CET (norsk tid)"
+          "hours": "Supporttider: Mandag–Fredag, 09:00–17:00 GST (UAE-tid)"
         },
         "faq": {
           "heading": "Vanlige spørsmål",
@@ -269,7 +269,7 @@
         },
         "address": {
           "heading": "Postadresse",
-          "body": "Drakkar Mahmed Harun\nBjørnegårdsvingen 17\n1338 Sandvika\nNorway\nOrganisation number: 935 975 530"
+          "body": "Cedra Kaddour FZ-LLC\nFDRK7137, Compass Building, Al Shohada Road, Al Hamra Industrial Zone-FZ\nRas Al Khaimah, United Arab Emirates\nRegistration No.: 0000004084353\nLicence No.: 7017101"
         }
       },
       "form": {
@@ -517,7 +517,7 @@
       "badge": "Premium · Kun Elite-medlemmer",
       "titlePre": "Personlig trening,",
       "titleAccent": "Til døren din",
-      "subtitle": "Bestill verifiserte, verdensklasse trenere for personlig 1‑til‑1 trening hjemme hos deg. Ekte coaching. Reelle kroppsforvandlinger.",
+      "subtitle": "Verifisert personlig trening lanseres snart. Bli med på ventelisten for å være først i køen — hjemme, på treningssenter eller online.",
       "heroCaptionPre": "Personlig trening som kommer til",
       "heroCaptionAccent": "deg",
       "heroCaptionSub": "Skreddersydde treningsplaner, sanntidsjusteringer og støttende coaching — alt personlig.",
@@ -541,7 +541,7 @@
       ],
       "meetTitlePre": "Møt dine",
       "meetTitleAccent": "Trenere",
-      "meetSubtitle": "Håndplukkede fagfolk. Bakgrunnssjekket. Vurdert av kolleger.",
+      "meetSubtitle": "Bli med på ventelisten for å bli matchet med verifiserte coacher ved lansering.",
       "periodSession": "Økt",
       "periodWeekly": "Ukentlig",
       "periodMonthly": "Månedlig",
@@ -559,6 +559,8 @@
       "meanwhileOr": "eller",
       "meanwhileDownload": "last ned appen",
       "meanwhileSuffix": "for tidlig tilgang.",
+      "notifyMe": "Varsle meg ved lansering",
+      "coachCta": "Er du coach?",
       "coaches": [
         {
           "name": "Marcus Cole",

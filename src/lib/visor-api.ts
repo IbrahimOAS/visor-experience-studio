@@ -42,7 +42,26 @@ export interface SubscriptionStatus {
   will_renew: boolean;
   limits: Record<string, number | string[]>;
   features: string[];
+  feature_flags?: Record<string, boolean | string | string[]>;
+  last_synced_at?: string;
 }
+
+interface LegacyTokenSession {
+  tokens: {
+    access_token: string;
+    refresh_token: string;
+  };
+  user: AuthSession["user"];
+}
+
+const normalizeSession = (session: AuthSession | LegacyTokenSession): AuthSession => {
+  if ("access" in session) return session;
+  return {
+    access: session.tokens.access_token,
+    refresh: session.tokens.refresh_token,
+    user: session.user,
+  };
+};
 
 export const completeFirebaseLogin = async (firebaseToken: string) => {
   const session = await request<AuthSession>("/accounts/firebase/login/", {
@@ -50,8 +69,9 @@ export const completeFirebaseLogin = async (firebaseToken: string) => {
     auth: false,
     body: JSON.stringify({ firebase_token: firebaseToken }),
   });
-  saveSession(session);
-  return session;
+  const normalized = normalizeSession(session);
+  saveSession(normalized);
+  return normalized;
 };
 
 export const completeFirebaseSignup = async (
@@ -63,8 +83,20 @@ export const completeFirebaseSignup = async (
     auth: false,
     body: JSON.stringify({ firebase_token: firebaseToken, ...profile }),
   });
-  saveSession(session);
-  return session;
+  const normalized = normalizeSession(session);
+  saveSession(normalized);
+  return normalized;
+};
+
+export const completeGoogleLogin = async (token: string) => {
+  const session = await request<AuthSession | LegacyTokenSession>("/accounts/social/google/", {
+    method: "POST",
+    auth: false,
+    body: JSON.stringify({ token }),
+  });
+  const normalized = normalizeSession(session);
+  saveSession(normalized);
+  return normalized;
 };
 
 export const getSubscriptionStatus = () => request<SubscriptionStatus>("/subscriptions/status/");

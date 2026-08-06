@@ -60,6 +60,9 @@ const Footer = () => {
             { label: t("footer.links.privacy"), href: "/privacy" },
             { label: t("footer.links.terms"), href: "/terms" },
             { label: t("footer.links.deleteAccount"), href: "/delete-account" },
+            { label: "Company Information", href: "/company" },
+            { label: "About", href: "/about" },
+            { label: "Contact", href: "/contact" },
           ],
         },
       ] as { title: string; links: FooterLink[] }[]).map((col) => (
@@ -84,9 +87,30 @@ const Footer = () => {
         </div>
       ))}
     </div>
-    <div className="max-w-7xl mx-auto mt-12 pt-6 border-t border-border/20 text-center text-sm text-muted-foreground">
-      {t("footer.rights")}
+    <div className="max-w-7xl mx-auto mt-12 pt-6 border-t border-border/20 text-sm text-muted-foreground space-y-4">
+      <p className="text-foreground/80">
+        <strong>VISOR Fitness is a fitness technology product operated by Cedra Kaddour FZ-LLC, a
+        Free Zone Limited Liability Company registered in Ras Al Khaimah, United Arab Emirates.</strong>
+      </p>
+      <p className="leading-relaxed">
+        Registration No. 0000004084353
+        <br />
+        Licence No. 7017101
+        <br />
+        Email:{" "}
+        <a href="mailto:support@visorfitness.com" className="hover:text-primary transition-colors">
+          support@visorfitness.com
+        </a>
+      </p>
+      <p className="text-xs leading-relaxed">
+        VISOR Fitness provides fitness, nutrition and wellness information for general informational
+        purposes. It is not a medical service and does not provide medical diagnosis, treatment or
+        emergency advice. AI-generated transformation images are illustrative estimates, not
+        guaranteed outcomes.
+      </p>
+      <p className="text-center pt-2">{t("footer.rights")}</p>
     </div>
+
   </footer>
   );
 };

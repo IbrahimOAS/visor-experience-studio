@@ -68,6 +68,9 @@ const HINTS: Record<string, Pick<SitemapEntry, "changefreq" | "priority">> = {
   "/careers": { changefreq: "monthly", priority: "0.5" },
   "/elite": { changefreq: "monthly", priority: "0.8" },
   "/blog": { changefreq: "weekly", priority: "0.8" },
+  "/company": { changefreq: "yearly", priority: "0.5" },
+  "/contact": { changefreq: "yearly", priority: "0.6" },
+  "/about": { changefreq: "yearly", priority: "0.6" },
 };
 
 

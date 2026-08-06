@@ -17,13 +17,14 @@ interface I18nPage {
 }
 
 interface Props {
+  afterSections?: React.ReactNode;
   pageKey: string;
   path: string;
   breadcrumbTrail: Array<{ key: "home" | "compare" | "concepts" | "support"; href: string }>;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-export function I18nContentPage({ pageKey, path, breadcrumbTrail, jsonLd }: Props) {
+export function I18nContentPage({ pageKey, path, breadcrumbTrail, jsonLd, afterSections }: Props) {
   const { t } = useTranslation();
   const page = t(`pages.${pageKey}`, { returnObjects: true }) as I18nPage;
 
@@ -43,6 +44,7 @@ export function I18nContentPage({ pageKey, path, breadcrumbTrail, jsonLd }: Prop
       h1={page.h1}
       breadcrumbs={breadcrumbs}
       jsonLd={jsonLd}
+      afterSections={afterSections}
       ctaLabel={t("hero.cta")}
       intro={<RichText content={page.intro} />}
       sections={(page.sections ?? []).map((s) => ({
