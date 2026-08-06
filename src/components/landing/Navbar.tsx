@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+
 import { APP_STORE_URL, handleAppStoreClick } from "@/lib/app-store";
 import visorLogo from "@/assets/visor-logo.png";
 import LanguageToggle from "@/components/LanguageToggle";
@@ -111,27 +111,27 @@ const Navbar = () => {
                 ))}
                 <div className="flex flex-col gap-4 pt-2">
                   <LanguageToggle align="left" dropdownMode="static" className="w-full" />
-                  <div className="grid grid-cols-2 gap-2 border-t border-white/10 pt-4">
+                  <div className="border-t border-white/10 pt-4">
                     <a
                       href="/login"
                       onClick={() => setMobileOpen(false)}
-                      className="px-4 h-9 inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-xs font-medium text-foreground"
+                      className="w-full px-4 h-9 inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-xs font-medium text-foreground"
                     >
                       {t("nav.signIn")}
                     </a>
-                    <a
-                      href={APP_STORE_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => {
-                        setMobileOpen(false);
-                        handleAppStoreClick(e);
-                      }}
-                      className="px-4 h-9 inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-semibold"
-                    >
-                      {t("nav.getApp")}
-                    </a>
                   </div>
+                  <a
+                    href={APP_STORE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => {
+                      setMobileOpen(false);
+                      handleAppStoreClick(e);
+                    }}
+                    className="px-4 h-9 inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-semibold"
+                  >
+                    {t("nav.getApp")}
+                  </a>
                 </div>
               </div>
             </motion.div>

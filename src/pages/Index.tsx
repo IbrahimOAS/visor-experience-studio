@@ -9,6 +9,7 @@ import EliteCoachesTeaser from "@/components/landing/EliteCoachesTeaser";
 import PricingSection from "@/components/landing/PricingSection";
 import PersonalCoaching from "@/components/landing/PersonalCoaching";
 import DownloadCTA from "@/components/landing/DownloadCTA";
+import JoinBanner from "@/components/landing/JoinBanner";
 import Footer from "@/components/landing/Footer";
 
 const Index = () => (
@@ -24,6 +25,7 @@ const Index = () => (
     <PricingSection />
     <PersonalCoaching />
     <DownloadCTA />
+    <JoinBanner />
     <Footer />
   </main>
 );

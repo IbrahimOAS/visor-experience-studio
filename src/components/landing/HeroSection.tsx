@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Apple, ArrowDown } from "lucide-react";
+import { Apple, ArrowDown, Globe } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { APP_STORE_URL, handleAppStoreClick } from "@/lib/app-store";
 import heroBg from "@/assets/hero-bg.jpg";
@@ -76,9 +77,16 @@ const HeroSection = () => {
             <Apple size={20} />
             {t("hero.cta")}
           </a>
+          <Link
+            to="/signup"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl glass-card-strong text-primary font-semibold hover:bg-primary/10 transition-all duration-300 hover:shadow-[0_0_30px_-4px_hsl(28,100%,55%/0.3)] group"
+          >
+            <Globe size={18} />
+            Join now — web
+          </Link>
           <a
             href="#features"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl glass-card-strong text-primary font-semibold hover:bg-primary/10 transition-all duration-300 hover:shadow-[0_0_30px_-4px_hsl(28,100%,55%/0.3)] group"
+            className="inline-flex items-center gap-2 px-6 py-4 rounded-2xl text-muted-foreground font-medium hover:text-foreground transition-colors duration-300 group"
           >
             {t("hero.secondaryCta")} <ArrowDown size={18} className="group-hover:translate-y-1 transition-transform duration-300" />
           </a>

@@ -28,6 +28,10 @@ const Signup = () => {
     try {
       const firebaseToken = await signUpWithFirebaseEmail(email, password);
       await completeFirebaseSignup(firebaseToken, buildSignupProfile(email, fullName));
+      // Track signup with FirstPromoter so the referrer gets credited
+      if (typeof window !== "undefined" && (window as any).fpr) {
+        (window as any).fpr("referral", { email });
+      }
       navigate(redirectTo);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Could not create account");
