@@ -55,7 +55,7 @@ const Cylinder = memo(
     isActive: boolean;
   }) => {
     const isSm = useMediaQuery("(max-width: 640px)");
-    const cylinderWidth = isSm ? 1100 : 1800;
+    const cylinderWidth = isSm ? 1600 : 2600;
     const faceCount = cards.length;
     const faceWidth = cylinderWidth / faceCount;
     const radius = cylinderWidth / (2 * Math.PI);
