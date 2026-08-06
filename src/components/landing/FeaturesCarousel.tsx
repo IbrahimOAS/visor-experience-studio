@@ -8,19 +8,22 @@ import {
   useTransform,
 } from "framer-motion";
 
-import uiScreen2 from "@/assets/ui-screen-2.png";
-import uiScreen3 from "@/assets/ui-screen-3.png";
-import uiScreen4 from "@/assets/ui-screen-4.png";
-import uiScreen5 from "@/assets/ui-screen-5.png";
-import uiScreen6 from "@/assets/ui-screen-6.png";
-import uiScreen7 from "@/assets/ui-screen-7.png";
-import uiScreen8 from "@/assets/ui-screen-8.png";
-import uiScreen9 from "@/assets/ui-screen-9.png";
+import appOnboarding from "@/assets/visor-app-70.png.asset.json";
+import appNutritionPrefs from "@/assets/visor-app-71.png.asset.json";
+import appBaselinePhotos from "@/assets/visor-app-72.png.asset.json";
+import appFutureYou from "@/assets/visor-app-73.png.asset.json";
+import appToday from "@/assets/visor-app-74.png.asset.json";
+import appPlan from "@/assets/visor-app-75.png.asset.json";
+import appSession from "@/assets/visor-app-76.png.asset.json";
+import appCalories from "@/assets/visor-app-77.png.asset.json";
+import appCoach from "@/assets/visor-app-78.png.asset.json";
+import appCycle from "@/assets/visor-app-79.png.asset.json";
 
 const cards = [
-  uiScreen2, uiScreen3, uiScreen4, uiScreen5,
-  uiScreen6, uiScreen7, uiScreen8, uiScreen9,
+  appOnboarding.url, appFutureYou.url, appToday.url, appPlan.url, appSession.url,
+  appCalories.url, appCoach.url, appNutritionPrefs.url, appBaselinePhotos.url, appCycle.url,
 ];
+
 
 const duration = 0.15;
 const transition = { duration, ease: [0.32, 0.72, 0, 1] as const };
