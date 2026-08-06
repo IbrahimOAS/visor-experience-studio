@@ -55,7 +55,7 @@ const Cylinder = memo(
     isActive: boolean;
   }) => {
     const isSm = useMediaQuery("(max-width: 640px)");
-    const cylinderWidth = isSm ? 1100 : 1800;
+    const cylinderWidth = isSm ? 1600 : 2600;
     const faceCount = cards.length;
     const faceWidth = cylinderWidth / faceCount;
     const radius = cylinderWidth / (2 * Math.PI);
@@ -69,7 +69,7 @@ const Cylinder = memo(
       <div
         className="flex h-full items-center justify-center"
         style={{
-          perspective: "1000px",
+          perspective: "1200px",
           transformStyle: "preserve-3d",
           willChange: "transform",
         }}
@@ -152,7 +152,7 @@ const FeaturesCarousel = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px]" />
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="w-full max-w-[100vw] mx-auto relative z-10 px-0">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -200,7 +200,7 @@ const FeaturesCarousel = () => {
             )}
           </AnimatePresence>
 
-          <div className="relative h-[500px] w-full overflow-hidden">
+          <div className="relative h-[600px] w-full overflow-visible">
             <Cylinder
               handleClick={handleClick}
               controls={controls}
