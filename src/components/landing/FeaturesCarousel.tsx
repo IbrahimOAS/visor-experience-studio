@@ -69,7 +69,7 @@ const Cylinder = memo(
       <div
         className="flex h-full items-center justify-center"
         style={{
-          perspective: "1000px",
+          perspective: "1200px",
           transformStyle: "preserve-3d",
           willChange: "transform",
         }}
