@@ -152,7 +152,7 @@ const FeaturesCarousel = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px]" />
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="w-full max-w-[100vw] mx-auto relative z-10 px-0">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
