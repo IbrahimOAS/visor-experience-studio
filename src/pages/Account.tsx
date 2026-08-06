@@ -1,11 +1,23 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Check, Copy, CreditCard, Gift, LogOut, ShieldCheck } from "lucide-react";
+import {
+  CalendarClock,
+  Check,
+  CheckCircle2,
+  Copy,
+  CreditCard,
+  Gift,
+  Loader2,
+  RefreshCw,
+  ShieldCheck,
+  Sparkles,
+  Zap,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import { getSession } from "@/lib/auth";
 import { createPortalSession, getSubscriptionStatus, SubscriptionStatus } from "@/lib/visor-api";
+import AccountShell from "@/components/billing/AccountShell";
 
 const tierRank: Record<string, number> = {
   free: 0,
@@ -63,11 +75,6 @@ const Account = () => {
     }
   };
 
-  const logout = async () => {
-    await clearSession();
-    navigate("/");
-  };
-
   const referralLink = `https://visorfitness.com?fpr=${session?.user.username ?? ""}`;
 
   const copyReferralLink = () => {
@@ -122,11 +129,14 @@ const Account = () => {
               </p>
             </div>
             <div className="rounded-xl border border-white/10 bg-background/35 p-4">
-              <p className="mb-2 flex items-center gap-2 text-xs text-muted-foreground">
+              <p className="mb-3 flex items-center gap-2 text-xs text-muted-foreground">
                 <CreditCard className="h-4 w-4" />
+                Billing
+              </p>
+              <Button className="mb-2 w-full" variant="outline" onClick={openPortal} disabled={portalLoading}>
                 {portalLoading ? "Opening..." : "Manage billing"}
               </Button>
-              <Button asChild variant="outline">
+              <Button asChild className="w-full" variant="outline">
                 <Link to="/pricing">Change plan</Link>
               </Button>
             </div>
