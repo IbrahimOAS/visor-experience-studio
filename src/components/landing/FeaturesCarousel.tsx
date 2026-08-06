@@ -200,7 +200,7 @@ const FeaturesCarousel = () => {
             )}
           </AnimatePresence>
 
-          <div className="relative h-[500px] w-full overflow-hidden">
+          <div className="relative h-[600px] w-full overflow-visible">
             <Cylinder
               handleClick={handleClick}
               controls={controls}
