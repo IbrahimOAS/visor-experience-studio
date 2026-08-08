@@ -55,10 +55,10 @@ const HeroSection = () => {
         <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none flex items-center justify-center">
           {/* Trail 2 — faintest, most dissolved */}
           <div
-            className="absolute top-1/2 left-1/2 w-[min(42vw,520px)] h-[min(60vw,740px)] animate-hero-figure-delay-2"
+            className="absolute top-1/2 left-1/2 w-[min(42vw,520px)] h-[min(60vw,740px)] animate-hero-figure-delay-2 border border-red-500"
             style={{ opacity: 0.12 }}
           >
-            <svg viewBox="0 0 200 400" className="w-full h-full">
+            <svg viewBox="0 0 200 400" className="w-full h-full border border-blue-500">
               <defs>
                 <linearGradient id="trailGrad2" x1="100" y1="0" x2="100" y2="400" gradientUnits="userSpaceOnUse">
                   <stop offset="0%" stopColor="hsl(28,100%,55%)" stopOpacity="0.6" />
@@ -71,10 +71,10 @@ const HeroSection = () => {
 
           {/* Trail 1 — mid opacity outline */}
           <div
-            className="absolute top-1/2 left-1/2 w-[min(42vw,520px)] h-[min(60vw,740px)] animate-hero-figure-delay-1"
+            className="absolute top-1/2 left-1/2 w-[min(42vw,520px)] h-[min(60vw,740px)] animate-hero-figure-delay-1 border border-red-500"
             style={{ opacity: 0.22 }}
           >
-            <svg viewBox="0 0 200 400" className="w-full h-full">
+            <svg viewBox="0 0 200 400" className="w-full h-full border border-blue-500">
               <defs>
                 <linearGradient id="trailGrad1" x1="100" y1="0" x2="100" y2="400" gradientUnits="userSpaceOnUse">
                   <stop offset="0%" stopColor="hsl(28,100%,55%)" stopOpacity="0.85" />
@@ -86,8 +86,8 @@ const HeroSection = () => {
           </div>
 
           {/* Primary silhouette — solid form advancing toward viewer */}
-          <div className="absolute top-1/2 left-1/2 w-[min(42vw,520px)] h-[min(60vw,740px)] animate-hero-figure">
-            <svg viewBox="0 0 200 400" className="w-full h-full drop-shadow-[0_0_35px_hsl(28,100%,55%/0.35)]">
+          <div className="absolute top-1/2 left-1/2 w-[min(42vw,520px)] h-[min(60vw,740px)] animate-hero-figure border border-red-500">
+            <svg viewBox="0 0 200 400" className="w-full h-full drop-shadow-[0_0_35px_hsl(28,100%,55%/0.35)] border border-blue-500">
               <defs>
                 <linearGradient id="figureGrad" x1="100" y1="0" x2="100" y2="400" gradientUnits="userSpaceOnUse">
                   <stop offset="0%" stopColor="hsl(0,0%,0%)" />
