@@ -55,10 +55,10 @@ const HeroSection = () => {
         <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none flex items-center justify-center">
           {/* Trail 2 — faintest, most dissolved */}
           <div
-            className="absolute top-1/2 left-1/2 h-[min(60vw,740px)] w-auto aspect-[1/2] animate-hero-figure-delay-2 border border-red-500"
-            style={{ opacity: 0.12 }}
+            className="absolute top-1/2 left-1/2 h-[min(72vw,860px)] w-auto aspect-[1/2] animate-hero-figure-delay-2"
+            style={{ opacity: 0.14 }}
           >
-            <svg viewBox="0 0 200 400" preserveAspectRatio="xMidYMid meet" className="h-full w-full border border-blue-500">
+            <svg viewBox="0 0 200 400" preserveAspectRatio="xMidYMid meet" className="h-full w-full">
               <defs>
                 <linearGradient id="trailGrad2" x1="100" y1="0" x2="100" y2="400" gradientUnits="userSpaceOnUse">
                   <stop offset="0%" stopColor="hsl(28,100%,55%)" stopOpacity="0.6" />
@@ -71,10 +71,10 @@ const HeroSection = () => {
 
           {/* Trail 1 — mid opacity outline */}
           <div
-            className="absolute top-1/2 left-1/2 h-[min(60vw,740px)] w-auto aspect-[1/2] animate-hero-figure-delay-1 border border-red-500"
-            style={{ opacity: 0.22 }}
+            className="absolute top-1/2 left-1/2 h-[min(72vw,860px)] w-auto aspect-[1/2] animate-hero-figure-delay-1"
+            style={{ opacity: 0.26 }}
           >
-            <svg viewBox="0 0 200 400" preserveAspectRatio="xMidYMid meet" className="h-full w-full border border-blue-500">
+            <svg viewBox="0 0 200 400" preserveAspectRatio="xMidYMid meet" className="h-full w-full">
               <defs>
                 <linearGradient id="trailGrad1" x1="100" y1="0" x2="100" y2="400" gradientUnits="userSpaceOnUse">
                   <stop offset="0%" stopColor="hsl(28,100%,55%)" stopOpacity="0.85" />
@@ -86,13 +86,13 @@ const HeroSection = () => {
           </div>
 
           {/* Primary silhouette — solid form advancing toward viewer */}
-          <div className="absolute top-1/2 left-1/2 h-[min(60vw,740px)] w-auto aspect-[1/2] animate-hero-figure border border-red-500">
-            <svg viewBox="0 0 200 400" preserveAspectRatio="xMidYMid meet" className="h-full w-full drop-shadow-[0_0_35px_hsl(28,100%,55%/0.35)] border border-blue-500 bg-green-500/30">
+          <div className="absolute top-1/2 left-1/2 h-[min(72vw,860px)] w-auto aspect-[1/2] animate-hero-figure">
+            <svg viewBox="0 0 200 400" preserveAspectRatio="xMidYMid meet" className="h-full w-full drop-shadow-[0_0_40px_hsl(28,100%,55%/0.4)]">
               <defs>
                 <linearGradient id="figureGrad" x1="100" y1="0" x2="100" y2="400" gradientUnits="userSpaceOnUse">
                   <stop offset="0%" stopColor="hsl(0,0%,0%)" />
                   <stop offset="55%" stopColor="hsl(0,0%,0%)" />
-                  <stop offset="100%" stopColor="hsl(28,100%,55%)" stopOpacity="0.25" />
+                  <stop offset="100%" stopColor="hsl(28,100%,55%)" stopOpacity="0.3" />
                 </linearGradient>
               </defs>
               <path d={silhouettePath} fill="url(#figureGrad)" />
