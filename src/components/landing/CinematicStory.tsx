@@ -35,7 +35,7 @@ const LazyVideo = ({ src, label }: { src: string; label: string }) => {
       muted
       loop
       playsInline
-      preload="none"
+      preload="metadata"
       aria-label={label}
       className="w-full h-full object-cover"
     />
