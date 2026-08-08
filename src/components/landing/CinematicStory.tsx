@@ -20,10 +20,13 @@ const LazyVideo = ({ src, label }: { src: string; label: string }) => {
   const ref = useRef<HTMLVideoElement>(null);
   const inView = useInView(ref, { margin: "-15% 0px" });
 
-  if (ref.current) {
-    if (inView) void ref.current.play().catch(() => undefined);
-    else ref.current.pause();
-  }
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (inView) void el.play().catch(() => undefined);
+    else el.pause();
+  }, [inView]);
+
 
   return (
     <video
