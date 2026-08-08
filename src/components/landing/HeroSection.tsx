@@ -3,6 +3,7 @@ import { Apple, ArrowDown, Globe, Star, ShieldCheck, Sparkles } from "lucide-rea
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { APP_STORE_URL, handleAppStoreClick } from "@/lib/app-store";
+import heroBg from "@/assets/hero-bg.jpg";
 import heroVideo from "@/assets/visor-hero-loop.mp4.asset.json";
 import heroPoster from "@/assets/visor-hero-poster.jpg.asset.json";
 
