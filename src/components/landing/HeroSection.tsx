@@ -87,7 +87,7 @@ const HeroSection = () => {
 
           {/* Primary silhouette — solid form advancing toward viewer */}
           <div className="absolute top-1/2 left-1/2 h-[min(60vw,740px)] w-auto aspect-[1/2] animate-hero-figure border border-red-500">
-            <svg viewBox="0 0 200 400" preserveAspectRatio="xMidYMid meet" className="h-full w-full drop-shadow-[0_0_35px_hsl(28,100%,55%/0.35)] border border-blue-500">
+            <svg viewBox="0 0 200 400" preserveAspectRatio="xMidYMid meet" className="h-full w-full drop-shadow-[0_0_35px_hsl(28,100%,55%/0.35)] border border-blue-500 bg-green-500/30">
               <defs>
                 <linearGradient id="figureGrad" x1="100" y1="0" x2="100" y2="400" gradientUnits="userSpaceOnUse">
                   <stop offset="0%" stopColor="hsl(0,0%,0%)" />
