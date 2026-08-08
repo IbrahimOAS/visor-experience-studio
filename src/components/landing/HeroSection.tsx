@@ -17,6 +17,10 @@ const HeroSection = () => {
     { icon: Star, label: t("hero.trust.trial", "7-day free trial on Elite") },
   ];
 
+  // Shared stylized human silhouette path
+  const silhouettePath =
+    "M100 26c13 0 22 12 22 28 0 14-8 24-16 28v8c22 6 34 24 40 60l8 150c2 10-8 14-16 10l-14-130-2-10h-4l-2 10-14 130c-8 4-18 0-16-10l8-150c6-36 18-54 40-60v-8c-8-4-16-14-16-28 0-16 9-28 22-28z";
+
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16">
       {/* Cinematic background video (image fallback beneath) */}
@@ -43,8 +47,61 @@ const HeroSection = () => {
         />
 
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-primary/10 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: "2s" }} />
+
+        {/* Kinetic figure glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[55vw] h-[55vw] max-w-[800px] max-h-[800px] bg-primary rounded-full blur-[160px] animate-hero-glow pointer-events-none" />
+
+        {/* Kinetic figure layers */}
+        <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none flex items-center justify-center">
+          {/* Trail 2 — faintest, most dissolved */}
+          <div
+            className="absolute top-1/2 left-1/2 w-[min(42vw,520px)] h-[min(60vw,740px)] animate-hero-figure-delay-2"
+            style={{ opacity: 0.12 }}
+          >
+            <svg viewBox="0 0 200 400" className="w-full h-full">
+              <defs>
+                <linearGradient id="trailGrad2" x1="100" y1="0" x2="100" y2="400" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="hsl(28,100%,55%)" stopOpacity="0.6" />
+                  <stop offset="100%" stopColor="hsl(28,100%,55%)" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+              <path d={silhouettePath} fill="none" stroke="url(#trailGrad2)" strokeWidth="2" className="blur-md" />
+            </svg>
+          </div>
+
+          {/* Trail 1 — mid opacity outline */}
+          <div
+            className="absolute top-1/2 left-1/2 w-[min(42vw,520px)] h-[min(60vw,740px)] animate-hero-figure-delay-1"
+            style={{ opacity: 0.22 }}
+          >
+            <svg viewBox="0 0 200 400" className="w-full h-full">
+              <defs>
+                <linearGradient id="trailGrad1" x1="100" y1="0" x2="100" y2="400" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="hsl(28,100%,55%)" stopOpacity="0.85" />
+                  <stop offset="100%" stopColor="hsl(28,100%,55%)" stopOpacity="0.1" />
+                </linearGradient>
+              </defs>
+              <path d={silhouettePath} fill="none" stroke="url(#trailGrad1)" strokeWidth="1.5" />
+            </svg>
+          </div>
+
+          {/* Primary silhouette — solid form advancing toward viewer */}
+          <div className="absolute top-1/2 left-1/2 w-[min(42vw,520px)] h-[min(60vw,740px)] animate-hero-figure">
+            <svg viewBox="0 0 200 400" className="w-full h-full drop-shadow-[0_0_35px_hsl(28,100%,55%/0.35)]">
+              <defs>
+                <linearGradient id="figureGrad" x1="100" y1="0" x2="100" y2="400" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="hsl(0,0%,0%)" />
+                  <stop offset="55%" stopColor="hsl(0,0%,0%)" />
+                  <stop offset="100%" stopColor="hsl(28,100%,55%)" stopOpacity="0.25" />
+                </linearGradient>
+              </defs>
+              <path d={silhouettePath} fill="url(#figureGrad)" />
+            </svg>
+          </div>
+        </div>
+
+        {/* Vignette / readability layer */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,hsl(var(--background)/0.4)_70%,hsl(var(--background)/0.85)_100%)] z-[15] pointer-events-none" />
       </div>
 
       {/* Content */}
