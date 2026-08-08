@@ -1,6 +1,17 @@
 import { memo, useEffect, useMemo, useState, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import {
+
+const appOnboarding = { url: "/media/visor-app-70.png" };
+const appNutritionPrefs = { url: "/media/visor-app-71.png" };
+const appBaselinePhotos = { url: "/media/visor-app-72.png" };
+const appFutureYou = { url: "/media/visor-app-73.png" };
+const appToday = { url: "/media/visor-app-74.png" };
+const appPlan = { url: "/media/visor-app-75.png" };
+const appSession = { url: "/media/visor-app-76.png" };
+const appCalories = { url: "/media/visor-app-77.png" };
+const appCoach = { url: "/media/visor-app-78.png" };
+const appCycle = { url: "/media/visor-app-79.png" };
   AnimatePresence,
   motion,
   useAnimation,
@@ -8,16 +19,6 @@ import {
   useTransform,
 } from "framer-motion";
 
-import appOnboarding from "@/assets/visor-app-70.png.asset.json";
-import appNutritionPrefs from "@/assets/visor-app-71.png.asset.json";
-import appBaselinePhotos from "@/assets/visor-app-72.png.asset.json";
-import appFutureYou from "@/assets/visor-app-73.png.asset.json";
-import appToday from "@/assets/visor-app-74.png.asset.json";
-import appPlan from "@/assets/visor-app-75.png.asset.json";
-import appSession from "@/assets/visor-app-76.png.asset.json";
-import appCalories from "@/assets/visor-app-77.png.asset.json";
-import appCoach from "@/assets/visor-app-78.png.asset.json";
-import appCycle from "@/assets/visor-app-79.png.asset.json";
 
 const cards = [
   appOnboarding.url, appFutureYou.url, appToday.url, appPlan.url, appSession.url,

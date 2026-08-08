@@ -4,10 +4,11 @@ import { motion, useInView } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Apple } from "lucide-react";
 import { APP_STORE_URL, handleAppStoreClick } from "@/lib/app-store";
-import stairs from "@/assets/visor-stairs.mp4.asset.json";
-import doorway from "@/assets/visor-doorway.mp4.asset.json";
-import mirror from "@/assets/visor-mirror.mp4.asset.json";
-import energy from "@/assets/visor-energy.mp4.asset.json";
+
+const stairs = { url: "/media/visor-stairs.mp4" };
+const doorway = { url: "/media/visor-doorway.mp4" };
+const mirror = { url: "/media/visor-mirror.mp4" };
+const energy = { url: "/media/visor-energy.mp4" };
 
 type Beat = {
   src: string;

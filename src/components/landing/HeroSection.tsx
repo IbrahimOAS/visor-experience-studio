@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { APP_STORE_URL, handleAppStoreClick } from "@/lib/app-store";
 import heroBg from "@/assets/hero-bg.jpg";
-import heroVideo from "@/assets/visor-hero-loop.mp4.asset.json";
-import heroPoster from "@/assets/visor-hero-poster.jpg.asset.json";
+
+const heroVideo = { url: "/media/visor-hero-loop.mp4" };
+const heroPoster = { url: "/media/visor-hero-poster.jpg" };
 
 const HeroSection = () => {
   const { t } = useTranslation();
