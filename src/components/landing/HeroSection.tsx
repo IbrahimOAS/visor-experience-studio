@@ -17,10 +17,19 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16">
-      {/* Cinematic background video */}
+      {/* Cinematic background video (image fallback beneath) */}
       <div className="absolute inset-0 z-0">
+        <img
+          src={heroBg}
+          alt="AI-powered body transformation visualization background"
+          width="1920"
+          height="1080"
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover opacity-70 animate-hero-kenburns will-change-transform"
+        />
         <video
-          className="w-full h-full object-cover opacity-70"
+          className="relative w-full h-full object-cover opacity-70"
           src={heroVideo.url}
           poster={heroPoster.url}
           autoPlay
@@ -30,6 +39,7 @@ const HeroSection = () => {
           preload="metadata"
           aria-hidden="true"
         />
+
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] animate-pulse" />
         <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-primary/10 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: "2s" }} />
