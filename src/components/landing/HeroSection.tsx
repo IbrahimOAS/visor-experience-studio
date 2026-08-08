@@ -17,9 +17,9 @@ const HeroSection = () => {
     { icon: Star, label: t("hero.trust.trial", "7-day free trial on Elite") },
   ];
 
-  // Shared stylized human silhouette path
+  // Shared stylized human silhouette path — centered in a 200×400 viewBox
   const silhouettePath =
-    "M100 26c13 0 22 12 22 28 0 14-8 24-16 28v8c22 6 34 24 40 60l8 150c2 10-8 14-16 10l-14-130-2-10h-4l-2 10-14 130c-8 4-18 0-16-10l8-150c6-36 18-54 40-60v-8c-8-4-16-14-16-28 0-16 9-28 22-28z";
+    "M100 24c15 0 24 13 24 29 0 15-9 26-18 30v9c24 7 36 26 42 64l8 152c2 11-9 15-17 11l-13-132-2-10h-4l-2 10-13 132c-8 4-19 0-17-11l8-152c6-38 18-57 42-64v-9c-9-4-18-15-18-30 0-16 9-29 24-29z";
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16">
