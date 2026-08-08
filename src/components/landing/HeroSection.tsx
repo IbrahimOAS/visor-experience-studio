@@ -28,10 +28,10 @@ const HeroSection = () => {
           height="1080"
           fetchPriority="high"
           decoding="async"
-          className="absolute inset-0 w-full h-full object-cover opacity-70 animate-hero-kenburns will-change-transform"
+          className="absolute inset-0 w-full h-full object-cover opacity-90 animate-hero-kenburns will-change-transform"
         />
         <video
-          className="relative w-full h-full object-cover opacity-70"
+          className="relative w-full h-full object-cover opacity-90"
           src={heroVideo.url}
           poster={heroPoster.url}
           autoPlay
@@ -42,9 +42,9 @@ const HeroSection = () => {
           aria-hidden="true"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-primary/10 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: "2s" }} />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/25 via-background/45 to-background" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/8 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-primary/8 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: "2s" }} />
       </div>
 
       {/* Content */}
