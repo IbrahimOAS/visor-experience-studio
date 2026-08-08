@@ -19,7 +19,7 @@ const HeroSection = () => {
 
   // Shared stylized human silhouette path — centered in a 200×400 viewBox
   const silhouettePath =
-    "M100 24c15 0 24 13 24 29 0 15-9 26-18 30v9c24 7 36 26 42 64l8 152c2 11-9 15-17 11l-13-132-2-10h-4l-2 10-13 132c-8 4-19 0-17-11l8-152c6-38 18-57 42-64v-9c-9-4-18-15-18-30 0-16 9-29 24-29z";
+    "M100 20c12 0 20 14 20 32 0 18-6 24-6 32 16 16 26 36 32 76l6 140c2 10-8 14-14 10l-12-130-10-10-10 10-12 130c-6 4-16 0-14-10l6-140c6-40 16-60 32-76 0-8-6-14-6-32 0-18 8-32 20-32z";
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16">
