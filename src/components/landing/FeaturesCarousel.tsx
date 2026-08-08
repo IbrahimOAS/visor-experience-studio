@@ -1,6 +1,12 @@
 import { memo, useEffect, useMemo, useState, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import {
+  AnimatePresence,
+  motion,
+  useAnimation,
+  useMotionValue,
+  useTransform,
+} from "framer-motion";
 
 const appOnboarding = { url: "/media/visor-app-70.png" };
 const appNutritionPrefs = { url: "/media/visor-app-71.png" };
@@ -12,12 +18,7 @@ const appSession = { url: "/media/visor-app-76.png" };
 const appCalories = { url: "/media/visor-app-77.png" };
 const appCoach = { url: "/media/visor-app-78.png" };
 const appCycle = { url: "/media/visor-app-79.png" };
-  AnimatePresence,
-  motion,
-  useAnimation,
-  useMotionValue,
-  useTransform,
-} from "framer-motion";
+
 
 
 const cards = [
