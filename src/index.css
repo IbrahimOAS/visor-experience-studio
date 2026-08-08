@@ -184,8 +184,41 @@
   transform: translateZ(0);
 }
 
+/* Kinetic hero figure — advances toward viewer and dissolves */
+@keyframes hero-figure-advance {
+  0%   { transform: translate(-50%, -46%) scale(0.78); opacity: 0; filter: blur(14px); }
+  18%  { opacity: 0.7; filter: blur(0px); }
+  72%  { opacity: 0.4; }
+  100% { transform: translate(-50%, -54%) scale(1.32); opacity: 0; filter: blur(26px); }
+}
+
+@keyframes hero-glow-pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.12; }
+  50%      { transform: translate(-50%, -50%) scale(1.15); opacity: 0.28; }
+}
+
+.animate-hero-figure {
+  animation: hero-figure-advance 14s ease-out infinite;
+}
+
+.animate-hero-figure-delay-1 {
+  animation: hero-figure-advance 14s ease-out infinite 2.5s;
+}
+
+.animate-hero-figure-delay-2 {
+  animation: hero-figure-advance 14s ease-out infinite 5s;
+}
+
+.animate-hero-glow {
+  animation: hero-glow-pulse 10s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .animate-hero-kenburns { animation: none; }
+  .animate-hero-kenburns,
+  .animate-hero-figure,
+  .animate-hero-figure-delay-1,
+  .animate-hero-figure-delay-2,
+  .animate-hero-glow { animation: none; }
 }
 
 /* Custom scrollbar */

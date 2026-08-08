@@ -17,6 +17,10 @@ const HeroSection = () => {
     { icon: Star, label: t("hero.trust.trial", "7-day free trial on Elite") },
   ];
 
+  // Shared stylized human silhouette path — centered in a 200×400 viewBox
+  const silhouettePath =
+    "M100 20c12 0 20 14 20 32 0 18-6 24-6 32 16 16 26 36 32 76l6 140c2 10-8 14-14 10l-12-130-10-10-10 10-12 130c-6 4-16 0-14-10l6-140c6-40 16-60 32-76 0-8-6-14-6-32 0-18 8-32 20-32z";
+
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16">
       {/* Cinematic background video (image fallback beneath) */}
@@ -43,8 +47,61 @@ const HeroSection = () => {
         />
 
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-primary/10 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: "2s" }} />
+
+        {/* Kinetic figure glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[55vw] h-[55vw] max-w-[800px] max-h-[800px] bg-primary rounded-full blur-[160px] animate-hero-glow pointer-events-none" />
+
+        {/* Kinetic figure layers */}
+        <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none flex items-center justify-center">
+          {/* Trail 2 — faintest, most dissolved */}
+          <div
+            className="absolute top-1/2 left-1/2 h-[min(72vw,860px)] w-auto aspect-[1/2] animate-hero-figure-delay-2"
+            style={{ opacity: 0.14 }}
+          >
+            <svg viewBox="0 0 200 400" preserveAspectRatio="xMidYMid meet" className="h-full w-full">
+              <defs>
+                <linearGradient id="trailGrad2" x1="100" y1="0" x2="100" y2="400" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="hsl(28,100%,55%)" stopOpacity="0.6" />
+                  <stop offset="100%" stopColor="hsl(28,100%,55%)" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+              <path d={silhouettePath} fill="none" stroke="url(#trailGrad2)" strokeWidth="2" className="blur-md" />
+            </svg>
+          </div>
+
+          {/* Trail 1 — mid opacity outline */}
+          <div
+            className="absolute top-1/2 left-1/2 h-[min(72vw,860px)] w-auto aspect-[1/2] animate-hero-figure-delay-1"
+            style={{ opacity: 0.26 }}
+          >
+            <svg viewBox="0 0 200 400" preserveAspectRatio="xMidYMid meet" className="h-full w-full">
+              <defs>
+                <linearGradient id="trailGrad1" x1="100" y1="0" x2="100" y2="400" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="hsl(28,100%,55%)" stopOpacity="0.85" />
+                  <stop offset="100%" stopColor="hsl(28,100%,55%)" stopOpacity="0.1" />
+                </linearGradient>
+              </defs>
+              <path d={silhouettePath} fill="none" stroke="url(#trailGrad1)" strokeWidth="1.5" />
+            </svg>
+          </div>
+
+          {/* Primary silhouette — solid form advancing toward viewer */}
+          <div className="absolute top-1/2 left-1/2 h-[min(72vw,860px)] w-auto aspect-[1/2] animate-hero-figure">
+            <svg viewBox="0 0 200 400" preserveAspectRatio="xMidYMid meet" className="h-full w-full drop-shadow-[0_0_40px_hsl(28,100%,55%/0.4)]">
+              <defs>
+                <linearGradient id="figureGrad" x1="100" y1="0" x2="100" y2="400" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="hsl(0,0%,0%)" />
+                  <stop offset="55%" stopColor="hsl(0,0%,0%)" />
+                  <stop offset="100%" stopColor="hsl(28,100%,55%)" stopOpacity="0.3" />
+                </linearGradient>
+              </defs>
+              <path d={silhouettePath} fill="url(#figureGrad)" />
+            </svg>
+          </div>
+        </div>
+
+        {/* Vignette / readability layer */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,hsl(var(--background)/0.4)_70%,hsl(var(--background)/0.85)_100%)] z-[15] pointer-events-none" />
       </div>
 
       {/* Content */}
