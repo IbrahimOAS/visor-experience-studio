@@ -1,24 +1,20 @@
 import { motion } from "framer-motion";
-import { Apple, ArrowDown, Globe, Star, ShieldCheck, Sparkles } from "lucide-react";
+import { Apple, ArrowDown, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { APP_STORE_URL, handleAppStoreClick } from "@/lib/app-store";
 import heroBg from "@/assets/hero-bg.jpg";
-import heroVideo from "@/assets/visor-hero-loop.mp4.asset.json";
-import heroPoster from "@/assets/visor-hero-poster.jpg.asset.json";
+import screen1 from "@/assets/app-screen-1.png";
+import screen2 from "@/assets/app-screen-2.png";
+import screen3 from "@/assets/app-screen-5.png";
+
+const screens = [screen1, screen2, screen3, screen1, screen2, screen3];
 
 const HeroSection = () => {
   const { t } = useTranslation();
-
-  const trust = [
-    { icon: Sparkles, label: t("hero.trust.live", "Live on the App Store") },
-    { icon: ShieldCheck, label: t("hero.trust.cancel", "Cancel anytime") },
-    { icon: Star, label: t("hero.trust.trial", "7-day free trial on Elite") },
-  ];
-
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16">
-      {/* Cinematic background video (image fallback beneath) */}
+      {/* Background */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroBg}
@@ -27,23 +23,12 @@ const HeroSection = () => {
           height="1080"
           fetchPriority="high"
           decoding="async"
-          className="absolute inset-0 w-full h-full object-cover opacity-70 animate-hero-kenburns will-change-transform"
+          className="w-full h-full object-cover opacity-70 animate-hero-kenburns will-change-transform"
         />
-        <video
-          className="relative w-full h-full object-cover opacity-70"
-          src={heroVideo.url}
-          poster={heroPoster.url}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          aria-hidden="true"
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
+        {/* Ambient glow orbs */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-primary/10 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: "2s" }} />
+        <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-primary/8 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: "2s" }} />
       </div>
 
       {/* Content */}
@@ -97,7 +82,7 @@ const HeroSection = () => {
             className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl glass-card-strong text-primary font-semibold hover:bg-primary/10 transition-all duration-300 hover:shadow-[0_0_30px_-4px_hsl(28,100%,55%/0.3)] group"
           >
             <Globe size={18} />
-            {t("hero.ctaWeb", "Start free on the web")}
+            Join now — web
           </Link>
           <a
             href="#features"
@@ -106,21 +91,8 @@ const HeroSection = () => {
             {t("hero.secondaryCta")} <ArrowDown size={18} className="group-hover:translate-y-1 transition-transform duration-300" />
           </a>
         </motion.div>
-
-        <motion.ul
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.9 }}
-          className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-muted-foreground"
-        >
-          {trust.map(({ icon: Icon, label }) => (
-            <li key={label} className="inline-flex items-center gap-2">
-              <Icon size={15} className="text-primary" />
-              {label}
-            </li>
-          ))}
-        </motion.ul>
       </div>
+
     </section>
   );
 };
