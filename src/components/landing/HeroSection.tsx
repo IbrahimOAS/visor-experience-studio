@@ -23,12 +23,9 @@ const HeroSection = () => {
           height="1080"
           fetchPriority="high"
           decoding="async"
-          className="w-full h-full object-cover opacity-70 animate-hero-kenburns will-change-transform"
+          className="w-full h-full object-cover object-center opacity-70"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
-        {/* Ambient glow orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-primary/8 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: "2s" }} />
       </div>
 
       {/* Content */}
