@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { APP_STORE_URL, handleAppStoreClick } from "@/lib/app-store";
 import heroBg from "@/assets/hero-bg.jpg";
-import heroFigure from "@/assets/hero-figure.png";
 import screen1 from "@/assets/app-screen-1.png";
 import screen2 from "@/assets/app-screen-2.png";
 import screen3 from "@/assets/app-screen-5.png";
@@ -28,19 +27,6 @@ const HeroSection = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
       </div>
-
-      {/* Extracted athlete figure */}
-      <div className="absolute inset-x-0 bottom-0 z-[1] flex justify-center pointer-events-none">
-        <img
-          src={heroFigure}
-          alt="Muscular athlete silhouette representing your future self"
-          loading="lazy"
-          decoding="async"
-          className="h-[70vh] w-auto object-contain object-bottom drop-shadow-[0_0_60px_hsl(28,100%,55%,0.25)]"
-        />
-        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background to-transparent" />
-      </div>
-
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center mt-12 mb-16">
