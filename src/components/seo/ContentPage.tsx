@@ -92,7 +92,7 @@ export const ContentPage = ({
           <div className="mt-16 text-center">
             <Link
               to="/"
-              className="inline-block px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_20px_-4px_hsl(28,100%,55%/0.5)]"
+              className="inline-block px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_20px_-4px_hsl(204,100%,73%/0.5)]"
             >
               {ctaLabel ?? "Explore VISOR"}
             </Link>

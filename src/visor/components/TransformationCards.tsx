@@ -1,0 +1,104 @@
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useLanguage } from '../i18n';
+
+const CARD_IMAGES = [
+  'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1500&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1500&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?q=80&w=1500&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1500&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1543352634-99a5d50ae78e?q=80&w=1500&auto=format&fit=crop',
+] as const;
+
+interface TransformationSectionProps {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  imageLeft: boolean;
+}
+
+function TransformationSection({ data }: { data: TransformationSectionProps }) {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'center center'],
+  });
+
+  const leftX = useTransform(scrollYProgress, [0, 1], ['-20vw', '0vw']);
+  const leftOpacity = useTransform(scrollYProgress, [0, 0.8], [0, 1]);
+  const rightX = useTransform(scrollYProgress, [0, 1], ['20vw', '0vw']);
+  const rightOpacity = useTransform(scrollYProgress, [0, 0.8], [0, 1]);
+
+  const image = (
+    <div className="mx-auto aspect-[4/5] w-full max-w-md overflow-hidden bg-card md:mx-0">
+      <img
+        src={data.image}
+        alt={data.title}
+        loading="lazy"
+        className="h-full w-full object-cover object-center opacity-70 grayscale transition-all duration-700 hover:scale-105 hover:opacity-100 hover:grayscale-0"
+      />
+    </div>
+  );
+
+  const copy = (
+    <div className="mx-auto w-full max-w-md md:mx-0">
+      <span className="mb-6 block text-sm font-semibold text-primary">{data.id}</span>
+      <h3 className="whitespace-pre-line text-5xl font-bold uppercase leading-[0.85] text-foreground md:text-7xl">
+        {data.title}
+      </h3>
+      <p className="mt-8 text-sm font-medium leading-relaxed text-muted-foreground md:text-base">
+        {data.description}
+      </p>
+    </div>
+  );
+
+  return (
+    <article
+      ref={sectionRef}
+      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden text-foreground"
+    >
+      <div className="relative z-10 mx-auto grid h-full w-full max-w-7xl grid-cols-1 items-center gap-12 px-6 py-24 md:grid-cols-2 lg:gap-24">
+        <motion.div
+          className={`flex h-full w-full flex-col justify-center ${data.imageLeft ? 'order-1' : 'order-2 md:order-1'}`}
+          style={{ x: leftX, opacity: leftOpacity }}
+        >
+          {data.imageLeft ? image : copy}
+        </motion.div>
+
+        <motion.div
+          className={`flex h-full w-full flex-col justify-center ${data.imageLeft ? 'order-2' : 'order-1 md:order-2'}`}
+          style={{ x: rightX, opacity: rightOpacity }}
+        >
+          {data.imageLeft ? copy : image}
+        </motion.div>
+      </div>
+    </article>
+  );
+}
+
+export function TransformationCards() {
+  const { t } = useLanguage();
+  const sections: TransformationSectionProps[] = [
+    { id: '01', title: t('tc1t'), description: t('tc1d'), image: CARD_IMAGES[0], imageLeft: true },
+    { id: '02', title: t('tc2t'), description: t('tc2d'), image: CARD_IMAGES[1], imageLeft: false },
+    { id: '03', title: t('tc3t'), description: t('tc3d'), image: CARD_IMAGES[2], imageLeft: true },
+    { id: '04', title: t('tc4t'), description: t('tc4d'), image: CARD_IMAGES[3], imageLeft: false },
+    { id: '05', title: t('tc5t'), description: t('tc5d'), image: CARD_IMAGES[4], imageLeft: true },
+  ];
+
+  return (
+    <section id="transformation-showcase" className="dark min-h-screen bg-transparent selection:bg-primary selection:text-primary-foreground">
+      <header className="flex min-h-[55vh] items-end justify-center px-6 pb-20 pt-32 text-center">
+        <h2 className="max-w-5xl text-4xl font-light leading-tight text-foreground sm:text-5xl md:text-7xl">
+          {t('action.title')}
+        </h2>
+      </header>
+      {sections.map((section) => (
+        <TransformationSection key={section.id} data={section} />
+      ))}
+    </section>
+  );
+}
+
+export default TransformationCards;

@@ -197,7 +197,7 @@ const DeleteAccount = () => {
               <div className="pt-2">
                 <Link
                   to="/privacy"
-                  className="inline-flex items-center gap-2 px-5 h-11 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_20px_-4px_hsl(28,100%,55%/0.5)]"
+                  className="inline-flex items-center gap-2 px-5 h-11 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_20px_-4px_hsl(204,100%,73%/0.5)]"
                 >
                   Privacy Policy
                   <ArrowRight size={16} />

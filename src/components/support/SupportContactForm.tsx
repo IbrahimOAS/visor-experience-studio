@@ -323,7 +323,7 @@ export const SupportContactForm = () => {
           <Button
             type="submit"
             disabled={status === "submitting" || status === "success"}
-            className="w-full sm:w-auto h-12 px-8 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_20px_-4px_hsl(28,100%,55%/0.5)] disabled:opacity-60"
+            className="w-full sm:w-auto h-12 px-8 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_20px_-4px_hsl(204,100%,73%/0.5)] disabled:opacity-60"
           >
             {status === "submitting" ? (
               <>

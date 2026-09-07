@@ -118,7 +118,7 @@ export const ComingSoonPage = ({
             <div className="flex flex-wrap gap-3">
               <a
                 href={primaryCtaHref}
-                className="inline-flex items-center gap-2 px-6 h-11 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_20px_-4px_hsl(28,100%,55%/0.5)]"
+                className="inline-flex items-center gap-2 px-6 h-11 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_20px_-4px_hsl(204,100%,73%/0.5)]"
               >
                 {primaryCtaLabel}
                 <ArrowRight size={16} />

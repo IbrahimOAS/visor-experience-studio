@@ -98,7 +98,7 @@ const ForCoaches = () => {
             </motion.p>
             <a
               href="#apply"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_24px_-4px_hsl(28,100%,55%/0.5)]"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_24px_-4px_hsl(204,100%,73%/0.5)]"
             >
               Apply to Join <ArrowRight size={16} />
             </a>

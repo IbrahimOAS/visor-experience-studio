@@ -39,7 +39,7 @@ const Navbar = () => {
               loading="eager"
               fetchPriority="high"
               decoding="async"
-              className="h-9 w-9 sm:h-10 sm:w-10 rounded-full object-cover transition-transform duration-300 group-hover:scale-110"
+              className="h-9 w-9 sm:h-10 sm:w-10 rounded-xl object-contain transition-transform duration-300 group-hover:scale-110"
             />
             <span className="text-base sm:text-lg font-bold font-['Space_Grotesk'] tracking-wide text-foreground">
               VISOR
@@ -75,7 +75,7 @@ const Navbar = () => {
               rel="noopener noreferrer"
               onClick={handleAppStoreClick}
               aria-label={`${t("nav.getApp")} — Download VISOR on the App Store`}
-              className="px-4 h-9 inline-flex items-center rounded-full bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_20px_-4px_hsl(28,100%,55%/0.5)]"
+              className="px-4 h-9 inline-flex items-center rounded-full bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_20px_-4px_hsl(204,100%,73%/0.5)]"
             >
               {t("nav.getApp")}
             </a>
