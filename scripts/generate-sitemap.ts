@@ -1,7 +1,7 @@
 // Runs before `vite dev` and `vite build`; writes public/sitemap.xml.
 // Auto-discovers routes from src/App.tsx so the sitemap never references
 // a page that doesn't exist (which would produce 404 soft errors in Search Console).
-//
+
 // Usage:
 //   tsx scripts/generate-sitemap.ts            # write public/sitemap.xml
 //   tsx scripts/generate-sitemap.ts --check    # CI mode: verify on-disk sitemap
