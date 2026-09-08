@@ -107,7 +107,8 @@ export const createCheckoutSession = (tierType: string, billingPeriod: "monthly"
     body: JSON.stringify({ tier_type: tierType, billing_period: billingPeriod }),
   });
 
-export const createPortalSession = () =>
+export const createPortalSession = (returnUrl?: string) =>
   request<{ url: string }>("/subscriptions/stripe/portal/", {
     method: "POST",
+    body: JSON.stringify(returnUrl ? { return_url: returnUrl } : {}),
   });

@@ -33,6 +33,10 @@ import BlogPost from "./pages/blog/BlogPost";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Account from "./pages/Account";
+import AccountBilling from "./pages/AccountBilling";
+import AccountUsage from "./pages/AccountUsage";
+import AccountSecurity from "./pages/AccountSecurity";
+import AccountPlan from "./pages/AccountPlan";
 import Pricing from "./pages/Pricing";
 import CheckoutSuccess from "./pages/CheckoutSuccess";
 import CheckoutCancel from "./pages/CheckoutCancel";
@@ -81,6 +85,10 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/account/billing" element={<AccountBilling />} />
+          <Route path="/account/usage" element={<AccountUsage />} />
+          <Route path="/account/security" element={<AccountSecurity />} />
+          <Route path="/account/plan" element={<AccountPlan />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/checkout/success" element={<CheckoutSuccess />} />
           <Route path="/checkout/cancel" element={<CheckoutCancel />} />

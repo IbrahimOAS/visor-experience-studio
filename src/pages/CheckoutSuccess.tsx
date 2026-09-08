@@ -41,7 +41,7 @@ const CheckoutSuccess = () => {
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <Button asChild>
-            <Link to="/account">Go to account</Link>
+            <Link to="/account/billing">Go to billing</Link>
           </Button>
           <Button variant="outline" onClick={refresh} disabled={loading}>
             {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <RefreshCw className="h-4 w-4" />}

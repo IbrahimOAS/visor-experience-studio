@@ -8,10 +8,10 @@ const CheckoutCancel = () => (
       <p className="mt-3 text-muted-foreground">No charge was made. You can choose a plan whenever you are ready.</p>
       <div className="mt-8 flex justify-center gap-3">
         <Button asChild>
-          <Link to="/pricing">View plans</Link>
+          <Link to="/account/plan">View plans</Link>
         </Button>
         <Button asChild variant="outline">
-          <Link to="/">Home</Link>
+          <Link to="/account">Back to account</Link>
         </Button>
       </div>
     </section>

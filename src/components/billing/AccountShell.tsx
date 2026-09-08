@@ -9,12 +9,20 @@ import { Button } from "@/components/ui/button";
 import { clearSession, getSession } from "@/lib/auth";
 
 const navItems = [
-  { label: "Overview",  href: "/account",          icon: Home       },
-  { label: "Billing",   href: "/account#billing",   icon: CreditCard },
-  { label: "Usage",     href: "/account#usage",     icon: BarChart3  },
-  { label: "Security",  href: "/account#security",  icon: Shield     },
-  { label: "Plan",      href: "/pricing",            icon: Sparkles   },
+  { label: "Overview",  href: "/account",           icon: Home       },
+  { label: "Billing",   href: "/account/billing",    icon: CreditCard },
+  { label: "Usage",     href: "/account/usage",      icon: BarChart3  },
+  { label: "Security",  href: "/account/security",   icon: Shield     },
+  { label: "Plan",      href: "/account/plan",       icon: Sparkles   },
 ];
+
+const sectionMeta: Record<string, { breadcrumb: string; title: string }> = {
+  "/account":          { breadcrumb: "Overview",  title: "Your dashboard" },
+  "/account/billing":  { breadcrumb: "Billing",   title: "Billing"        },
+  "/account/usage":    { breadcrumb: "Usage",     title: "Usage & limits" },
+  "/account/security": { breadcrumb: "Security",  title: "Security"       },
+  "/account/plan":     { breadcrumb: "Plan",      title: "Your plan"      },
+};
 
 interface AccountShellProps { children: React.ReactNode }
 
@@ -25,6 +33,8 @@ const AccountShell = ({ children }: AccountShellProps) => {
 
   const logout = async () => { await clearSession(); navigate("/"); };
 
+  const meta = sectionMeta[location.pathname] ?? { breadcrumb: "Account", title: "Account" };
+
   return (
     <main className="min-h-screen bg-background">
       {/* subtle full-page ambient */}
@@ -33,7 +43,7 @@ const AccountShell = ({ children }: AccountShellProps) => {
         <div className="absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full bg-primary/4 blur-[120px]" />
       </div>
 
-      <div className="relative mx-auto grid min-h-screen max-w-[1400px] md:grid-cols-[260px_1fr]">
+      <div className="relative mx-auto grid min-h-screen max-w-[1400px] md:grid-cols-[240px_1fr]">
 
         {/* ── Sidebar ─────────────────────────────────────────────────────────── */}
         <aside className="sticky top-0 flex h-screen flex-col border-r border-white/8 bg-white/[0.02] px-4 py-6 backdrop-blur-xl">
@@ -67,7 +77,7 @@ const AccountShell = ({ children }: AccountShellProps) => {
           <nav className="flex-1 space-y-1">
             {navItems.map((item) => {
               const Icon   = item.icon;
-              const active = location.pathname === item.href.split("#")[0] && item.href !== "/pricing";
+              const active = location.pathname === item.href;
               return (
                 <Link
                   key={item.label}
@@ -99,7 +109,7 @@ const AccountShell = ({ children }: AccountShellProps) => {
         </aside>
 
         {/* ── Main ────────────────────────────────────────────────────────────── */}
-        <section className="min-w-0 px-6 py-8 sm:px-10 sm:py-10">
+        <section className="min-w-0 px-6 py-8 sm:px-8 sm:py-8">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -109,9 +119,9 @@ const AccountShell = ({ children }: AccountShellProps) => {
             <div>
               <p className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-primary">
                 <Settings className="h-3.5 w-3.5" />
-                Account
+                {meta.breadcrumb}
               </p>
-              <h1 className="text-3xl font-bold md:text-4xl">Your dashboard</h1>
+              <h1 className="text-3xl font-bold md:text-4xl">{meta.title}</h1>
             </div>
             <Button asChild variant="outline" className="rounded-xl border-white/15 hover:bg-white/8">
               <Link to="/">← Site</Link>
