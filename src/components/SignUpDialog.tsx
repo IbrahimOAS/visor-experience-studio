@@ -126,6 +126,7 @@ export function SignUpDialog({ open, onOpenChange, onSignIn }: SignUpDialogProps
             className="space-y-4"
             onSubmit={(e) => {
               e.preventDefault();
+              void handleSubmit();
             }}
           >
             <div className="space-y-1.5">
