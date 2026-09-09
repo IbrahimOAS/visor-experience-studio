@@ -44,6 +44,7 @@ const PricingPage = () => {
   const [error, setError] = useState("");
   const { currency } = useCurrency();
   const [accountOpen, setAccountOpen] = useState(false);
+  const [pendingPlan, setPendingPlan] = useState("");
   const [eliteCoachesOpen, setEliteCoachesOpen] = useState(false);
 
   const startCheckout = async (tierType: string) => {
@@ -97,7 +98,21 @@ const PricingPage = () => {
                 </Button>
               </header>
 
-              <SignInDialog open={accountOpen} onOpenChange={setAccountOpen} />
+              <SignInDialog
+                open={accountOpen}
+                onOpenChange={(open) => {
+                  setAccountOpen(open);
+                  if (!open) setPendingPlan("");
+                }}
+                redirectTo="/pricing"
+                onAuthenticated={() => {
+                  if (pendingPlan) {
+                    const plan = pendingPlan;
+                    setPendingPlan("");
+                    void startCheckout(plan);
+                  }
+                }}
+              />
               <EliteCoachesDialog open={eliteCoachesOpen} onOpenChange={setEliteCoachesOpen} />
 
               <section className="py-14 text-center">
