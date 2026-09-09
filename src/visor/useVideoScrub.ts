@@ -4,8 +4,14 @@ import * as MP4Box from 'mp4box';
 const LERP_TAU = 8;
 const SNAP = 0.002;
 const LRU_MAX = 24;
+const LRU_MAX_MOBILE = 12;
 const LEAD = 24;
+const LEAD_MOBILE = 8;
 const WATCHDOG = 8000;
+const WATCHDOG_MOBILE = 15000;
+// Frames are re-encoded as still images; phones get a smaller, lighter bank.
+const MAX_FRAME_WIDTH_MOBILE = 720;
+const FRAME_STRIDE_MOBILE = 2;
 
 interface FrameItem {
   ts: number; // in microseconds
@@ -20,12 +26,13 @@ interface UseVideoScrubReturn {
   containerRef: RefObject<HTMLDivElement | null>;
 }
 
-// Phones cannot render a paused, never-played video and struggle with
-// frame-accurate seeking, so there the clip simply plays as an ambient loop.
+// Phones get the same frame-accurate scrub as desktop, just with a lighter
+// frame bank (half the frames, downscaled) so memory stays reasonable.
 function isMobileScrub(): boolean {
   if (typeof window === 'undefined') return false;
   return window.matchMedia('(max-width: 767px), (pointer: coarse)').matches;
 }
+
 
 export function resolveVideoUrl(url: string): string {
   if (!url) return '/hero.mp4';
