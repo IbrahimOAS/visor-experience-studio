@@ -117,8 +117,9 @@ export function useVideoScrub(videoSrc: string): UseVideoScrubReturn {
       const bitmap = await createImageBitmap(frame!.blob);
       lru.set(index, bitmap);
 
-      // Evict oldest if exceeding LRU_MAX
-      if (lru.size > LRU_MAX) {
+      // Evict oldest when over the device-specific cache budget
+      if (lru.size > lruLimit()) {
+
         const oldestKey = lru.keys().next().value;
         if (oldestKey !== undefined && oldestKey !== activeBitmapIndexRef.current) {
           const old = lru.get(oldestKey);
