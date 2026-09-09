@@ -135,7 +135,7 @@ export default function SkewCards({ cards, onCardClick }: SkewCardsProps) {
   const translatedCards = useVisorCards();
   const items = cards ?? translatedCards;
   return (
-    <div className="w-full grid grid-cols-2 xl:grid-cols-4 gap-2.5 sm:gap-6 justify-items-center items-stretch py-2">
+    <div className="w-full grid grid-cols-2 xl:grid-cols-4 gap-2 sm:gap-6 justify-items-center items-stretch py-1 sm:py-2">
       {items.map((card, idx) => (
         <div
           key={idx}
@@ -149,7 +149,7 @@ export default function SkewCards({ cards, onCardClick }: SkewCardsProps) {
           <FlippingCard
             width={280}
             height={330}
-            className="!w-full !h-[275px] sm:!h-[var(--height)] border-white/20 bg-transparent dark:bg-transparent dark:border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.35)]"
+            className="!w-full !h-[228px] sm:!h-[var(--height)] border-white/20 bg-transparent dark:bg-transparent dark:border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.35)]"
             frontContent={<CardFront card={card} />}
             backContent={<CardBack card={card} />}
           />

@@ -279,7 +279,7 @@ export default function App() {
           {/* SECTION 2 (How VISOR AI Fitness App Works - 4 Glassmorphism Cards) */}
           <section
             id="section-2-center"
-            className="absolute inset-0 px-4 sm:px-8 md:px-12 pt-28 sm:pt-32 md:pt-36 pb-8 sm:pb-12 flex flex-col items-center justify-center pointer-events-none overflow-y-auto sm:overflow-visible"
+            className="absolute inset-0 px-3 sm:px-8 md:px-12 pt-20 sm:pt-32 md:pt-36 pb-6 sm:pb-12 flex flex-col items-center justify-center pointer-events-none overflow-y-auto sm:overflow-visible"
             style={{
               opacity: s2Opacity,
               transition: 'opacity 0.1s ease-out',
@@ -349,7 +349,7 @@ export default function App() {
       </div>
 
         {/* Body transformation panels scroll over video 1 inside this track. */}
-        <div className="absolute inset-x-0 top-[350vh] z-10">
+        <div className="absolute inset-x-0 top-[480vh] z-10">
           <TransformationCards />
         </div>
     </div>
