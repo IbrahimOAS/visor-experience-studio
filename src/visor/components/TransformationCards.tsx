@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useLanguage } from '../i18n';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const CARD_IMAGES = [
   'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1500&auto=format&fit=crop',
@@ -20,34 +21,36 @@ interface TransformationSectionProps {
 
 function TransformationSection({ data }: { data: TransformationSectionProps }) {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start end', 'center center'],
   });
 
-  const leftX = useTransform(scrollYProgress, [0, 1], ['-20vw', '0vw']);
+  const slide = isMobile ? '0vw' : '20vw';
+  const leftX = useTransform(scrollYProgress, [0, 1], [`-${slide}`, '0vw']);
   const leftOpacity = useTransform(scrollYProgress, [0, 0.8], [0, 1]);
-  const rightX = useTransform(scrollYProgress, [0, 1], ['20vw', '0vw']);
+  const rightX = useTransform(scrollYProgress, [0, 1], [slide, '0vw']);
   const rightOpacity = useTransform(scrollYProgress, [0, 0.8], [0, 1]);
 
   const image = (
-    <div className="mx-auto aspect-[4/5] w-full max-w-md overflow-hidden bg-card md:mx-0">
+    <div className="mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl bg-card md:mx-0 md:rounded-none">
       <img
         src={data.image}
         alt={data.title}
         loading="lazy"
-        className="h-full w-full object-cover object-center opacity-70 grayscale transition-all duration-700 hover:scale-105 hover:opacity-100 hover:grayscale-0"
+        className="h-full w-full object-cover object-center transition-all duration-700 md:opacity-70 md:grayscale md:hover:scale-105 md:hover:opacity-100 md:hover:grayscale-0"
       />
     </div>
   );
 
   const copy = (
     <div className="mx-auto w-full max-w-md md:mx-0">
-      <span className="mb-6 block text-sm font-semibold text-primary">{data.id}</span>
-      <h3 className="whitespace-pre-line text-5xl font-bold uppercase leading-[0.85] text-foreground md:text-7xl">
+      <span className="mb-3 block text-sm font-semibold text-primary md:mb-6">{data.id}</span>
+      <h3 className="whitespace-pre-line text-[2rem] font-bold uppercase leading-[0.95] text-foreground sm:text-5xl sm:leading-[0.85] md:text-7xl">
         {data.title}
       </h3>
-      <p className="mt-8 text-sm font-medium leading-relaxed text-muted-foreground md:text-base">
+      <p className="mt-4 text-sm font-medium leading-relaxed text-muted-foreground md:mt-8 md:text-base">
         {data.description}
       </p>
     </div>
@@ -56,9 +59,9 @@ function TransformationSection({ data }: { data: TransformationSectionProps }) {
   return (
     <article
       ref={sectionRef}
-      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden text-foreground"
+      className="relative flex min-h-[80vh] w-full items-center justify-center overflow-hidden text-foreground md:min-h-screen"
     >
-      <div className="relative z-10 mx-auto grid h-full w-full max-w-7xl grid-cols-1 items-center gap-12 px-6 py-24 md:grid-cols-2 lg:gap-24">
+      <div className="relative z-10 mx-auto grid h-full w-full max-w-7xl grid-cols-1 items-center gap-8 px-5 py-16 sm:px-6 md:grid-cols-2 md:gap-12 md:py-24 lg:gap-24">
         <motion.div
           className={`flex h-full w-full flex-col justify-center ${data.imageLeft ? 'order-1' : 'order-2 md:order-1'}`}
           style={{ x: leftX, opacity: leftOpacity }}
