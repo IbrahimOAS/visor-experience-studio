@@ -19,7 +19,6 @@ import {
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { SeoHead } from "@/components/seo/SeoHead";
-import { CoachApplicationForm } from "@/components/coaches/CoachApplicationForm";
 
 const SITE = "https://visorfitness.com";
 
