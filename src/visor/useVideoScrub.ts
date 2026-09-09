@@ -391,6 +391,25 @@ export function useVideoScrub(videoSrc: string): UseVideoScrubReturn {
     const video = videoRef.current;
     if (!video) return;
 
+    // On phones/tablets: play the clip as a muted ambient loop so the visuals
+    // are actually painted (a paused, never-played video stays blank there).
+    if (isMobileScrub()) {
+      video.loop = true;
+      video.muted = true;
+      video.playsInline = true;
+      const kick = () => {
+        video.play().catch(() => {});
+      };
+      kick();
+      video.addEventListener('loadeddata', kick);
+      document.addEventListener('touchstart', kick, { once: true, passive: true });
+      return () => {
+        video.removeEventListener('loadeddata', kick);
+        document.removeEventListener('touchstart', kick);
+      };
+    }
+
+
     const handleLoadedMetadata = () => {
       if (video.duration && !isNaN(video.duration) && video.duration > 0) {
         durationRef.current = video.duration;
