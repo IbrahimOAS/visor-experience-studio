@@ -101,7 +101,10 @@ export function SignUpDialog({ open, onOpenChange, onSignIn }: SignUpDialogProps
           </p>
 
           <Button
+            type="button"
             variant="outline"
+            disabled={submitting}
+            onClick={handleGoogle}
             className="mt-6 h-11 w-full rounded-xl border-white/10 bg-white/5 text-sm font-semibold text-white hover:bg-white/10 hover:text-white"
           >
             <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
