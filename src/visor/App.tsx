@@ -417,6 +417,8 @@ export default function App() {
         onSignUp={() => setSignUpOpen(true)}
       />
 
+      <GuidesSection />
+
       <Footer />
     </div>
   );
