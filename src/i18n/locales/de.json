@@ -460,9 +460,9 @@
         {
           "name": "Core",
           "subtitle": "The Builder",
-          "price": "$12.99",
+          "price": "$19.90",
           "period": "/Monat",
-          "yearlyPrice": "$89.99/yr (save 42%)",
+          "yearlyPrice": "$139.90/yr (save 41%)",
           "features": [
             "Alles in Free +",
             "Voller 12‑Wochen‑Plan (Wochen 2–12)",
@@ -481,9 +481,9 @@
         {
           "name": "Pro",
           "subtitle": "The Performer",
-          "price": "$19.99",
+          "price": "$29.90",
           "period": "/Monat",
-          "yearlyPrice": "$139.99/yr (save 42%)",
+          "yearlyPrice": "$199.90/yr (save 44%)",
           "features": [
             "Alles in Core +",
             "KI‑Lebensmittel‑Scanner (Kamera‑Auto‑Log)",
@@ -498,9 +498,9 @@
         {
           "name": "Elite",
           "subtitle": "The Olympia Path",
-          "price": "$27.99",
+          "price": "$44.90",
           "period": "/Monat",
-          "yearlyPrice": "$199.99/yr (save 40%)",
+          "yearlyPrice": "$299.90/yr (save 44%)",
           "features": [
             "Alles in Pro +",
             "Olympia‑Modus — fortschrittlichstes KI‑Rendering",

@@ -179,16 +179,20 @@ type Mood = "idle" | "watching" | "shy" | "excited" | "pressed" | "success" | "h
 export function RobotAuthForm({
   defaultMode = "signin",
   onAuthenticated,
+  redirectTo = "/account",
 }: {
   defaultMode?: "signin" | "register";
   onAuthenticated?: () => void;
+  redirectTo?: string;
 }) {
   const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(defaultMode === "signin");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [showPass, setShowPass] = useState(false);
+  const [showConfirmPass, setShowConfirmPass] = useState(false);
   const [mood, setMood] = useState<Mood>("idle");
   const [turned, setTurned] = useState(false);
   const [hyped, setHyped] = useState(false);
@@ -207,6 +211,7 @@ export function RobotAuthForm({
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const passRef = useRef<HTMLInputElement>(null);
+  const confirmPassRef = useRef<HTMLInputElement>(null);
 
   const say = (text: string) => {
     setBubble(text);
@@ -279,6 +284,7 @@ export function RobotAuthForm({
     setName("");
     setEmail("");
     setPassword("");
+    setConfirmPassword("");
     setDone(false);
     setSubmitting(false);
     setTurned(false);
@@ -323,6 +329,8 @@ export function RobotAuthForm({
     if (!isLogin && !name.trim()) complaint = ["Name is required.", nameRef.current];
     else if (!EMAIL_RE.test(email.trim())) complaint = ["Invalid email format.", emailRef.current];
     else if (!password) complaint = ["Password is required.", passRef.current];
+    else if (!isLogin && !confirmPassword) complaint = ["Please confirm your password.", confirmPassRef.current];
+    else if (!isLogin && password !== confirmPassword) complaint = ["Passwords don't match. Try again.", confirmPassRef.current];
 
     if (complaint) {
       say(complaint[0]);
@@ -338,15 +346,14 @@ export function RobotAuthForm({
       if (isLogin) {
         const firebaseToken = await signInWithFirebaseEmail(email, password);
         await completeFirebaseLogin(firebaseToken);
-        succeed("Access granted. Welcome back!", "/account");
+        succeed("Access granted. Welcome back!", redirectTo);
       } else {
         const firebaseToken = await signUpWithFirebaseEmail(email, password);
         await completeFirebaseSignup(firebaseToken, buildSignupProfile(email, name));
-        // Track signup with FirstPromoter so the referrer gets credited
         if (typeof window !== "undefined" && (window as any).fpr) {
           (window as any).fpr("referral", { email });
         }
-        succeed(`Welcome aboard, ${name.trim()}!`, "/pricing");
+        succeed(`Welcome aboard, ${name.trim()}!`, redirectTo);
       }
     } catch (err) {
       fail(err instanceof Error ? err.message : isLogin ? "Could not sign in." : "Could not create account.");
@@ -362,7 +369,7 @@ export function RobotAuthForm({
     try {
       const googleToken = await signInWithGooglePopup();
       await completeGoogleLogin(googleToken);
-      succeed("Access granted. Welcome back!", isLogin ? "/account" : "/pricing");
+      succeed("Access granted. Welcome back!", redirectTo);
     } catch (err) {
       fail(err instanceof Error ? err.message : "Could not continue with Google.");
     }
@@ -565,6 +572,51 @@ export function RobotAuthForm({
             </button>
           </div>
         </div>
+
+        {!isLogin && (
+          <div className="input-group">
+            <label htmlFor="ra-confirm-password">Confirm Password</label>
+            <div className="field">
+              <svg className="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+              <input
+                id="ra-confirm-password"
+                ref={confirmPassRef}
+                type={showConfirmPass ? "text" : "password"}
+                value={confirmPassword}
+                placeholder="••••••••"
+                autoComplete="new-password"
+                onFocus={() => {
+                  setMood("shy");
+                  setTurned(true);
+                  setLook({ x: 0, y: 0 });
+                  setTilt({ rx: 0, ry: 0 });
+                  say("Almost there — confirm your password 🔒");
+                }}
+                onBlur={() => setTurned(false)}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
+              <button
+                className="peek"
+                type="button"
+                aria-label={showConfirmPass ? "Hide password" : "Show password"}
+                aria-pressed={showConfirmPass}
+                onMouseDown={(e) => e.preventDefault()}
+                onClick={() => {
+                  setShowConfirmPass((s) => !s);
+                  confirmPassRef.current?.focus();
+                }}
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        )}
 
         <button
           className={`btn ${done ? "is-success" : ""}`}

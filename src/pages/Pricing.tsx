@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useCurrency, formatPrice } from "@/hooks/useCurrency";
 import { Link, useNavigate } from "react-router-dom";
 import { Check, Crown, Loader2, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -15,22 +16,22 @@ const plans = [
   {
     tierType: "core",
     name: "Core",
-    monthly: "$12.99",
-    annual: "$89.99",
+    monthly: 19.90,
+    annual: 139.90,
     features: ["Full 12-week plan", "Unlimited tracking", "Month 3 prediction", "Unlimited coach chat"],
   },
   {
     tierType: "pro",
     name: "Pro",
-    monthly: "$19.99",
-    annual: "$139.99",
+    monthly: 29.90,
+    annual: 199.90,
     features: ["AI food scanner", "Custom workout builder", "Month 6 prediction", "Community groups"],
   },
   {
     tierType: "elite",
     name: "Elite",
-    monthly: "$27.99",
-    annual: "$199.99",
+    monthly: 44.90,
+    annual: 299.90,
     features: ["Olympia Mode", "Unlimited predictions", "AI nutrition generator", "7-day free trial"],
     highlighted: true,
   },
@@ -41,12 +42,13 @@ const PricingPage = () => {
   const [billingPeriod, setBillingPeriod] = useState<"monthly" | "annual">("monthly");
   const [loadingPlan, setLoadingPlan] = useState("");
   const [error, setError] = useState("");
+  const { currency } = useCurrency();
   const [accountOpen, setAccountOpen] = useState(false);
   const [eliteCoachesOpen, setEliteCoachesOpen] = useState(false);
 
   const startCheckout = async (tierType: string) => {
     if (!getSession()) {
-      navigate(`/login?redirect=${encodeURIComponent("/pricing")}`);
+      setAccountOpen(true);
       return;
     }
 
@@ -141,7 +143,7 @@ const PricingPage = () => {
                       <h2 className="text-2xl font-bold text-white">{plan.name}</h2>
                       <div className="mt-5 flex items-baseline gap-2">
                         <span className="text-4xl font-bold text-white">
-                          {billingPeriod === "monthly" ? plan.monthly : plan.annual}
+                          {formatPrice(billingPeriod === "monthly" ? plan.monthly : plan.annual, currency)}
                         </span>
                         <span className="text-sm text-white/60">/{billingPeriod === "monthly" ? "mo" : "yr"}</span>
                       </div>

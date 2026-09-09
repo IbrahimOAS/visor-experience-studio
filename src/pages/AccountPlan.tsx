@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useCurrency, formatPrice } from "@/hooks/useCurrency";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Check, CheckCircle2, Crown, Loader2, Sparkles } from "lucide-react";
@@ -19,23 +20,23 @@ const plans = [
   {
     tierType: "core",
     name: "Core",
-    monthly: "$12.99",
-    annual: "$89.99",
+    monthly: 19.90,
+    annual: 139.90,
     features: ["Full 12-week plan", "Unlimited tracking", "Month 3 prediction", "Unlimited coach chat"],
   },
   {
     tierType: "pro",
     name: "Pro",
-    monthly: "$19.99",
-    annual: "$139.99",
+    monthly: 29.90,
+    annual: 199.90,
     features: ["AI food scanner", "Custom workout builder", "Month 6 prediction", "Community groups"],
     highlighted: true,
   },
   {
     tierType: "elite",
     name: "Elite",
-    monthly: "$27.99",
-    annual: "$199.99",
+    monthly: 44.90,
+    annual: 299.90,
     features: ["Olympia Mode", "Unlimited predictions", "AI nutrition generator", "7-day free trial"],
   },
 ];
@@ -43,6 +44,7 @@ const plans = [
 const AccountPlan = () => {
   const navigate = useNavigate();
   const [billingPeriod, setBillingPeriod] = useState<"monthly" | "annual">("monthly");
+  const { currency } = useCurrency();
   const [status, setStatus]               = useState<SubscriptionStatus | null>(null);
   const [loadingPlan, setLoadingPlan]     = useState("");
   const [statusLoading, setStatusLoading] = useState(true);
@@ -143,7 +145,7 @@ const AccountPlan = () => {
                 <h2 className="text-xl font-bold">{plan.name}</h2>
                 <div className="mt-3 flex items-baseline gap-1.5">
                   <span className="text-3xl font-bold">
-                    {billingPeriod === "monthly" ? plan.monthly : plan.annual}
+                    {formatPrice(billingPeriod === "monthly" ? plan.monthly : plan.annual, currency)}
                   </span>
                   <span className="text-sm text-muted-foreground">
                     /{billingPeriod === "monthly" ? "mo" : "yr"}
