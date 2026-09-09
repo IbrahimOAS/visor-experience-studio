@@ -473,6 +473,7 @@ export function useVideoScrub(videoSrc: string): UseVideoScrubReturn {
 
 
     const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mobileAmbient = isMobileScrub();
 
     const updateFrame = (now: number) => {
       if (!isMounted) return;
