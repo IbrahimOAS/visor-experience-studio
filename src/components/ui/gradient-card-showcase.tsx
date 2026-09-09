@@ -90,7 +90,9 @@ function CardFront({ card }: { card: VisorCardItem }) {
         </div>
         <div className="pt-3 border-t border-white/10 flex items-center justify-center text-xs font-medium text-[#99FFFF]">
           <span className="flex items-center gap-1.5">
-            <MousePointerClick className="w-3.5 h-3.5" /> {t('step.hover')}
+            <MousePointerClick className="w-3.5 h-3.5" />
+            <span className="md:hidden">{t('step.tap')}</span>
+            <span className="hidden md:inline">{t('step.hover')}</span>
           </span>
         </div>
       </div>
