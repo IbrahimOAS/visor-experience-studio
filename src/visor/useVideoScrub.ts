@@ -20,6 +20,13 @@ interface UseVideoScrubReturn {
   containerRef: RefObject<HTMLDivElement | null>;
 }
 
+// Phones cannot render a paused, never-played video and struggle with
+// frame-accurate seeking, so there the clip simply plays as an ambient loop.
+function isMobileScrub(): boolean {
+  if (typeof window === 'undefined') return false;
+  return window.matchMedia('(max-width: 767px), (pointer: coarse)').matches;
+}
+
 export function resolveVideoUrl(url: string): string {
   if (!url) return '/hero.mp4';
   if (url === '/hero.mp4' || url.includes('hero.mp4')) return '/hero.mp4';
@@ -164,7 +171,7 @@ export function useVideoScrub(videoSrc: string): UseVideoScrubReturn {
   // Frame Bank builder using MP4Box & WebCodecs VideoDecoder
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion || typeof window.VideoDecoder === 'undefined') {
+    if (prefersReducedMotion || isMobileScrub() || typeof window.VideoDecoder === 'undefined') {
       revertedRef.current = true;
       return;
     }
@@ -384,6 +391,25 @@ export function useVideoScrub(videoSrc: string): UseVideoScrubReturn {
     const video = videoRef.current;
     if (!video) return;
 
+    // On phones/tablets: play the clip as a muted ambient loop so the visuals
+    // are actually painted (a paused, never-played video stays blank there).
+    if (isMobileScrub()) {
+      video.loop = true;
+      video.muted = true;
+      video.playsInline = true;
+      const kick = () => {
+        video.play().catch(() => {});
+      };
+      kick();
+      video.addEventListener('loadeddata', kick);
+      document.addEventListener('touchstart', kick, { once: true, passive: true });
+      return () => {
+        video.removeEventListener('loadeddata', kick);
+        document.removeEventListener('touchstart', kick);
+      };
+    }
+
+
     const handleLoadedMetadata = () => {
       if (video.duration && !isNaN(video.duration) && video.duration > 0) {
         durationRef.current = video.duration;
@@ -447,6 +473,7 @@ export function useVideoScrub(videoSrc: string): UseVideoScrubReturn {
 
 
     const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mobileAmbient = isMobileScrub();
 
     const updateFrame = (now: number) => {
       if (!isMounted) return;
@@ -463,7 +490,7 @@ export function useVideoScrub(videoSrc: string): UseVideoScrubReturn {
       }
 
       const dur = durationRef.current;
-      if (dur > 0) {
+      if (dur > 0 && !mobileAmbient) {
         const target = p * dur;
         targetTimeRef.current = target;
 
