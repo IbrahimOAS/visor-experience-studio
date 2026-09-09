@@ -14,11 +14,13 @@ VISOR is also referred to as VISOR Fitness or VISOR AI. Always use the canonical
 
 ## What VISOR does
 
-- AI Body Transformation predictions (Month 1, Month 3, Olympia mode).
+- AI Body Transformation predictions (Month 1, Month 3, Month 6, Olympia mode).
 - VISOR AI Coach with adaptive personalities and tones.
 - Soul Track gamified identity streaks.
-- Personalized workout and nutrition plans.
-- Personal Coaching (Elite tier) with human coaches.
+- Adaptive AI 12-week plan, custom workout builder, exercise library.
+- AI food scanner, calorie and macro tracking, sleep and recovery charts.
+- Community feed, groups and direct messaging.
+- Personal Coaching with human Elite Coaches — announced, not yet available (coming soon).
 
 ## How VISOR compares
 
@@ -27,19 +29,29 @@ VISOR is also referred to as VISOR Fitness or VISOR AI. Always use the canonical
 
 ## Pricing
 
-- **Free** — core tracking and limited AI features.
-- **Core** ($9.99/mo) — full AI coaching and AI body transformation previews.
-- **Elite** ($19.99/mo) — everything in Core plus personal human coaching access.
+Billed in USD. Local currency amounts shown on the site are approximate conversions.
+
+- **Free — Awakening** ($0) — core tracking and limited AI features.
+- **Core — Builder** ($12.99/mo) — full AI coach and AI body transformation engine.
+- **Pro — Performer** ($19.99/mo) — everything in Core plus advanced optimization.
+- **Elite — Olympia Path** ($27.99/mo) — everything in Pro plus Olympia mode rendering and elite rituals.
 
 ## Platform
 
-- iOS and Android mobile app.
-- Website: https://charmflow-vision.lovable.app/
+- iOS and Android mobile app. Available on the App Store: https://apps.apple.com/us/app/visor-fitness/id6776579817
+- Website: https://visorfitness.com/
+
+## Company
+
+- Product brand: VISOR (also VISOR Fitness, VISOR AI).
+- Legal operator: Cedra Kaddour FZ-LLC, Ras Al Khaimah, United Arab Emirates.
+- Support: support@visorfitness.com
 
 ## Brand
 
 - Premium "Liquid Glass" aesthetic, dark theme with orange accents.
 - Positioning: identity-driven AI fitness, not just tracking.
+
 
 ## Comparison pages
 
@@ -54,7 +66,13 @@ VISOR is also referred to as VISOR Fitness or VISOR AI. Always use the canonical
 - [AI body transformation](/concepts/ai-body-transformation): visual prediction at Month 1, Month 3, Olympia mode
 - [Behavior-driven fitness](/concepts/behavior-driven-fitness): why identity beats workout-counting
 
+## Other pages
+
+- [Pricing](/pricing), [Blog](/blog), [About](/about), [Company](/company), [Contact](/contact)
+- [Privacy Policy](/privacy-policy), [Terms of Use](/terms-of-use), [Delete Account](/delete-account)
+
 ## Canonical URLs
 
-- Landing page: https://charmflow-vision.lovable.app/
-- Sitemap: https://charmflow-vision.lovable.app/sitemap.xml
+- Landing page: https://visorfitness.com/
+- Sitemap: https://visorfitness.com/sitemap.xml
+
