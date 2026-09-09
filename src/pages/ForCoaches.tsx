@@ -19,7 +19,6 @@ import {
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { SeoHead } from "@/components/seo/SeoHead";
-import { CoachApplicationForm } from "@/components/coaches/CoachApplicationForm";
 
 const SITE = "https://visorfitness.com";
 
@@ -100,8 +99,9 @@ const ForCoaches = () => {
               href="#apply"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_24px_-4px_hsl(204,100%,73%/0.5)]"
             >
-              Apply to Join <ArrowRight size={16} />
+              Applications coming soon <ArrowRight size={16} />
             </a>
+
           </div>
         </section>
 
@@ -179,12 +179,31 @@ const ForCoaches = () => {
           </div>
         </section>
 
-        {/* Application form */}
+        {/* Applications coming soon */}
         <section className="py-20 px-6">
           <div className="max-w-3xl mx-auto">
-            <CoachApplicationForm />
+            <div id="apply" className="glass-card-strong rounded-3xl p-6 md:p-10 text-center">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-[11px] font-semibold uppercase tracking-[0.2em]">
+                Coming soon
+              </span>
+              <h2 className="text-2xl md:text-3xl font-bold font-['Space_Grotesk'] mt-5 mb-3">
+                Coach applications are not open yet
+              </h2>
+              <p className="text-sm text-muted-foreground leading-relaxed max-w-xl mx-auto">
+                The VISOR Elite Coach programme is still being built. Applications, verification and in-app
+                booking will open in a later release. If you would like to be told the moment it goes live,
+                send us a short note and we will keep you posted.
+              </p>
+              <a
+                href="mailto:support@visorfitness.com?subject=VISOR%20Elite%20Coach%20waitlist"
+                className="mt-7 inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-all duration-300"
+              >
+                Notify me when it opens <ArrowRight size={16} />
+              </a>
+            </div>
           </div>
         </section>
+
 
         <Footer />
       </main>
