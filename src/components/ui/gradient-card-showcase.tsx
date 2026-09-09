@@ -135,7 +135,7 @@ export default function SkewCards({ cards, onCardClick }: SkewCardsProps) {
   const translatedCards = useVisorCards();
   const items = cards ?? translatedCards;
   return (
-    <div className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 justify-items-center items-stretch py-2">
+    <div className="w-full grid grid-cols-2 xl:grid-cols-4 gap-2.5 sm:gap-6 justify-items-center items-stretch py-2">
       {items.map((card, idx) => (
         <div
           key={idx}
