@@ -16,6 +16,8 @@ export function FlippingCard({
   height = 300,
   width = 350,
 }: FlippingCardProps) {
+  const [flipped, setFlipped] = React.useState(false);
+
   return (
     <div
       className="group/flipping-card [perspective:1000px]"
@@ -27,9 +29,20 @@ export function FlippingCard({
       }
     >
       <div
+        role="button"
+        tabIndex={0}
+        aria-pressed={flipped}
+        onClick={() => setFlipped((f) => !f)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            setFlipped((f) => !f);
+          }
+        }}
         className={cn(
-          "relative rounded-xl border border-neutral-200 bg-white shadow-lg transition-all duration-700 [transform-style:preserve-3d] group-hover/flipping-card:[transform:rotateY(180deg)] dark:border-neutral-800 dark:bg-neutral-950",
+          "relative cursor-pointer select-none rounded-xl border border-neutral-200 bg-white shadow-lg transition-all duration-700 [transform-style:preserve-3d] md:group-hover/flipping-card:[transform:rotateY(180deg)] dark:border-neutral-800 dark:bg-neutral-950",
           "h-[var(--height)] w-[var(--width)]",
+          flipped && "[transform:rotateY(180deg)]",
           className
         )}
       >
