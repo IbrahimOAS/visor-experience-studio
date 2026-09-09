@@ -71,24 +71,24 @@ function CardFront({ card }: { card: VisorCardItem }) {
   const { step, title, desc, icon } = card;
   return (
     <div className="absolute inset-0 rounded-xl overflow-hidden">
-      <div className="relative h-full w-full p-5 backdrop-blur-xl rounded-xl text-white flex flex-col justify-between border border-white/25 bg-[#0b131e]/50 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.15)]">
+      <div className="relative h-full w-full p-3.5 sm:p-5 backdrop-blur-xl rounded-xl text-white flex flex-col justify-between border border-white/25 bg-[#0b131e]/50 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.15)]">
         <div>
-          <div className="flex items-center justify-between gap-2 mb-4">
-            <div className="w-10 h-10 rounded-xl bg-white/[0.1] border border-white/20 flex items-center justify-center text-[#99FFFF] shadow-[0_0_12px_rgba(153,255,255,0.3)]">
+          <div className="flex items-center justify-between gap-1.5 mb-2.5 sm:mb-4">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-white/[0.1] border border-white/20 flex items-center justify-center text-[#99FFFF] shadow-[0_0_12px_rgba(153,255,255,0.3)]">
               {icon}
             </div>
-            <span className="text-[10px] tracking-[0.2em] font-semibold text-[#99FFFF] uppercase px-2.5 py-1 rounded-full bg-white/[0.08] border border-white/15">
+            <span className="text-[9px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.2em] font-semibold text-[#99FFFF] uppercase px-2 py-1 rounded-full bg-white/[0.08] border border-white/15">
               {step}
             </span>
           </div>
-          <h2 className="text-lg sm:text-xl font-medium tracking-tight text-white mb-2">
+          <h2 className="text-[15px] leading-snug sm:text-xl font-medium tracking-tight text-white mb-1.5 sm:mb-2">
             {title}
           </h2>
-          <p className="text-xs sm:text-[13px] text-white/75 leading-relaxed">
+          <p className="text-[11px] sm:text-[13px] text-white/75 leading-relaxed">
             {desc}
           </p>
         </div>
-        <div className="pt-3 border-t border-white/10 flex items-center justify-center text-xs font-medium text-[#99FFFF]">
+        <div className="pt-2 sm:pt-3 border-t border-white/10 flex items-center justify-center text-[11px] sm:text-xs font-medium text-[#99FFFF]">
           <span className="flex items-center gap-1.5">
             <MousePointerClick className="w-3.5 h-3.5" />
             <span className="md:hidden">{t('step.tap')}</span>
