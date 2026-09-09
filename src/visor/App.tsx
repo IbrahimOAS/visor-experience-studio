@@ -10,6 +10,7 @@ import { TransformationCards } from './components/TransformationCards';
 import { PersonalTrainingSection } from './components/PersonalTrainingSection';
 import { PERMANENT_VIDEO_URL, SECOND_VIDEO_URL } from './constants';
 import Footer from '@/components/Footer';
+import { GuidesSection } from './components/GuidesSection';
 import { EliteCoachesDialog } from '@/components/EliteCoachesDialog';
 import { SignUpDialog } from '@/components/SignUpDialog';
 import { SignInDialog } from '@/components/SignInDialog';
