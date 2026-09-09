@@ -4,14 +4,18 @@ import * as MP4Box from 'mp4box';
 const LERP_TAU = 8;
 const SNAP = 0.002;
 const LRU_MAX = 24;
-const LRU_MAX_MOBILE = 12;
+const LRU_MAX_MOBILE = 8;
+const LRU_MAX_LOW_END = 6;
 const LEAD = 24;
-const LEAD_MOBILE = 8;
+const LEAD_MOBILE = 6;
 const WATCHDOG = 8000;
 const WATCHDOG_MOBILE = 15000;
-// Frames are re-encoded as still images; phones get a smaller, lighter bank.
-const MAX_FRAME_WIDTH_MOBILE = 720;
-const FRAME_STRIDE_MOBILE = 2;
+
+// Frames are re-encoded as still images. Phones get a much lighter bank:
+// fewer frames, smaller pixels, cheaper JPEG. Low-end phones go lighter still.
+const MOBILE_PROFILE = { maxWidth: 540, stride: 3, quality: 0.68, lru: LRU_MAX_MOBILE };
+const LOW_END_PROFILE = { maxWidth: 420, stride: 5, quality: 0.6, lru: LRU_MAX_LOW_END };
+const DESKTOP_PROFILE = { maxWidth: 0, stride: 1, quality: 0.82, lru: LRU_MAX };
 
 interface FrameItem {
   ts: number; // in microseconds
@@ -26,16 +30,31 @@ interface UseVideoScrubReturn {
   containerRef: RefObject<HTMLDivElement | null>;
 }
 
-// Phones get the same frame-accurate scrub as desktop, just with a lighter
-// frame bank (half the frames, downscaled) so memory stays reasonable.
 function isMobileScrub(): boolean {
   if (typeof window === 'undefined') return false;
   return window.matchMedia('(max-width: 767px), (pointer: coarse)').matches;
 }
 
-function lruLimit(): number {
-  return isMobileScrub() ? LRU_MAX_MOBILE : LRU_MAX;
+// Weak CPU or little RAM reported by the device -> most aggressive settings.
+function isLowEndDevice(): boolean {
+  if (typeof navigator === 'undefined') return false;
+  const nav = navigator as Navigator & { deviceMemory?: number };
+  const memory = typeof nav.deviceMemory === 'number' ? nav.deviceMemory : undefined;
+  const cores = typeof nav.hardwareConcurrency === 'number' ? nav.hardwareConcurrency : undefined;
+  if (memory !== undefined && memory <= 4) return true;
+  if (cores !== undefined && cores <= 4) return true;
+  return false;
 }
+
+function scrubProfile() {
+  if (!isMobileScrub()) return DESKTOP_PROFILE;
+  return isLowEndDevice() ? LOW_END_PROFILE : MOBILE_PROFILE;
+}
+
+function lruLimit(): number {
+  return scrubProfile().lru;
+}
+
 
 
 
