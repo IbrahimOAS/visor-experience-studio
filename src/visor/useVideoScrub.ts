@@ -486,7 +486,6 @@ export function useVideoScrub(videoSrc: string): UseVideoScrubReturn {
 
 
     const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const mobileAmbient = isMobileScrub();
 
     const updateFrame = (now: number) => {
       if (!isMounted) return;
@@ -503,7 +502,7 @@ export function useVideoScrub(videoSrc: string): UseVideoScrubReturn {
       }
 
       const dur = durationRef.current;
-      if (dur > 0 && !mobileAmbient) {
+      if (dur > 0) {
         const target = p * dur;
         targetTimeRef.current = target;
 
