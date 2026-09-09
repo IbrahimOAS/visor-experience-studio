@@ -148,8 +148,9 @@ export default function App() {
         {/* Sticky Full Viewport Scene */}
         <div
           id="sticky-scene-container"
-          className="sticky top-0 w-full h-screen overflow-hidden"
+          className="sticky top-0 w-full h-[100dvh] overflow-hidden"
         >
+
         {/* 1) Video Full Cover */}
         <video
           ref={videoRef}
@@ -279,7 +280,7 @@ export default function App() {
           {/* SECTION 2 (How VISOR AI Fitness App Works - 4 Glassmorphism Cards) */}
           <section
             id="section-2-center"
-            className="absolute inset-0 px-3 sm:px-8 md:px-12 pt-20 sm:pt-32 md:pt-36 pb-6 sm:pb-12 flex flex-col items-center justify-center pointer-events-none overflow-y-auto sm:overflow-visible"
+            className="absolute inset-0 px-3 sm:px-8 md:px-12 pt-20 sm:pt-32 md:pt-36 pb-6 sm:pb-12 flex flex-col items-center justify-center pointer-events-none overflow-hidden sm:overflow-visible"
             style={{
               opacity: s2Opacity,
               transition: 'opacity 0.1s ease-out',
@@ -361,7 +362,7 @@ export default function App() {
         className="relative bg-[#070b12]"
       >
         {/* Sticky Background Video scrubbing synchronously across all 3 components */}
-        <div className="sticky top-0 w-full h-screen overflow-hidden pointer-events-none z-0">
+        <div className="sticky top-0 w-full h-[100dvh] overflow-hidden pointer-events-none z-0">
           <video
             ref={secondVideoRef}
             id="features-scrub-video"
@@ -383,7 +384,7 @@ export default function App() {
         </div>
 
         {/* Content Layers on top of the scrubbing video */}
-        <div className="relative z-10 -mt-[100vh]">
+        <div className="relative z-10 -mt-[100dvh]">
           {/* 1. AI Fitness App Features to Transform Your Body */}
           <FeaturesSection onGetApp={openAppStore} />
 
