@@ -30,6 +30,7 @@ const EXTRA_STATIC_ROUTES = [
   "/blog/why-identity-beats-motivation",
   "/blog/ai-vs-human-coaching",
   "/blog/science-of-consistency",
+  "/blog/6-pack-transformation-guide",
 ];
 
 const HINTS = {
