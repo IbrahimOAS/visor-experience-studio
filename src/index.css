@@ -373,6 +373,13 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Prevent sideways scrolling on small screens */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 /* Alternating section tint — semi-transparent so the animated orbs show through */
 .section-even {
   background: linear-gradient(
