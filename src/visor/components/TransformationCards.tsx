@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useLanguage } from '../i18n';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const CARD_IMAGES = [
   'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1500&auto=format&fit=crop',
