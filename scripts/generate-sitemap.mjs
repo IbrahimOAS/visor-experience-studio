@@ -31,6 +31,9 @@ const EXTRA_STATIC_ROUTES = [
   "/blog/ai-vs-human-coaching",
   "/blog/science-of-consistency",
   "/blog/6-pack-transformation-guide",
+  "/blog/meal-prep-guide",
+  "/blog/workout-routine-guide",
+  "/blog/tracking-progress-guide",
 ];
 
 const HINTS = {
