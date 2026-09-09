@@ -209,6 +209,8 @@ export function useVideoScrub(videoSrc: string): UseVideoScrubReturn {
     }
 
     const mobile = isMobileScrub();
+    const profile = scrubProfile();
+
 
     let isAborted = false;
     let decoder: VideoDecoder | null = null;
