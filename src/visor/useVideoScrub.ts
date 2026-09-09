@@ -490,7 +490,7 @@ export function useVideoScrub(videoSrc: string): UseVideoScrubReturn {
       }
 
       const dur = durationRef.current;
-      if (dur > 0) {
+      if (dur > 0 && !mobileAmbient) {
         const target = p * dur;
         targetTimeRef.current = target;
 
