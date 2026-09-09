@@ -391,23 +391,36 @@ export function useVideoScrub(videoSrc: string): UseVideoScrubReturn {
     const video = videoRef.current;
     if (!video) return;
 
-    // On phones/tablets: play the clip as a muted ambient loop so the visuals
-    // are actually painted (a paused, never-played video stays blank there).
+    // On phones: a video that has never played stays blank, so kick off a
+    // muted inline play once and pause it again immediately. After that the
+    // element can be seeked by scroll position like on desktop.
     if (isMobileScrub()) {
-      video.loop = true;
+      video.loop = false;
       video.muted = true;
       video.playsInline = true;
-      const kick = () => {
-        video.play().catch(() => {});
+      let primed = false;
+      const prime = () => {
+        if (primed) return;
+        const play = video.play();
+        if (play && typeof play.then === 'function') {
+          play
+            .then(() => {
+              primed = true;
+              video.pause();
+            })
+            .catch(() => {});
+        }
       };
-      kick();
-      video.addEventListener('loadeddata', kick);
-      document.addEventListener('touchstart', kick, { once: true, passive: true });
-      return () => {
-        video.removeEventListener('loadeddata', kick);
-        document.removeEventListener('touchstart', kick);
+      prime();
+      video.addEventListener('loadeddata', prime);
+      document.addEventListener('touchstart', prime, { once: true, passive: true });
+      const cleanupMobile = () => {
+        video.removeEventListener('loadeddata', prime);
+        document.removeEventListener('touchstart', prime);
       };
+      window.addEventListener('pagehide', cleanupMobile, { once: true });
     }
+
 
 
     const handleLoadedMetadata = () => {
