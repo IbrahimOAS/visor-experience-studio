@@ -105,7 +105,7 @@ function CardBack({ card }: { card: VisorCardItem }) {
   return (
     <div className="absolute inset-0 rounded-xl overflow-hidden">
       <div
-        className="relative h-full w-full p-5 rounded-xl text-white flex flex-col border border-[#99FFFF]/40 bg-[#0b131e]/50 backdrop-blur-xl"
+        className="relative h-full w-full p-3.5 sm:p-5 rounded-xl text-white flex flex-col border border-[#99FFFF]/40 bg-[#0b131e]/50 backdrop-blur-xl"
         style={{
           boxShadow: `0 0 24px 0 ${card.gradientFrom}33, inset 0 0 0 1px rgba(255,255,255,0.12)`,
         }}
@@ -114,12 +114,12 @@ function CardBack({ card }: { card: VisorCardItem }) {
           <span className="text-[10px] tracking-[0.2em] font-semibold uppercase text-[#99FFFF]">
             {card.step} — {t('step.details')}
           </span>
-          <h3 className="text-base font-semibold mt-1.5 mb-3 text-white">
+          <h3 className="text-sm sm:text-base font-semibold mt-1.5 mb-2 sm:mb-3 text-white">
             {card.backTitle || card.title}
           </h3>
-          <ul className="space-y-2">
+          <ul className="space-y-1.5 sm:space-y-2">
             {card.backPoints.map((point, i) => (
-              <li key={i} className="flex items-start gap-2 text-[11.5px] leading-snug text-white/80">
+              <li key={i} className="flex items-start gap-1.5 sm:gap-2 text-[10.5px] sm:text-[11.5px] leading-snug text-white/80">
                 <CheckCircle2 className="w-3.5 h-3.5 mt-0.5 shrink-0 text-[#99FFFF]" />
                 <span>{point}</span>
               </li>
@@ -149,7 +149,7 @@ export default function SkewCards({ cards, onCardClick }: SkewCardsProps) {
           <FlippingCard
             width={280}
             height={330}
-            className="!w-full !h-[240px] sm:!h-[var(--height)] border-white/20 bg-transparent dark:bg-transparent dark:border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.35)]"
+            className="!w-full !h-[275px] sm:!h-[var(--height)] border-white/20 bg-transparent dark:bg-transparent dark:border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.35)]"
             frontContent={<CardFront card={card} />}
             backContent={<CardBack card={card} />}
           />
