@@ -171,7 +171,7 @@ export function useVideoScrub(videoSrc: string): UseVideoScrubReturn {
   // Frame Bank builder using MP4Box & WebCodecs VideoDecoder
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion || typeof window.VideoDecoder === 'undefined') {
+    if (prefersReducedMotion || isMobileScrub() || typeof window.VideoDecoder === 'undefined') {
       revertedRef.current = true;
       return;
     }
