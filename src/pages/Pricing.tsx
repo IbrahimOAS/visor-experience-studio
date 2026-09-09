@@ -118,8 +118,10 @@ const PricingPage = () => {
               <section className="py-14 text-center">
                 <h1 className="text-4xl font-bold text-white md:text-6xl">Choose your VISOR plan</h1>
                 <p className="mx-auto mt-4 max-w-2xl text-white/70">
-                  Subscribe on the web, then sign in with the same account in the mobile app. Prices are shown
-                  in USD and exclude any taxes that may apply in your country.
+                  Subscribe on the web, then sign in with the same account in the mobile app.
+                  {currency.code === "USD"
+                    ? " Prices are shown in USD and exclude any taxes that may apply in your country."
+                    : ` Prices are billed in USD; the ${currency.code} amounts shown are an approximate conversion and exclude any taxes that may apply in your country. The exact amount is confirmed at checkout.`}
                 </p>
                 <div className="mx-auto mt-8 inline-flex rounded-full border border-white/10 bg-white/5 p-1">
                   {(["monthly", "annual"] as const).map((period) => (
