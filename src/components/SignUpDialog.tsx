@@ -204,11 +204,22 @@ export function SignUpDialog({ open, onOpenChange, onSignIn }: SignUpDialogProps
               </div>
             </div>
 
+            {error && (
+              <p role="alert" className="text-sm text-red-400">
+                {error}
+              </p>
+            )}
+
             <Button
               type="submit"
+              disabled={submitting}
               className="h-11 w-full rounded-xl bg-[#99FFFF] text-sm font-bold text-[#0A1926] hover:bg-[#B3FFFF] shadow-[0_0_20px_rgba(153,255,255,0.35)]"
             >
-              <UserPlus className="mr-1.5 h-4 w-4" />
+              {submitting ? (
+                <Loader2 className="mr-1.5 h-4 w-4 animate-spin" />
+              ) : (
+                <UserPlus className="mr-1.5 h-4 w-4" />
+              )}
               {t("signup.submit")}
             </Button>
           </form>
