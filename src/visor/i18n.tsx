@@ -137,6 +137,7 @@ const EN: Dict = {
   'tc5d': 'Personalized meal plans and macro tracking to fuel your transformation',
 
   'step.hover': 'Hover to flip',
+  'step.tap': 'Tap to flip',
   'step.details': 'Details',
 
   'sc1step': 'STEP 1',
@@ -379,6 +380,7 @@ const NO: Dict = {
   'tc5d': 'Personlige måltidsplaner og makrosporing for å drive transformasjonen din',
 
   'step.hover': 'Hold over for å snu',
+  'step.tap': 'Trykk for å snu',
   'step.details': 'Detaljer',
 
   'sc1step': 'TRINN 1',
@@ -625,6 +627,7 @@ const ES: Dict = {
     'Planes de comidas personalizados y seguimiento de macros para impulsar tu transformación',
 
   'step.hover': 'Pasa el cursor para girar',
+  'step.tap': 'Toca para girar',
   'step.details': 'Detalles',
 
   'sc1step': 'PASO 1',
@@ -870,6 +873,7 @@ const DE: Dict = {
   'tc5d': 'Personalisierte Mahlzeitenpläne und Makro-Tracking für deine Transformation',
 
   'step.hover': 'Zum Umdrehen hovern',
+  'step.tap': 'Zum Umdrehen tippen',
   'step.details': 'Details',
 
   'sc1step': 'SCHRITT 1',
@@ -1121,6 +1125,7 @@ const FR: Dict = {
     'Plans de repas personnalisés et suivi des macros pour alimenter votre transformation',
 
   'step.hover': 'Survolez pour retourner',
+  'step.tap': 'Touchez pour retourner',
   'step.details': 'Détails',
 
   'sc1step': 'ÉTAPE 1',
@@ -1363,6 +1368,7 @@ const AR: Dict = {
   'tc5d': 'خطط وجبات مخصصة وتتبع ماكروز لتغذية تحوّلك',
 
   'step.hover': 'مرّر للقلب',
+  'step.tap': 'اضغط للقلب',
   'step.details': 'التفاصيل',
 
   'sc1step': 'الخطوة 1',
