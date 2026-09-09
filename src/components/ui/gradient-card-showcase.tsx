@@ -149,7 +149,7 @@ export default function SkewCards({ cards, onCardClick }: SkewCardsProps) {
           <FlippingCard
             width={280}
             height={330}
-            className="!w-full border-white/20 bg-transparent dark:bg-transparent dark:border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.35)]"
+            className="!w-full !h-[240px] sm:!h-[var(--height)] border-white/20 bg-transparent dark:bg-transparent dark:border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.35)]"
             frontContent={<CardFront card={card} />}
             backContent={<CardBack card={card} />}
           />
