@@ -20,6 +20,13 @@ interface UseVideoScrubReturn {
   containerRef: RefObject<HTMLDivElement | null>;
 }
 
+// Phones cannot render a paused, never-played video and struggle with
+// frame-accurate seeking, so there the clip simply plays as an ambient loop.
+function isMobileScrub(): boolean {
+  if (typeof window === 'undefined') return false;
+  return window.matchMedia('(max-width: 767px), (pointer: coarse)').matches;
+}
+
 export function resolveVideoUrl(url: string): string {
   if (!url) return '/hero.mp4';
   if (url === '/hero.mp4' || url.includes('hero.mp4')) return '/hero.mp4';
