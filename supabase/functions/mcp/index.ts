@@ -28,7 +28,15 @@ var get_app_info_default = defineTool({
               "Soul Track identity alignment system",
               "Personalized workout & nutrition planning"
             ],
-            tiers: ["Free", "Core", "Elite"],
+            tiers: [
+              { name: "Free \u2014 Awakening", priceUsdPerMonth: 0 },
+              { name: "Core \u2014 Builder", priceUsdPerMonth: 12.99 },
+              { name: "Pro \u2014 Performer", priceUsdPerMonth: 19.99 },
+              { name: "Elite \u2014 Olympia Path", priceUsdPerMonth: 27.99 }
+            ],
+            personalCoaching: "Human Elite Coaches \u2014 coming soon, not yet available.",
+            legalOperator: "Cedra Kaddour FZ-LLC, Ras Al Khaimah, United Arab Emirates",
+            appStore: "https://apps.apple.com/us/app/visor-fitness/id6776579817",
             website: "https://visorfitness.com"
           },
           null,
