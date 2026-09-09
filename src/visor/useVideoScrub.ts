@@ -338,8 +338,9 @@ export function useVideoScrub(videoSrc: string): UseVideoScrubReturn {
             for (const sample of samples) {
               if (isAborted) break;
 
-              // Throttle with LEAD so decode doesn't outrun blob encoding
-              while (decodeQueueCount >= LEAD && !isAborted) {
+              // Throttle so decode doesn't outrun still-image encoding
+              while (decodeQueueCount >= (mobile ? LEAD_MOBILE : LEAD) && !isAborted) {
+
                 await new Promise((r) => setTimeout(r, 10));
               }
 
