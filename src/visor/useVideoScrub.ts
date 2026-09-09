@@ -33,6 +33,11 @@ function isMobileScrub(): boolean {
   return window.matchMedia('(max-width: 767px), (pointer: coarse)').matches;
 }
 
+function lruLimit(): number {
+  return isMobileScrub() ? LRU_MAX_MOBILE : LRU_MAX;
+}
+
+
 
 export function resolveVideoUrl(url: string): string {
   if (!url) return '/hero.mp4';
@@ -141,7 +146,7 @@ export function useVideoScrub(videoSrc: string): UseVideoScrubReturn {
             .then((warmBitmap) => {
               if (!lruRef.current.has(neighborIdx)) {
                 lruRef.current.set(neighborIdx, warmBitmap);
-                if (lruRef.current.size > LRU_MAX) {
+                if (lruRef.current.size > lruLimit()) {
                   const evictKey = lruRef.current.keys().next().value;
                   if (
                     evictKey !== undefined &&
