@@ -271,9 +271,9 @@ export function useVideoScrub(videoSrc: string): UseVideoScrubReturn {
           let decodeQueueCount = 0;
           let outputIndex = 0;
           const framePromises: Promise<void>[] = [];
-          const stride = mobile ? FRAME_STRIDE_MOBILE : 1;
+          const stride = profile.stride;
           const mimeType = mobile ? 'image/jpeg' : 'image/webp';
-          const quality = mobile ? 0.72 : 0.82;
+          const quality = profile.quality;
 
           decoder = new VideoDecoder({
             output: (videoFrame: VideoFrame) => {
@@ -289,11 +289,12 @@ export function useVideoScrub(videoSrc: string): UseVideoScrubReturn {
               const timestamp = videoFrame.timestamp;
               let targetWidth = videoFrame.displayWidth;
               let targetHeight = videoFrame.displayHeight;
-              if (mobile && targetWidth > MAX_FRAME_WIDTH_MOBILE) {
-                const scale = MAX_FRAME_WIDTH_MOBILE / targetWidth;
+              if (profile.maxWidth > 0 && targetWidth > profile.maxWidth) {
+                const scale = profile.maxWidth / targetWidth;
                 targetWidth = Math.round(targetWidth * scale);
                 targetHeight = Math.round(targetHeight * scale);
               }
+
 
               const processPromise = (async () => {
                 try {
