@@ -48,9 +48,11 @@ const PricingPage = () => {
 
   const startCheckout = async (tierType: string) => {
     if (!getSession()) {
+      setPendingPlan(tierType);
       setAccountOpen(true);
       return;
     }
+
 
     setError("");
     setLoadingPlan(tierType);
