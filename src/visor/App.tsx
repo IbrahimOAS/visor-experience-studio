@@ -312,7 +312,7 @@ export default function App() {
             >
               <button
                 id="section-2-down-btn"
-                onClick={() => scrollToProgress(0.85)}
+                onClick={() => scrollToProgress(0.93)}
                 aria-label="Scroll down"
                 className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity cursor-pointer text-white border border-white/30 bg-black/20 backdrop-blur-md"
               >
