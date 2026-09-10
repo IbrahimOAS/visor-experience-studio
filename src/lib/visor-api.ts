@@ -101,10 +101,14 @@ export const completeGoogleLogin = async (token: string) => {
 
 export const getSubscriptionStatus = () => request<SubscriptionStatus>("/subscriptions/status/");
 
-export const createCheckoutSession = (tierType: string, billingPeriod: "monthly" | "annual") =>
+export const createCheckoutSession = (
+  tierType: string,
+  billingPeriod: "monthly" | "annual",
+  currency: "usd" | "nok" = "usd",
+) =>
   request<{ url: string }>("/subscriptions/stripe/checkout/", {
     method: "POST",
-    body: JSON.stringify({ tier_type: tierType, billing_period: billingPeriod }),
+    body: JSON.stringify({ tier_type: tierType, billing_period: billingPeriod, currency }),
   });
 
 export const createPortalSession = (returnUrl?: string) =>

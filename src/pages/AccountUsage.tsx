@@ -19,14 +19,16 @@ const fadeUp = (delay = 0) => ({
 const tierRank: Record<string, number> = { free: 0, core: 1, pro: 2, elite: 3 };
 
 const featureRows = [
-  { label: "AI Workout Plans",       desc: "Personalised to your goals",       key: "ai_plan_full",            minTier: "core"  },
-  { label: "Food Scanner",           desc: "Instant nutrition from camera",     key: "food_scanner",            minTier: "pro"   },
-  { label: "Olympia Mode",           desc: "Elite-level programming",           key: "olympia_mode",            minTier: "elite" },
-  { label: "Priority AI Rendering",  desc: "Fastest response times",            key: "priority_ai_rendering",   minTier: "elite" },
+  { label: "Health App Sync",        desc: "iOS Health & Google Fit sync",      key: "health_sync",             minTier: "free"  },
+  { label: "AI Workout Plans",       desc: "Personalised to your goals",        key: "ai_plan_full",            minTier: "core"  },
   { label: "Unlimited Tracking",     desc: "Track all workouts without limits", key: "unlimited_tracking",      minTier: "core"  },
-  { label: "Coach Chat",             desc: "Direct message your AI coach",      key: "coach_chat",              minTier: "core"  },
+  { label: "Coach Chat",             desc: "Unlimited VISOR AI chat",           key: "coach_chat",              minTier: "core"  },
+  { label: "Food Scanner",           desc: "Instant nutrition from camera",     key: "food_scanner",            minTier: "pro"   },
   { label: "Custom Workout Builder", desc: "Build your own programs",           key: "custom_workout_builder",  minTier: "pro"   },
+  { label: "AI Health Suggestions",  desc: "Personalised insights from your device data", key: "ai_health_suggestions", minTier: "pro" },
+  { label: "Olympia Mode",           desc: "Elite-level programming",           key: "olympia_mode",            minTier: "elite" },
   { label: "AI Nutrition Generator", desc: "Personalised meal plans",           key: "ai_nutrition_generator",  minTier: "elite" },
+  { label: "Priority AI Rendering",  desc: "Fastest response times",            key: "priority_ai_rendering",   minTier: "elite" },
 ];
 
 const formatLimitValue = (val: unknown): string => {

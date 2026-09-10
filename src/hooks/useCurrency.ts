@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
 
 export interface CurrencyInfo {
-  code: string;       // "NOK"
-  symbol: string;     // "kr"
-  rate: number;       // multiplier from USD (e.g. 10.5)
+  code: string;
+  symbol: string;
+  rate: number;        // multiplier from USD — ignored when isStatic is true
   position: "before" | "after";
+  isStatic?: boolean;  // true = use hardcoded prices per plan, never convert from USD
 }
 
 // Approximate rates — Stripe Adaptive Pricing handles the exact charge;
 // these are for display only and can be updated periodically.
+// Currencies marked isStatic=true have their own fixed prices in the plans data.
 const CURRENCY_MAP: Record<string, CurrencyInfo> = {
-  NO: { code: "NOK", symbol: "kr",   rate: 10.8,  position: "after"  },
+  NO: { code: "NOK", symbol: "kr",   rate: 10.8,  position: "after",  isStatic: true },
   SE: { code: "SEK", symbol: "kr",   rate: 10.4,  position: "after"  },
   DK: { code: "DKK", symbol: "kr",   rate: 7.1,   position: "after"  },
   GB: { code: "GBP", symbol: "£",    rate: 0.79,  position: "before" },

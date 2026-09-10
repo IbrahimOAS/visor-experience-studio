@@ -20,24 +20,68 @@ const plans = [
   {
     tierType: "core",
     name: "Core",
+    subtitle: "The Builder",
+    tagline: "Full plan and unlimited basics",
     monthly: 19.90,
     annual: 139.90,
-    features: ["Full 12-week plan", "Unlimited tracking", "Month 3 prediction", "Unlimited coach chat"],
+    nokMonthly: 199,
+    nokAnnual: 1399,
+    features: [
+      "Full AI 12-week plan (weeks 1–12)",
+      "Unlimited activity tracker & workout programmes",
+      "Unlimited calorie tracker",
+      "Health history charts & sleep tracking",
+      "Dynamic personalised coach",
+      "Full ritual library & streak recovery",
+      "Community — post, comment & direct messages",
+      "Unlimited VISOR AI chat",
+      "AI transform — month 3 prediction",
+      "Personal records tracking",
+      "Visible Soul Track score",
+      "Exercise library",
+      "Health app sync — iOS Health & Google Fit",
+    ],
   },
   {
     tierType: "pro",
     name: "Pro",
+    subtitle: "The Performer",
+    tagline: "Full-featured power user",
     monthly: 29.90,
     annual: 199.90,
-    features: ["AI food scanner", "Custom workout builder", "Month 6 prediction", "Community groups"],
+    nokMonthly: 299,
+    nokAnnual: 1999,
     highlighted: true,
+    inherits: "Everything in Core, plus:",
+    features: [
+      "AI food scanner — camera auto-log",
+      "Custom workout builder",
+      "Full coach personality & tone",
+      "Community groups — create & join",
+      "AI transform — month 6 prediction",
+      "Advanced progress insights",
+      "AI health suggestions — personalised insights from your device data",
+    ],
   },
   {
     tierType: "elite",
     name: "Elite",
+    subtitle: "The Olympia Path",
+    tagline: "Serious athlete, AI max",
     monthly: 44.90,
     annual: 299.90,
-    features: ["Olympia Mode", "Unlimited predictions", "AI nutrition generator", "7-day free trial"],
+    nokMonthly: 449,
+    nokAnnual: 2999,
+    inherits: "Everything in Pro, plus:",
+    features: [
+      "Olympia Mode — the most advanced AI",
+      "Unlimited AI predictions",
+      "Priority AI rendering",
+      "AI nutrition generator — 10 a month",
+      "Elite ritual library",
+      "Early access to new features",
+      "7-day free trial",
+    ],
   },
 ];
 
@@ -60,11 +104,13 @@ const AccountPlan = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const isNok = currency.isStatic && currency.code === "NOK";
+
   const startCheckout = async (tierType: string) => {
     setError("");
     setLoadingPlan(tierType);
     try {
-      const { url } = await createCheckoutSession(tierType, billingPeriod);
+      const { url } = await createCheckoutSession(tierType, billingPeriod, isNok ? "nok" : "usd");
       window.location.href = url;
     } catch (err) {
       setError(err instanceof Error ? err.message : "Could not start checkout");
@@ -144,16 +190,26 @@ const AccountPlan = () => {
                 )}
 
                 <h2 className="text-xl font-bold">{plan.name}</h2>
+                <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">{plan.subtitle}</p>
+                <p className="mt-1 text-xs text-muted-foreground">{plan.tagline}</p>
                 <div className="mt-3 flex items-baseline gap-1.5">
                   <span className="text-3xl font-bold">
-                    {formatPrice(billingPeriod === "monthly" ? plan.monthly : plan.annual, currency)}
+                    {isNok
+                      ? `${billingPeriod === "monthly" ? plan.nokMonthly : plan.nokAnnual} kr`
+                      : formatPrice(billingPeriod === "monthly" ? plan.monthly : plan.annual, currency)}
                   </span>
                   <span className="text-sm text-muted-foreground">
                     /{billingPeriod === "monthly" ? "mo" : "yr"}
                   </span>
                 </div>
 
-                <ul className="my-6 flex-1 space-y-2.5">
+                <ul className="my-5 flex-1 space-y-2">
+                  {"inherits" in plan && plan.inherits && (
+                    <li className="mb-1 flex gap-2.5 text-sm font-semibold text-primary">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      {plan.inherits}
+                    </li>
+                  )}
                   {plan.features.map((feat) => (
                     <li key={feat} className="flex gap-2.5 text-sm text-muted-foreground">
                       <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />

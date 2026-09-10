@@ -12,28 +12,78 @@ import { GlassNavbar } from "@/visor/components/GlassNavbar";
 import Footer from "@/components/Footer";
 import { LanguageProvider } from "@/visor/i18n";
 
+// ── NOK static prices — update these to match what you set in Stripe ──────────
+// Core:  199 kr/mo · 1 399 kr/yr
+// Pro:   299 kr/mo · 1 999 kr/yr
+// Elite: 449 kr/mo · 2 999 kr/yr
+// ─────────────────────────────────────────────────────────────────────────────
+
 const plans = [
   {
     tierType: "core",
     name: "Core",
+    subtitle: "The Builder",
+    tagline: "Full plan and unlimited basics",
     monthly: 19.90,
     annual: 139.90,
-    features: ["Full 12-week plan", "Unlimited tracking", "Month 3 prediction", "Unlimited coach chat"],
+    nokMonthly: 199,
+    nokAnnual: 1399,
+    features: [
+      "Full AI 12-week plan (weeks 1–12)",
+      "Unlimited activity tracker & workout programmes",
+      "Unlimited calorie tracker",
+      "Health history charts & sleep tracking",
+      "Dynamic personalised coach",
+      "Full ritual library & streak recovery",
+      "Community — post, comment & direct messages",
+      "Unlimited VISOR AI chat",
+      "AI transform — month 3 prediction",
+      "Personal records tracking",
+      "Visible Soul Track score",
+      "Exercise library",
+      "Health app sync — iOS Health & Google Fit",
+    ],
   },
   {
     tierType: "pro",
     name: "Pro",
+    subtitle: "The Performer",
+    tagline: "Full-featured power user",
     monthly: 29.90,
     annual: 199.90,
-    features: ["AI food scanner", "Custom workout builder", "Month 6 prediction", "Community groups"],
+    nokMonthly: 299,
+    nokAnnual: 1999,
+    highlighted: true,
+    inherits: "Everything in Core, plus:",
+    features: [
+      "AI food scanner — camera auto-log",
+      "Custom workout builder",
+      "Full coach personality & tone",
+      "Community groups — create & join",
+      "AI transform — month 6 prediction",
+      "Advanced progress insights",
+      "AI health suggestions — personalised insights from your device data",
+    ],
   },
   {
     tierType: "elite",
     name: "Elite",
+    subtitle: "The Olympia Path",
+    tagline: "Serious athlete, AI max",
     monthly: 44.90,
     annual: 299.90,
-    features: ["Olympia Mode", "Unlimited predictions", "AI nutrition generator", "7-day free trial"],
-    highlighted: true,
+    nokMonthly: 449,
+    nokAnnual: 2999,
+    inherits: "Everything in Pro, plus:",
+    features: [
+      "Olympia Mode — the most advanced AI",
+      "Unlimited AI predictions",
+      "Priority AI rendering",
+      "AI nutrition generator — 10 a month",
+      "Elite ritual library",
+      "Early access to new features",
+      "7-day free trial",
+    ],
   },
 ];
 
@@ -47,6 +97,8 @@ const PricingPage = () => {
   const [pendingPlan, setPendingPlan] = useState("");
   const [eliteCoachesOpen, setEliteCoachesOpen] = useState(false);
 
+  const isNok = currency.isStatic && currency.code === "NOK";
+
   const startCheckout = async (tierType: string) => {
     if (!getSession()) {
       setPendingPlan(tierType);
@@ -54,11 +106,10 @@ const PricingPage = () => {
       return;
     }
 
-
     setError("");
     setLoadingPlan(tierType);
     try {
-      const { url } = await createCheckoutSession(tierType, billingPeriod);
+      const { url } = await createCheckoutSession(tierType, billingPeriod, isNok ? "nok" : "usd");
       window.location.href = url;
     } catch (err) {
       setError(err instanceof Error ? err.message : "Could not start checkout");
@@ -156,17 +207,27 @@ const PricingPage = () => {
                       {plan.highlighted && (
                         <div className="mb-4 flex items-center gap-2 text-xs font-bold uppercase text-[#99FFFF]">
                           <Crown className="h-4 w-4" />
-                          Best value
+                          Most popular
                         </div>
                       )}
                       <h2 className="text-2xl font-bold text-white">{plan.name}</h2>
+                      <p className="mt-0.5 text-xs font-semibold uppercase tracking-widest text-white/40">{plan.subtitle}</p>
+                      <p className="mt-1 text-sm text-white/55">{plan.tagline}</p>
                       <div className="mt-5 flex items-baseline gap-2">
                         <span className="text-4xl font-bold text-white">
-                          {formatPrice(billingPeriod === "monthly" ? plan.monthly : plan.annual, currency)}
+                          {isNok
+                            ? `${billingPeriod === "monthly" ? plan.nokMonthly : plan.nokAnnual} kr`
+                            : formatPrice(billingPeriod === "monthly" ? plan.monthly : plan.annual, currency)}
                         </span>
                         <span className="text-sm text-white/60">/{billingPeriod === "monthly" ? "mo" : "yr"}</span>
                       </div>
                       <ul className="my-8 flex-1 space-y-3">
+                        {"inherits" in plan && plan.inherits && (
+                          <li className="mb-1 flex gap-3 text-sm font-semibold text-[#99FFFF]/80">
+                            <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#99FFFF]" />
+                            <span>{plan.inherits}</span>
+                          </li>
+                        )}
                         {plan.features.map((feature) => (
                           <li key={feature} className="flex gap-3 text-sm text-white/80">
                             <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#99FFFF]" />
