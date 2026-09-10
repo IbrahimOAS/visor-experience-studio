@@ -50,13 +50,6 @@ export default function App() {
   const { scrollProgress, canvasLive, videoRef, canvasRef, containerRef } =
     useVideoScrub(VIDEO_URL);
 
-  const {
-    scrollProgress: secondProgress,
-    canvasLive: secondCanvasLive,
-    videoRef: secondVideoRef,
-    canvasRef: secondCanvasRef,
-    containerRef: secondContainerRef,
-  } = useVideoScrub(SECOND_VIDEO_URL);
 
   const [modalType, setModalType] = useState<'get-app' | 'sign-in' | null>(null);
   const [eliteCoachesOpen, setEliteCoachesOpen] = useState(false);
