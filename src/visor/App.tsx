@@ -8,7 +8,8 @@ import { FeaturesSection } from './components/FeaturesSection';
 import { WhatsInsideSection } from './components/WhatsInsideSection';
 import { TransformationCards } from './components/TransformationCards';
 import { PersonalTrainingSection } from './components/PersonalTrainingSection';
-import { PERMANENT_VIDEO_URL, SECOND_VIDEO_URL } from './constants';
+import { PERMANENT_VIDEO_URL } from './constants';
+import featuresBg from '@/assets/features-bg.jpg';
 import Footer from '@/components/Footer';
 import { GuidesSection } from './components/GuidesSection';
 import { EliteCoachesDialog } from '@/components/EliteCoachesDialog';
@@ -50,13 +51,6 @@ export default function App() {
   const { scrollProgress, canvasLive, videoRef, canvasRef, containerRef } =
     useVideoScrub(VIDEO_URL);
 
-  const {
-    scrollProgress: secondProgress,
-    canvasLive: secondCanvasLive,
-    videoRef: secondVideoRef,
-    canvasRef: secondCanvasRef,
-    containerRef: secondContainerRef,
-  } = useVideoScrub(SECOND_VIDEO_URL);
 
   const [modalType, setModalType] = useState<'get-app' | 'sign-in' | null>(null);
   const [eliteCoachesOpen, setEliteCoachesOpen] = useState(false);
@@ -356,35 +350,25 @@ export default function App() {
         </div>
     </div>
 
-      {/* Secondary Video Scrub Track (Features -> Programs -> What's Inside VISOR) */}
+      {/* Secondary Track (Features -> Programs -> What's Inside VISOR) */}
       <div
-        ref={secondContainerRef}
         id="features-flow-track"
         className="relative bg-[#070b12]"
       >
-        {/* Sticky Background Video scrubbing synchronously across all 3 components */}
+        {/* Sticky still background — portal scene, no person */}
         <div className="sticky top-0 w-full h-[100dvh] overflow-hidden pointer-events-none z-0">
-          <video
-            ref={secondVideoRef}
-            id="features-scrub-video"
-            src={resolveVideoUrl(SECOND_VIDEO_URL)}
-            crossOrigin="anonymous"
-            muted
-            playsInline
-            preload="auto"
+          <img
+            src={featuresBg}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
             className="absolute inset-0 w-full h-full object-cover"
           />
-
-          <canvas
-            ref={secondCanvasRef}
-            id="features-scrub-canvas"
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
-              secondCanvasLive ? 'opacity-100' : 'opacity-0'
-            }`}
-          />
+          <div className="absolute inset-0 bg-[#070b12]/35" />
         </div>
 
-        {/* Content Layers on top of the scrubbing video */}
+        {/* Content Layers on top of the background */}
         <div className="relative z-10 -mt-[100dvh]">
           {/* 1. AI Fitness App Features to Transform Your Body */}
           <FeaturesSection onGetApp={openAppStore} />
