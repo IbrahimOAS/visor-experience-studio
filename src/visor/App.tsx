@@ -82,11 +82,13 @@ export default function App() {
     s2Opacity = Math.max(0, 1 - (p - 0.25) / 0.03);
   }
 
+  // Section 4 must only appear after the transformation panels
+  // (top-[480vh] + ~555vh of content ≈ 1035vh of a 1150vh max scroll ≈ 0.90).
   let s4Opacity = 0;
-  if (p < 0.82) {
+  if (p < 0.9) {
     s4Opacity = 0;
-  } else if (p < 0.86) {
-    s4Opacity = (p - 0.82) / 0.04;
+  } else if (p < 0.94) {
+    s4Opacity = (p - 0.9) / 0.04;
   } else {
     s4Opacity = 1;
   }
