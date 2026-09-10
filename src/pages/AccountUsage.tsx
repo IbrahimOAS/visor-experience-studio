@@ -19,20 +19,22 @@ const fadeUp = (delay = 0) => ({
 const tierRank: Record<string, number> = { free: 0, core: 1, pro: 2, elite: 3 };
 
 const featureRows = [
-  { label: "AI Workout Plans",      desc: "Personalised to your goals",        key: "ai_plan_full",           minTier: "core"  },
-  { label: "Food Scanner",          desc: "Instant nutrition from camera",      key: "food_scanner",           minTier: "pro"   },
-  { label: "Olympia Mode",          desc: "Elite-level programming",            key: "olympia_mode",           minTier: "elite" },
-  { label: "Priority AI Rendering", desc: "Fastest response times",             key: "priority_ai_rendering",  minTier: "elite" },
-  { label: "Unlimited Tracking",    desc: "Track all workouts without limits",  key: "unlimited_tracking",     minTier: "core"  },
-  { label: "Coach Chat",            desc: "Direct message your AI coach",       key: "coach_chat",             minTier: "core"  },
-  { label: "Custom Workout Builder", desc: "Build your own programs",           key: "custom_workout_builder", minTier: "pro"   },
-  { label: "AI Nutrition Generator", desc: "Personalised meal plans",           key: "ai_nutrition_generator", minTier: "elite" },
+  { label: "AI Workout Plans",       desc: "Personalised to your goals",       key: "ai_plan_full",            minTier: "core"  },
+  { label: "Food Scanner",           desc: "Instant nutrition from camera",     key: "food_scanner",            minTier: "pro"   },
+  { label: "Olympia Mode",           desc: "Elite-level programming",           key: "olympia_mode",            minTier: "elite" },
+  { label: "Priority AI Rendering",  desc: "Fastest response times",            key: "priority_ai_rendering",   minTier: "elite" },
+  { label: "Unlimited Tracking",     desc: "Track all workouts without limits", key: "unlimited_tracking",      minTier: "core"  },
+  { label: "Coach Chat",             desc: "Direct message your AI coach",      key: "coach_chat",              minTier: "core"  },
+  { label: "Custom Workout Builder", desc: "Build your own programs",           key: "custom_workout_builder",  minTier: "pro"   },
+  { label: "AI Nutrition Generator", desc: "Personalised meal plans",           key: "ai_nutrition_generator",  minTier: "elite" },
 ];
 
-const formatLimitValue = (val: number | string[]): string => {
-  if (Array.isArray(val)) return val.length ? val.join(", ") : "None";
+const formatLimitValue = (val: unknown): string => {
+  if (val == null) return "—";
+  if (Array.isArray(val)) return val.length ? (val as string[]).join(", ") : "None";
   if (val === -1) return "Unlimited";
-  return val.toLocaleString();
+  if (typeof val === "number") return val.toLocaleString();
+  return String(val);
 };
 
 const formatLimitKey = (key: string): string =>
@@ -43,7 +45,6 @@ const AccountUsage = () => {
   const [status, setStatus]   = useState<SubscriptionStatus | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError]     = useState("");
-  const session = getSession();
 
   const loadStatus = async () => {
     setError("");
@@ -53,17 +54,28 @@ const AccountUsage = () => {
     finally { setLoading(false); }
   };
 
+  // Read session inside the effect only — keeps it out of the deps array
+  // and prevents an infinite re-render loop caused by getSession() returning
+  // a new object reference on every render (JSON.parse creates a new object each call).
   useEffect(() => {
-    if (!session) { navigate(`/login?redirect=${encodeURIComponent("/account/usage")}`); return; }
+    const session = getSession();
+    if (!session) {
+      navigate(`/login?redirect=${encodeURIComponent("/account/usage")}`);
+      return;
+    }
     loadStatus();
-  }, [navigate, session]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  if (!session) return null;
+  // Render-time guard — only used to bail out, not in any dep array
+  if (!getSession()) return null;
 
   const currentRank = tierRank[status?.tier_type ?? "free"] ?? 0;
   const subscribed  = Boolean(status?.is_subscribed && status?.tier_type !== "free");
-  const limits      = status?.limits ? Object.entries(status.limits) : [];
-  const hasLimits   = limits.length > 0;
+  const limits      = status?.limits
+    ? Object.entries(status.limits).filter(([, v]) => v != null)
+    : [];
+  const hasLimits = limits.length > 0;
 
   return (
     <AccountShell>
@@ -76,7 +88,11 @@ const AccountUsage = () => {
               <Zap className="h-5 w-5 text-primary" />
               Feature access
             </h3>
-            <Button variant="ghost" size="sm" onClick={loadStatus} disabled={loading} className="h-8 gap-1.5 text-xs text-muted-foreground hover:text-foreground">
+            <Button
+              variant="ghost" size="sm"
+              onClick={loadStatus} disabled={loading}
+              className="h-8 gap-1.5 text-xs text-muted-foreground hover:text-foreground"
+            >
               {loading ? <Loader2 className="h-3 w-3 animate-spin" /> : <RefreshCw className="h-3 w-3" />}
               Refresh
             </Button>
@@ -111,25 +127,21 @@ const AccountUsage = () => {
                         <Lock className="h-10 w-10 text-white/5" />
                       </div>
                     )}
-                    <div className="relative flex items-center gap-3">
-                      <div className="flex flex-1 min-w-0 items-start gap-3">
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center justify-between gap-2 mb-0.5">
-                            <p className={`text-sm font-semibold truncate ${!enabled ? "text-muted-foreground" : ""}`}>
-                              {feature.label}
-                            </p>
-                            <span className={`shrink-0 flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide ${
-                              enabled
-                                ? "bg-emerald-400/15 text-emerald-400 border border-emerald-400/20"
-                                : "bg-white/8 text-white/30 border border-white/10"
-                            }`}>
-                              {enabled ? <CheckCircle2 className="h-3 w-3" /> : <Lock className="h-3 w-3" />}
-                              {enabled ? "On" : `${feature.minTier.toUpperCase()}+`}
-                            </span>
-                          </div>
-                          <p className="text-xs text-muted-foreground">{feature.desc}</p>
-                        </div>
+                    <div className="relative flex-1 min-w-0">
+                      <div className="flex items-center justify-between gap-2 mb-0.5">
+                        <p className={`text-sm font-semibold truncate ${!enabled ? "text-muted-foreground" : ""}`}>
+                          {feature.label}
+                        </p>
+                        <span className={`shrink-0 flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide ${
+                          enabled
+                            ? "bg-emerald-400/15 text-emerald-400 border border-emerald-400/20"
+                            : "bg-white/8 text-white/30 border border-white/10"
+                        }`}>
+                          {enabled ? <CheckCircle2 className="h-3 w-3" /> : <Lock className="h-3 w-3" />}
+                          {enabled ? "On" : `${feature.minTier.toUpperCase()}+`}
+                        </span>
                       </div>
+                      <p className="text-xs text-muted-foreground">{feature.desc}</p>
                     </div>
                   </motion.div>
                 );
@@ -138,7 +150,10 @@ const AccountUsage = () => {
           )}
 
           {!subscribed && !loading && (
-            <motion.div {...fadeUp(0.4)} className="mt-4 flex items-center justify-between gap-4 rounded-xl border border-primary/20 bg-primary/5 px-5 py-4">
+            <motion.div
+              {...fadeUp(0.4)}
+              className="mt-4 flex items-center justify-between gap-4 rounded-xl border border-primary/20 bg-primary/5 px-5 py-4"
+            >
               <p className="text-sm text-muted-foreground">Unlock all features by upgrading your plan.</p>
               <Button asChild className="shrink-0 rounded-xl bg-primary text-background hover:bg-primary/90">
                 <Link to="/account/plan">View plans</Link>
@@ -178,7 +193,7 @@ const AccountUsage = () => {
         </motion.section>
 
         {/* ── Subscription features list ────────────────────────────────────── */}
-        {status?.features && status.features.length > 0 && (
+        {Array.isArray(status?.features) && status.features.length > 0 && (
           <motion.section {...fadeUp(0.16)} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
             <h3 className="mb-5 flex items-center gap-2 text-lg font-bold">
               <Sparkles className="h-5 w-5 text-primary" />
@@ -195,7 +210,9 @@ const AccountUsage = () => {
           </motion.section>
         )}
 
-        {error && <p className="rounded-lg bg-red-500/10 px-3 py-2 text-xs text-red-400">{error}</p>}
+        {error && (
+          <p className="rounded-lg bg-red-500/10 px-3 py-2 text-xs text-red-400">{error}</p>
+        )}
 
       </div>
     </AccountShell>
