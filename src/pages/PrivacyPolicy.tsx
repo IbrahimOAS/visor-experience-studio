@@ -27,7 +27,7 @@ const PrivacyPolicy = () => (
         We apply the UAE Personal Data Protection Law (Federal Decree-Law No. 45 of 2021) and, where
         it applies to users in the EU/EEA and UK, the GDPR.
         <br />
-        <span className="text-sm opacity-70">Last updated: August 2026</span>
+        <span className="text-sm opacity-70">Last updated: September 2026</span>
       </>
     }
     sections={[
@@ -67,7 +67,32 @@ const PrivacyPolicy = () => (
             <p><strong>Community and communications.</strong> Posts, messages, moderation reports and related records.</p>
             <p><strong>Subscription and transaction information.</strong> Subscription status, entitlements, product identifiers, renewal dates and receipt identifiers from Apple, Google, RevenueCat or similar billing partners. We do not receive or store your full payment card number.</p>
             <p><strong>Device, diagnostics, and usage.</strong> IP address, device type, OS, app version, push token, crash data, diagnostics and usage events.</p>
-            <p><strong>Apple Health / HealthKit.</strong> VISOR does not access, read from, or write to Apple Health or HealthKit.</p>
+          </>
+        ),
+      },
+      {
+        heading: "Connected Health and Wearable Data",
+        body: (
+          <>
+            <p>VISOR may allow you to connect supported health, fitness and wearable services to your VISOR account. Current supported integrations may include Apple Health / HealthKit, Android Health Connect and Polar. Additional optional integrations may include Oura, Strava, WHOOP, Garmin, Dexcom and other compatible services as they become available.</p>
+            <p>VISOR accesses data from a connected service only after you choose to connect that service and grant the required permissions or authorization.</p>
+            <p>Depending on the service and the permissions you grant, connected health and fitness data may include heart rate, heart-rate variability, resting heart rate, steps, active energy, workouts, exercise history, sleep and sleep stages, blood oxygen, body temperature, recovery information, activity information and other health or fitness measurements made available by the connected provider.</p>
+            <p>If you choose to connect a compatible continuous glucose monitoring service such as Dexcom, VISOR may receive glucose readings, timestamps, glucose trends and related CGM information that you authorize the provider to share with VISOR.</p>
+            <p>Connected health and wearable data may be treated as health data or special category personal data under applicable law. Where required, VISOR processes this information only with your explicit consent.</p>
+            <p>We use connected health and wearable data to provide and personalize features such as activity tracking, workout guidance, nutrition insights, sleep and recovery information, AI-assisted coaching and other fitness and wellness features you choose to use.</p>
+            <p>VISOR does not sell connected health or wearable data and does not use this information for targeted advertising, cross-context behavioral advertising or advertising profiling.</p>
+            <p>VISOR is a fitness and wellness service. Connected health and CGM information is provided for general wellness and informational purposes and is not intended to diagnose, treat, cure or prevent disease, determine insulin dosage or replace advice from a qualified healthcare professional.</p>
+          </>
+        ),
+      },
+      {
+        heading: "Connecting and Disconnecting Third-Party Services",
+        body: (
+          <>
+            <p>When you connect a supported third-party health or wearable service, authorization may be handled through the provider's application, operating system permission controls or OAuth authorization process.</p>
+            <p>You can choose which permissions to grant where the connected service supports granular permissions. You may revoke permissions through VISOR, your device settings or the connected provider's account settings, depending on the integration.</p>
+            <p>Disconnecting a service stops VISOR from requesting new data from that service. Information previously imported into VISOR remains subject to this Privacy Policy, including the Data Retention, Your Rights and Account Deletion sections.</p>
+            <p>The third-party provider may separately process your information under its own privacy policy when you use its authentication, authorization or device services.</p>
           </>
         ),
       },
@@ -160,6 +185,7 @@ const PrivacyPolicy = () => (
           <>
             <p><strong>We do not sell your personal data</strong>, including your health and fitness data, and we do not share your health or fitness data with any third party for advertising, marketing or cross-context behavioral tracking.</p>
             <p><strong>Service providers.</strong> Vendors that help us run VISOR — cloud hosting, storage, CDN, authentication, notifications, analytics, support and subscription management — acting as processors on our instructions.</p>
+            <p><strong>Connected health and wearable providers.</strong> When you choose to connect a third-party health, fitness, wearable or CGM service, VISOR may exchange the information necessary to authenticate the connection and receive the data you have authorized. Depending on the integrations available to you, these providers may include Apple Health / HealthKit, Android Health Connect, Polar, Oura, Strava, WHOOP, Garmin and Dexcom. VISOR accesses only the data permitted by the user and supported by the relevant integration.</p>
             <p><strong>Examples.</strong> Firebase / Google services for authentication and messaging; Google Gemini for AI features (including health-related inputs); RevenueCat for subscription and entitlement management — it receives your app user ID, subscription product identifiers, purchase timestamps and device platform to manage and restore your subscription status, and does not receive your health or fitness data; and Apple App Store and Google Play for billing.</p>
             <p><strong>Legal and safety.</strong> When reasonably necessary to comply with law, respond to valid requests, protect users, investigate fraud or enforce our Terms.</p>
             <p><strong>Business transfers.</strong> Information may transfer as part of a merger, acquisition, financing or asset sale, subject to applicable law.</p>
@@ -185,7 +211,7 @@ const PrivacyPolicy = () => (
             <p>We keep personal information only as long as necessary for the purposes it was collected:</p>
             <ul className="list-disc pl-5 space-y-2">
               <li><strong>Account and profile.</strong> For the life of your account; deleted on account deletion (limited copies may persist in backups for up to ~90 days).</li>
-              <li><strong>Fitness and health data.</strong> For the life of your account and deleted when you delete your account, unless retention is legally required.</li>
+              <li><strong>Fitness, health and connected-device data.</strong> For the life of your account or for as long as needed to provide the features you have enabled. Disconnecting a connected health or wearable service stops future collection from that service but does not automatically delete information previously imported into VISOR. Previously imported information is deleted when you delete your account or when we are otherwise required to delete it under applicable law, subject to limited backup and legal-retention requirements.</li>
               <li><strong>Photos.</strong> Uploaded body and meal photos, and AI-generated transformation images, are kept until you delete them in the app or delete your account; backup copies purge within ~90 days. Photos are never used to train AI models.</li>
               <li><strong>Subscription and transaction records.</strong> Retained for as long as required by applicable UAE accounting, tax and record-keeping obligations (currently 5 years) and for billing reconciliation.</li>
               <li><strong>Diagnostic logs and security records.</strong> Kept for limited periods, then deleted or anonymized.</li>
@@ -215,6 +241,7 @@ const PrivacyPolicy = () => (
               We respond within 30 days. You may also lodge a complaint with the UAE Data Office or,
               if you are in the EU/EEA or UK, with your local supervisory authority.
             </p>
+            <p>You may also disconnect supported health and wearable integrations or revoke their permissions through VISOR, your device settings or the relevant third-party service. Revoking access stops future collection from that service.</p>
           </>
         ),
       },
