@@ -49,16 +49,16 @@ const AccountPlan = () => {
   const [loadingPlan, setLoadingPlan]     = useState("");
   const [statusLoading, setStatusLoading] = useState(true);
   const [error, setError]                 = useState("");
-  const session = getSession();
-
   useEffect(() => {
-    if (!session) { navigate(`/login?redirect=${encodeURIComponent("/account/plan")}`); return; }
+    const s = getSession();
+    if (!s) { navigate(`/login?redirect=${encodeURIComponent("/account/plan")}`); return; }
     (async () => {
       try { setStatus(await getSubscriptionStatus()); }
       catch { /* non-critical */ }
       finally { setStatusLoading(false); }
     })();
-  }, [navigate, session]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const startCheckout = async (tierType: string) => {
     setError("");
@@ -72,6 +72,7 @@ const AccountPlan = () => {
     }
   };
 
+  const session = getSession();
   if (!session) return null;
 
   const currentTier = status?.tier_type ?? "free";

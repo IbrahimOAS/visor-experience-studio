@@ -112,3 +112,8 @@ export const createPortalSession = (returnUrl?: string) =>
     method: "POST",
     body: JSON.stringify(returnUrl ? { return_url: returnUrl } : {}),
   });
+
+export const requestAccountDeletion = () =>
+  request<{ detail: string; recovery_period_days: number }>("/accounts/request-deletion/", {
+    method: "POST",
+  });

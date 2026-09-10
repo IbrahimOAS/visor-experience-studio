@@ -22,8 +22,6 @@ const AccountBilling = () => {
   const [loading, setLoading]           = useState(true);
   const [portalLoading, setPortalLoading] = useState(false);
   const [error, setError]               = useState("");
-  const session = getSession();
-
   const loadStatus = async () => {
     setError("");
     setLoading(true);
@@ -33,9 +31,11 @@ const AccountBilling = () => {
   };
 
   useEffect(() => {
-    if (!session) { navigate(`/login?redirect=${encodeURIComponent("/account/billing")}`); return; }
+    const s = getSession();
+    if (!s) { navigate(`/login?redirect=${encodeURIComponent("/account/billing")}`); return; }
     loadStatus();
-  }, [navigate, session]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const openPortal = async () => {
     setError("");
@@ -50,6 +50,7 @@ const AccountBilling = () => {
     }
   };
 
+  const session = getSession();
   if (!session) return null;
 
   const subscribed = Boolean(status?.is_subscribed && status?.tier_type !== "free");

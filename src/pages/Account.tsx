@@ -32,7 +32,6 @@ const Account = () => {
   const [error, setError]     = useState("");
   const [loading, setLoading] = useState(true);
   const [copied, setCopied]   = useState(false);
-  const session = getSession();
 
   const loadStatus = async () => {
     setError("");
@@ -42,11 +41,17 @@ const Account = () => {
     finally { setLoading(false); }
   };
 
+  // Read session inside the effect only — avoids putting a new object reference
+  // in the dep array on every render (JSON.parse always returns a new object).
   useEffect(() => {
-    if (!session) { navigate(`/login?redirect=${encodeURIComponent("/account")}`); return; }
+    const s = getSession();
+    if (!s) { navigate(`/login?redirect=${encodeURIComponent("/account")}`); return; }
     loadStatus();
-  }, [navigate, session]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
+  // Render-time read — only used for null guard and referral link, not in any dep array
+  const session = getSession();
   if (!session) return null;
 
   const referralLink = `https://visorfitness.com?fpr=${session.user.username ?? ""}`;
@@ -74,7 +79,7 @@ const Account = () => {
                     <Crown className="h-8 w-8 text-primary" />
                   </div>
                   <span className={`absolute -bottom-1.5 -right-1.5 rounded-full border-2 border-background px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${subscribed ? "bg-primary text-background" : "bg-white/15 text-muted-foreground"}`}>
-                    {status?.tier_type ?? "FREE"}
+                    {loading ? "…" : (status?.tier_type ?? "FREE")}
                   </span>
                 </div>
                 <div>
@@ -95,7 +100,9 @@ const Account = () => {
 
               <div className="flex flex-col gap-2 sm:items-end">
                 <Button className="gap-2 rounded-xl bg-primary text-background hover:bg-primary/90" asChild>
-                  <Link to="/account/plan"><Star className="h-4 w-4" /> Upgrade plan</Link>
+                  {subscribed
+                    ? <Link to="/account/billing"><CreditCard className="h-4 w-4" /> Manage plan</Link>
+                    : <Link to="/account/plan"><Star className="h-4 w-4" /> Upgrade plan</Link>}
                 </Button>
                 <Button variant="outline" className="gap-2 rounded-xl border-white/15 hover:bg-white/8" onClick={loadStatus} disabled={loading}>
                   {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <RefreshCw className="h-4 w-4" />}
