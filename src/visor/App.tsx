@@ -119,7 +119,7 @@ export default function App() {
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     } else if (index === 3) {
       // Coaching -> Personal Training, Your Door (section 4 of hero track)
-      scrollToProgress(0.92);
+      scrollToProgress(0.96);
     } else if (index === 4) {
       const el = document.getElementById('whats-inside-section');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
