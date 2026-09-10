@@ -460,9 +460,9 @@
         {
           "name": "Core",
           "subtitle": "The Builder",
-          "price": "$12.99",
+          "price": "$19.90",
           "period": "/month",
-          "yearlyPrice": "$89.99/yr (save 42%)",
+          "yearlyPrice": "$139.90/yr (save 41%)",
           "features": [
             "Everything in Free +",
             "Full 12-Week Plan (Weeks 2–12)",
@@ -481,9 +481,9 @@
         {
           "name": "Pro",
           "subtitle": "The Performer",
-          "price": "$19.99",
+          "price": "$29.90",
           "period": "/month",
-          "yearlyPrice": "$139.99/yr (save 42%)",
+          "yearlyPrice": "$199.90/yr (save 44%)",
           "features": [
             "Everything in Core +",
             "AI Food Scanner (camera auto-log)",
@@ -498,9 +498,9 @@
         {
           "name": "Elite",
           "subtitle": "The Olympia Path",
-          "price": "$27.99",
+          "price": "$44.90",
           "period": "/month",
-          "yearlyPrice": "$199.99/yr (save 40%)",
+          "yearlyPrice": "$299.90/yr (save 44%)",
           "features": [
             "Everything in Pro +",
             "Olympia Mode — most advanced AI render",

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useCurrency, formatPrice } from "@/hooks/useCurrency";
 import { Link, useNavigate } from "react-router-dom";
 import { Check, Crown, Loader2, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -15,22 +16,22 @@ const plans = [
   {
     tierType: "core",
     name: "Core",
-    monthly: "$12.99",
-    annual: "$89.99",
+    monthly: 19.90,
+    annual: 139.90,
     features: ["Full 12-week plan", "Unlimited tracking", "Month 3 prediction", "Unlimited coach chat"],
   },
   {
     tierType: "pro",
     name: "Pro",
-    monthly: "$19.99",
-    annual: "$139.99",
+    monthly: 29.90,
+    annual: 199.90,
     features: ["AI food scanner", "Custom workout builder", "Month 6 prediction", "Community groups"],
   },
   {
     tierType: "elite",
     name: "Elite",
-    monthly: "$27.99",
-    annual: "$199.99",
+    monthly: 44.90,
+    annual: 299.90,
     features: ["Olympia Mode", "Unlimited predictions", "AI nutrition generator", "7-day free trial"],
     highlighted: true,
   },
@@ -41,14 +42,18 @@ const PricingPage = () => {
   const [billingPeriod, setBillingPeriod] = useState<"monthly" | "annual">("monthly");
   const [loadingPlan, setLoadingPlan] = useState("");
   const [error, setError] = useState("");
+  const { currency } = useCurrency();
   const [accountOpen, setAccountOpen] = useState(false);
+  const [pendingPlan, setPendingPlan] = useState("");
   const [eliteCoachesOpen, setEliteCoachesOpen] = useState(false);
 
   const startCheckout = async (tierType: string) => {
     if (!getSession()) {
-      navigate(`/login?redirect=${encodeURIComponent("/pricing")}`);
+      setPendingPlan(tierType);
+      setAccountOpen(true);
       return;
     }
+
 
     setError("");
     setLoadingPlan(tierType);
@@ -93,14 +98,30 @@ const PricingPage = () => {
                 </Button>
               </header>
 
-              <SignInDialog open={accountOpen} onOpenChange={setAccountOpen} />
+              <SignInDialog
+                open={accountOpen}
+                onOpenChange={(open) => {
+                  setAccountOpen(open);
+                  if (!open) setPendingPlan("");
+                }}
+                redirectTo="/pricing"
+                onAuthenticated={() => {
+                  if (pendingPlan) {
+                    const plan = pendingPlan;
+                    setPendingPlan("");
+                    void startCheckout(plan);
+                  }
+                }}
+              />
               <EliteCoachesDialog open={eliteCoachesOpen} onOpenChange={setEliteCoachesOpen} />
 
               <section className="py-14 text-center">
                 <h1 className="text-4xl font-bold text-white md:text-6xl">Choose your VISOR plan</h1>
                 <p className="mx-auto mt-4 max-w-2xl text-white/70">
-                  Subscribe on the web, then sign in with the same account in the mobile app. Prices are shown
-                  in USD and exclude any taxes that may apply in your country.
+                  Subscribe on the web, then sign in with the same account in the mobile app.
+                  {currency.code === "USD"
+                    ? " Prices are shown in USD and exclude any taxes that may apply in your country."
+                    : ` Prices are billed in USD; the ${currency.code} amounts shown are an approximate conversion and exclude any taxes that may apply in your country. The exact amount is confirmed at checkout.`}
                 </p>
                 <div className="mx-auto mt-8 inline-flex rounded-full border border-white/10 bg-white/5 p-1">
                   {(["monthly", "annual"] as const).map((period) => (
@@ -141,7 +162,7 @@ const PricingPage = () => {
                       <h2 className="text-2xl font-bold text-white">{plan.name}</h2>
                       <div className="mt-5 flex items-baseline gap-2">
                         <span className="text-4xl font-bold text-white">
-                          {billingPeriod === "monthly" ? plan.monthly : plan.annual}
+                          {formatPrice(billingPeriod === "monthly" ? plan.monthly : plan.annual, currency)}
                         </span>
                         <span className="text-sm text-white/60">/{billingPeriod === "monthly" ? "mo" : "yr"}</span>
                       </div>

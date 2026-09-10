@@ -1,11 +1,20 @@
 import { useState } from "react";
-import { Eye, EyeOff, UserPlus } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Eye, EyeOff, Loader2, UserPlus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { VisorLogo } from "@/visor/components/VisorLogo";
 import { useLanguage } from "@/visor/i18n";
+import {
+  buildSignupProfile,
+  signInWithGooglePopup,
+  signUpWithFirebaseEmail,
+} from "@/lib/auth";
+import { completeFirebaseSignup, completeGoogleLogin } from "@/lib/visor-api";
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 type SignUpDialogProps = {
   open: boolean;
@@ -15,12 +24,57 @@ type SignUpDialogProps = {
 
 export function SignUpDialog({ open, onOpenChange, onSignIn }: SignUpDialogProps) {
   const { t } = useLanguage();
+  const navigate = useNavigate();
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+
+  const finish = () => {
+    onOpenChange(false);
+    navigate("/account");
+  };
+
+  const handleSubmit = async () => {
+    if (submitting) return;
+    setError("");
+
+    if (!fullName.trim()) return setError("Please enter your name.");
+    if (!EMAIL_RE.test(email.trim())) return setError("Please enter a valid email address.");
+    if (password.length < 6) return setError("Password must be at least 6 characters.");
+    if (password !== confirmPassword) return setError("Passwords don't match.");
+
+    setSubmitting(true);
+    try {
+      const firebaseToken = await signUpWithFirebaseEmail(email.trim(), password);
+      await completeFirebaseSignup(firebaseToken, buildSignupProfile(email.trim(), fullName));
+      finish();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Could not create your account.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const handleGoogle = async () => {
+    if (submitting) return;
+    setError("");
+    setSubmitting(true);
+    try {
+      const googleToken = await signInWithGooglePopup();
+      await completeGoogleLogin(googleToken);
+      finish();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Could not continue with Google.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -47,7 +101,10 @@ export function SignUpDialog({ open, onOpenChange, onSignIn }: SignUpDialogProps
           </p>
 
           <Button
+            type="button"
             variant="outline"
+            disabled={submitting}
+            onClick={handleGoogle}
             className="mt-6 h-11 w-full rounded-xl border-white/10 bg-white/5 text-sm font-semibold text-white hover:bg-white/10 hover:text-white"
           >
             <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -69,6 +126,7 @@ export function SignUpDialog({ open, onOpenChange, onSignIn }: SignUpDialogProps
             className="space-y-4"
             onSubmit={(e) => {
               e.preventDefault();
+              void handleSubmit();
             }}
           >
             <div className="space-y-1.5">
@@ -147,11 +205,22 @@ export function SignUpDialog({ open, onOpenChange, onSignIn }: SignUpDialogProps
               </div>
             </div>
 
+            {error && (
+              <p role="alert" className="text-sm text-red-400">
+                {error}
+              </p>
+            )}
+
             <Button
               type="submit"
+              disabled={submitting}
               className="h-11 w-full rounded-xl bg-[#99FFFF] text-sm font-bold text-[#0A1926] hover:bg-[#B3FFFF] shadow-[0_0_20px_rgba(153,255,255,0.35)]"
             >
-              <UserPlus className="mr-1.5 h-4 w-4" />
+              {submitting ? (
+                <Loader2 className="mr-1.5 h-4 w-4 animate-spin" />
+              ) : (
+                <UserPlus className="mr-1.5 h-4 w-4" />
+              )}
               {t("signup.submit")}
             </Button>
           </form>

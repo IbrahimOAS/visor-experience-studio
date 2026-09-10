@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import VsMyFitnessPal from "./pages/compare/VsMyFitnessPal";
@@ -31,7 +31,6 @@ import Elite from "./pages/Elite";
 import BlogIndex from "./pages/blog/BlogIndex";
 import BlogPost from "./pages/blog/BlogPost";
 import Login from "./pages/Login";
-import Signup from "./pages/Signup";
 import Account from "./pages/Account";
 import AccountBilling from "./pages/AccountBilling";
 import AccountUsage from "./pages/AccountUsage";
@@ -83,7 +82,7 @@ const App = () => (
           <Route path="/blog" element={<BlogIndex />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/signup" element={<Navigate to="/login" replace />} />
           <Route path="/account" element={<Account />} />
           <Route path="/account/billing" element={<AccountBilling />} />
           <Route path="/account/usage" element={<AccountUsage />} />

@@ -460,9 +460,9 @@
         {
           "name": "Core",
           "subtitle": "Byggeren",
-          "price": "$12.99",
+          "price": "$19.90",
           "period": "/måned",
-          "yearlyPrice": "$89.99/yr (save 42%)",
+          "yearlyPrice": "$139.90/yr (save 41%)",
           "features": [
             "Alt i Gratis +",
             "Full 12-ukers plan (Uker 2–12)",
@@ -481,9 +481,9 @@
         {
           "name": "Pro",
           "subtitle": "Utøveren",
-          "price": "$19.99",
+          "price": "$29.90",
           "period": "/måned",
-          "yearlyPrice": "$139.99/yr (save 42%)",
+          "yearlyPrice": "$199.90/yr (save 44%)",
           "features": [
             "Alt i Core +",
             "AI-mat-skanner (kamera auto-logg)",
@@ -498,9 +498,9 @@
         {
           "name": "Elite",
           "subtitle": "Olympia‑veien",
-          "price": "$27.99",
+          "price": "$44.90",
           "period": "/måned",
-          "yearlyPrice": "$199.99/yr (save 40%)",
+          "yearlyPrice": "$299.90/yr (save 44%)",
           "features": [
             "Alt i Pro +",
             "Olympia-modus — mest avansert AI-render",

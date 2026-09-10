@@ -58,7 +58,7 @@ export function WhatsInsideSection({ onGetApp, onSignIn }: WhatsInsideSectionPro
   return (
     <section 
       id="whats-inside-section" 
-      className="relative z-10 w-full py-24 sm:py-32 px-4 sm:px-8 md:px-12 lg:px-20 bg-transparent text-white border-t border-white/10"
+      className="relative z-10 w-full overflow-hidden py-24 sm:py-32 px-4 sm:px-8 md:px-12 lg:px-20 bg-transparent text-white border-t border-white/10"
     >
       {/* Subtle background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[400px] bg-[#99FFFF]/5 blur-[160px] rounded-full pointer-events-none" />

@@ -71,26 +71,28 @@ function CardFront({ card }: { card: VisorCardItem }) {
   const { step, title, desc, icon } = card;
   return (
     <div className="absolute inset-0 rounded-xl overflow-hidden">
-      <div className="relative h-full w-full p-5 backdrop-blur-xl rounded-xl text-white flex flex-col justify-between border border-white/25 bg-[#0b131e]/50 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.15)]">
-        <div>
-          <div className="flex items-center justify-between gap-2 mb-4">
-            <div className="w-10 h-10 rounded-xl bg-white/[0.1] border border-white/20 flex items-center justify-center text-[#99FFFF] shadow-[0_0_12px_rgba(153,255,255,0.3)]">
+      <div className="relative h-full w-full p-3 sm:p-5 backdrop-blur-xl rounded-xl text-white flex flex-col justify-between border border-white/25 bg-[#0b131e]/50 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.15)]">
+        <div className="min-h-0 flex-1 overflow-hidden">
+          <div className="flex items-center justify-between gap-1.5 mb-2 sm:mb-4">
+            <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-xl bg-white/[0.1] border border-white/20 flex items-center justify-center text-[#99FFFF] shadow-[0_0_12px_rgba(153,255,255,0.3)]">
               {icon}
             </div>
-            <span className="text-[10px] tracking-[0.2em] font-semibold text-[#99FFFF] uppercase px-2.5 py-1 rounded-full bg-white/[0.08] border border-white/15">
+            <span className="text-[8px] sm:text-[10px] tracking-[0.12em] sm:tracking-[0.2em] font-semibold text-[#99FFFF] uppercase px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-full bg-white/[0.08] border border-white/15">
               {step}
             </span>
           </div>
-          <h2 className="text-lg sm:text-xl font-medium tracking-tight text-white mb-2">
+          <h2 className="text-[13px] leading-tight sm:text-xl font-medium tracking-tight text-white mb-1 sm:mb-2">
             {title}
           </h2>
-          <p className="text-xs sm:text-[13px] text-white/75 leading-relaxed">
+          <p className="text-[10.5px] leading-snug sm:text-[13px] text-white/75 sm:leading-relaxed line-clamp-5 sm:line-clamp-none">
             {desc}
           </p>
         </div>
-        <div className="pt-3 border-t border-white/10 flex items-center justify-center text-xs font-medium text-[#99FFFF]">
+        <div className="pt-1.5 sm:pt-3 border-t border-white/10 flex items-center justify-center text-[10px] sm:text-xs font-medium text-[#99FFFF]">
           <span className="flex items-center gap-1.5">
-            <MousePointerClick className="w-3.5 h-3.5" /> {t('step.hover')}
+            <MousePointerClick className="w-3.5 h-3.5" />
+            <span className="md:hidden">{t('step.tap')}</span>
+            <span className="hidden md:inline">{t('step.hover')}</span>
           </span>
         </div>
       </div>
@@ -103,21 +105,21 @@ function CardBack({ card }: { card: VisorCardItem }) {
   return (
     <div className="absolute inset-0 rounded-xl overflow-hidden">
       <div
-        className="relative h-full w-full p-5 rounded-xl text-white flex flex-col border border-[#99FFFF]/40 bg-[#0b131e]/50 backdrop-blur-xl"
+        className="relative h-full w-full p-3 sm:p-5 rounded-xl text-white flex flex-col overflow-hidden border border-[#99FFFF]/40 bg-[#0b131e]/50 backdrop-blur-xl"
         style={{
           boxShadow: `0 0 24px 0 ${card.gradientFrom}33, inset 0 0 0 1px rgba(255,255,255,0.12)`,
         }}
       >
-        <div>
-          <span className="text-[10px] tracking-[0.2em] font-semibold uppercase text-[#99FFFF]">
+        <div className="min-h-0 flex-1 overflow-hidden">
+          <span className="text-[9px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.2em] font-semibold uppercase text-[#99FFFF]">
             {card.step} — {t('step.details')}
           </span>
-          <h3 className="text-base font-semibold mt-1.5 mb-3 text-white">
+          <h3 className="text-[13px] sm:text-base font-semibold mt-1 mb-1.5 sm:mb-3 text-white">
             {card.backTitle || card.title}
           </h3>
-          <ul className="space-y-2">
+          <ul className="space-y-1 sm:space-y-2">
             {card.backPoints.map((point, i) => (
-              <li key={i} className="flex items-start gap-2 text-[11.5px] leading-snug text-white/80">
+              <li key={i} className="flex items-start gap-1.5 sm:gap-2 text-[9.5px] sm:text-[11.5px] leading-snug text-white/80">
                 <CheckCircle2 className="w-3.5 h-3.5 mt-0.5 shrink-0 text-[#99FFFF]" />
                 <span>{point}</span>
               </li>
@@ -133,7 +135,7 @@ export default function SkewCards({ cards, onCardClick }: SkewCardsProps) {
   const translatedCards = useVisorCards();
   const items = cards ?? translatedCards;
   return (
-    <div className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 justify-items-center items-stretch py-2">
+    <div className="w-full grid grid-cols-2 xl:grid-cols-4 gap-2 sm:gap-6 justify-items-center items-stretch py-1 sm:py-2">
       {items.map((card, idx) => (
         <div
           key={idx}
@@ -147,7 +149,7 @@ export default function SkewCards({ cards, onCardClick }: SkewCardsProps) {
           <FlippingCard
             width={280}
             height={330}
-            className="!w-full border-white/20 bg-transparent dark:bg-transparent dark:border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.35)]"
+            className="!w-full !h-[228px] sm:!h-[var(--height)] border-white/20 bg-transparent dark:bg-transparent dark:border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.35)]"
             frontContent={<CardFront card={card} />}
             backContent={<CardBack card={card} />}
           />

@@ -460,9 +460,9 @@
         {
           "name": "Core",
           "subtitle": "El Constructor",
-          "price": "$12.99",
+          "price": "$19.90",
           "period": "/mes",
-          "yearlyPrice": "$89.99/yr (ahorra 42%)",
+          "yearlyPrice": "$139.90/yr (ahorra 41%)",
           "features": [
             "Todo en Free +",
             "Plan completo de 12 semanas (Semanas 2–12)",
@@ -481,9 +481,9 @@
         {
           "name": "Pro",
           "subtitle": "El Intérprete",
-          "price": "$19.99",
+          "price": "$29.90",
           "period": "/mes",
-          "yearlyPrice": "$139.99/yr (ahorra 42%)",
+          "yearlyPrice": "$199.90/yr (ahorra 44%)",
           "features": [
             "Todo en Core +",
             "Escáner de alimentos por IA (registro automático con la cámara)",
@@ -498,9 +498,9 @@
         {
           "name": "Elite",
           "subtitle": "El Camino Olympia",
-          "price": "$27.99",
+          "price": "$44.90",
           "period": "/mes",
-          "yearlyPrice": "$199.99/yr (ahorra 40%)",
+          "yearlyPrice": "$299.90/yr (ahorra 44%)",
           "features": [
             "Todo en Pro +",
             "Modo Olympia — render IA más avanzado",

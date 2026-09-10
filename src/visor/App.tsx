@@ -8,8 +8,10 @@ import { FeaturesSection } from './components/FeaturesSection';
 import { WhatsInsideSection } from './components/WhatsInsideSection';
 import { TransformationCards } from './components/TransformationCards';
 import { PersonalTrainingSection } from './components/PersonalTrainingSection';
-import { PERMANENT_VIDEO_URL, SECOND_VIDEO_URL } from './constants';
+import { PERMANENT_VIDEO_URL } from './constants';
+import featuresBg from '@/assets/features-bg.jpg';
 import Footer from '@/components/Footer';
+import { GuidesSection } from './components/GuidesSection';
 import { EliteCoachesDialog } from '@/components/EliteCoachesDialog';
 import { SignUpDialog } from '@/components/SignUpDialog';
 import { SignInDialog } from '@/components/SignInDialog';
@@ -49,13 +51,6 @@ export default function App() {
   const { scrollProgress, canvasLive, videoRef, canvasRef, containerRef } =
     useVideoScrub(VIDEO_URL);
 
-  const {
-    scrollProgress: secondProgress,
-    canvasLive: secondCanvasLive,
-    videoRef: secondVideoRef,
-    canvasRef: secondCanvasRef,
-    containerRef: secondContainerRef,
-  } = useVideoScrub(SECOND_VIDEO_URL);
 
   const [modalType, setModalType] = useState<'get-app' | 'sign-in' | null>(null);
   const [eliteCoachesOpen, setEliteCoachesOpen] = useState(false);
@@ -87,11 +82,13 @@ export default function App() {
     s2Opacity = Math.max(0, 1 - (p - 0.25) / 0.03);
   }
 
+  // Section 4 must only appear after the transformation panels
+  // (top-[480vh] + ~555vh of content ≈ 1035vh of a 1150vh max scroll ≈ 0.90).
   let s4Opacity = 0;
-  if (p < 0.82) {
+  if (p < 0.9) {
     s4Opacity = 0;
-  } else if (p < 0.86) {
-    s4Opacity = (p - 0.82) / 0.04;
+  } else if (p < 0.94) {
+    s4Opacity = (p - 0.9) / 0.04;
   } else {
     s4Opacity = 1;
   }
@@ -122,7 +119,7 @@ export default function App() {
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     } else if (index === 3) {
       // Coaching -> Personal Training, Your Door (section 4 of hero track)
-      scrollToProgress(0.92);
+      scrollToProgress(0.96);
     } else if (index === 4) {
       const el = document.getElementById('whats-inside-section');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -148,8 +145,9 @@ export default function App() {
         {/* Sticky Full Viewport Scene */}
         <div
           id="sticky-scene-container"
-          className="sticky top-0 w-full h-screen overflow-hidden"
+          className="sticky top-0 w-full h-[100dvh] overflow-hidden"
         >
+
         {/* 1) Video Full Cover */}
         <video
           ref={videoRef}
@@ -279,7 +277,7 @@ export default function App() {
           {/* SECTION 2 (How VISOR AI Fitness App Works - 4 Glassmorphism Cards) */}
           <section
             id="section-2-center"
-            className="absolute inset-0 px-4 sm:px-8 md:px-12 pt-28 sm:pt-32 md:pt-36 pb-8 sm:pb-12 flex flex-col items-center justify-center pointer-events-none overflow-y-auto sm:overflow-visible"
+            className="absolute inset-0 px-3 sm:px-8 md:px-12 pt-20 sm:pt-32 md:pt-36 pb-6 sm:pb-12 flex flex-col items-center justify-center pointer-events-none overflow-hidden sm:overflow-visible"
             style={{
               opacity: s2Opacity,
               transition: 'opacity 0.1s ease-out',
@@ -314,7 +312,7 @@ export default function App() {
             >
               <button
                 id="section-2-down-btn"
-                onClick={() => scrollToProgress(0.85)}
+                onClick={() => scrollToProgress(0.93)}
                 aria-label="Scroll down"
                 className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity cursor-pointer text-white border border-white/30 bg-black/20 backdrop-blur-md"
               >
@@ -349,41 +347,31 @@ export default function App() {
       </div>
 
         {/* Body transformation panels scroll over video 1 inside this track. */}
-        <div className="absolute inset-x-0 top-[350vh] z-10">
+        <div className="absolute inset-x-0 top-[480vh] z-10">
           <TransformationCards />
         </div>
     </div>
 
-      {/* Secondary Video Scrub Track (Features -> Programs -> What's Inside VISOR) */}
+      {/* Secondary Track (Features -> Programs -> What's Inside VISOR) */}
       <div
-        ref={secondContainerRef}
         id="features-flow-track"
         className="relative bg-[#070b12]"
       >
-        {/* Sticky Background Video scrubbing synchronously across all 3 components */}
-        <div className="sticky top-0 w-full h-screen overflow-hidden pointer-events-none z-0">
-          <video
-            ref={secondVideoRef}
-            id="features-scrub-video"
-            src={resolveVideoUrl(SECOND_VIDEO_URL)}
-            crossOrigin="anonymous"
-            muted
-            playsInline
-            preload="auto"
+        {/* Sticky still background — portal scene, no person */}
+        <div className="sticky top-0 w-full h-[100dvh] overflow-hidden pointer-events-none z-0">
+          <img
+            src={featuresBg}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
             className="absolute inset-0 w-full h-full object-cover"
           />
-
-          <canvas
-            ref={secondCanvasRef}
-            id="features-scrub-canvas"
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
-              secondCanvasLive ? 'opacity-100' : 'opacity-0'
-            }`}
-          />
+          <div className="absolute inset-0 bg-[#070b12]/35" />
         </div>
 
-        {/* Content Layers on top of the scrubbing video */}
-        <div className="relative z-10 -mt-[100vh]">
+        {/* Content Layers on top of the background */}
+        <div className="relative z-10 -mt-[100dvh]">
           {/* 1. AI Fitness App Features to Transform Your Body */}
           <FeaturesSection onGetApp={openAppStore} />
 
@@ -414,6 +402,8 @@ export default function App() {
         onOpenChange={setSignInOpen}
         onSignUp={() => setSignUpOpen(true)}
       />
+
+      <GuidesSection />
 
       <Footer />
     </div>

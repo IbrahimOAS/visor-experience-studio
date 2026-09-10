@@ -59,7 +59,7 @@ export function FeaturesSection({ onGetApp }: FeaturesSectionProps) {
   return (
     <section 
       id="features-section" 
-      className="relative z-10 w-full py-20 sm:py-28 px-4 sm:px-8 md:px-12 lg:px-20 bg-transparent text-white border-t border-white/10"
+      className="relative z-10 w-full overflow-hidden py-20 sm:py-28 px-4 sm:px-8 md:px-12 lg:px-20 bg-transparent text-white border-t border-white/10"
     >
       {/* Subtle ambient lighting */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-[#99FFFF]/5 blur-[160px] rounded-full pointer-events-none" />

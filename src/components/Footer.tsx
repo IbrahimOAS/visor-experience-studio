@@ -23,6 +23,7 @@ const Footer = () => {
       title: t("footer.company"),
       links: [
         { label: t("footer.whyVisor"), href: "/why-visor" },
+        { label: "Guides", href: "/blog" },
         { label: "VS MyFitnessPal", href: "/vs/myfitnesspal" },
         { label: "VS Freeletics", href: "/vs/freeletics" },
         { label: t("footer.support"), href: "/support" },

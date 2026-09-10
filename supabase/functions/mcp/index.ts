@@ -2,6 +2,100 @@
 // To take ownership, delete this banner line; the plugin then leaves the file alone.
 // supabase function: mcp
 // Bundled from src/lib/mcp/index.ts by @lovable.dev/mcp-js.
+<<<<<<< HEAD
+=======
+// src/lib/mcp/index.ts
+import { defineMcp } from "npm:@lovable.dev/mcp-js@0.20.0";
+
+// src/lib/mcp/tools/get-app-info.ts
+import { defineTool } from "npm:@lovable.dev/mcp-js@0.20.0";
+var get_app_info_default = defineTool({
+  name: "get_app_info",
+  title: "Get VISOR app info",
+  description: "Returns overview information about the VISOR AI fitness app, including its purpose, key features, and subscription tiers.",
+  inputSchema: {},
+  annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
+  handler: () => ({
+    content: [
+      {
+        type: "text",
+        text: JSON.stringify(
+          {
+            name: "VISOR",
+            tagline: "AI Body Transformation App",
+            description: "VISOR is an emotionally intelligent AI fitness platform combining adaptive coaching, AI body transformation visuals, and behavior-driven identity tracking (Soul Track).",
+            keyFeatures: [
+              "Emotionally Adaptive AI Coach",
+              "AI Body Transformation (Months 1, 3, Olympia)",
+              "Soul Track identity alignment system",
+              "Personalized workout & nutrition planning"
+            ],
+            tiers: [
+              { name: "Free \u2014 Awakening", priceUsdPerMonth: 0 },
+              { name: "Core \u2014 Builder", priceUsdPerMonth: 12.99 },
+              { name: "Pro \u2014 Performer", priceUsdPerMonth: 19.99 },
+              { name: "Elite \u2014 Olympia Path", priceUsdPerMonth: 27.99 }
+            ],
+            personalCoaching: "Human Elite Coaches \u2014 coming soon, not yet available.",
+            legalOperator: "Cedra Kaddour FZ-LLC, Ras Al Khaimah, United Arab Emirates",
+            appStore: "https://apps.apple.com/us/app/visor-fitness/id6776579817",
+            website: "https://visorfitness.com"
+          },
+          null,
+          2
+        )
+      }
+    ]
+  })
+});
+
+// src/lib/mcp/tools/list-features.ts
+import { defineTool as defineTool2 } from "npm:@lovable.dev/mcp-js@0.20.0";
+import { z } from "npm:zod@^4.4.3";
+var list_features_default = defineTool2({
+  name: "list_features",
+  title: "List VISOR features",
+  description: "Lists VISOR's main product features, optionally filtered by category (coaching, transformation, tracking, all).",
+  inputSchema: {
+    category: z.enum(["coaching", "transformation", "tracking", "all"]).default("all").describe("Feature category filter.")
+  },
+  annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
+  handler: ({ category }) => {
+    const features = {
+      coaching: [
+        "Emotionally adaptive AI coach with multiple tones",
+        "Personalized daily check-ins",
+        "Context-aware motivation"
+      ],
+      transformation: [
+        "AI body transformation visuals (Month 1, Month 3, Olympia)",
+        "Progress photo timeline",
+        "Realistic before/after simulation"
+      ],
+      tracking: [
+        "Soul Track behavioral & identity alignment",
+        "Workout & nutrition logging",
+        "Streaks and consistency metrics"
+      ]
+    };
+    const chosen = category === "all" ? Object.entries(features).flatMap(([k, v]) => v.map((f) => `[${k}] ${f}`)) : features[category];
+    return {
+      content: [{ type: "text", text: chosen.join("\n") }],
+      structuredContent: { category, features: chosen }
+    };
+  }
+});
+
+// src/lib/mcp/index.ts
+var mcp_default = defineMcp({
+  name: "visor-mcp",
+  title: "VISOR MCP",
+  version: "0.1.0",
+  instructions: "Tools for the VISOR AI fitness app. Use `get_app_info` for an overview and `list_features` to explore product capabilities.",
+  tools: [get_app_info_default, list_features_default]
+});
+
+>>>>>>> 2b7e18e144acff11b0a545bbcc83ab3d16e58d66
 // lovable-mcp-supabase-entry.ts
 import mcp from "npm:D:\\projects\\ventatech projects\\visor-experience-studio\\src\\lib\\mcp\\index.ts";
 import { createSupabaseHandler } from "npm:@lovable.dev/mcp-js@0.20.1/stacks/supabase";

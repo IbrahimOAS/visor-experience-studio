@@ -4,8 +4,18 @@ import * as MP4Box from 'mp4box';
 const LERP_TAU = 8;
 const SNAP = 0.002;
 const LRU_MAX = 24;
+const LRU_MAX_MOBILE = 8;
+const LRU_MAX_LOW_END = 6;
 const LEAD = 24;
+const LEAD_MOBILE = 6;
 const WATCHDOG = 8000;
+const WATCHDOG_MOBILE = 15000;
+
+// Frames are re-encoded as still images. Phones get a much lighter bank:
+// fewer frames, smaller pixels, cheaper JPEG. Low-end phones go lighter still.
+const MOBILE_PROFILE = { maxWidth: 540, stride: 3, quality: 0.68, lru: LRU_MAX_MOBILE };
+const LOW_END_PROFILE = { maxWidth: 420, stride: 5, quality: 0.6, lru: LRU_MAX_LOW_END };
+const DESKTOP_PROFILE = { maxWidth: 0, stride: 1, quality: 0.82, lru: LRU_MAX };
 
 interface FrameItem {
   ts: number; // in microseconds
@@ -19,6 +29,34 @@ interface UseVideoScrubReturn {
   canvasRef: RefObject<HTMLCanvasElement | null>;
   containerRef: RefObject<HTMLDivElement | null>;
 }
+
+function isMobileScrub(): boolean {
+  if (typeof window === 'undefined') return false;
+  return window.matchMedia('(max-width: 767px), (pointer: coarse)').matches;
+}
+
+// Weak CPU or little RAM reported by the device -> most aggressive settings.
+function isLowEndDevice(): boolean {
+  if (typeof navigator === 'undefined') return false;
+  const nav = navigator as Navigator & { deviceMemory?: number };
+  const memory = typeof nav.deviceMemory === 'number' ? nav.deviceMemory : undefined;
+  const cores = typeof nav.hardwareConcurrency === 'number' ? nav.hardwareConcurrency : undefined;
+  if (memory !== undefined && memory <= 4) return true;
+  if (cores !== undefined && cores <= 4) return true;
+  return false;
+}
+
+function scrubProfile() {
+  if (!isMobileScrub()) return DESKTOP_PROFILE;
+  return isLowEndDevice() ? LOW_END_PROFILE : MOBILE_PROFILE;
+}
+
+function lruLimit(): number {
+  return scrubProfile().lru;
+}
+
+
+
 
 export function resolveVideoUrl(url: string): string {
   if (!url) return '/hero.mp4';
@@ -103,8 +141,9 @@ export function useVideoScrub(videoSrc: string): UseVideoScrubReturn {
       const bitmap = await createImageBitmap(frame!.blob);
       lru.set(index, bitmap);
 
-      // Evict oldest if exceeding LRU_MAX
-      if (lru.size > LRU_MAX) {
+      // Evict oldest when over the device-specific cache budget
+      if (lru.size > lruLimit()) {
+
         const oldestKey = lru.keys().next().value;
         if (oldestKey !== undefined && oldestKey !== activeBitmapIndexRef.current) {
           const old = lru.get(oldestKey);
@@ -126,7 +165,7 @@ export function useVideoScrub(videoSrc: string): UseVideoScrubReturn {
             .then((warmBitmap) => {
               if (!lruRef.current.has(neighborIdx)) {
                 lruRef.current.set(neighborIdx, warmBitmap);
-                if (lruRef.current.size > LRU_MAX) {
+                if (lruRef.current.size > lruLimit()) {
                   const evictKey = lruRef.current.keys().next().value;
                   if (
                     evictKey !== undefined &&
@@ -169,6 +208,10 @@ export function useVideoScrub(videoSrc: string): UseVideoScrubReturn {
       return;
     }
 
+    const mobile = isMobileScrub();
+    const profile = scrubProfile();
+
+
     let isAborted = false;
     let decoder: VideoDecoder | null = null;
     let watchdogTimer: NodeJS.Timeout | null = null;
@@ -184,7 +227,8 @@ export function useVideoScrub(videoSrc: string): UseVideoScrubReturn {
           buildingRef.current = false;
           setCanvasLive(false);
         }
-      }, WATCHDOG);
+      }, mobile ? WATCHDOG_MOBILE : WATCHDOG);
+
 
       try {
         const response = await fetch(resolvedSrc, { mode: 'cors' });
@@ -227,34 +271,52 @@ export function useVideoScrub(videoSrc: string): UseVideoScrubReturn {
           const codec = videoTrack.codec;
 
           let decodeQueueCount = 0;
+          let outputIndex = 0;
           const framePromises: Promise<void>[] = [];
+          const stride = profile.stride;
+          const mimeType = mobile ? 'image/jpeg' : 'image/webp';
+          const quality = profile.quality;
 
           decoder = new VideoDecoder({
             output: (videoFrame: VideoFrame) => {
               decodeQueueCount--;
+              const frameIndex = outputIndex++;
+
+              // Phones keep every Nth frame so the bank stays memory-friendly.
+              if (stride > 1 && frameIndex % stride !== 0) {
+                videoFrame.close();
+                return;
+              }
+
               const timestamp = videoFrame.timestamp;
-              const displayWidth = videoFrame.displayWidth;
-              const displayHeight = videoFrame.displayHeight;
+              let targetWidth = videoFrame.displayWidth;
+              let targetHeight = videoFrame.displayHeight;
+              if (profile.maxWidth > 0 && targetWidth > profile.maxWidth) {
+                const scale = profile.maxWidth / targetWidth;
+                targetWidth = Math.round(targetWidth * scale);
+                targetHeight = Math.round(targetHeight * scale);
+              }
+
 
               const processPromise = (async () => {
                 try {
                   let blob: Blob | null = null;
                   if (typeof OffscreenCanvas !== 'undefined') {
-                    const offscreen = new OffscreenCanvas(displayWidth, displayHeight);
+                    const offscreen = new OffscreenCanvas(targetWidth, targetHeight);
                     const ctx = offscreen.getContext('2d');
                     if (ctx) {
-                      ctx.drawImage(videoFrame, 0, 0);
-                      blob = await offscreen.convertToBlob({ type: 'image/webp', quality: 0.82 });
+                      ctx.drawImage(videoFrame, 0, 0, targetWidth, targetHeight);
+                      blob = await offscreen.convertToBlob({ type: mimeType, quality });
                     }
                   } else {
                     const canvas = document.createElement('canvas');
-                    canvas.width = displayWidth;
-                    canvas.height = displayHeight;
+                    canvas.width = targetWidth;
+                    canvas.height = targetHeight;
                     const ctx = canvas.getContext('2d');
                     if (ctx) {
-                      ctx.drawImage(videoFrame, 0, 0);
+                      ctx.drawImage(videoFrame, 0, 0, targetWidth, targetHeight);
                       blob = await new Promise<Blob | null>((resolve) =>
-                        canvas.toBlob(resolve, 'image/webp', 0.82)
+                        canvas.toBlob(resolve, mimeType, quality)
                       );
                     }
                   }
@@ -269,6 +331,7 @@ export function useVideoScrub(videoSrc: string): UseVideoScrubReturn {
 
               framePromises.push(processPromise);
             },
+
             error: () => {
               // Some browsers expose WebCodecs but reject this MP4's avcC data.
               // Stop immediately and use the reliable video-seeking path.
@@ -297,8 +360,9 @@ export function useVideoScrub(videoSrc: string): UseVideoScrubReturn {
             for (const sample of samples) {
               if (isAborted) break;
 
-              // Throttle with LEAD so decode doesn't outrun blob encoding
-              while (decodeQueueCount >= LEAD && !isAborted) {
+              // Throttle so decode doesn't outrun still-image encoding
+              while (decodeQueueCount >= (mobile ? LEAD_MOBILE : LEAD) && !isAborted) {
+
                 await new Promise((r) => setTimeout(r, 10));
               }
 
@@ -383,6 +447,38 @@ export function useVideoScrub(videoSrc: string): UseVideoScrubReturn {
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
+
+    // On phones: a video that has never played stays blank, so kick off a
+    // muted inline play once and pause it again immediately. After that the
+    // element can be seeked by scroll position like on desktop.
+    if (isMobileScrub()) {
+      video.loop = false;
+      video.muted = true;
+      video.playsInline = true;
+      let primed = false;
+      const prime = () => {
+        if (primed) return;
+        const play = video.play();
+        if (play && typeof play.then === 'function') {
+          play
+            .then(() => {
+              primed = true;
+              video.pause();
+            })
+            .catch(() => {});
+        }
+      };
+      prime();
+      video.addEventListener('loadeddata', prime);
+      document.addEventListener('touchstart', prime, { once: true, passive: true });
+      const cleanupMobile = () => {
+        video.removeEventListener('loadeddata', prime);
+        document.removeEventListener('touchstart', prime);
+      };
+      window.addEventListener('pagehide', cleanupMobile, { once: true });
+    }
+
+
 
     const handleLoadedMetadata = () => {
       if (video.duration && !isNaN(video.duration) && video.duration > 0) {
