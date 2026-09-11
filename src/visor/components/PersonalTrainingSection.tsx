@@ -43,50 +43,20 @@ export function PersonalTrainingSection({ overlay = false }: { overlay?: boolean
           {t('pt.sub')}
         </p>
 
-        {/* Coach images */}
-        <div className={`${overlay ? 'mt-5' : 'mt-10'} grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 w-full max-w-3xl`}>
-          <div className={`relative ${overlay ? 'h-36 sm:h-44' : 'h-52 sm:h-64'} rounded-2xl overflow-hidden border border-white/10 group`}>
-            <img
-              src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=900&auto=format&fit=crop"
-              alt="Personal trainer coaching a client in the gym"
-              className="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-          </div>
-          <div className={`relative ${overlay ? 'h-36 sm:h-44' : 'h-52 sm:h-64'} rounded-2xl overflow-hidden border border-[#99FFFF]/25 group shadow-[0_0_40px_rgba(153,255,255,0.08)]`}>
-            <img
-              src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=900&auto=format&fit=crop"
-              alt="Personalized fitness coach high-fiving a client"
-              className="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-            <div className="absolute bottom-4 left-4 right-4 text-left">
-              <p className="text-sm sm:text-base font-semibold text-white">
-                {t('pt.cardTitle')}
-              </p>
-              <p className="mt-1 text-[11px] sm:text-xs text-white/60">
-                {t('pt.cardDesc')}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Feature cards */}
-        <div className={`${overlay ? 'mt-4' : 'mt-6'} grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full max-w-3xl`}>
-          {FEATURES.map((f) => (
-            <div
-              key={f.title}
-              className={`rounded-2xl border border-white/10 bg-[#0b131e]/50 backdrop-blur-xl ${overlay ? 'p-3.5' : 'p-5'} text-left transition-all duration-300 hover:border-[#99FFFF]/40 hover:bg-white/[0.07] hover:shadow-[0_0_30px_rgba(153,255,255,0.08)]}`}
-            >
-              <div className="w-8 h-8 rounded-lg bg-[#99FFFF]/10 border border-[#99FFFF]/25 flex items-center justify-center mb-3">
-                <f.icon className="w-4 h-4 text-[#99FFFF]" />
-              </div>
-              <h3 className="text-sm sm:text-base font-semibold text-white">{f.title}</h3>
-              <p className="mt-1.5 text-xs sm:text-sm text-white/55 leading-relaxed">{f.desc}</p>
-            </div>
-          ))}
+        {/* Fanned card stack */}
+        <div className={`${overlay ? 'mt-4' : 'mt-8'} w-full`}>
+          <CardStack
+            items={CARDS}
+            maxVisible={7}
+            cardWidth={cardWidth}
+            cardHeight={cardHeight}
+            overlap={0.5}
+            spreadDeg={40}
+            autoAdvance
+            intervalMs={3200}
+            pauseOnHover
+            showDots
+          />
         </div>
 
         {/* Meet Your Coaches — coming soon card */}
