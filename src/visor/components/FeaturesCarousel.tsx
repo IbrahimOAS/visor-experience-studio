@@ -8,6 +8,10 @@ import {
   type PanInfo,
 } from 'framer-motion';
 import { X, Sparkles, Hand } from 'lucide-react';
+import logoAnimation from '@/assets/logo-animation.mp4.asset.json';
+
+const logoVideo = logoAnimation.url;
+const isVideo = (src: string) => src.endsWith('.mp4');
 
 const cards = [
   '/app-screens/ui-1.jpeg',
@@ -17,7 +21,7 @@ const cards = [
   '/app-screens/ui-5.jpeg',
   '/app-screens/ui-6.jpeg',
   '/app-screens/ui-7.jpeg',
-  '/app-screens/ui-8.png',
+  logoVideo,
   '/app-screens/ui-9.jpeg',
   '/app-screens/ui-10.jpeg',
 ];
