@@ -101,7 +101,7 @@ export function PersonalTrainingSection({ overlay = false }: { overlay?: boolean
         <div className={`${overlay ? 'mt-4' : 'mt-8'} w-full`}>
           <CardStack
             items={CARDS}
-            maxVisible={7}
+            maxVisible={8}
             cardWidth={cardWidth}
             cardHeight={cardHeight}
             overlap={0.5}
