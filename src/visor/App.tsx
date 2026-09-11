@@ -9,7 +9,7 @@ import { WhatsInsideSection } from './components/WhatsInsideSection';
 import { TransformationCards } from './components/TransformationCards';
 import { PersonalTrainingSection } from './components/PersonalTrainingSection';
 import { PERMANENT_VIDEO_URL } from './constants';
-import featuresBg from '@/assets/features-bg.jpg';
+
 import Footer from '@/components/Footer';
 import { GuidesSection } from './components/GuidesSection';
 import { EliteCoachesDialog } from '@/components/EliteCoachesDialog';
