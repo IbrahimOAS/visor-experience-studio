@@ -1,18 +1,66 @@
 import React from 'react';
-import { BadgeCheck, MapPin, MonitorSmartphone, CalendarClock, Bell, UserRound } from 'lucide-react';
+import { Bell, UserRound } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n';
+import { CardStack, type CardStackItem } from '@/components/ui/card-stack';
 
 const APP_STORE_URL = 'https://apps.apple.com/us/app/visor-fitness/id6776579817';
 
 export function PersonalTrainingSection({ overlay = false }: { overlay?: boolean; visible?: boolean }) {
   const { t } = useLanguage();
-  const FEATURES = [
-    { icon: BadgeCheck, title: t('pt.f1t'), desc: t('pt.f1d') },
-    { icon: MapPin, title: t('pt.f2t'), desc: t('pt.f2d') },
-    { icon: MonitorSmartphone, title: t('pt.f3t'), desc: t('pt.f3d') },
-    { icon: CalendarClock, title: t('pt.f4t'), desc: t('pt.f4d') },
+
+  const [vw, setVw] = React.useState(() => (typeof window !== 'undefined' ? window.innerWidth : 1280));
+  React.useEffect(() => {
+    const onResize = () => setVw(window.innerWidth);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  const isMobile = vw < 640;
+  const cardWidth = isMobile ? Math.min(300, vw - 60) : overlay ? 380 : 460;
+  const cardHeight = isMobile ? 200 : overlay ? 230 : 290;
+
+  const CARDS: CardStackItem[] = [
+    {
+      id: 1,
+      tag: t('pt.badge'),
+      title: t('pt.f1t'),
+      description: t('pt.f1d'),
+      imageSrc: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=900&auto=format&fit=crop',
+    },
+    {
+      id: 2,
+      title: t('pt.f2t'),
+      description: t('pt.f2d'),
+      imageSrc: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=900&auto=format&fit=crop',
+    },
+    {
+      id: 3,
+      title: t('pt.f3t'),
+      description: t('pt.f3d'),
+      imageSrc: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=900&auto=format&fit=crop',
+    },
+    {
+      id: 4,
+      title: t('pt.f4t'),
+      description: t('pt.f4d'),
+      imageSrc: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=900&auto=format&fit=crop',
+    },
+    {
+      id: 5,
+      title: t('pt.cardTitle'),
+      description: t('pt.cardDesc'),
+      imageSrc: 'https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=900&auto=format&fit=crop',
+    },
+    {
+      id: 6,
+      tag: t('pt.comingSoon'),
+      title: t('pt.meetTitle'),
+      description: t('pt.meetDesc'),
+      imageSrc: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=900&auto=format&fit=crop',
+    },
   ];
+
 
   return (
     <section
