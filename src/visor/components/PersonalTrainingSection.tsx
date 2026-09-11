@@ -3,6 +3,7 @@ import { Bell, UserRound } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n';
 import { CardStack, type CardStackItem } from '@/components/ui/card-stack';
+import ptProgressImg from '@/assets/pt-progress-tracking.jpg';
 
 const APP_STORE_URL = 'https://apps.apple.com/us/app/visor-fitness/id6776579817';
 
@@ -63,7 +64,7 @@ export function PersonalTrainingSection({ overlay = false }: { overlay?: boolean
       id: 7,
       title: t('pt.f5t'),
       description: t('pt.f5d'),
-      imageSrc: 'https://images.unsplash.com/photo-1461938337379-4b537cd2cbb4?q=80&w=900&auto=format&fit=crop',
+      imageSrc: ptProgressImg,
     },
   ];
 
