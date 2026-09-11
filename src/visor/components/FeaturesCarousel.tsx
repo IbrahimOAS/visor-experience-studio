@@ -8,6 +8,10 @@ import {
   type PanInfo,
 } from 'framer-motion';
 import { X, Sparkles, Hand } from 'lucide-react';
+import logoAnimation from '@/assets/logo-animation.mp4.asset.json';
+
+const logoVideo = logoAnimation.url;
+const isVideo = (src: string) => src.endsWith('.mp4');
 
 const cards = [
   '/app-screens/ui-1.jpeg',
@@ -17,7 +21,7 @@ const cards = [
   '/app-screens/ui-5.jpeg',
   '/app-screens/ui-6.jpeg',
   '/app-screens/ui-7.jpeg',
-  '/app-screens/ui-8.png',
+  logoVideo,
   '/app-screens/ui-9.jpeg',
   '/app-screens/ui-10.jpeg',
 ];
@@ -98,11 +102,22 @@ const Cylinder = memo(({ handleClick, controls, isActive }: CylinderProps) => {
             onClick={() => handleClick(imgUrl, i)}
           >
             <div className="relative w-full rounded-xl overflow-hidden border border-white/20 shadow-[0_8px_25px_rgba(0,0,0,0.7)] group-hover:border-[#99FFFF]/80 group-hover:shadow-[0_0_25px_rgba(153,255,255,0.3)] transition-all duration-300 bg-[#0d141f]">
-              <img
-                src={imgUrl}
-                alt={`VISOR app screen ${i + 1}`}
-                className="pointer-events-none w-full object-cover aspect-[9/20]"
-              />
+              {isVideo(imgUrl) ? (
+                <video
+                  src={imgUrl}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="pointer-events-none w-full object-cover aspect-[9/20]"
+                />
+              ) : (
+                <img
+                  src={imgUrl}
+                  alt={`VISOR app screen ${i + 1}`}
+                  className="pointer-events-none w-full object-cover aspect-[9/20]"
+                />
+              )}
               {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#070b12] via-transparent to-black/30 pointer-events-none" />
             </div>
@@ -166,14 +181,28 @@ export const FeaturesCarousel = () => {
                     <X className="w-5 h-5" />
                   </button>
 
-                  <motion.img
-                    src={activeImg}
-                    alt="VISOR App Preview"
-                    className="w-full max-h-[75vh] rounded-3xl shadow-[0_0_50px_rgba(153,255,255,0.3)] object-contain border border-[#99FFFF]/40"
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-                  />
+                  {isVideo(activeImg) ? (
+                    <motion.video
+                      src={activeImg}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full max-h-[75vh] rounded-3xl shadow-[0_0_50px_rgba(153,255,255,0.3)] object-contain border border-[#99FFFF]/40"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                    />
+                  ) : (
+                    <motion.img
+                      src={activeImg}
+                      alt="VISOR App Preview"
+                      className="w-full max-h-[75vh] rounded-3xl shadow-[0_0_50px_rgba(153,255,255,0.3)] object-contain border border-[#99FFFF]/40"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                    />
+                  )}
 
                   <div className="mt-4 text-center">
                     <h4 className="text-base font-semibold text-white">
