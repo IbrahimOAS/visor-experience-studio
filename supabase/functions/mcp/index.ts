@@ -2,8 +2,6 @@
 // To take ownership, delete this banner line; the plugin then leaves the file alone.
 // supabase function: mcp
 // Bundled from src/lib/mcp/index.ts by @lovable.dev/mcp-js.
-<<<<<<< HEAD
-=======
 // src/lib/mcp/index.ts
 import { defineMcp } from "npm:@lovable.dev/mcp-js@0.20.0";
 
@@ -95,8 +93,6 @@ var mcp_default = defineMcp({
   tools: [get_app_info_default, list_features_default]
 });
 
->>>>>>> 2b7e18e144acff11b0a545bbcc83ab3d16e58d66
 // lovable-mcp-supabase-entry.ts
-import mcp from "npm:D:\\projects\\ventatech projects\\visor-experience-studio\\src\\lib\\mcp\\index.ts";
-import { createSupabaseHandler } from "npm:@lovable.dev/mcp-js@0.20.1/stacks/supabase";
-Deno.serve(createSupabaseHandler(mcp, { functionName: "mcp" }));
+import { createSupabaseHandler } from "npm:@lovable.dev/mcp-js@0.20.0/stacks/supabase";
+Deno.serve(createSupabaseHandler(mcp_default, { functionName: "mcp" }));
