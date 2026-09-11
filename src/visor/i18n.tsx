@@ -61,6 +61,8 @@ const EN: Dict = {
     'Combine in-person sessions with live video check-ins for accountability between visits.',
   'pt.f4t': 'Flexible Booking',
   'pt.f4d': 'Book single sessions or weekly packages. Reschedule anytime, no penalties.',
+  'pt.f5t': 'Progress Tracking & Check-ins',
+  'pt.f5d': 'Weekly check-ins, form reviews and measurable progress tracked in the app.',
   'pt.comingSoon': 'Coming Soon',
   'pt.meetTitle': 'Meet Your Coaches',
   'pt.meetDesc': 'Join the waitlist to be matched with verified coaches when we launch.',
@@ -303,6 +305,8 @@ const NO: Dict = {
     'Kombiner fysiske økter med videosjekker for ansvarlighet mellom besøkene.',
   'pt.f4t': 'Fleksibel booking',
   'pt.f4d': 'Book enkeltøkter eller ukespakker. Endre når som helst, uten gebyr.',
+  'pt.f5t': 'Fremgang og oppfølging',
+  'pt.f5d': 'Ukentlige oppfølginger, teknikkgjennomgang og målbar fremgang i appen.',
   'pt.comingSoon': 'Kommer snart',
   'pt.meetTitle': 'Møt coacherne dine',
   'pt.meetDesc':
@@ -549,6 +553,8 @@ const ES: Dict = {
   'pt.f4t': 'Reserva flexible',
   'pt.f4d':
     'Reserva sesiones sueltas o paquetes semanales. Reprograma cuando quieras, sin penalizaciones.',
+  'pt.f5t': 'Seguimiento y revisiones',
+  'pt.f5d': 'Revisiones semanales, análisis de técnica y progreso medible en la app.',
   'pt.comingSoon': 'Próximamente',
   'pt.meetTitle': 'Conoce a tus coaches',
   'pt.meetDesc':
@@ -796,6 +802,8 @@ const DE: Dict = {
     'Kombiniere Präsenztermine mit Live-Video-Check-ins für Verbindlichkeit zwischen den Besuchen.',
   'pt.f4t': 'Flexible Buchung',
   'pt.f4d': 'Buche Einzelsessions oder Wochenpakete. Jederzeit umbuchen, ohne Gebühren.',
+  'pt.f5t': 'Fortschritt & Check-ins',
+  'pt.f5d': 'Wöchentliche Check-ins, Technikanalyse und messbarer Fortschritt in der App.',
   'pt.comingSoon': 'Bald verfügbar',
   'pt.meetTitle': 'Lerne deine Coaches kennen',
   'pt.meetDesc':
@@ -1046,6 +1054,8 @@ const FR: Dict = {
   'pt.f4t': 'Réservation flexible',
   'pt.f4d':
     "Réservez des séances à l'unité ou des forfaits hebdomadaires. Reprogrammez à tout moment, sans pénalité.",
+  'pt.f5t': 'Suivi et points réguliers',
+  'pt.f5d': 'Points hebdomadaires, analyse technique et progrès mesurables dans l’app.',
   'pt.comingSoon': 'Bientôt disponible',
   'pt.meetTitle': 'Rencontrez vos coachs',
   'pt.meetDesc':
@@ -1294,6 +1304,8 @@ const AR: Dict = {
   'pt.f3d': 'اجمع بين الجلسات الحضورية والمتابعة المرئية المباشرة للالتزام بين الزيارات.',
   'pt.f4t': 'حجز مرن',
   'pt.f4d': 'احجز جلسات فردية أو باقات أسبوعية. أعد الجدولة في أي وقت دون غرامات.',
+  'pt.f5t': 'متابعة التقدم والمراجعات',
+  'pt.f5d': 'مراجعات أسبوعية وتحليل للأداء وتتبع تقدم قابل للقياس داخل التطبيق.',
   'pt.comingSoon': 'قريبًا',
   'pt.meetTitle': 'تعرّف على مدربيك',
   'pt.meetDesc': 'انضم إلى قائمة الانتظار ليتم مطابقتك مع مدربين موثّقين عند الإطلاق.',
