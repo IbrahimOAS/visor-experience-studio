@@ -9,7 +9,7 @@ import { WhatsInsideSection } from './components/WhatsInsideSection';
 import { TransformationCards } from './components/TransformationCards';
 import { PersonalTrainingSection } from './components/PersonalTrainingSection';
 import { PERMANENT_VIDEO_URL } from './constants';
-import featuresBg from '@/assets/features-bg.jpg';
+
 import Footer from '@/components/Footer';
 import { GuidesSection } from './components/GuidesSection';
 import { EliteCoachesDialog } from '@/components/EliteCoachesDialog';
@@ -355,23 +355,10 @@ export default function App() {
       {/* Secondary Track (Features -> Programs -> What's Inside VISOR) */}
       <div
         id="features-flow-track"
-        className="relative bg-[#070b12]"
+        className="relative bg-black"
       >
-        {/* Sticky still background — portal scene, no person */}
-        <div className="sticky top-0 w-full h-[100dvh] overflow-hidden pointer-events-none z-0">
-          <img
-            src={featuresBg}
-            alt=""
-            aria-hidden="true"
-            loading="lazy"
-            decoding="async"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-[#070b12]/35" />
-        </div>
-
-        {/* Content Layers on top of the background */}
-        <div className="relative z-10 -mt-[100dvh]">
+        {/* Content Layers on a plain black background */}
+        <div className="relative z-10">
           {/* 1. AI Fitness App Features to Transform Your Body */}
           <FeaturesSection onGetApp={openAppStore} />
 

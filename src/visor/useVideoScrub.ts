@@ -61,15 +61,12 @@ function lruLimit(): number {
 export function resolveVideoUrl(url: string): string {
   if (!url) return '/hero.mp4';
   if (url === '/hero.mp4' || url.includes('hero.mp4')) return '/hero.mp4';
-  if (url === '/features.mp4' || url.includes('features.mp4')) return '/features.mp4';
+  
   const gdriveMatch = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
   if (gdriveMatch && gdriveMatch[1]) {
     const id = gdriveMatch[1];
     if (id === '1g9eqlgA3ZBQe_SBcu7SXJfsLPQ3EXXXK') {
       return '/hero.mp4';
-    }
-    if (id === '1Gga1upu5VWZXAn-rth_PPAIKsXZVY6k7') {
-      return '/features.mp4';
     }
     return `/api/video?id=${id}`;
   }
