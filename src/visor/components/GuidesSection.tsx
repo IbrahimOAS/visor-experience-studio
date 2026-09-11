@@ -23,7 +23,7 @@ export const GuidesSection = () => {
   return (
     <section
       id="guides"
-      className="relative z-10 px-5 sm:px-6 py-16 sm:py-24 bg-black/40 backdrop-blur-sm"
+      className="relative z-10 px-5 sm:px-6 py-16 sm:py-24 bg-black"
     >
       <div className="max-w-6xl mx-auto">
         <div className="mb-8 sm:mb-12 text-center">
