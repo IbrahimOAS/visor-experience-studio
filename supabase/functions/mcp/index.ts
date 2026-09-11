@@ -49,7 +49,7 @@ var get_app_info_default = defineTool({
 
 // src/lib/mcp/tools/list-features.ts
 import { defineTool as defineTool2 } from "npm:@lovable.dev/mcp-js@0.20.1";
-import { z } from "npm:zod@^4.4.3";
+import { z } from "npm:zod@^4.6.2";
 var list_features_default = defineTool2({
   name: "list_features",
   title: "List VISOR features",
