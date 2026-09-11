@@ -181,14 +181,28 @@ export const FeaturesCarousel = () => {
                     <X className="w-5 h-5" />
                   </button>
 
-                  <motion.img
-                    src={activeImg}
-                    alt="VISOR App Preview"
-                    className="w-full max-h-[75vh] rounded-3xl shadow-[0_0_50px_rgba(153,255,255,0.3)] object-contain border border-[#99FFFF]/40"
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-                  />
+                  {isVideo(activeImg) ? (
+                    <motion.video
+                      src={activeImg}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full max-h-[75vh] rounded-3xl shadow-[0_0_50px_rgba(153,255,255,0.3)] object-contain border border-[#99FFFF]/40"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                    />
+                  ) : (
+                    <motion.img
+                      src={activeImg}
+                      alt="VISOR App Preview"
+                      className="w-full max-h-[75vh] rounded-3xl shadow-[0_0_50px_rgba(153,255,255,0.3)] object-contain border border-[#99FFFF]/40"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                    />
+                  )}
 
                   <div className="mt-4 text-center">
                     <h4 className="text-base font-semibold text-white">
