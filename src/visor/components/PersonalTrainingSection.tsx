@@ -59,6 +59,12 @@ export function PersonalTrainingSection({ overlay = false }: { overlay?: boolean
       description: t('pt.meetDesc'),
       imageSrc: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=900&auto=format&fit=crop',
     },
+    {
+      id: 7,
+      title: t('pt.f5t'),
+      description: t('pt.f5d'),
+      imageSrc: 'https://images.unsplash.com/photo-1461938337379-4b537cd2cbb4?q=80&w=900&auto=format&fit=crop',
+    },
   ];
 
 
@@ -95,7 +101,7 @@ export function PersonalTrainingSection({ overlay = false }: { overlay?: boolean
         <div className={`${overlay ? 'mt-4' : 'mt-8'} w-full`}>
           <CardStack
             items={CARDS}
-            maxVisible={7}
+            maxVisible={8}
             cardWidth={cardWidth}
             cardHeight={cardHeight}
             overlap={0.5}
