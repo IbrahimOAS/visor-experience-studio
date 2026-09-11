@@ -71,7 +71,7 @@ function CardFront({ card }: { card: VisorCardItem }) {
   const { step, title, desc, icon } = card;
   return (
     <div className="absolute inset-0 rounded-xl overflow-hidden">
-      <div className="relative h-full w-full p-3 sm:p-5 backdrop-blur-xl rounded-xl text-white flex flex-col justify-between border border-white/25 bg-[#0b131e]/50 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.15)]">
+      <div className="relative h-full w-full p-3 sm:p-5 backdrop-blur-2xl rounded-xl text-white flex flex-col justify-between border border-white/12 bg-[#070d16]/92 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]">
         <div className="min-h-0 flex-1 overflow-hidden">
           <div className="flex items-center justify-between gap-1.5 mb-2 sm:mb-4">
             <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-xl bg-white/[0.1] border border-white/20 flex items-center justify-center text-[#99FFFF] shadow-[0_0_12px_rgba(153,255,255,0.3)]">
@@ -105,9 +105,9 @@ function CardBack({ card }: { card: VisorCardItem }) {
   return (
     <div className="absolute inset-0 rounded-xl overflow-hidden">
       <div
-        className="relative h-full w-full p-3 sm:p-5 rounded-xl text-white flex flex-col overflow-hidden border border-[#99FFFF]/40 bg-[#0b131e]/50 backdrop-blur-xl"
+        className="relative h-full w-full p-3 sm:p-5 rounded-xl text-white flex flex-col overflow-hidden border border-[#99FFFF]/25 bg-[#070d16]/95 backdrop-blur-2xl"
         style={{
-          boxShadow: `0 0 24px 0 ${card.gradientFrom}33, inset 0 0 0 1px rgba(255,255,255,0.12)`,
+          boxShadow: `0 0 24px 0 ${card.gradientFrom}22, inset 0 0 0 1px rgba(255,255,255,0.06)`,
         }}
       >
         <div className="min-h-0 flex-1 overflow-hidden">
@@ -143,13 +143,13 @@ export default function SkewCards({ cards, onCardClick }: SkewCardsProps) {
         >
           {/* Gradient glow behind card */}
           <span
-            className="absolute inset-0 rounded-2xl blur-[28px] opacity-40 pointer-events-none"
+            className="absolute inset-0 rounded-2xl blur-[28px] opacity-20 pointer-events-none"
             style={{ background: `linear-gradient(315deg, ${card.gradientFrom}, ${card.gradientTo})` }}
           />
           <FlippingCard
             width={280}
             height={330}
-            className="!w-full !h-[228px] sm:!h-[var(--height)] border-white/20 bg-transparent dark:bg-transparent dark:border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.35)]"
+            className="!w-full !h-[228px] sm:!h-[var(--height)] border-white/10 bg-[#070d16] dark:bg-[#070d16] dark:border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.55)]"
             frontContent={<CardFront card={card} />}
             backContent={<CardBack card={card} />}
           />
