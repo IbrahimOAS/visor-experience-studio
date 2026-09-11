@@ -102,11 +102,22 @@ const Cylinder = memo(({ handleClick, controls, isActive }: CylinderProps) => {
             onClick={() => handleClick(imgUrl, i)}
           >
             <div className="relative w-full rounded-xl overflow-hidden border border-white/20 shadow-[0_8px_25px_rgba(0,0,0,0.7)] group-hover:border-[#99FFFF]/80 group-hover:shadow-[0_0_25px_rgba(153,255,255,0.3)] transition-all duration-300 bg-[#0d141f]">
-              <img
-                src={imgUrl}
-                alt={`VISOR app screen ${i + 1}`}
-                className="pointer-events-none w-full object-cover aspect-[9/20]"
-              />
+              {isVideo(imgUrl) ? (
+                <video
+                  src={imgUrl}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="pointer-events-none w-full object-cover aspect-[9/20]"
+                />
+              ) : (
+                <img
+                  src={imgUrl}
+                  alt={`VISOR app screen ${i + 1}`}
+                  className="pointer-events-none w-full object-cover aspect-[9/20]"
+                />
+              )}
               {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#070b12] via-transparent to-black/30 pointer-events-none" />
             </div>
