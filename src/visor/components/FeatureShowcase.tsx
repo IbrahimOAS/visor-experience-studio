@@ -64,11 +64,11 @@ const FeatureCard = ({ feature }: { feature: (typeof features)[0] }) => {
           style={{ y, scale }}
           className="absolute w-[80%] sm:w-[60%] md:w-[85%] lg:w-[75%] max-w-[420px] will-change-transform"
         >
-          <div className="rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl relative w-full aspect-[1/2.16]">
+          <div className="relative w-full aspect-[1/2.06] drop-shadow-[0_30px_60px_rgba(0,0,0,0.7)]">
             <img
               src={feature.image}
               alt={feature.title}
-              className="w-full h-full object-cover object-top block"
+              className="w-full h-full object-contain block"
               loading="lazy"
             />
           </div>
