@@ -91,6 +91,9 @@ export function FeaturesSection({ onGetApp }: FeaturesSectionProps) {
           <FeaturesCarousel />
         </div>
       </div>
+
+      {/* Scroll-driven feature showcase */}
+      <FeatureShowcase />
     </section>
   );
 }
