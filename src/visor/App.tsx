@@ -333,7 +333,7 @@ export default function App() {
           {/* Personal Training, Your Door — same hero.mp4 scrubbing behind */}
           <section
             id="section-4-personal-training"
-            className="absolute inset-0 overflow-y-auto overflow-x-hidden"
+            className="absolute inset-0 overflow-y-auto"
             style={{
               opacity: s4Opacity,
               transition: 'opacity 0.1s ease-out',

@@ -92,28 +92,8 @@ export function CardStack<T extends CardStackItem>({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active]);
 
-  const stageRef = React.useRef<HTMLDivElement>(null);
-  const [stageWidth, setStageWidth] = React.useState(0);
-
-  React.useEffect(() => {
-    const el = stageRef.current;
-    if (!el) return;
-    const update = () => setStageWidth(el.clientWidth);
-    update();
-    const ro = new ResizeObserver(update);
-    ro.observe(el);
-    return () => ro.disconnect();
-  }, []);
-
   const maxOffset = Math.max(0, Math.floor(maxVisible / 2));
-  const baseSpacing = Math.max(10, Math.round(cardWidth * (1 - overlap)));
-  // Keep the whole fan inside the available width instead of spilling off-screen.
-  const availableHalf = stageWidth > 0 ? (stageWidth - cardWidth) / 2 : 0;
-  const fittedSpacing =
-    stageWidth > 0 && maxOffset > 0
-      ? Math.max(14, Math.floor(availableHalf / maxOffset))
-      : baseSpacing;
-  const cardSpacing = Math.min(baseSpacing, fittedSpacing);
+  const cardSpacing = Math.max(10, Math.round(cardWidth * (1 - overlap)));
   const stepDeg = maxOffset > 0 ? spreadDeg / maxOffset : 0;
 
   const canGoPrev = loop || active > 0;
@@ -154,8 +134,7 @@ export function CardStack<T extends CardStackItem>({
       onMouseLeave={() => setHovering(false)}
     >
       <div
-        ref={stageRef}
-        className="relative w-full overflow-x-hidden"
+        className="relative w-full"
         style={{ height: cardHeight + 80 }}
         tabIndex={0}
         onKeyDown={onKeyDown}
