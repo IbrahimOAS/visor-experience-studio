@@ -12,6 +12,7 @@ import { PERMANENT_VIDEO_URL } from './constants';
 
 import Footer from '@/components/Footer';
 import { GuidesSection } from './components/GuidesSection';
+import { LifestyleShowcase } from './components/LifestyleShowcase';
 import { EliteCoachesDialog } from '@/components/EliteCoachesDialog';
 import { SignUpDialog } from '@/components/SignUpDialog';
 import { SignInDialog } from '@/components/SignInDialog';
@@ -391,6 +392,8 @@ export default function App() {
       />
 
       <GuidesSection />
+
+      <LifestyleShowcase />
 
       <Footer />
     </div>
