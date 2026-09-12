@@ -46,24 +46,25 @@ const FeatureCard = ({ feature }: { feature: (typeof features)[0] }) => {
   return (
     <div
       ref={ref}
-      className="bg-[#111318] border border-white/5 rounded-[3rem] md:rounded-[4rem] overflow-hidden flex flex-col md:flex-row mx-auto w-[92%] lg:w-[95%] max-w-[1400px] mb-6 min-h-[75vh] md:min-h-[85vh] relative shadow-[0_30px_60px_rgba(0,0,0,0.8)]"
+      className="bg-[#111318] border border-white/5 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row mx-auto w-[94%] lg:w-[97%] max-w-[1680px] mb-6 min-h-[60vh] md:min-h-[52vh] relative shadow-[0_30px_60px_rgba(0,0,0,0.8)]"
     >
       {/* Left Column: Text Content */}
-      <div className="w-full md:w-[50%] p-10 sm:p-12 md:p-20 lg:p-24 flex flex-col justify-center relative z-10">
-        <h3 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-[1.1] tracking-tight max-w-2xl">
+      <div className="w-full md:w-[56%] p-8 sm:p-10 md:p-14 lg:p-16 flex flex-col justify-center relative z-10">
+        <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1] tracking-tight max-w-2xl">
           {feature.title}
         </h3>
-        <p className="text-lg sm:text-xl lg:text-2xl text-slate-400 max-w-lg leading-relaxed font-light">
+        <p className="text-base sm:text-lg lg:text-xl text-slate-400 max-w-xl leading-relaxed font-light">
           {feature.subtitle}
         </p>
       </div>
 
       {/* Right Column: Mobile UI Mockup */}
-      <div className="w-full md:w-[50%] relative flex justify-center items-center h-[50vh] md:h-auto">
+      <div className="w-full md:w-[44%] relative flex justify-center items-center h-[46vh] md:h-auto">
         <motion.div
           style={{ y, scale }}
-          className="absolute w-[80%] sm:w-[60%] md:w-[85%] lg:w-[75%] max-w-[420px] will-change-transform"
+          className="absolute w-[62%] sm:w-[48%] md:w-[62%] lg:w-[54%] max-w-[340px] will-change-transform"
         >
+
           <div className="relative w-full aspect-[1/2.06] drop-shadow-[0_30px_60px_rgba(0,0,0,0.7)]">
             <img
               src={feature.image}
@@ -82,7 +83,7 @@ export function FeatureShowcase() {
   return (
     <section className="bg-transparent py-16 md:py-24 w-full relative z-20 overflow-x-hidden">
       <div className="text-center max-w-4xl mx-auto px-6 mb-12 md:mb-20">
-        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light uppercase tracking-tight leading-[1.05] text-white">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight leading-tight text-white">
           Be Yourself{' '}
           <span
             className="font-semibold text-[#99FFFF]"
@@ -91,6 +92,7 @@ export function FeatureShowcase() {
             Be VISOR
           </span>
         </h2>
+
         <p className="mt-4 text-base sm:text-lg text-slate-400 font-light max-w-2xl mx-auto">
           Set your goal, your pace, your identity and your coach's voice — VISOR adapts to the
           version of you that you choose.
