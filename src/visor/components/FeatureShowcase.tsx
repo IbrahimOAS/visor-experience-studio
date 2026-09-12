@@ -81,6 +81,22 @@ const FeatureCard = ({ feature }: { feature: (typeof features)[0] }) => {
 export function FeatureShowcase() {
   return (
     <section className="bg-transparent py-16 md:py-24 w-full relative z-20 overflow-x-hidden">
+      <div className="text-center max-w-4xl mx-auto px-6 mb-12 md:mb-20">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light uppercase tracking-tight leading-[1.05] text-white">
+          Be Yourself{' '}
+          <span
+            className="font-semibold text-[#99FFFF]"
+            style={{ textShadow: '0 0 28px rgba(153, 255, 255, 0.4)' }}
+          >
+            Be VISOR
+          </span>
+        </h2>
+        <p className="mt-4 text-base sm:text-lg text-slate-400 font-light max-w-2xl mx-auto">
+          Set your goal, your pace, your identity and your coach's voice — VISOR adapts to the
+          version of you that you choose.
+        </p>
+      </div>
+
       {features.map((feature) => (
         <FeatureCard key={feature.id} feature={feature} />
       ))}
