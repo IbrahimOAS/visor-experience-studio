@@ -82,7 +82,7 @@ export function FeatureShowcase() {
   return (
     <section className="bg-transparent py-16 md:py-24 w-full relative z-20 overflow-x-hidden">
       <div className="text-center max-w-4xl mx-auto px-6 mb-12 md:mb-20">
-        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light uppercase tracking-tight leading-[1.05] text-white">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight leading-tight text-white">
           Be Yourself{' '}
           <span
             className="font-semibold text-[#99FFFF]"
@@ -91,6 +91,7 @@ export function FeatureShowcase() {
             Be VISOR
           </span>
         </h2>
+
         <p className="mt-4 text-base sm:text-lg text-slate-400 font-light max-w-2xl mx-auto">
           Set your goal, your pace, your identity and your coach's voice — VISOR adapts to the
           version of you that you choose.
