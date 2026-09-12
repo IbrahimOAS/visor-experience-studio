@@ -9,6 +9,7 @@ import {
   CheckCircle2
 } from 'lucide-react';
 import { FeaturesCarousel } from './FeaturesCarousel';
+import { FeatureShowcase } from './FeatureShowcase';
 import { useLanguage } from '../i18n';
 
 interface FeaturesSectionProps {
@@ -91,6 +92,9 @@ export function FeaturesSection({ onGetApp }: FeaturesSectionProps) {
           <FeaturesCarousel />
         </div>
       </div>
+
+      {/* Scroll-driven feature showcase */}
+      <FeatureShowcase />
     </section>
   );
 }
