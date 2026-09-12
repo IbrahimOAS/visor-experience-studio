@@ -1,30 +1,34 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import panel01 from '@/assets/ui-panel-01.png.asset.json';
+import panel02 from '@/assets/ui-panel-02.png.asset.json';
+import panel03 from '@/assets/ui-panel-03.png.asset.json';
+import panel04 from '@/assets/ui-panel-04.png.asset.json';
 
 const features = [
   {
     id: 1,
-    title: 'Your progress, made clear',
-    subtitle: 'See your milestones and understand how far you have come.',
-    image: '/app-screens/ui-1.jpeg',
+    title: 'Start with one clear goal',
+    subtitle: 'Lean out, build mass, recomposition or longevity — pick your primary outcome and shift it any week.',
+    image: panel01.url,
   },
   {
     id: 2,
-    title: 'Guidance that understands you',
-    subtitle: 'Get personalized support shaped around your goals.',
-    image: '/app-screens/ui-3.jpeg',
+    title: 'Choose how hard you get pushed',
+    subtitle: 'Steady, Ambitious or Olympia sets your progression speed, and you see the pace it implies.',
+    image: panel04.url,
   },
   {
     id: 3,
-    title: 'Build your daily rhythm',
-    subtitle: 'Turn small actions into consistent habits.',
-    image: '/app-screens/ui-4.jpeg',
+    title: 'Become the version you choose',
+    subtitle: 'Identity modes set the intensity of your plan and the voice of your coach.',
+    image: panel03.url,
   },
   {
     id: 4,
-    title: 'See the bigger picture',
-    subtitle: 'Explore your trends and choose your next step with confidence.',
-    image: '/app-screens/ui-2.jpeg',
+    title: 'Coaching in a voice you like',
+    subtitle: 'Commander, Guardian, Visionary or Strategist — change your coach tone whenever you want.',
+    image: panel02.url,
   },
 ];
 
