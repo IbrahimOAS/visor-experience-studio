@@ -46,7 +46,7 @@ const FeatureCard = ({ feature }: { feature: (typeof features)[0] }) => {
   return (
     <div
       ref={ref}
-      className="bg-[#111318] border border-white/5 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row mx-auto w-[94%] lg:w-[97%] max-w-[1680px] mb-6 min-h-[60vh] md:min-h-[52vh] relative shadow-[0_30px_60px_rgba(0,0,0,0.8)]"
+      className="bg-[#111318] border border-white/5 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row mx-auto w-[97%] lg:w-[99%] max-w-[1880px] mb-6 min-h-[60vh] md:min-h-[50vh] relative shadow-[0_30px_60px_rgba(0,0,0,0.8)]"
     >
       {/* Left Column: Text Content */}
       <div className="w-full md:w-[56%] p-8 sm:p-10 md:p-14 lg:p-16 flex flex-col justify-center relative z-10">
