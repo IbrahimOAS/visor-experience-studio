@@ -154,7 +154,8 @@ export function CardStack<T extends CardStackItem>({
       onMouseLeave={() => setHovering(false)}
     >
       <div
-        className="relative w-full"
+        ref={stageRef}
+        className="relative w-full overflow-x-hidden"
         style={{ height: cardHeight + 80 }}
         tabIndex={0}
         onKeyDown={onKeyDown}
