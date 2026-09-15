@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { SeoHead } from "@/components/seo/SeoHead";
@@ -47,6 +48,105 @@ const Card = ({ icon, title, children, index }: CardProps) => (
     <div className="text-foreground/85 leading-relaxed space-y-3">{children}</div>
   </motion.div>
 );
+
+type FormStatus = "idle" | "loading" | "success" | "error";
+
+const DeletionForm = () => {
+  const [email, setEmail]   = useState("");
+  const [reason, setReason] = useState("");
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+
+    setStatus("loading");
+    try {
+      const res = await fetch(
+        "https://api.visorfitness.com/api/accounts/request-deletion-web/",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: email.trim().toLowerCase(), reason: reason.trim() }),
+        }
+      );
+      if (res.ok) {
+        setStatus("success");
+        setMessage(`Request received. We'll send a confirmation to ${email.trim()} and process your deletion within 30 days.`);
+      } else {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.detail || `Server error (${res.status})`);
+      }
+    } catch (err) {
+      if (err instanceof TypeError) {
+        // Network failure — fall back to mailto
+        const subject = encodeURIComponent("Account Deletion Request");
+        const body = encodeURIComponent(
+          `Hi VISOR team,\n\nPlease permanently delete my account.\n\nAccount email: ${email.trim()}` +
+          (reason ? `\nReason: ${reason}` : "") +
+          "\n\nI understand this is permanent and cannot be undone."
+        );
+        window.location.href = `mailto:support@visorfitness.com?subject=${subject}&body=${body}`;
+        setStatus("success");
+        setMessage("Opening your email app with a pre-filled request…");
+      } else {
+        setStatus("error");
+        setMessage(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+      }
+    }
+  };
+
+  if (status === "success") {
+    return (
+      <p className="text-sm rounded-xl border border-green-500/30 bg-green-500/10 text-green-300 p-4 leading-relaxed">
+        {message}
+      </p>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div>
+        <label className="block text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-1.5">
+          Email address on your account
+        </label>
+        <input
+          type="email"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="you@example.com"
+          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-colors"
+        />
+      </div>
+      <div>
+        <label className="block text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-1.5">
+          Reason <span className="normal-case font-normal tracking-normal">(optional)</span>
+        </label>
+        <textarea
+          rows={3}
+          value={reason}
+          onChange={(e) => setReason(e.target.value)}
+          placeholder="Let us know why you're leaving (optional)"
+          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-colors resize-y"
+        />
+      </div>
+      {status === "error" && (
+        <p className="text-sm text-red-400 rounded-xl border border-red-500/30 bg-red-500/10 p-3">
+          {message}
+        </p>
+      )}
+      <button
+        type="submit"
+        disabled={status === "loading" || !email.trim()}
+        className="w-full h-12 rounded-xl bg-red-500 hover:bg-red-600 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold text-sm transition-colors"
+      >
+        {status === "loading" ? "Submitting…" : "Request Account Deletion"}
+      </button>
+    </form>
+  );
+};
 
 const DeleteAccount = () => {
   const breadcrumbLd = {
@@ -132,26 +232,12 @@ const DeleteAccount = () => {
             </Card>
 
             <Card icon={<Mail size={22} />} title="Can't access your account?" index={1}>
-              <p>
-                Email{" "}
-                <a
-                  href="mailto:support@visorfitness.com?subject=Delete%20My%20Account"
-                  className="text-primary hover:underline"
-                >
-                  support@visorfitness.com
-                </a>{" "}
-                with the subject line <strong>Delete My Account</strong>.
-              </p>
               <p className="text-sm text-muted-foreground">
-                To identify your account, include: the email address registered to your VISOR account,
-                your account name or display name, and the platform you signed up on (iOS or Android).
-                We may ask one additional verification question before deleting the account.
+                Submit your email below and we'll process your deletion request within 30 days. A
+                confirmation will be sent to the address you provide. Backup copies are purged within
+                approximately 90 days.
               </p>
-              <p className="text-sm text-muted-foreground">
-                We confirm receipt within 5 business days, complete deletion within 30 days, and send a
-                confirmation email to your registered address once the deletion is done. Backup copies
-                are purged within approximately 90 days.
-              </p>
+              <DeletionForm />
             </Card>
 
             <Card icon={<Shield size={22} />} title="What data is deleted?" index={2}>
